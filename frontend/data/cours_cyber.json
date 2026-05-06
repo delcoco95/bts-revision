@@ -1,0 +1,399 @@
+﻿[
+  {
+    "id": "cyber-01",
+    "chapitre": "cyber-01",
+    "titre": "Fondamentaux de la cybersécurité — CIA, ANSSI, ISO 27001",
+    "domaine": "Cybersécurité",
+    "sections": [
+      {
+        "titre": "1. La triade CIA",
+        "contenu": "La sécurité de l'information repose sur trois piliers fondamentaux, regroupés sous l'acronyme CIA :\n\n**Confidentialité** : seuls les utilisateurs autorisés peuvent accéder à l'information. Exemple : chiffrement AES-256 d'une base de données RH.\n\n**Intégrité** : l'information ne doit pas être altérée de manière non autorisée. Exemple : signature HMAC-SHA256 d'un fichier de log.\n\n**Disponibilité** : les systèmes et données doivent être accessibles quand nécessaire. Exemple : cluster haute disponibilité avec failover automatique.\n\nCertains référentiels ajoutent la **non-répudiation** (impossibilité de nier une action) et la **traçabilité** (journalisation de toutes les actions)."
+      },
+      {
+        "titre": "2. L'ANSSI — Agence Nationale de la Sécurité des Systèmes d'Information",
+        "contenu": "Créée en 2009, l'ANSSI est l'autorité nationale française en matière de cybersécurité. Elle est rattachée au Secrétariat Général de la Défense et de la Sécurité Nationale (SGDSN).\n\nMissions principales :\n- Défense des systèmes d'information de l'État\n- Assistance aux victimes d'attaques (OIV, OSE, administrations)\n- Publication de guides et référentiels techniques (PSSIE, RGS, SecNumCloud)\n- Qualification des produits et services de sécurité\n- Sensibilisation et formation\n\nRéférentiels ANSSI importants :\n- **PSSIE** : Politique de Sécurité des Systèmes d'Information de l'État\n- **RGS** : Référentiel Général de Sécurité (sites web étatiques)\n- **EBIOS Risk Manager** : méthode d'analyse de risque\n- **SecNumCloud** : qualification des prestataires cloud\n\nSite officiel : www.ssi.gouv.fr"
+      },
+      {
+        "titre": "3. ISO 27001 / 27002",
+        "contenu": "L'ISO 27001 est une norme internationale définissant les exigences d'un Système de Management de la Sécurité de l'Information (SMSI).\n\nStructure :\n- Clause 4 : Contexte de l'organisation\n- Clause 5 : Leadership\n- Clause 6 : Planification (évaluation des risques)\n- Clause 7 : Support\n- Clause 8 : Opérations\n- Clause 9 : Évaluation des performances\n- Clause 10 : Amélioration continue\n- Annexe A : 114 contrôles de sécurité répartis en 14 domaines\n\nL'ISO 27002 détaille les bonnes pratiques d'application des contrôles de l'Annexe A.\n\nCycle PDCA appliqué au SMSI :\n- Plan : identifier les risques, définir les mesures\n- Do : mettre en œuvre les contrôles\n- Check : auditer et surveiller\n- Act : améliorer en continu\n\nCertification : une organisation peut être certifiée ISO 27001 par un organisme accrédité (Bureau Veritas, AFNOR...)."
+      },
+      {
+        "titre": "4. Méthode EBIOS Risk Manager",
+        "contenu": "EBIOS Risk Manager (2018) est la méthode officielle de l'ANSSI pour l'analyse et le traitement des risques cyber.\n\nCinq ateliers :\n1. **Cadrage et socle de sécurité** : périmètre, valeurs métier, biens support\n2. **Sources de risque** : identification des attaquants potentiels et leurs motivations\n3. **Scénarios stratégiques** : chemins d'attaque à haut niveau\n4. **Scénarios opérationnels** : détail technique des attaques (techniques MITRE ATT&CK)\n5. **Traitement du risque** : mesures de sécurité, risque résiduel accepté\n\nConcepts clés :\n- **Valeur métier** : ce que l'organisation cherche à protéger (données, services)\n- **Bien support** : infrastructure hébergeant la valeur métier (serveur, réseau)\n- **Source de risque** : entité pouvant causer un incident (concurrent, cybercriminel, employé malveillant)\n- **Vraisemblance / Gravité** : axes d'évaluation du risque\n\nEBIOS RM est obligatoire pour les Opérateurs de Services Essentiels (OSE) et les OIV."
+      }
+    ],
+    "exercices": [
+      {
+        "type": "qcm",
+        "question": "Quel pilier de la triade CIA garantit que seuls les utilisateurs autorisés accèdent à l'information ?",
+        "choix": ["Disponibilité", "Intégrité", "Confidentialité", "Non-répudiation"],
+        "reponse": "Confidentialité"
+      },
+      {
+        "type": "vrai_faux",
+        "question": "L'ANSSI a été créée en 2005.",
+        "reponse": false,
+        "explication": "L'ANSSI a été créée en 2009."
+      },
+      {
+        "type": "definition",
+        "terme": "SMSI",
+        "definition": "Système de Management de la Sécurité de l'Information — ensemble de politiques, processus et contrôles pour gérer la sécurité de l'information selon ISO 27001."
+      }
+    ],
+    "liens": [
+      {"texte": "ANSSI — ssi.gouv.fr", "url": "https://www.ssi.gouv.fr"},
+      {"texte": "ISO 27001 — iso.org", "url": "https://www.iso.org/fr/isoiec-27001-information-security.html"},
+      {"texte": "EBIOS RM", "url": "https://www.ssi.gouv.fr/guide/ebios-risk-manager-la-methode/"}
+    ]
+  },
+  {
+    "id": "cyber-02",
+    "chapitre": "cyber-02",
+    "titre": "Attaques informatiques — Taxonomie, Kill Chain, MITRE ATT&CK",
+    "domaine": "Cybersécurité",
+    "sections": [
+      {
+        "titre": "1. Classification des attaques",
+        "contenu": "Les cyberattaques se classifient selon plusieurs axes :\n\n**Par vecteur d'attaque :**\n- Réseau : scan de ports, man-in-the-middle, DDoS\n- Applicatif : injection SQL, XSS, CSRF, buffer overflow\n- Social engineering : phishing, vishing, pretexting\n- Physique : vol de matériel, shoulder surfing, tailgating\n\n**Par objectif :**\n- Espionnage (APT — Advanced Persistent Threat)\n- Sabotage (ransomware, wiper)\n- Fraude financière (BEC — Business Email Compromise)\n- Hacktivisme (défacement, DDoS militants)\n\n**Types d'acteurs :**\n- Script kiddies : peu qualifiés, outils automatisés\n- Hacktivistes : motivation idéologique (Anonymous)\n- Cybercriminels : motivation financière\n- APT étatiques : Lazarus Group (Corée du Nord), APT28 (Russie/GRU), APT41 (Chine)\n- Insiders : employés malveillants ou négligents"
+      },
+      {
+        "titre": "2. Cyber Kill Chain (Lockheed Martin)",
+        "contenu": "La Cyber Kill Chain (2011) modélise les 7 phases d'une attaque ciblée :\n\n1. **Reconnaissance** : collecte d'informations OSINT (LinkedIn, Shodan, WHOIS). Outils : theHarvester, Maltego.\n2. **Weaponization** : création du payload malveillant (exploit + dropper). Ex : PDF piégé avec CVE.\n3. **Delivery** : vecteur de livraison — email de phishing, clé USB, watering hole.\n4. **Exploitation** : exécution de l'exploit sur la cible. Ex : CVE-2017-0144 (EternalBlue/WannaCry).\n5. **Installation** : déploiement du malware persistant (RAT, backdoor). Ex : Mimikatz pour dump de credentials.\n6. **Command & Control (C2)** : communication avec le serveur de l'attaquant via DNS over HTTPS, Tor, ou domaines légitimes détournés (living off the land).\n7. **Actions on Objectives** : exfiltration, chiffrement (ransomware), destruction, pivot latéral.\n\nL'objectif défensif est de détecter et bloquer l'attaque le plus tôt possible dans la chaîne."
+      },
+      {
+        "titre": "3. MITRE ATT&CK",
+        "contenu": "MITRE ATT&CK (Adversarial Tactics, Techniques and Common Knowledge) est une base de connaissances des tactiques et techniques utilisées par les attaquants réels, basée sur des observations terrain.\n\nStructure :\n- **Tactiques** : l'objectif de l'attaquant (ex : TA0001 Initial Access, TA0006 Credential Access)\n- **Techniques** : la méthode utilisée (ex : T1566 Phishing, T1078 Valid Accounts)\n- **Sous-techniques** : variantes spécifiques (ex : T1566.001 Spearphishing Attachment)\n\nMatrice Enterprise — 14 tactiques :\nInitial Access → Execution → Persistence → Privilege Escalation → Defense Evasion → Credential Access → Discovery → Lateral Movement → Collection → Command and Control → Exfiltration → Impact\n\nUsages :\n- Red team : planifier des attaques réalistes\n- Blue team : mapper les détections SIEM aux techniques ATT&CK\n- Purple team : évaluer la couverture défensive\n\nOutils basés sur ATT&CK : Atomic Red Team, CALDERA, Sigma rules."
+      },
+      {
+        "titre": "4. Cas concrets — WannaCry et SolarWinds",
+        "contenu": "**WannaCry (mai 2017)**\n- Type : ransomware cryptoworm\n- Exploitation : CVE-2017-0144 (EternalBlue) — faille SMBv1 Windows\n- Propagation : auto-réplication sans interaction utilisateur\n- Impact : 200 000 systèmes dans 150 pays, NHS UK paralysé, Renault contraint d'arrêter des usines\n- Attribution : Lazarus Group (Corée du Nord)\n- Remédiation : patch MS17-010, désactivation SMBv1, segmentation réseau\n\n**SolarWinds (décembre 2020)**\n- Type : supply chain attack + APT\n- Vecteur : mise à jour légitime de SolarWinds Orion contenant un backdoor (SUNBURST)\n- Impact : 18 000 clients dont 9 agences fédérales US (DoJ, Treasury, DHS), Microsoft\n- Attribution : APT29 (Cozy Bear — SVR russe)\n- Durée de présence : 9 mois sans détection\n- Enseignements : vérification d'intégrité des mises à jour, Zero Trust, segmentation stricte"
+      }
+    ],
+    "exercices": [
+      {
+        "type": "qcm",
+        "question": "Quelle faille a exploité le ransomware WannaCry ?",
+        "choix": ["CVE-2014-0160 (Heartbleed)", "CVE-2017-0144 (EternalBlue)", "CVE-2021-44228 (Log4Shell)", "CVE-2020-1472 (Zerologon)"],
+        "reponse": "CVE-2017-0144 (EternalBlue)"
+      },
+      {
+        "type": "cas_pratique",
+        "question": "Un attaquant envoie un email avec un document Word piégé à un employé. À quelle phase de la Cyber Kill Chain correspond l'ouverture du document par l'employé ?",
+        "reponse": "Phase 3 : Delivery (livraison du payload) — et si le document exécute un exploit, phase 4 : Exploitation."
+      }
+    ],
+    "liens": [
+      {"texte": "MITRE ATT&CK", "url": "https://attack.mitre.org"},
+      {"texte": "ANSSI — Panorama de la cybermenace 2023", "url": "https://www.ssi.gouv.fr/actualite/panorama-de-la-cybermenace-2023/"}
+    ]
+  },
+  {
+    "id": "cyber-03",
+    "chapitre": "cyber-03",
+    "titre": "Pare-feux, DMZ et filtrage réseau",
+    "domaine": "Cybersécurité",
+    "sections": [
+      {
+        "titre": "1. Types de pare-feux",
+        "contenu": "**Pare-feu stateless (sans état) — filtrage de paquets**\nAnalyse chaque paquet indépendamment (adresse IP source/destination, port, protocole). Rapide mais limité : ne peut pas inspecter le contexte d'une connexion.\n\n**Pare-feu stateful (avec état)**\nMaintient une table des connexions établies. Autorise les paquets appartenant à une session légitime. Exemple : Netfilter (Linux), Windows Defender Firewall.\n\n**Next-Generation Firewall (NGFW)**\nCombine stateful + inspection applicative (couche 7) + IPS intégré + déchiffrement TLS + identification des utilisateurs (LDAP/AD) + threat intelligence.\nExemples : Palo Alto PA-Series, Fortinet FortiGate, Cisco FTD, pfSense + Suricata.\n\n**WAF (Web Application Firewall)**\nFiltrage spécifique aux applications web : détecte injection SQL, XSS, CSRF, path traversal. Exemples : ModSecurity, AWS WAF, Cloudflare WAF."
+      },
+      {
+        "titre": "2. Architecture DMZ",
+        "contenu": "La DMZ (Demilitarized Zone) est une zone réseau intermédiaire entre Internet et le réseau interne, hébergeant les services accessibles depuis l'extérieur.\n\nArchitecture classique à 3 zones :\n```\nInternet → [FW Externe] → DMZ → [FW Interne] → LAN\n```\n\nServices typiquement en DMZ :\n- Serveur web (HTTP/HTTPS)\n- Serveur de messagerie (SMTP, IMAP)\n- Reverse proxy\n- Bastion SSH\n- Serveur DNS externe\n\nPrincipes :\n- Un attaquant compromettant un serveur DMZ ne doit pas accéder au LAN directement\n- Les flux depuis la DMZ vers le LAN sont strictement contrôlés\n- Le LAN peut initier des connexions vers la DMZ, pas l'inverse\n\nArchitecture dual-homed : un seul firewall avec 3 interfaces (WAN, DMZ, LAN) — moins sécurisée mais plus économique."
+      },
+      {
+        "titre": "3. iptables / nftables",
+        "contenu": "**iptables** est l'outil historique de filtrage sous Linux (Netfilter). Il est progressivement remplacé par nftables.\n\nStructure iptables :\n- Tables : filter, nat, mangle, raw\n- Chaînes : INPUT, OUTPUT, FORWARD (table filter)\n- Cibles : ACCEPT, DROP, REJECT, LOG\n\nExemples de règles courantes :\n```bash\n# Autoriser SSH entrant\niptables -A INPUT -p tcp --dport 22 -j ACCEPT\n\n# Bloquer tout le reste en entrée\niptables -A INPUT -j DROP\n\n# NAT / masquerade (routeur)\niptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE\n\n# Autoriser les connexions établies\niptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT\n```\n\n**nftables** (successeur recommandé depuis Linux 3.13, défaut sur Debian 10+) :\n```bash\nnft add rule inet filter input tcp dport 22 accept\nnft add rule inet filter input ct state established,related accept\n```\n\nPfSense : distribution FreeBSD spécialisée pare-feu/routeur, interface web, support VLAN, VPN (OpenVPN, WireGuard), IDS/IPS (Suricata)."
+      },
+      {
+        "titre": "4. IDS / IPS",
+        "contenu": "**IDS (Intrusion Detection System)** : détecte et alerte — passif, écoute en mode miroir.\n**IPS (Intrusion Prevention System)** : détecte et bloque — actif, inséré en ligne.\n\nModes de détection :\n- **Signatures** : comparaison aux patterns d'attaques connus (comme un antivirus). Rapide, fiable pour menaces connues.\n- **Anomalies** : déviation par rapport à un comportement de base. Détecte les menaces inconnues (zero-day) mais génère des faux positifs.\n\nOutils open source :\n- **Snort** : IDS/IPS réseau à base de règles, édité par Cisco\n- **Suricata** : alternative moderne, multi-threading, décodage TLS, intégration pfSense\n- **Zeek** (ex-Bro) : analyse comportementale réseau\n\nEmplacement :\n- IDS en dehors du pare-feu : voit tout le trafic externe\n- IDS en dedans : voit les attaques ayant passé le pare-feu\n- HIDS (host-based) : OSSEC, Wazuh — surveille les logs et fichiers système locaux"
+      }
+    ],
+    "exercices": [
+      {
+        "type": "qcm",
+        "question": "Quelle zone réseau est conçue pour héberger les services accessibles depuis Internet tout en protégeant le LAN interne ?",
+        "choix": ["VLAN de management", "DMZ", "Zone de confiance", "Backbone"],
+        "reponse": "DMZ"
+      },
+      {
+        "type": "pratique",
+        "question": "Écrire la règle iptables pour autoriser uniquement le trafic HTTP (port 80) et HTTPS (port 443) en entrée, et rejeter tout le reste.",
+        "reponse": "iptables -A INPUT -p tcp --dport 80 -j ACCEPT\niptables -A INPUT -p tcp --dport 443 -j ACCEPT\niptables -A INPUT -j REJECT"
+      }
+    ],
+    "liens": [
+      {"texte": "pfSense Documentation", "url": "https://docs.netgate.com/pfsense/en/latest/"},
+      {"texte": "Suricata IDS/IPS", "url": "https://suricata.io/"}
+    ]
+  },
+  {
+    "id": "cyber-04",
+    "chapitre": "cyber-04",
+    "titre": "Cryptographie et PKI — Chiffrement, Certificats, TLS",
+    "domaine": "Cybersécurité",
+    "sections": [
+      {
+        "titre": "1. Chiffrement symétrique",
+        "contenu": "En chiffrement symétrique, la même clé est utilisée pour chiffrer et déchiffrer. Rapide, adapté aux gros volumes de données.\n\n**AES (Advanced Encryption Standard)**\n- Algorithme standard depuis 2001 (NIST)\n- Tailles de clé : 128, 192 ou 256 bits\n- Modes d'opération : ECB (déconseillé), CBC, CTR, GCM (authentifié)\n- AES-GCM est le mode recommandé : chiffrement + authentification (AEAD)\n\n**Autres algorithmes :**\n- 3DES : obsolète, remplacé par AES\n- ChaCha20-Poly1305 : alternative à AES pour plateformes sans accélération matérielle (mobile)\n\n**Problème clé** : comment partager la clé secrète de manière sécurisée ? → Résolu par la cryptographie asymétrique."
+      },
+      {
+        "titre": "2. Chiffrement asymétrique et Diffie-Hellman",
+        "contenu": "**RSA (Rivest–Shamir–Adleman)**\n- Basé sur la difficulté de factoriser de grands nombres premiers\n- Paire de clés : clé publique (chiffrement) / clé privée (déchiffrement)\n- Tailles recommandées : 2048 bits minimum, 4096 bits pour haute sécurité\n- Usages : chiffrement, signature numérique, échange de clé\n- Lent pour gros volumes → utilisé pour chiffrer la clé symétrique (hybrid encryption)\n\n**ECC (Elliptic Curve Cryptography)**\n- Sécurité équivalente à RSA avec des clés plus courtes (256 bits ECC ≈ 3072 bits RSA)\n- Algorithmes : ECDSA (signature), ECDH (échange de clé)\n- Courbes : P-256 (NIST), Curve25519 (recommandée par ANSSI)\n\n**Diffie-Hellman (DH) / ECDH**\n- Protocole d'échange de clé sur canal non sécurisé\n- Permet deux parties d'établir un secret partagé sans se l'avoir transmis\n- Perfect Forward Secrecy (PFS) : DHE ou ECDHE génèrent des clés de session éphémères — compromission de la clé longue terme ne compromet pas les sessions passées"
+      },
+      {
+        "titre": "3. Hachage et intégrité",
+        "contenu": "Une fonction de hachage produit une empreinte (digest) de taille fixe à partir d'une entrée de taille variable. Propriétés requises :\n- Déterministe\n- Résistant aux collisions\n- Sens unique (one-way)\n\n**SHA-2 (Secure Hash Algorithm 2)**\n- SHA-256 : empreinte 256 bits — standard pour certificats, Git, signatures\n- SHA-512 : empreinte 512 bits — plus robuste\n\n**SHA-3** : algorithme alternatif (Keccak), recommandé pour nouvelles applications\n\n**MD5 et SHA-1** : obsolètes, collisions démontrées — NE PAS UTILISER pour la sécurité\n\n**HMAC (Hash-based Message Authentication Code)**\nCombine hachage + clé secrète pour authentification d'intégrité :\nHMAC(K, M) = H((K⊕opad) || H((K⊕ipad) || M))\nUsages : JWT, authentification API, vérification de messages"
+      },
+      {
+        "titre": "4. PKI et certificats X.509",
+        "contenu": "Une PKI (Public Key Infrastructure) est l'ensemble des composants permettant de gérer les clés et certificats numériques.\n\nComposants :\n- **CA (Certificate Authority)** : autorité qui signe les certificats. Hiérarchie : Root CA → Intermediate CA → End-entity\n- **RA (Registration Authority)** : vérifie l'identité avant émission\n- **CRL (Certificate Revocation List)** : liste des certificats révoqués\n- **OCSP (Online Certificate Status Protocol)** : vérification en temps réel du statut d'un certificat\n\nCertificat X.509 — champs principaux :\n- Subject (CN, O, C)\n- Issuer (CA)\n- Validity (Not Before / Not After)\n- Public Key\n- Extensions (SAN, KeyUsage, CRL Distribution Points)\n- Signature de la CA\n\nTypes de certificats :\n- DV (Domain Validation) : vérifie le contrôle du domaine\n- OV (Organization Validation) : vérifie l'organisation\n- EV (Extended Validation) : vérification renforcée\n- Wildcard : *.exemple.fr\n\n**TLS 1.3 (RFC 8446, 2018)**\nHandshake en 1 RTT (contre 2 pour TLS 1.2). Suppression des algorithmes faibles (RC4, DES, MD5, SHA-1, RSA key exchange statique). Cipher suites obligatoires : TLS_AES_256_GCM_SHA384, TLS_CHACHA20_POLY1305_SHA256."
+      }
+    ],
+    "exercices": [
+      {
+        "type": "qcm",
+        "question": "Quel algorithme de hachage est considéré comme obsolète et ne doit plus être utilisé pour la sécurité ?",
+        "choix": ["SHA-256", "SHA-3", "MD5", "HMAC-SHA256"],
+        "reponse": "MD5"
+      },
+      {
+        "type": "definition",
+        "terme": "Perfect Forward Secrecy",
+        "definition": "Propriété cryptographique garantissant que la compromission d'une clé longue terme ne permet pas de déchiffrer les sessions passées, car des clés éphémères distinctes ont été générées pour chaque session (via DHE ou ECDHE)."
+      }
+    ],
+    "liens": [
+      {"texte": "Let's Encrypt — AC gratuite", "url": "https://letsencrypt.org"},
+      {"texte": "SSL Labs — test TLS", "url": "https://www.ssllabs.com/ssltest/"}
+    ]
+  },
+  {
+    "id": "cyber-05",
+    "chapitre": "cyber-05",
+    "titre": "Authentification — MFA, RADIUS, Kerberos, Zero Trust",
+    "domaine": "Cybersécurité",
+    "sections": [
+      {
+        "titre": "1. Facteurs d'authentification",
+        "contenu": "L'authentification consiste à vérifier l'identité d'un utilisateur. Il existe trois facteurs :\n\n**Ce que je sais** : mot de passe, code PIN, question secrète\n**Ce que je possède** : carte à puce, token physique (YubiKey), smartphone (TOTP)\n**Ce que je suis** : empreinte digitale, reconnaissance faciale, iris (biométrie)\n\n**Authentification multifacteur (MFA)**\nCombine au moins deux facteurs différents. Renforce considérablement la sécurité : même si le mot de passe est volé (phishing), l'accès reste bloqué sans le second facteur.\n\n**TOTP (Time-based One-Time Password) — RFC 6238**\nCode à 6 chiffres basé sur HMAC-SHA1(secret, temps/30s). Implémentations : Google Authenticator, Authy, Microsoft Authenticator.\n\n**FIDO2 / WebAuthn**\nAuthentification sans mot de passe basée sur clés asymétriques. La clé privée reste sur l'appareil (TPM, clé USB). Résistant au phishing car lié au domaine. Exemples : YubiKey, Windows Hello, Touch ID."
+      },
+      {
+        "titre": "2. RADIUS",
+        "contenu": "RADIUS (Remote Authentication Dial-In User Service — RFC 2865) est le protocole standard AAA pour l'accès réseau :\n- **Authentication** : vérification de l'identité\n- **Authorization** : attribution des droits et VLAN\n- **Accounting** : journalisation des sessions\n\nFonctionnement :\n1. L'équipement réseau (commutateur, AP Wi-Fi) agit comme NAS (Network Access Server)\n2. Il relaie les credentials de l'utilisateur au serveur RADIUS\n3. Le serveur RADIUS consulte l'annuaire (AD, LDAP) et répond Accept/Reject\n4. En cas d'Accept, il peut retourner des attributs VLAN (tunnel-private-group-id)\n\nPort UDP : 1812 (auth), 1813 (accounting). Chiffrement partiel (mot de passe uniquement) via MD5 partagé — recommander EAP par-dessus RADIUS.\n\nServeurs RADIUS open source : FreeRADIUS, Radiator.\n\n**802.1X** : standard IEEE utilisant RADIUS pour le contrôle d'accès port-based (voir cours SISR-04)."
+      },
+      {
+        "titre": "3. Kerberos",
+        "contenu": "Kerberos (RFC 4120) est le protocole d'authentification utilisé dans les domaines Windows (Active Directory) depuis Windows 2000.\n\nComposants :\n- **KDC (Key Distribution Center)** : serveur central — comprend l'AS et le TGS\n- **AS (Authentication Server)** : émet le TGT après vérification du mot de passe\n- **TGS (Ticket Granting Server)** : émet des tickets de service sur présentation du TGT\n- **TGT (Ticket Granting Ticket)** : preuve d'authentification (durée 10h par défaut)\n\nFlux :\n1. Client → AS : demande TGT (AS-REQ)\n2. AS → Client : TGT chiffré + clé de session (AS-REP)\n3. Client → TGS : présente TGT, demande ticket service (TGS-REQ)\n4. TGS → Client : ticket de service (TGS-REP)\n5. Client → Serveur : accès avec ticket de service (AP-REQ)\n\nAttaques Kerberos :\n- **Pass-the-Ticket** : vol et réutilisation d'un TGT\n- **Golden Ticket** : forger un TGT avec le hash KRBTGT — accès illimité\n- **Kerberoasting** : demander des tickets de service pour des comptes SPN, puis craquer le hash hors ligne\n- **AS-REP Roasting** : cibler les comptes sans pre-auth Kerberos activé"
+      },
+      {
+        "titre": "4. Zero Trust",
+        "contenu": "Le modèle Zero Trust (\"Ne jamais faire confiance, toujours vérifier\") remet en cause le modèle périmétrique traditionnel.\n\nPrincipes fondamentaux (NIST SP 800-207) :\n1. Toutes les ressources sont considérées hostiles\n2. L'accès est accordé au cas par cas, après vérification complète\n3. Le moindre privilège est appliqué strictement\n4. Tous les flux sont chiffrés et inspectés\n5. L'accès est dynamique : réévalué en continu (contexte, comportement, risque)\n\nComposants d'une architecture Zero Trust :\n- **Identité** : MFA obligatoire, IAM (Identity Access Management)\n- **Appareils** : conformité vérifiée (MDM, EDR), certificat machine\n- **Réseau** : micro-segmentation, Software-Defined Perimeter (SDP)\n- **Applications** : CASB (Cloud Access Security Broker), reverse proxy\n- **Données** : classification, DLP (Data Loss Prevention)\n\nExemples d'implémentation :\n- Google BeyondCorp (modèle Zero Trust pionnier)\n- Microsoft Entra ID (Azure AD) + Conditional Access\n- Cloudflare Access / Zscaler ZPA"
+      }
+    ],
+    "exercices": [
+      {
+        "type": "qcm",
+        "question": "Quel composant de Kerberos émet le Ticket Granting Ticket (TGT) ?",
+        "choix": ["TGS", "KDC/AS", "Client", "Service cible"],
+        "reponse": "KDC/AS"
+      },
+      {
+        "type": "definition",
+        "terme": "Kerberoasting",
+        "definition": "Attaque contre Kerberos consistant à demander des tickets de service pour des comptes associés à des SPN, puis à craquer les hashes TGS hors ligne pour récupérer les mots de passe de comptes de service."
+      }
+    ],
+    "liens": [
+      {"texte": "NIST Zero Trust (SP 800-207)", "url": "https://csrc.nist.gov/publications/detail/sp/800-207/final"},
+      {"texte": "FreeRADIUS", "url": "https://freeradius.org/"}
+    ]
+  },
+  {
+    "id": "cyber-06",
+    "chapitre": "cyber-06",
+    "titre": "Sécurité Wi-Fi — WPA3, 802.1X Enterprise, attaques",
+    "domaine": "Cybersécurité",
+    "sections": [
+      {
+        "titre": "1. Évolution des protocoles Wi-Fi",
+        "contenu": "**WEP (1999)** — Wired Equivalent Privacy\nChiffrement RC4, clé statique 40 ou 104 bits. Cassé en quelques minutes (attaque FMS/chopchop). Obsolète — interdit en production.\n\n**WPA (2003)** — Wi-Fi Protected Access\nTransition WEP→WPA2. TKIP (Temporal Key Integrity Protocol) : clé par paquet. Vulnérable aux attaques TKIP.\n\n**WPA2 (2004) — IEEE 802.11i**\nChiffrement AES-CCMP obligatoire. Mode Personal (PSK) et Enterprise (802.1X).\nVulnérabilités connues : KRACK (Key Reinstallation Attack, 2017), attaque dictionnaire sur le PMK.\n\n**WPA3 (2018)**\n- SAE (Simultaneous Authentication of Equals) remplace le PSK — résistant aux attaques hors ligne\n- Protection des trames de management (MFP obligatoire)\n- Perfect Forward Secrecy natif\n- WPA3-Enterprise : chiffrement 192 bits (CNSA)\n- Mode transition WPA2/WPA3 pour compatibilité\n\n**WPA3-Enterprise 802.1X** : authentification individuelle avec certificats ou identifiants, attribution dynamique de VLAN per-user."
+      },
+      {
+        "titre": "2. Architecture 802.1X Wi-Fi",
+        "contenu": "En mode Enterprise, le Wi-Fi utilise le protocole 802.1X :\n\nActeurs :\n- **Supplicant** : poste client (Windows, Linux, smartphone) avec logiciel 802.1X\n- **Authenticator** : borne Wi-Fi (access point) qui relaie l'authentification\n- **Authentication Server** : serveur RADIUS (FreeRADIUS, Windows NPS)\n\nMéthodes EAP courantes :\n- **EAP-TLS** : certificat client + certificat serveur — le plus sécurisé, déploiement PKI requis\n- **PEAP-MSCHAPv2** : certificat serveur uniquement + identifiants AD — le plus répandu en entreprise\n- **EAP-TTLS** : tunnel TLS + identifiants internes\n\nFlux EAP-TLS simplifié :\n1. Client associe à l'AP (ouvert)\n2. AP déclenche EAP-Request/Identity\n3. Tunnel TLS établi (vérification croisée des certificats)\n4. RADIUS retourne Accept + attributs VLAN\n5. Client placé dynamiquement dans le VLAN correspondant\n\nCas d'usage IRIS : chaque VLAN (étudiants, profs, admin) est attribué dynamiquement par le RADIUS selon le groupe AD de l'utilisateur."
+      },
+      {
+        "titre": "3. Attaques Wi-Fi",
+        "contenu": "**Evil Twin (AP fantôme)**\n- L'attaquant crée un AP avec le même SSID qu'un réseau légitime\n- Les clients se connectent automatiquement (signal plus fort)\n- L'attaquant capte les credentials ou effectue un MITM\n- Contremesure : 802.1X Enterprise (le certificat serveur valide l'AP), WIDS (Wireless IDS)\n\n**PMKID Attack**\n- Récupération du PMKID depuis le premier frame EAPOL (sans écouter 4-way handshake)\n- Crack hors ligne du PMK (clé PSK) avec Hashcat\n- Outil : hcxdumptool + hcxtools\n- Contremesure : mot de passe WPA2 très long (>20 chars), utiliser WPA3/SAE\n\n**Deauthentication Attack**\n- Envoi de trames de déauthentification forgées (802.11 sans chiffrement des trames de gestion)\n- Force la reconnexion pour capturer le 4-way handshake\n- Contremesure : WPA3 (MFP protège les trames de management)\n\n**Rogue AP / KARMA Attack**\n- Réponse automatique à toutes les sonde requests des clients\n- Capture les connexions automatiques des terminaux\n\n**Outils d'audit Wi-Fi** : Aircrack-ng, Kismet, Wireshark, hcxdumptool, Hostapd-WPE"
+      }
+    ],
+    "exercices": [
+      {
+        "type": "qcm",
+        "question": "Quelle méthode EAP nécessite un certificat côté client ET côté serveur ?",
+        "choix": ["PEAP-MSCHAPv2", "EAP-TTLS", "EAP-TLS", "EAP-MD5"],
+        "reponse": "EAP-TLS"
+      },
+      {
+        "type": "vrai_faux",
+        "question": "WPA3 utilise l'algorithme SAE qui protège contre les attaques dictionnaire hors ligne sur la clé PSK.",
+        "reponse": true,
+        "explication": "SAE (Simultaneous Authentication of Equals) est basé sur un échange Diffie-Hellman qui ne permet pas le crack hors ligne du PMK même en capturant le handshake."
+      }
+    ],
+    "liens": [
+      {"texte": "Wi-Fi Alliance WPA3", "url": "https://www.wi-fi.org/discover-wi-fi/security"},
+      {"texte": "Aircrack-ng", "url": "https://www.aircrack-ng.org/"}
+    ]
+  },
+  {
+    "id": "cyber-07",
+    "chapitre": "cyber-07",
+    "titre": "SIEM, SOC et réponse à incident",
+    "domaine": "Cybersécurité",
+    "sections": [
+      {
+        "titre": "1. SIEM — Security Information and Event Management",
+        "contenu": "Un SIEM collecte, normalise, corrèle et analyse les logs de l'ensemble de l'infrastructure pour détecter les incidents de sécurité.\n\nFonctions principales :\n- **Collecte** : agents sur les endpoints, syslog depuis équipements réseau, API\n- **Normalisation** : conversion au format commun (CEF, LEEF, ECS)\n- **Corrélation** : application de règles pour détecter des séquences d'événements suspects\n- **Alerting** : notification en temps réel des analystes SOC\n- **Forensics** : conservation et recherche des logs (rétention 90j à 1 an minimum)\n\nSolutions open source :\n- **Elastic SIEM (ELK Stack)** : Elasticsearch + Logstash + Kibana + Elastic Security\n- **Wazuh** : SIEM + HIDS open source, agent sur chaque endpoint, détection MITRE ATT&CK\n- **OSSIM** (AlienVault) : SIEM communautaire\n\nSolutions commerciales : Splunk, IBM QRadar, Microsoft Sentinel, Exabeam."
+      },
+      {
+        "titre": "2. SOC — Security Operations Center",
+        "contenu": "Un SOC est l'équipe dédiée à la surveillance et la réponse aux incidents de sécurité, en opération 24/7.\n\nNiveaux d'analystes :\n- **N1** : triage des alertes, qualification Vrai/Faux positif, escalade\n- **N2** : investigation approfondie, corrélation multi-source, containment\n- **N3** : threat hunting, reverse engineering, forensics avancé\n\nIOC vs IOA :\n- **IOC (Indicator of Compromise)** : preuve qu'une compromission a eu lieu — hash de malware, adresse IP C2, nom de domaine malveillant. Réactif.\n- **IOA (Indicator of Attack)** : comportement révélant une attaque en cours — exécution de PowerShell encodé, enumération LDAP, création de compte administrateur. Proactif.\n\nThreat Intelligence :\n- Flux de menaces (MISP, VirusTotal, Shodan)\n- Partage d'IOC entre organisations (STIX/TAXII, CERT-FR)\n- TTP mapping sur MITRE ATT&CK"
+      },
+      {
+        "titre": "3. Réponse à incident — PRIS et forensics",
+        "contenu": "Processus de réponse à incident (NIST SP 800-61) :\n\n1. **Préparation** : politiques, playbooks, outils installés, équipe formée\n2. **Détection et analyse** : qualification de l'alerte, scope de l'incident, classification (P1-P4)\n3. **Containment** : isolation du système compromis (VLAN de quarantaine, blocage IP)\n4. **Éradication** : suppression du malware, fermeture du vecteur d'entrée, reset credentials\n5. **Récupération** : restauration depuis sauvegardes validées, remise en production progressive\n6. **Post-mortem (Lessons Learned)** : rapport, améliorations, mise à jour des playbooks\n\nForensics — collecte de preuves :\n- **Ordre de volatilité** (RFC 3227) : RAM → processus actifs → connexions réseau → disque → logs\n- **Imaging disque** : dd, FTK Imager, Autopsy\n- **Analyse mémoire** : Volatility Framework\n- **Chain of custody** : intégrité des preuves (hash SHA-256 de chaque image)\n\nNotification ANSSI : les OIV et OSE doivent déclarer les incidents significatifs dans les 72h."
+      }
+    ],
+    "exercices": [
+      {
+        "type": "qcm",
+        "question": "Quelle est la différence entre un IOC et un IOA ?",
+        "choix": [
+          "Un IOC détecte une attaque en cours, un IOA prouve une compromission passée",
+          "Un IOC prouve une compromission passée, un IOA détecte un comportement d'attaque en cours",
+          "Ce sont des synonymes",
+          "Un IOC est réseau, un IOA est système"
+        ],
+        "reponse": "Un IOC prouve une compromission passée, un IOA détecte un comportement d'attaque en cours"
+      }
+    ],
+    "liens": [
+      {"texte": "Wazuh SIEM/XDR", "url": "https://wazuh.com"},
+      {"texte": "CERT-FR — ANSSI", "url": "https://www.cert.ssi.gouv.fr/"}
+    ]
+  },
+  {
+    "id": "cyber-08",
+    "chapitre": "cyber-08",
+    "titre": "PRA, PCA et continuité de service",
+    "domaine": "Cybersécurité",
+    "sections": [
+      {
+        "titre": "1. PCA et PRA — Définitions",
+        "contenu": "**PCA (Plan de Continuité d'Activité)**\nEnsemble des mesures permettant à l'organisation de continuer à fonctionner pendant un sinistre. Objectif : maintenir les services critiques, même dégradés.\n\n**PRA (Plan de Reprise d'Activité)**\nEnsemble des procédures pour restaurer les systèmes et reprendre l'activité après un sinistre. Complémentaire au PCA.\n\n**Indicateurs clés :**\n- **RTO (Recovery Time Objective)** : durée maximale d'interruption acceptable — \"combien de temps peut-on être hors service ?\"\n- **RPO (Recovery Point Objective)** : perte de données maximale acceptable — \"jusqu'où remonter dans le temps ?\"\n\nExemple :\n- RTO = 4h → le service doit être rétabli en moins de 4 heures\n- RPO = 1h → on accepte de perdre au maximum 1h de données → sauvegardes toutes les heures\n\n**DIMA (Durée d'Interruption Maximale Admissible)** : délai au-delà duquel l'interruption remet en cause la survie de l'organisation."
+      },
+      {
+        "titre": "2. Stratégies de sauvegarde",
+        "contenu": "**Règle 3-2-1 :**\n- 3 copies des données\n- Sur 2 supports différents (disque local + bande / NAS)\n- Dont 1 copie hors site (site distant, cloud)\n\nVariante 3-2-1-1-0 (recommandée) : +1 copie hors ligne (air-gapped) + 0 erreur vérifiée.\n\n**Types de sauvegarde :**\n- **Complète** : toutes les données — temps long, restauration rapide\n- **Incrémentale** : depuis la dernière sauvegarde (complète ou incrémentale) — rapide, mais restauration complexe\n- **Différentielle** : depuis la dernière sauvegarde complète — compromis\n\n**Réplication en temps réel :**\n- **DRBD (Distributed Replicated Block Device)** : réplication synchrone de volumes entre 2 serveurs Linux — RPO ~ 0\n- **Keepalived + VRRP** : bascule automatique IP virtuelle en cas de panne primaire → RTO en secondes\n\nSolutions cloud : Azure Site Recovery, AWS Elastic Disaster Recovery, Veeam."
+      },
+      {
+        "titre": "3. Tests et validation du PRA",
+        "contenu": "Un PRA non testé est un PRA qui ne fonctionnera pas lors d'un sinistre réel.\n\nTypes de tests :\n- **Test de bureau (tabletop exercise)** : simulation sur paper — équipes discutent des procédures\n- **Test de composant** : restauration d'un serveur ou service isolé\n- **Test partiel** : basculement d'un site sur un autre sans interruption de production\n- **Test complet (failover)** : basculement total — le plus représentatif, le plus risqué\n\nFréquence recommandée : au moins 1 test complet par an, tests partiels trimestriels.\n\nCritères de validation :\n- RTO respecté\n- RPO respecté\n- Intégrité des données restaurées (hash)\n- Procédures documentées et à jour\n- Équipes capables d'exécuter sans assistance externe\n\nNormes : ISO 22301 (continuité d'activité), ISO 27031 (ICT Readiness for Business Continuity)."
+      }
+    ],
+    "exercices": [
+      {
+        "type": "cas_pratique",
+        "question": "Une entreprise définit un RPO de 2h. Quelle fréquence minimale de sauvegarde doit-elle planifier ?",
+        "reponse": "Une sauvegarde toutes les 2 heures maximum, afin de ne jamais perdre plus de 2 heures de données en cas d'incident."
+      }
+    ],
+    "liens": [
+      {"texte": "ANSSI — Guide PCA/PRA", "url": "https://www.ssi.gouv.fr/guide/plan-de-continuite-dactivite/"},
+      {"texte": "ISO 22301", "url": "https://www.iso.org/fr/standard/75106.html"}
+    ]
+  },
+  {
+    "id": "cyber-09",
+    "chapitre": "cyber-09",
+    "titre": "RGPD et conformité — Protection des données personnelles",
+    "domaine": "Cybersécurité",
+    "sections": [
+      {
+        "titre": "1. RGPD — Contexte et principes",
+        "contenu": "Le RGPD (Règlement Général sur la Protection des Données) est entré en application le 25 mai 2018. Il s'applique à toute organisation traitant des données de résidents européens, quel que soit le lieu d'établissement.\n\n**7 principes fondamentaux (Article 5) :**\n1. Licéité, loyauté, transparence\n2. Limitation des finalités (données collectées pour un but précis)\n3. Minimisation des données (collecter uniquement le nécessaire)\n4. Exactitude\n5. Limitation de conservation (durée définie)\n6. Intégrité et confidentialité (sécurité appropriée)\n7. Responsabilité (accountability)\n\n**Bases légales du traitement (Article 6) :**\n- Consentement explicite\n- Exécution d'un contrat\n- Obligation légale\n- Intérêts vitaux\n- Mission d'intérêt public\n- Intérêts légitimes\n\n**Données sensibles (Article 9)** : origine raciale, opinions politiques, religion, santé, orientation sexuelle, données biométriques — traitement interdit sauf exceptions."
+      },
+      {
+        "titre": "2. Droits des personnes et obligations",
+        "contenu": "**Droits des personnes concernées :**\n- Droit d'accès (Article 15) : obtenir une copie de ses données\n- Droit de rectification (Article 16)\n- Droit à l'effacement / \"droit à l'oubli\" (Article 17)\n- Droit à la portabilité (Article 20) : récupérer ses données dans un format lisible\n- Droit d'opposition (Article 21) : s'opposer au traitement (notamment marketing direct)\n- Droit à la limitation du traitement (Article 18)\n\n**Obligations des organisations :**\n- **Registre des traitements** : inventaire de tous les traitements de données (obligatoire >250 employés)\n- **Privacy by Design / Default** : intégrer la protection des données dès la conception\n- **DPIA (Data Protection Impact Assessment)** : évaluation d'impact obligatoire pour les traitements à risque élevé\n- **DPO (Data Protection Officer)** : obligatoire pour organismes publics, entreprises traitant à grande échelle\n\n**Notification de violation (Article 33)** :\n- Délai : 72 heures pour notifier la CNIL\n- Si risque élevé pour les personnes : notification directe des personnes concernées (Article 34)"
+      },
+      {
+        "titre": "3. Sanctions et NIS2",
+        "contenu": "**Sanctions RGPD :**\n- Niveau 1 : jusqu'à 10 millions d'euros ou 2% du CA mondial annuel\n- Niveau 2 (infractions graves) : jusqu'à 20 millions d'euros ou **4% du CA mondial** (le plus élevé des deux)\n\nExemples de sanctions notables :\n- Meta (Facebook) : 1,2 milliard d'euros (CNIL irlandaise, 2023) — transfert illégal de données vers les USA\n- Amazon : 746 millions d'euros (CNIL luxembourgeoise, 2021) — ciblage publicitaire sans consentement\n- Google : 150 millions d'euros (CNIL, 2022) — cookies\n\n**Directive NIS2 (2022/2555 — entrée en vigueur octobre 2024)**\nSuccesseur de NIS (2016), NIS2 élargit le champ :\n- 18 secteurs essentiels (énergie, santé, transports, eau, infrastructure numérique...)\n- Entités importantes et essentielles (PME incluses dans secteurs critiques)\n- Obligations : mesures de sécurité, gestion des risques, notification d'incidents dans les 24h\n- Sanctions : jusqu'à 10M€ ou 2% du CA pour entités essentielles\n- Transposition en droit français : loi Cyber Résilience prévue 2024"
+      }
+    ],
+    "exercices": [
+      {
+        "type": "qcm",
+        "question": "Dans quel délai une organisation doit-elle notifier la CNIL en cas de violation de données personnelles ?",
+        "choix": ["24 heures", "48 heures", "72 heures", "7 jours"],
+        "reponse": "72 heures"
+      },
+      {
+        "type": "definition",
+        "terme": "DPIA",
+        "definition": "Data Protection Impact Assessment — évaluation d'impact sur la protection des données obligatoire avant tout traitement susceptible d'engendrer un risque élevé pour les droits et libertés des personnes (Article 35 RGPD)."
+      }
+    ],
+    "liens": [
+      {"texte": "CNIL — rgpd.fr", "url": "https://www.cnil.fr/fr/rgpd-de-quoi-parle-t-on"},
+      {"texte": "NIS2 — ENISA", "url": "https://www.enisa.europa.eu/topics/cybersecurity-policy/nis-directive-new"}
+    ]
+  },
+  {
+    "id": "cyber-10",
+    "chapitre": "cyber-10",
+    "titre": "Test d'intrusion — Pentest, OWASP, CVE",
+    "domaine": "Cybersécurité",
+    "sections": [
+      {
+        "titre": "1. Méthodologie de pentest",
+        "contenu": "Un test d'intrusion (pentest) est une attaque simulée et autorisée visant à identifier les vulnérabilités d'un système avant qu'un attaquant réel ne les exploite.\n\n**Types de pentest selon la connaissance de la cible :**\n- **Black Box** : aucune information — simule un attaquant externe inconnu\n- **White Box** : accès total (code source, architecture, credentials) — couverture maximale\n- **Grey Box** : connaissance partielle (comptes utilisateur, plan réseau)\n\n**Cadre légal :** un pentest DOIT être autorisé par écrit (ROE — Rules of Engagement). Sans autorisation, c'est une infraction pénale (Article 323-1 du Code pénal — jusqu'à 2 ans + 60 000€).\n\n**Phases du pentest :**\n1. **Reconnaissance** : OSINT, DNS, Shodan, LinkedIn\n2. **Scanning** : Nmap, Nessus, OpenVAS\n3. **Exploitation** : Metasploit, exploit CVE, BurpSuite\n4. **Post-exploitation** : privilege escalation, lateral movement, persistence\n5. **Reporting** : rapport technique + résumé exécutif, CVSS scoring"
+      },
+      {
+        "titre": "2. Outils de pentest",
+        "contenu": "**Nmap (Network Mapper)**\nScanner réseau de référence :\n```bash\n# Scan SYN (rapide, furtif)\nnmap -sS -p 1-65535 192.168.1.0/24\n\n# Détection OS et services\nnmap -O -sV 192.168.1.1\n\n# Scan vulnérabilités (scripts NSE)\nnmap --script vuln 192.168.1.1\n```\n\n**Metasploit Framework**\nPlateforme d'exploitation de vulnérabilités :\n- Base de données de modules exploit, payload, auxiliary\n- msfconsole → search, use, set options, exploit\n- Meterpreter : shell post-exploitation avancé\n\n**Burp Suite**\nProxy d'interception pour tests applicatifs web :\n- Intercepter et modifier les requêtes HTTP/HTTPS\n- Scanner automatique de vulnérabilités\n- Fuzzer, intruder (brute force), répéteur\n\n**Autres outils :**\n- Nikto : scanner de vulnérabilités web\n- SQLmap : injection SQL automatisée\n- Hydra / John the Ripper : brute force / cracking\n- Mimikatz : dump de credentials Windows (LSASS)\n- BloodHound : cartographie AD et chemins d'attaque\n- Kali Linux : distribution dédiée pentest"
+      },
+      {
+        "titre": "3. OWASP Top 10 (2021)",
+        "contenu": "L'OWASP (Open Web Application Security Project) publie le Top 10 des risques de sécurité applicatifs web :\n\n**A01 — Broken Access Control** (remonte de #5 à #1)\nLes contrôles d'accès ne sont pas correctement appliqués. Exemple : IDOR (Insecure Direct Object Reference) — accès aux données d'un autre utilisateur en modifiant l'ID dans l'URL.\n\n**A02 — Cryptographic Failures**\nDonnées sensibles transmises ou stockées sans chiffrement adéquat. Exemples : mot de passe en MD5 non salé, transmission HTTP sans TLS.\n\n**A03 — Injection** (SQL, OS, LDAP)\n```sql\n-- Exemple d'injection SQL :\nSELECT * FROM users WHERE username='admin'--' AND password='x'\n-- Le -- commente le reste, bypass l'authentification\n```\nContremesure : requêtes préparées (prepared statements), ORM.\n\n**A04 — Insecure Design** : absence de modélisation des menaces dès la conception.\n\n**A05 — Security Misconfiguration** : ports ouverts inutiles, identifiants par défaut, headers de sécurité manquants.\n\n**A06 — Vulnerable and Outdated Components** : dépendances non mises à jour (Log4Shell CVE-2021-44228).\n\n**A07 — Identification and Authentication Failures** : absence de MFA, mots de passe faibles, gestion de session défaillante.\n\n**A08 — Software and Data Integrity Failures** : build/update non signés, désérialisation non sécurisée.\n\n**A09 — Security Logging and Monitoring Failures** : incidents non détectés faute de logs.\n\n**A10 — Server-Side Request Forgery (SSRF)** : le serveur effectue des requêtes vers des ressources internes à la demande de l'attaquant."
+      },
+      {
+        "titre": "4. CVE et CVSS",
+        "contenu": "**CVE (Common Vulnerabilities and Exposures)**\nIdentifiant unique pour chaque vulnérabilité connue. Format : CVE-ANNÉE-NUMÉRO.\nExemples notables :\n- CVE-2017-0144 : EternalBlue (SMBv1 Windows) — WannaCry\n- CVE-2021-44228 : Log4Shell (Log4j) — exécution de code à distance via JNDI\n- CVE-2020-1472 : Zerologon (Netlogon) — élévation de privilège domaine AD\n- CVE-2014-0160 : Heartbleed (OpenSSL) — fuite mémoire, vol de clés privées\n\n**CVSS (Common Vulnerability Scoring System) v3.1**\nScore de sévérité de 0 à 10 :\n- 0.0 : None\n- 0.1–3.9 : Low\n- 4.0–6.9 : Medium\n- 7.0–8.9 : High\n- 9.0–10.0 : Critical\n\nComposantes du score : vecteur d'attaque, complexité, privilèges requis, interaction utilisateur, portée, impact CIA.\n\n**NVD (National Vulnerability Database)** : base officielle US, consultable sur nvd.nist.gov.\n\nVeille CVE : abonnement aux flux CERT-FR, NVD, CVE.org, Vulners."
+      }
+    ],
+    "exercices": [
+      {
+        "type": "qcm",
+        "question": "Quelle vulnérabilité du Top 10 OWASP 2021 permet à un attaquant d'accéder aux données d'un autre utilisateur en modifiant l'ID dans l'URL ?",
+        "choix": ["A03 — Injection", "A01 — Broken Access Control (IDOR)", "A07 — Authentication Failures", "A10 — SSRF"],
+        "reponse": "A01 — Broken Access Control (IDOR)"
+      },
+      {
+        "type": "pratique",
+        "question": "Quelle commande Nmap permet de détecter les versions de services sur une cible et de lancer les scripts de détection de vulnérabilités ?",
+        "reponse": "nmap -sV --script vuln <cible>"
+      }
+    ],
+    "liens": [
+      {"texte": "OWASP Top 10", "url": "https://owasp.org/www-project-top-ten/"},
+      {"texte": "NVD — CVE Database", "url": "https://nvd.nist.gov/"},
+      {"texte": "Kali Linux", "url": "https://www.kali.org/"}
+    ]
+  }
+]

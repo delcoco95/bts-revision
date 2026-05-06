@@ -1,0 +1,255 @@
+﻿[
+  {
+    "id": "qe5-01",
+    "type": "qcm",
+    "question": "Dans la méthode Scrum, qui est responsable de maximiser la valeur du produit et de gérer le Product Backlog ?",
+    "choix": ["Scrum Master", "Product Owner", "L'équipe de développement", "Le client (MOA)"],
+    "reponse_correcte": "Product Owner",
+    "explication": "Le Product Owner (PO) est la personne responsable de définir les priorités du Product Backlog, de s'assurer que l'équipe travaille sur ce qui apporte le plus de valeur au client. Il est l'interface entre les parties prenantes et l'équipe Scrum."
+  },
+  {
+    "id": "qe5-02",
+    "type": "qcm",
+    "question": "Dans un projet en méthode Agile Scrum, qu'est-ce qu'un 'Sprint' ?",
+    "choix": [
+      "Un document de planification du projet",
+      "Une itération de travail limitée dans le temps (1 à 4 semaines) produisant un incrément fonctionnel",
+      "Une réunion quotidienne de synchronisation de 15 minutes",
+      "Un rapport d'avancement envoyé au client"
+    ],
+    "reponse_correcte": "Une itération de travail limitée dans le temps (1 à 4 semaines) produisant un incrément fonctionnel",
+    "explication": "Un Sprint est une itération de durée fixe (time-box), généralement de 2 semaines, à l'issue de laquelle l'équipe livre un incrément potentiellement livrable du produit. Chaque Sprint commence par un Sprint Planning et se termine par une Sprint Review et une Sprint Retrospective."
+  },
+  {
+    "id": "qe5-03",
+    "type": "qcm",
+    "question": "Quelle est la différence entre la MOA et la MOE dans un projet informatique ?",
+    "choix": [
+      "MOA = équipe technique, MOE = client",
+      "MOA = maîtrise d'ouvrage (client qui exprime le besoin), MOE = maîtrise d'œuvre (équipe qui réalise)",
+      "MOA = chef de projet, MOE = développeurs",
+      "MOA et MOE sont des synonymes dans le secteur IT"
+    ],
+    "reponse_correcte": "MOA = maîtrise d'ouvrage (client qui exprime le besoin), MOE = maîtrise d'œuvre (équipe qui réalise)",
+    "explication": "La MOA (Maîtrise d'Ouvrage) représente le client ou commanditaire : elle exprime le besoin, valide les livrables et finance le projet. La MOE (Maîtrise d'Œuvre) est l'équipe technique chargée de concevoir et réaliser la solution. Dans un projet BTS SIO, l'élève fait partie de la MOE."
+  },
+  {
+    "id": "qe5-04",
+    "type": "qcm",
+    "question": "Dans un diagramme de GANTT, qu'est-ce que le 'chemin critique' ?",
+    "choix": [
+      "La tâche la plus coûteuse du projet",
+      "La séquence de tâches la plus longue déterminant la durée minimale du projet",
+      "Les tâches pouvant être effectuées en parallèle",
+      "Le planning initial avant les révisions"
+    ],
+    "reponse_correcte": "La séquence de tâches la plus longue déterminant la durée minimale du projet",
+    "explication": "Le chemin critique (ou chemin critique PERT) est la séquence de tâches dépendantes dont la durée totale est maximale. Tout retard sur une tâche du chemin critique retarde directement la date de fin du projet. Les tâches hors chemin critique ont une marge flottante."
+  },
+  {
+    "id": "qe5-05",
+    "type": "qcm",
+    "question": "Qu'est-ce qu'un cahier des charges fonctionnel (CDCF) ?",
+    "choix": [
+      "Un document technique décrivant l'architecture de la solution",
+      "Un document décrivant les fonctionnalités attendues du système du point de vue de l'utilisateur, sans présupposer de solution technique",
+      "Le contrat signé entre MOA et MOE",
+      "La liste des bugs à corriger en production"
+    ],
+    "reponse_correcte": "Un document décrivant les fonctionnalités attendues du système du point de vue de l'utilisateur, sans présupposer de solution technique",
+    "explication": "Le CDCF (Cahier des Charges Fonctionnel) exprime le BESOIN en termes de fonctions et de performances attendues, indépendamment de la solution technique. Il est rédigé par la MOA. Il s'oppose au cahier des charges technique qui décrit comment la solution sera réalisée."
+  },
+  {
+    "id": "qe5-06",
+    "type": "qcm",
+    "question": "Dans UML, quel diagramme représente les interactions entre un utilisateur et le système sous forme de fonctionnalités accessibles ?",
+    "choix": [
+      "Diagramme de classes",
+      "Diagramme de séquence",
+      "Diagramme de cas d'utilisation (Use Case)",
+      "Diagramme de déploiement"
+    ],
+    "reponse_correcte": "Diagramme de cas d'utilisation (Use Case)",
+    "explication": "Le diagramme de cas d'utilisation (Use Case Diagram) représente les interactions entre les acteurs (utilisateurs ou systèmes externes) et le système. Il décrit CE QUE fait le système du point de vue fonctionnel. Les acteurs sont représentés par des bonhommes, les cas d'utilisation par des ellipses."
+  },
+  {
+    "id": "qe5-07",
+    "type": "qcm",
+    "question": "Lors d'un projet SISR, un client demande une 'recette'. Que signifie cette étape ?",
+    "choix": [
+      "La facturation finale du projet",
+      "La phase de tests utilisateurs validant que la solution livrée répond bien aux exigences du cahier des charges",
+      "La documentation technique finale",
+      "La mise en production automatique"
+    ],
+    "reponse_correcte": "La phase de tests utilisateurs validant que la solution livrée répond bien aux exigences du cahier des charges",
+    "explication": "La recette (ou réception) est la phase durant laquelle la MOA vérifie que la solution livrée par la MOE est conforme au cahier des charges. Elle comprend des tests de recette (plans de tests, fiches de recette). Un procès-verbal de recette (PV) est signé à l'issue. La recette peut être provisoire puis définitive."
+  },
+  {
+    "id": "qe5-08",
+    "type": "qcm",
+    "question": "Dans ITIL, quelle est la différence entre un 'incident' et un 'problème' ?",
+    "choix": [
+      "Un incident est planifié, un problème est imprévu",
+      "Un incident est une interruption non planifiée d'un service IT ; un problème est la cause racine inconnue d'un ou plusieurs incidents",
+      "Ils sont synonymes dans ITIL v4",
+      "Un incident touche les utilisateurs, un problème touche uniquement les serveurs"
+    ],
+    "reponse_correcte": "Un incident est une interruption non planifiée d'un service IT ; un problème est la cause racine inconnue d'un ou plusieurs incidents",
+    "explication": "ITIL distingue clairement : l'Incident Management vise à restaurer le service le plus vite possible (contournement acceptable). Le Problem Management cherche à identifier et éliminer la cause racine pour éviter la récurrence. Un problème génère des Known Errors (erreurs connues avec contournement documenté)."
+  },
+  {
+    "id": "qe5-09",
+    "type": "qcm",
+    "question": "Quelle méthode de gestion de projet utilise des 'User Stories' pour décrire les besoins fonctionnels sous la forme 'En tant que [rôle], je veux [action] afin de [bénéfice]' ?",
+    "choix": ["Méthode PRINCE2", "Méthode en cascade (Waterfall)", "Méthode Agile/Scrum", "Méthode PERT"],
+    "reponse_correcte": "Méthode Agile/Scrum",
+    "explication": "Les User Stories sont un outil Agile (popularisé par Scrum et XP). Elles décrivent une fonctionnalité du point de vue de l'utilisateur final. Format : 'En tant que [persona], je veux [fonctionnalité] afin de [valeur métier]'. Chaque User Story est estimée en points d'effort (Story Points) et intégrée dans le Product Backlog."
+  },
+  {
+    "id": "qe5-10",
+    "type": "qcm",
+    "question": "Dans le tableau de synthèse BTS SIO SISR, à quoi correspond le bloc de compétences 'B2' ?",
+    "choix": [
+      "Concevoir une solution d'infrastructure réseau",
+      "Exploiter les éléments de l'infrastructure et assurer la continuité de service",
+      "Protéger les données à caractère personnel",
+      "Gérer le patrimoine informatique"
+    ],
+    "reponse_correcte": "Exploiter les éléments de l'infrastructure et assurer la continuité de service",
+    "explication": "Le référentiel BTS SIO SISR définit 6 blocs de compétences : B1 (Support), B2 (Exploitation/Continuité), B3 (Cybersécurité), B4 (Conception réseaux), B5 (Communication/Formation), B6 (Projet). Chaque projet du tableau de synthèse doit être associé aux compétences couvertes."
+  },
+  {
+    "id": "qe5-11",
+    "type": "cas_pratique",
+    "question": "Vous réalisez un projet de déploiement d'un serveur DHCP/DNS dans une école. Citez 4 livrables attendus à la fin du projet et indiquez pour chacun s'il s'adresse à la MOA ou à la MOE.",
+    "reponse_correcte": "Livrables MOA (client) : 1) Compte-rendu de recette / PV de réception — validation que le service fonctionne conformément au CDCF. 2) Documentation utilisateur / guide d'administration simplifié — pour les responsables informatiques de l'école. Livrables MOE (technique) : 3) Documentation technique d'installation — procédure complète de déploiement, configuration du serveur. 4) Plan d'adressage IP et configuration DHCP/DNS — schéma réseau, plages d'adresses, zones DNS, enregistrements. Bonus : Tableau de tests de recette complété, Plan de reprise (PRA) du service.",
+    "explication": "Un livrable est tout résultat tangible produit à l'issue d'une phase de projet. La distinction MOA/MOE est fondamentale : la MOA valide, la MOE produit. Dans le contexte BTS SIO, chaque projet doit être documenté avec au minimum : doc technique, tests, et PV de recette."
+  },
+  {
+    "id": "qe5-12",
+    "type": "qcm",
+    "question": "Quelle est la différence entre une méthode 'en cascade' (Waterfall) et une méthode 'Agile' dans la gestion de projet ?",
+    "choix": [
+      "Waterfall est plus rapide qu'Agile",
+      "Waterfall segmente le projet en phases séquentielles non réversibles ; Agile divise le projet en itérations courtes avec des retours client fréquents",
+      "Agile ne produit pas de documentation contrairement à Waterfall",
+      "Waterfall est réservé aux petits projets, Agile aux grands projets"
+    ],
+    "reponse_correcte": "Waterfall segmente le projet en phases séquentielles non réversibles ; Agile divise le projet en itérations courtes avec des retours client fréquents",
+    "explication": "Waterfall (cycle en V ou cascade) : phases séquentielles (Besoins → Conception → Développement → Tests → Déploiement). Simple mais rigide. Agile : livraisons itératives (sprints), adaptation continue aux retours clients. Agile répond mieux à l'incertitude des besoins. Le Manifeste Agile (2001) pose 4 valeurs fondamentales."
+  },
+  {
+    "id": "qe5-13",
+    "type": "qcm",
+    "question": "Dans un projet de gestion de parc informatique, qu'est-ce qu'un CMDB ?",
+    "choix": [
+      "Un logiciel de création de diagrammes réseau",
+      "Une base de données centralisant les informations sur tous les équipements et services IT (Configuration Management Database)",
+      "Un protocole de sauvegarde des configurations",
+      "Un outil de monitoring réseau"
+    ],
+    "reponse_correcte": "Une base de données centralisant les informations sur tous les équipements et services IT (Configuration Management Database)",
+    "explication": "La CMDB (Configuration Management Database) est un composant central d'ITIL. Elle recense tous les Configuration Items (CI) : serveurs, postes, licences, services, relations entre composants. Elle permet la gestion des changements, la résolution d'incidents et l'analyse d'impact. Outils : GLPI, ServiceNow, iTop."
+  },
+  {
+    "id": "qe5-14",
+    "type": "qcm",
+    "question": "Dans Scrum, quelle est la durée recommandée du Daily Scrum (mêlée quotidienne) et son objectif principal ?",
+    "choix": [
+      "1 heure — faire le point complet sur l'avancement",
+      "15 minutes — synchroniser l'équipe sur les 3 questions : qu'ai-je fait hier, que vais-je faire aujourd'hui, quels sont mes obstacles",
+      "30 minutes — présenter au Product Owner l'avancement",
+      "5 minutes — signaler les bugs détectés"
+    ],
+    "reponse_correcte": "15 minutes — synchroniser l'équipe sur les 3 questions : qu'ai-je fait hier, que vais-je faire aujourd'hui, quels sont mes obstacles",
+    "explication": "Le Daily Scrum est une réunion de synchronisation de 15 minutes maximum (time-boxed), debout, chaque matin. Chaque membre répond : (1) Qu'ai-je accompli hier ? (2) Que vais-je faire aujourd'hui ? (3) Y a-t-il des obstacles ? Son rôle est d'adapter le Sprint Backlog, pas de faire un rapport de statut."
+  },
+  {
+    "id": "qe5-15",
+    "type": "qcm",
+    "question": "Quelle analyse permet d'évaluer les forces, faiblesses, opportunités et menaces d'un projet ou d'une organisation ?",
+    "choix": ["Analyse PERT", "Analyse SWOT", "Analyse RACI", "Analyse GANTT"],
+    "reponse_correcte": "Analyse SWOT",
+    "explication": "L'analyse SWOT (Strengths, Weaknesses, Opportunities, Threats — ou FFOM en français : Forces, Faiblesses, Opportunités, Menaces) est un outil d'analyse stratégique. Forces/Faiblesses sont des facteurs internes à l'organisation. Opportunités/Menaces sont des facteurs externes (marché, réglementation, concurrence)."
+  },
+  {
+    "id": "qe5-16",
+    "type": "qcm",
+    "question": "Qu'est-ce qu'une matrice RACI dans la gestion de projet ?",
+    "choix": [
+      "Un diagramme de flux des données entre systèmes",
+      "Un tableau définissant pour chaque tâche qui est Responsable, Approbateur (Accountable), Consulté et Informé",
+      "Un outil de calcul du retour sur investissement",
+      "Un protocole de gestion des versions de fichiers"
+    ],
+    "reponse_correcte": "Un tableau définissant pour chaque tâche qui est Responsable, Approbateur (Accountable), Consulté et Informé",
+    "explication": "RACI : R = Responsible (qui réalise la tâche), A = Accountable (qui approuve et assume la responsabilité finale — 1 seul par tâche), C = Consulted (qui est consulté avant décision), I = Informed (qui est informé après décision). Outil essentiel pour clarifier les responsabilités et éviter les zones grises."
+  },
+  {
+    "id": "qe5-17",
+    "type": "cas_pratique",
+    "question": "Vous devez présenter le projet Wi-Fi 802.1X VLAN de l'école IRIS au jury E5. Rédigez la contextualisation du projet en 5 phrases maximum : besoin initial, client, périmètre, solution retenue, résultat.",
+    "reponse_correcte": "Modèle de réponse : 'L'école IRIS Nice souhaitait sécuriser l'accès à son réseau Wi-Fi en segmentant les utilisateurs par profil (étudiants, enseignants, administration) afin d'éviter tout accès non autorisé et de respecter la politique de sécurité de l'établissement. Le client est M. Yan BOURQUARD, responsable informatique d'IRIS Nice. Le périmètre couvrait l'infrastructure Wi-Fi existante, le commutateur Cisco central et l'annuaire Active Directory. La solution retenue repose sur le standard 802.1X avec authentification RADIUS (FreeRADIUS) et attribution dynamique de VLAN par groupe AD (VLAN 10 étudiants, VLAN 20 enseignants, VLAN 30 administration). Le résultat est une segmentation réseau fonctionnelle validée par tests de connexion, avec chaque utilisateur placé automatiquement dans le bon VLAN selon ses credentials Active Directory.'",
+    "explication": "La contextualisation d'un projet BTS SIO doit toujours couvrir : POURQUOI (besoin), QUI (client/commanditaire), QUOI (périmètre), COMMENT (solution), RÉSULTAT (validation). C'est la structure attendue par le jury pour évaluer la compréhension du contexte professionnel."
+  },
+  {
+    "id": "qe5-18",
+    "type": "qcm",
+    "question": "Dans ITIL v4, quel processus gère les demandes de modifications planifiées d'un service IT (ex: mise à jour serveur) en évaluant risques et impacts avant approbation ?",
+    "choix": [
+      "Incident Management",
+      "Service Request Management",
+      "Change Enablement (Change Management)",
+      "Problem Management"
+    ],
+    "reponse_correcte": "Change Enablement (Change Management)",
+    "explication": "Le Change Enablement (anciennement Change Management en ITIL v3) contrôle le cycle de vie de tous les changements. Types de changements : Standard (préapprouvé, faible risque), Normal (évalué par le Change Advisory Board — CAB), Emergency (urgent, approuvé par ECAB). Objectif : minimiser le risque de perturbation des services."
+  },
+  {
+    "id": "qe5-19",
+    "type": "qcm",
+    "question": "Lors de la présentation orale E5, le jury demande : 'Quelles difficultés avez-vous rencontrées et comment les avez-vous résolues ?' Quelle réponse est la plus adaptée au niveau BTS ?",
+    "choix": [
+      "\"Je n'ai pas rencontré de difficultés particulières, tout s'est bien passé.\"",
+      "\"J'ai eu des problèmes mais j'ai cherché sur Internet.\"",
+      "\"J'ai rencontré [difficulté précise] lors de [phase du projet]. J'ai d'abord [première approche], puis face à [obstacle], j'ai adopté [solution] ce qui m'a permis [résultat].\"",
+      "\"C'était compliqué à cause du manque de temps.\""
+    ],
+    "reponse_correcte": "\"J'ai rencontré [difficulté précise] lors de [phase du projet]. J'ai d'abord [première approche], puis face à [obstacle], j'ai adopté [solution] ce qui m'a permis [résultat].\"",
+    "explication": "Le jury évalue la capacité d'analyse et de résolution de problèmes. Une bonne réponse doit : identifier une difficulté RÉELLE et PRÉCISE, décrire la démarche de résolution (documentation, tests, collaboration), et conclure sur le résultat. Dire qu'il n'y a pas eu de difficulté est perçu comme un manque de recul ou de sincérité."
+  },
+  {
+    "id": "qe5-20",
+    "type": "qcm",
+    "question": "Quelle est la différence entre un test unitaire, un test d'intégration et un test de recette ?",
+    "choix": [
+      "Ce sont des synonymes correspondant à des niveaux de détail différents",
+      "Test unitaire = teste un composant isolé ; test d'intégration = teste l'interaction entre composants ; test de recette = valide la conformité globale avec le cahier des charges (MOA)",
+      "Test unitaire = fait par le client ; test d'intégration = fait par les développeurs ; test de recette = automatisé",
+      "Seul le test de recette est obligatoire dans les projets BTS"
+    ],
+    "reponse_correcte": "Test unitaire = teste un composant isolé ; test d'intégration = teste l'interaction entre composants ; test de recette = valide la conformité globale avec le cahier des charges (MOA)",
+    "explication": "Pyramide des tests : Tests unitaires (TU) — faits par les développeurs, rapides, automatisés. Tests d'intégration — vérifient que les composants fonctionnent ensemble. Tests de recette (UAT — User Acceptance Tests) — réalisés par la MOA pour valider que la solution répond aux besoins exprimés dans le cahier des charges."
+  },
+  {
+    "id": "qe5-21",
+    "type": "vrai_faux",
+    "question": "Dans un projet Agile, le Product Backlog doit être figé dès le début du projet pour garantir un périmètre stable.",
+    "reponse_correcte": "Faux",
+    "explication": "L'une des forces de l'Agile est précisément la gestion du changement : le Product Backlog est un artefact VIVANT, constamment mis à jour (priorisé, enrichi, découpé) en fonction des retours clients, des évolutions du marché et des apprentissages de l'équipe. C'est la méthode Waterfall qui cherche à figer le périmètre."
+  },
+  {
+    "id": "qe5-22",
+    "type": "qcm",
+    "question": "Dans le cadre du BTS SIO, qu'est-ce que le tableau de synthèse et à quoi sert-il lors de l'épreuve E5 ?",
+    "choix": [
+      "Un planning GANTT des projets réalisés en entreprise",
+      "Un document récapitulatif listant les activités et projets professionnels réalisés, associés aux compétences du référentiel, servant de support à l'épreuve orale E5",
+      "Un bilan financier des projets réalisés",
+      "Un rapport de stage rédigé à la fin de la première année"
+    ],
+    "reponse_correcte": "Un document récapitulatif listant les activités et projets professionnels réalisés, associés aux compétences du référentiel, servant de support à l'épreuve orale E5",
+    "explication": "Le tableau de synthèse est l'un des documents centraux de l'épreuve E5 (épreuve professionnelle orale). Il liste les activités et projets réalisés en stage/alternance/lycée, en les associant aux blocs de compétences du référentiel BTS SIO. Il est inclus dans le portfolio et présenté lors de l'oral. Sa complétude et sa cohérence sont évaluées par le jury."
+  }
+]

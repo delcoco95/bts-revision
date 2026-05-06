@@ -1,0 +1,220 @@
+﻿[
+  {
+    "id": "sisr-01",
+    "chapitre": "1. Modele OSI et TCP/IP",
+    "cours": "Le modele OSI (Open Systems Interconnection) decoupe la communication reseau en 7 couches :\n1. Physique — transmission des bits (cable, fibre, Wi-Fi)\n2. Liaison — MAC, Ethernet, commutation\n3. Reseau — IP, routage, adressage\n4. Transport — TCP (fiable), UDP (rapide)\n5. Session — etablissement/fermeture de sessions\n6. Presentation — encodage, chiffrement SSL/TLS\n7. Application — HTTP, DNS, FTP, SMTP\n\nLe modele TCP/IP est une simplification en 4 couches : Acces reseau / Internet / Transport / Application.",
+    "notions": [
+      "OSI",
+      "TCP/IP",
+      "PDU",
+      "encapsulation",
+      "decapsulation"
+    ],
+    "exemples": [
+      "Une requete HTTPS passe par : Application (HTTP) → Presentation (TLS) → Transport (TCP) → Reseau (IP) → Liaison (Ethernet) → Physique",
+      "Un ping utilise ICMP (couche 3 — Reseau)"
+    ],
+    "fiche": "OSI = 7 couches (PNRTSPA) | TCP/IP = 4 couches | TCP = fiable (accusé réception) | UDP = rapide sans garantie",
+    "titre": "Modèle OSI et TCP/IP — Architecture réseau",
+    "domaine": "Réseaux et Systèmes"
+  },
+  {
+    "id": "sisr-02",
+    "chapitre": "2. Adressage IP et sous-reseaux (VLSM)",
+    "cours": "Une adresse IPv4 est sur 32 bits (ex : 192.168.1.1). Elle est composee d'une partie reseau et d'une partie hote.\nLe masque de sous-reseau (ex : /24 = 255.255.255.0) delimit les deux parties.\nCIDR (Classless Inter-Domain Routing) permet de creer des sous-reseaux de taille variable (VLSM).\nIPv6 = 128 bits, notation hexadecimale.",
+    "notions": [
+      "adresse reseau",
+      "broadcast",
+      "CIDR",
+      "VLSM",
+      "passerelle",
+      "IPv4",
+      "IPv6"
+    ],
+    "exemples": [
+      "192.168.10.0/24 → reseau : 192.168.10.0 | broadcast : 192.168.10.255 | hotes : 192.168.10.1 a .254 (254 machines)",
+      "192.168.10.0/26 → 64 adresses, 62 hotes utilisables"
+    ],
+    "fiche": "/24 = 256 addr | /25 = 128 | /26 = 64 | /27 = 32 | /28 = 16 | /30 = 4 (2 hotes)",
+    "titre": "Adressage IPv4/IPv6 et sous-réseaux VLSM",
+    "domaine": "Réseaux et Systèmes"
+  },
+  {
+    "id": "sisr-03",
+    "chapitre": "3. VLANs et commutation",
+    "cours": "Un VLAN (Virtual LAN) est une segmentation logique du reseau au niveau de la couche 2.\nChaque VLAN est un domaine de broadcast isole. La communication entre VLANs necessite un routeur ou un switch de couche 3.\nConfiguration Cisco : VLAN base, port access (un seul VLAN), port trunk (plusieurs VLANs via 802.1Q).\nRoutage inter-VLAN : router-on-a-stick (sous-interfaces) ou switch L3.",
+    "notions": [
+      "VLAN",
+      "trunk",
+      "access port",
+      "802.1Q",
+      "domaine de broadcast",
+      "routage inter-VLAN"
+    ],
+    "exemples": [
+      "SW(config)# vlan 10 / name ETUDIANTS",
+      "SW(config-if)# switchport mode access / switchport access vlan 10",
+      "SW(config-if)# switchport mode trunk / switchport trunk allowed vlan 10,20,30"
+    ],
+    "fiche": "VLAN = isolation L2 | Access = 1 VLAN | Trunk = plusieurs VLANs (802.1Q) | Inter-VLAN = besoin routeur ou L3 switch",
+    "titre": "VLANs, commutation et trunk 802.1Q",
+    "domaine": "Réseaux et Systèmes"
+  },
+  {
+    "id": "sisr-04",
+    "chapitre": "4. Protocole 802.1X et authentification reseau",
+    "cours": "Le protocole 802.1X permet l'authentification des equipements avant d'accorder l'acces au reseau (NAC).\nIl repose sur 3 acteurs :\n- Supplicant : le client (PC, smartphone) qui demande l'acces\n- Authenticator : le switch ou borne Wi-Fi qui controle l'acces\n- Serveur d'authentification : le serveur RADIUS (NPS sous Windows)\nFlux : EAP over LAN (EAPOL) entre supplicant et authenticator, puis RADIUS entre authenticator et serveur.\nL'IANA attribue dynamiquement le VLAN via les Tunnel Attributes (RFC 3580).",
+    "notions": [
+      "802.1X",
+      "supplicant",
+      "authenticator",
+      "RADIUS",
+      "NPS",
+      "EAP",
+      "EAPOL",
+      "Tunnel-Pvt-Group-ID"
+    ],
+    "exemples": [
+      "PC → EAPOL → Switch (NPS/RADIUS) → AD → VLAN attribue automatiquement",
+      "Sous Windows Server : role NPS + enregistrement dans l'AD + politique reseau par groupe"
+    ],
+    "fiche": "3 acteurs : Supplicant (PC) | Authenticator (Switch) | Serveur RADIUS (NPS) | AD verifie les creds | VLAN attribue via Tunnel Attributes",
+    "titre": "Authentification réseau 802.1X et RADIUS",
+    "domaine": "Réseaux et Systèmes"
+  },
+  {
+    "id": "sisr-05",
+    "chapitre": "5. Active Directory et GPO",
+    "cours": "Active Directory (AD DS) est un service d'annuaire Microsoft permettant de centraliser la gestion des identites et des ressources.\nComposants cles : foret, domaine, OU (Unites Organisationnelles), utilisateurs, groupes.\nLes GPO (Group Policy Objects) appliquent des configurations automatiques aux postes et utilisateurs de l'AD.\nDNS est indispensable pour l'AD (localisation des controleurs de domaine).",
+    "notions": [
+      "AD DS",
+      "domaine",
+      "foret",
+      "OU",
+      "GPO",
+      "DNS",
+      "LDAP",
+      "Kerberos",
+      "FSMO"
+    ],
+    "exemples": [
+      "GPO de securite : mot de passe min 12 chars, blocage USB, fond d'ecran imposé",
+      "OU Etudiants → GPO restriction logiciels | OU Admins → GPO acces total"
+    ],
+    "fiche": "AD = centralise les identites | OU = conteneurs | GPO = politiques auto | DNS requis | Kerberos = auth | LDAP = protocole annuaire",
+    "titre": "Active Directory, GPO et gestion des identités",
+    "domaine": "Réseaux et Systèmes"
+  },
+  {
+    "id": "sisr-06",
+    "chapitre": "6. Routage statique et dynamique",
+    "cours": "Le routage permet d'acheminer les paquets entre reseaux differents.\nRoutes statiques : configurees manuellement, simples mais non adaptatives.\nRoutes dynamiques : protocoles OSPF (link-state, AS interne), RIP (distance vector, obsolete), BGP (inter-AS, Internet).\nCommande Cisco : ip route [destination] [masque] [nexthop/interface]",
+    "notions": [
+      "table de routage",
+      "routage statique",
+      "OSPF",
+      "RIP",
+      "BGP",
+      "next-hop",
+      "metrique"
+    ],
+    "exemples": [
+      "Router(config)# ip route 192.168.20.0 255.255.255.0 192.168.1.254",
+      "OSPF : router ospf 1 / network 192.168.0.0 0.0.0.255 area 0"
+    ],
+    "fiche": "Statique = manuel | OSPF = dynamique, lien-etat | BGP = Internet | RIP = obsolete | Metrique = cout du chemin",
+    "titre": "Routage statique et dynamique (OSPF, BGP)",
+    "domaine": "Réseaux et Systèmes"
+  },
+  {
+    "id": "sisr-07",
+    "chapitre": "7. Cybersecurite — Notions fondamentales",
+    "cours": "La cybersecurite vise a proteger la confidentialite, l'integrite et la disponibilite des SI (triade CIA).\nMenaces principales : phishing, ransomware, MITM, DDoS, injection SQL, XSS.\nDefenses : pare-feu, IDS/IPS, VPN, chiffrement, authentification forte (MFA), PSSI.\nReferentiels : ISO 27001, NIST, guides ANSSI.",
+    "notions": [
+      "CIA",
+      "PSSI",
+      "pare-feu",
+      "IDS",
+      "IPS",
+      "VPN",
+      "MFA",
+      "Zero Trust",
+      "ransomware",
+      "phishing"
+    ],
+    "exemples": [
+      "Zero Trust : 'ne jamais faire confiance, toujours verifier' — controle continu meme en interne",
+      "PSSI = document definissant les regles de securite de l'organisation"
+    ],
+    "fiche": "CIA = Confidentialite / Integrite / Disponibilite | PSSI = politique securite | Zero Trust = verification continue | MFA = auth multi-facteurs",
+    "titre": "Sécurité réseau — Fondamentaux",
+    "domaine": "Réseaux et Systèmes"
+  },
+  {
+    "id": "sisr-08",
+    "chapitre": "8. PRA et PCA",
+    "cours": "Le PRA (Plan de Reprise d'Activite) definit les procedures pour reprendre l'activite apres un sinistre.\nRPO (Recovery Point Objective) : perte de donnees maximale acceptable (ex : RPO < 1h = sauvegardes horaires).\nRTO (Recovery Time Objective) : duree maximale de coupure acceptable (ex : RTO < 30s = failover automatique).\nLe PCA (Plan de Continuite d'Activite) assure la continuite PENDANT l'incident (sans interruption).\nSolutions : DRBD (replication synchrone), Keepalived/VRRP (failover), BorgBackup (sauvegardes chiffrees).",
+    "notions": [
+      "PRA",
+      "PCA",
+      "RPO",
+      "RTO",
+      "DRBD",
+      "Keepalived",
+      "VRRP",
+      "BorgBackup",
+      "failover",
+      "replication"
+    ],
+    "exemples": [
+      "DRBD = replication bloc a bloc en temps reel entre 2 serveurs (RPO=0)",
+      "Keepalived + VRRP = IP virtuelle qui bascule automatiquement sur le serveur secondaire en <30s",
+      "BorgBackup : borg create --compression lz4 --encryption repokey-blake2"
+    ],
+    "fiche": "RPO = combien de donnees on peut perdre | RTO = combien de temps on peut s'arreter | DRBD = sync | BorgBackup = sauvegarde chiffree | VRRP = IP virtuelle",
+    "titre": "PRA, PCA et continuité de service",
+    "domaine": "Réseaux et Systèmes"
+  },
+  {
+    "id": "sisr-09",
+    "chapitre": "9. Supervision — Prometheus & Grafana",
+    "cours": "Prometheus est un outil de collecte de metriques systeme par scraping HTTP.\nNode Exporter expose les metriques du systeme (CPU, RAM, disque, reseau).\nGrafana se connecte a Prometheus pour afficher des dashboards visuels.\nAlertmanager envoie des alertes (mail, Slack) selon des regles definies.\nLanguage de requete : PromQL.",
+    "notions": [
+      "Prometheus",
+      "Grafana",
+      "Node Exporter",
+      "Alertmanager",
+      "scraping",
+      "PromQL",
+      "dashboard"
+    ],
+    "exemples": [
+      "Alerte : CPU > 90% pendant 5 minutes → email au sysadmin",
+      "PromQL : rate(node_cpu_seconds_total{mode='idle'}[5m])"
+    ],
+    "fiche": "Prometheus = collecte | Node Exporter = agent systeme | Grafana = dashboard | Alertmanager = alertes | PromQL = langage de requete",
+    "titre": "Supervision réseau — Prometheus & Grafana",
+    "domaine": "Réseaux et Systèmes"
+  },
+  {
+    "id": "sisr-10",
+    "chapitre": "10. Docker et conteneurisation",
+    "cours": "Docker permet d'empacketer une application avec ses dependances dans un conteneur isole.\nContrairement aux VMs, les conteneurs partagent le noyau de l'hote (leger et rapide).\nDockerfile : instructions pour construire une image.\nDocker Compose : orchestration de plusieurs conteneurs (docker-compose.yml).\nVolumes : persistance des donnees. Reseaux : isolation entre conteneurs.",
+    "notions": [
+      "conteneur",
+      "image",
+      "Dockerfile",
+      "Docker Compose",
+      "volume",
+      "registry",
+      "Docker Hub"
+    ],
+    "exemples": [
+      "docker run -d -p 8080:80 nginx",
+      "docker compose up -d — demarre tous les services definis dans docker-compose.yml"
+    ],
+    "fiche": "Conteneur ≠ VM (partage le noyau) | Image = template | Dockerfile = recette | Compose = multi-conteneurs | Volume = persistance",
+    "titre": "Docker, conteneurisation et infrastructure Cloud",
+    "domaine": "Réseaux et Systèmes"
+  }
+]

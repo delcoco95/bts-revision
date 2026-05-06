@@ -1,0 +1,164 @@
+﻿[
+  {
+    "id": "culture-q01",
+    "type": "qcm",
+    "question": "Quelle est la règle principale de la synthèse de documents ?",
+    "options": [
+      "Résumer chaque document dans l'ordre du corpus",
+      "Présenter objectivement les idées croisées des documents sans donner son opinion",
+      "Donner son avis personnel après avoir présenté les documents",
+      "Citer intégralement les passages les plus importants"
+    ],
+    "reponse_correcte": 1,
+    "explication": "La synthèse de documents doit présenter les idées des auteurs de manière objective et croisée (plan thématique), sans jamais exprimer l'opinion personnelle du rédacteur. Résumer chaque document dans l'ordre serait une faute méthodologique grave (plan document par document).",
+    "niveau": "essentiel",
+    "chapitre_ref": "culture-01"
+  },
+  {
+    "id": "culture-q02",
+    "type": "cas_pratique",
+    "question": "Identifiez TOUTES les erreurs dans cette introduction de synthèse :\n\n\"Je vais vous parler du numérique et de la vie privée. Les documents présentent différents points de vue. D'après moi, le RGPD est une très bonne loi car il protège nos données. Le document 1 parle de la surveillance, le document 2 défend les libertés numériques et le document 3 est un article de journal. Nous allons voir pourquoi le numérique est dangereux pour la vie privée.\"",
+    "options": null,
+    "reponse_correcte": null,
+    "correction_detaillee": {
+      "erreurs_identifiees": [
+        "ERREUR 1 — Opinion personnelle : 'D'après moi, le RGPD est une très bonne loi' → INTERDIT en synthèse",
+        "ERREUR 2 — Plan document par document : 'Le document 1 parle de... le document 2...' → il faut un plan THÉMATIQUE",
+        "ERREUR 3 — Conclusion dans l'introduction : 'pourquoi le numérique est dangereux' → l'introduction ne doit pas anticiper une conclusion",
+        "ERREUR 4 — Formule orale : 'Je vais vous parler de...' → formule d'exposé oral, pas de synthèse écrite",
+        "ERREUR 5 — Absence de problématique formulée : aucune question centrale n'est posée",
+        "ERREUR 6 — Présentation du corpus insuffisante : manque date, auteur, source pour chaque document"
+      ],
+      "introduction_corrigee": "À l'heure où 5,3 milliards d'individus naviguent quotidiennement sur internet, la question de la protection des données personnelles s'impose comme un enjeu majeur de nos sociétés numériques. Ce corpus de trois documents — un article de presse spécialisée (2022), une tribune d'expert en droit numérique et un rapport institutionnel — nous invite à nous interroger : le cadre réglementaire actuel permet-il de concilier liberté numérique et protection de la vie privée ? Nous examinerons d'abord les risques que le numérique fait peser sur la vie privée, avant d'analyser les réponses réglementaires et techniques apportées à ces enjeux."
+    },
+    "niveau": "intermédiaire",
+    "chapitre_ref": "culture-01"
+  },
+  {
+    "id": "culture-q03",
+    "type": "qcm",
+    "question": "Quelle est la différence fondamentale entre un argument et un exemple ?",
+    "options": [
+      "Un argument est toujours plus long qu'un exemple",
+      "Un argument est une raison logique appuyant la thèse ; un exemple en est une illustration concrète",
+      "Un exemple peut remplacer un argument si il est suffisamment précis",
+      "Un argument est personnel, un exemple est objectif"
+    ],
+    "reponse_correcte": 1,
+    "explication": "L'argument répond à la question 'pourquoi ?' : c'est une raison logique, abstraite. L'exemple illustre l'argument avec un cas concret (événement, statistique, personnalité). Un exemple SEUL ne constitue pas un argument : il doit toujours être associé à un raisonnement. Exemple d'erreur fréquente : 'Cambridge Analytica a exploité des données Facebook.' — c'est un exemple, pas un argument. L'argument serait : 'Les plateformes numériques exposent les utilisateurs à des risques de manipulation de leurs données personnelles à des fins politiques ou commerciales.'",
+    "niveau": "essentiel",
+    "chapitre_ref": "culture-03"
+  },
+  {
+    "id": "culture-q04",
+    "type": "vrai_faux",
+    "question": "Dans une synthèse de documents, on peut donner son avis personnel si on le signale clairement avec 'À mon avis...'",
+    "reponse_correcte": false,
+    "explication": "FAUX. Dans une synthèse de documents, l'opinion personnelle est ABSOLUMENT INTERDITE, même signalée. C'est la règle fondamentale qui différencie la synthèse de la dissertation. Exprimer son opinion est une faute méthodologique qui peut entraîner une pénalité significative. Seule la dissertation ou le commentaire permettent l'expression d'un point de vue personnel.",
+    "niveau": "essentiel",
+    "chapitre_ref": "culture-01"
+  },
+  {
+    "id": "culture-q05",
+    "type": "qcm",
+    "question": "Quelle figure de style consiste à rapprocher deux idées contraires dans la même formulation pour créer un effet de paradoxe ou de tension ?",
+    "options": [
+      "L'analogie",
+      "La gradation",
+      "L'antithèse",
+      "La métonymie"
+    ],
+    "reponse_correcte": 2,
+    "explication": "L'antithèse oppose deux idées contraires dans la même phrase ou le même énoncé. Exemple : 'Le Cloud offre une liberté totale dans une dépendance absolue.' ou 'Le numérique nous connecte au monde tout en nous isolant les uns des autres.' L'analogie rapproche deux domaines différents. La gradation est une liste en intensité croissante. La métonymie désigne une réalité par un élément qui lui est associé.",
+    "niveau": "intermédiaire",
+    "chapitre_ref": "culture-03"
+  },
+  {
+    "id": "culture-q06",
+    "type": "cas_pratique",
+    "question": "Sur le thème 'IA et emploi' : formulez une thèse, une antithèse et une synthèse dialectique complètes. Chaque partie doit comprendre au moins un argument et un exemple.",
+    "options": null,
+    "reponse_correcte": null,
+    "correction_detaillee": {
+      "these": {
+        "enonce": "L'intelligence artificielle constitue une chance pour les métiers du numérique.",
+        "argument": "Elle automatise les tâches répétitives à faible valeur ajoutée, permettant aux techniciens de se concentrer sur des activités plus complexes et créatives.",
+        "exemple": "GitHub Copilot réduit de 55% le temps consacré à l'écriture de code répétitif, selon une étude GitHub de 2023, libérant les développeurs pour l'architecture et la sécurité."
+      },
+      "antithese": {
+        "enonce": "Cependant, l'IA représente également une menace réelle pour l'emploi dans le secteur numérique.",
+        "argument": "Elle menace particulièrement les profils techniques peu qualifiés dont les tâches sont entièrement automatisables.",
+        "exemple": "Les systèmes AIOps automatisent désormais la surveillance et la résolution des incidents de niveau 1, compressant les besoins en techniciens support N1."
+      },
+      "synthese": {
+        "enonce": "L'IA transforme le marché du travail numérique sans le détruire, à condition que les professionnels IT investissent dans de nouvelles compétences.",
+        "argument": "De nouveaux métiers émergent (prompt engineer, ML engineer, AI ethicist) qui nécessitent une combinaison de compétences techniques et humaines impossibles à automatiser.",
+        "exemple": "Le Forum Économique Mondial (2023) estime que l'IA détruira 85 millions d'emplois mais en créera 97 millions d'ici 2025, avec un solde net positif si les formations suivent."
+      }
+    },
+    "niveau": "avancé",
+    "chapitre_ref": "culture-03"
+  },
+  {
+    "id": "culture-q07",
+    "type": "qcm",
+    "question": "Pour un sujet de dissertation de type 'Dans quelle mesure le numérique remet-il en cause la vie privée ?', quel plan est le plus adapté ?",
+    "options": [
+      "Plan chronologique : avant internet / depuis internet / futur numérique",
+      "Plan dialectique : thèse / antithèse / synthèse avec nuances",
+      "Plan par documents : résumé de chaque source",
+      "Plan alphabétique : par ordre des notions abordées"
+    ],
+    "reponse_correcte": 1,
+    "explication": "Le sujet 'Dans quelle mesure...' est une invitation à nuancer : il suggère que la réponse n'est ni totalement oui ni totalement non. Le plan dialectique (thèse / antithèse / synthèse) est idéal car il permet d'abord d'affirmer que oui, le numérique menace la vie privée, puis de montrer les limites de cette affirmation (protections RGPD, chiffrement, droits numériques), pour conclure sur une vision nuancée. Le plan chronologique peut fonctionner mais il n'est pas le plus adapté pour une question normative.",
+    "niveau": "intermédiaire",
+    "chapitre_ref": "culture-04"
+  },
+  {
+    "id": "culture-q08",
+    "type": "vrai_faux",
+    "question": "La conclusion d'une synthèse de documents doit exprimer clairement la position personnelle du rédacteur sur le sujet traité.",
+    "reponse_correcte": false,
+    "explication": "FAUX. Contrairement à la dissertation, la synthèse de documents NE comporte PAS de conclusion personnelle. L'exercice exige une objectivité totale du début à la fin. Le texte se termine soit par le dernier paragraphe du développement, soit par un bilan factuel des idées présentées. Exprimer une opinion en conclusion serait une faute méthodologique majeure. La conclusion personnelle est réservée à la DISSERTATION.",
+    "niveau": "essentiel",
+    "chapitre_ref": "culture-01"
+  },
+  {
+    "id": "culture-q09",
+    "type": "cas_pratique",
+    "question": "Rédigez une phrase de transition complète entre ces deux parties d'une synthèse sur 'Le télétravail' :\n- Partie I : 'Les avantages du télétravail pour les salariés'\n- Partie II : 'Les risques et limites du télétravail'",
+    "options": null,
+    "reponse_correcte": null,
+    "correction_detaillee": {
+      "transition_modele": "Ainsi, le télétravail apparaît, à travers les documents de ce corpus, comme une modalité de travail favorable à l'équilibre vie professionnelle/vie personnelle et à la productivité individuelle. Cependant, cette vision optimiste mérite d'être nuancée : les auteurs mettent également en évidence des risques humains et organisationnels que ni les entreprises ni les salariés ne peuvent ignorer.",
+      "structure_analysee": [
+        "BILAN de la partie I : 'le télétravail apparaît comme une modalité favorable...'",
+        "MOT PIVOT : 'Cependant' — marque le basculement vers la partie opposée",
+        "ANNONCE de la partie II : 'des risques humains et organisationnels...'",
+        "LIEN AU CORPUS : 'les auteurs mettent en évidence' — rappelle qu'on travaille sur des documents"
+      ],
+      "erreurs_a_eviter": [
+        "Ne pas commencer par 'Maintenant' ou 'Ensuite' (trop oral)",
+        "Ne pas répéter le titre de la partie : trop mécanique",
+        "Ne pas omettre le bilan de la partie précédente"
+      ]
+    },
+    "niveau": "intermédiaire",
+    "chapitre_ref": "culture-01"
+  },
+  {
+    "id": "culture-q10",
+    "type": "qcm",
+    "question": "Quelle est la durée officielle de l'épreuve E1 (Culture générale et expression) au BTS SIO ?",
+    "options": [
+      "2 heures",
+      "3 heures",
+      "4 heures",
+      "5 heures"
+    ],
+    "reponse_correcte": 2,
+    "explication": "L'épreuve E1 'Culture générale et expression' du BTS dure 4 heures. Elle est commune à tous les BTS et comporte deux parties : une synthèse de documents (coefficient principal) et une écriture personnelle. Le coefficient de E1 est de 3 au BTS SIO. Il est fortement conseillé de consacrer environ 2h30 à la synthèse et 1h30 à l'écriture personnelle, en gardant 30 minutes pour la relecture.",
+    "niveau": "essentiel",
+    "chapitre_ref": "culture-01"
+  }
+]

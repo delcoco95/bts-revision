@@ -1,0 +1,226 @@
+﻿[
+  {
+    "id": "maths-01",
+    "chapitre": "Domaine 1 — Numération et codage",
+    "titre": "Chapitre 1 — Systèmes de numération",
+    "domaine": "Arithmétique informatique",
+    "cours": "SYSTÈMES DE NUMÉRATION\n\nI. LES BASES DE NUMÉRATION\nBase décimale (10) : chiffres 0-9, système usuel. Ex: 192 = 1×10²+9×10¹+2×10⁰\nBase binaire (2) : chiffres 0 et 1. Utilisée par les processeurs et mémoires.\nBase octale (8) : chiffres 0-7, représentation par groupes de 3 bits.\nBase hexadécimale (16) : chiffres 0-9 et lettres A-F. Groupes de 4 bits.\n\nII. CONVERSIONS\nDécimal → Binaire : divisions successives par 2, lire les restes de bas en haut.\nEx : 192÷2=96 r0, 96÷2=48 r0, 48÷2=24 r0, 24÷2=12 r0, 12÷2=6 r0, 6÷2=3 r0, 3÷2=1 r1, 1÷2=0 r1 → 11000000\nDécimal → Hexadécimal : divisions successives par 16. Ex : 255÷16=15 r15 → FF\nBinaire → Hexa : grouper par 4 bits (nibbles). Ex : 11000000 → 1100|0000 → C0\nConversions importantes : F=15, E=14, D=13, C=12, B=11, A=10\n\nIII. REPRÉSENTATION DES ENTIERS NÉGATIFS — COMPLÉMENT À 2\n1. Écrire la valeur absolue en binaire sur n bits.\n2. Inverser tous les bits (complément à 1).\n3. Ajouter 1 au résultat.\nEx : -5 sur 8 bits : 5=00000101, inverser→11111010, +1→11111011\nRemarque : sur n bits, on représente les entiers de -2^(n-1) à 2^(n-1)-1.\n\nIV. NOMBRES FLOTTANTS — IEEE 754 SIMPLE PRÉCISION\nFormat 32 bits : 1 bit signe | 8 bits exposant (biaisé +127) | 23 bits mantisse.\nFormule : valeur = (-1)^s × 1.mantisse × 2^(exposant-127)\nEx : 0 01111111 00000000000000000000000 = +1.0 × 2^0 = 1.0\n\nV. APPLICATIONS RÉSEAU\nAdresses IPv4 sur 32 bits : 192.168.1.1 = 11000000.10101000.00000001.00000001\nMasque /24 = 255.255.255.0 = 11111111.11111111.11111111.00000000\nSous-réseau /24 : 24 bits pour le réseau, 8 bits pour les hôtes → 2^8-2 = 254 hôtes.\nAdresses MAC en hexa : 6 octets séparés par ':' ou '-'. Ex : AA:BB:CC:DD:EE:FF",
+    "notions_cles": [
+      "Base binaire",
+      "Base hexadécimale",
+      "Complément à 2",
+      "IEEE 754",
+      "Adresse IP en binaire",
+      "Masque réseau",
+      "Conversion décimal-binaire",
+      "Conversion binaire-hexa"
+    ],
+    "exemple_concret": "Configurer un sous-réseau : 192.168.1.0/24 signifie que les 24 premiers bits sont le masque réseau. En binaire : 192=11000000, 168=10101000, 1=00000001. Le masque /24 = 255.255.255.0 permet 254 hôtes (2^8 - 2).",
+    "fiche_revision": [
+      "Les 4 bases : décimale (10), binaire (2), octale (8), hexadécimale (16)",
+      "Décimal → Binaire : divisions successives par 2, lire les restes de bas en haut",
+      "Binaire → Hexa : regrouper par 4 bits, convertir chaque nibble",
+      "Complément à 2 pour les négatifs : inverser tous les bits + ajouter 1",
+      "IEEE 754 simple précision : 1 bit signe + 8 bits exposant + 23 bits mantisse",
+      "IPv4 : adresse sur 32 bits, représentation en 4 octets décimaux pointés",
+      "Masque /24 = 255.255.255.0 : 24 bits réseau, 8 bits hôtes, 254 hôtes utilisables",
+      "Adresse MAC : identifiant unique sur 6 octets en hexadécimal"
+    ]
+  },
+  {
+    "id": "maths-02",
+    "chapitre": "Domaine 2 — Logique booléenne",
+    "titre": "Chapitre 2 — Algèbre de Boole",
+    "domaine": "Logique",
+    "cours": "ALGÈBRE DE BOOLE\n\nI. VARIABLES ET OPÉRATEURS BOOLÉENS\nVariable booléenne : prend uniquement les valeurs 0 (Faux) ou 1 (Vrai).\nOpérateur ET (AND, ∧) : A∧B = 1 seulement si A=1 ET B=1.\nOpérateur OU (OR, ∨) : A∨B = 1 si au moins l'un des deux est 1.\nOpérateur NON (NOT, ¬) : ¬A = 1-A, inverse la valeur.\nXOR (OU exclusif) : A⊕B = 1 si A≠B, 0 si A=B.\nNAND : ¬(A∧B) ; NOR : ¬(A∨B).\n\nII. TABLES DE VÉRITÉ\n| A | B | A∧B | A∨B | A⊕B | ¬A |\n| 0 | 0 |  0  |  0  |  0  |  1 |\n| 0 | 1 |  0  |  1  |  1  |  1 |\n| 1 | 0 |  0  |  1  |  1  |  0 |\n| 1 | 1 |  1  |  1  |  0  |  0 |\n\nIII. LOIS DE DE MORGAN\n¬(A∧B) = ¬A∨¬B  (négation d'une conjonction = disjonction des négations)\n¬(A∨B) = ¬A∧¬B  (négation d'une disjonction = conjonction des négations)\nMnémotechnique : 'casser la barre, changer l'opérateur'.\n\nIV. AUTRES LOIS FONDAMENTALES\nCommutativité : A∧B = B∧A ; A∨B = B∨A\nAssociativité : (A∧B)∧C = A∧(B∧C)\nDistributivité : A∧(B∨C) = (A∧B)∨(A∧C)\nAbsorption : A∧(A∨B) = A ; A∨(A∧B) = A\nIdempotence : A∧A = A ; A∨A = A\nNeutralité : A∧1 = A ; A∨0 = A\nComplémentarité : A∧¬A = 0 ; A∨¬A = 1\n\nV. APPLICATION — RÈGLES PARE-FEU\nIF (port=80 AND protocol=TCP) THEN allow\nIF (port=443 AND protocol=TCP) THEN allow\nSimplification : (p=80∧TCP)∨(p=443∧TCP) = TCP∧(p=80∨p=443)",
+    "notions_cles": [
+      "Variable booléenne",
+      "Opérateur ET (AND)",
+      "Opérateur OU (OR)",
+      "Opérateur NON (NOT)",
+      "XOR",
+      "Table de vérité",
+      "Lois de De Morgan",
+      "Simplification booléenne"
+    ],
+    "exemple_concret": "Règle de pare-feu : Autoriser le trafic si (port=443 ET protocole=TCP) OU (port=80 ET protocole=TCP). En Boole : A=(p=443), B=(prot=TCP), C=(p=80). Règle = (A∧B)∨(C∧B) = B∧(A∨C) — simplification par factorisation.",
+    "fiche_revision": [
+      "Variable booléenne : 0 (Faux) ou 1 (Vrai), pas d'autre valeur possible",
+      "ET (∧) : résultat 1 uniquement si TOUS les opérandes sont à 1",
+      "OU (∨) : résultat 1 si AU MOINS UN opérande est à 1",
+      "XOR (⊕) : résultat 1 si les opérandes sont DIFFÉRENTS",
+      "De Morgan 1 : ¬(A∧B) = ¬A∨¬B — casser la barre, changer l'opérateur",
+      "De Morgan 2 : ¬(A∨B) = ¬A∧¬B — même règle pour la disjonction",
+      "Distributivité : A∧(B∨C) = (A∧B)∨(A∧C), permet la factorisation",
+      "Application réseau : simplifier les règles de filtrage pare-feu par factorisation"
+    ]
+  },
+  {
+    "id": "maths-03",
+    "chapitre": "Domaine 3 — Arithmétique modulaire",
+    "titre": "Chapitre 3 — Arithmétique modulaire",
+    "domaine": "Arithmétique",
+    "cours": "ARITHMÉTIQUE MODULAIRE\n\nI. DIVISION EUCLIDIENNE ET MODULO\nDivision euclidienne : a = b×q + r avec 0 ≤ r < b (q = quotient, r = reste).\nModulo : a mod n = reste r de la division euclidienne de a par n.\nEx : 47 mod 8 → 47 = 8×5 + 7 → 47 mod 8 = 7\nPropriétés du modulo :\n(a+b) mod n = ((a mod n) + (b mod n)) mod n\n(a×b) mod n = ((a mod n) × (b mod n)) mod n\n\nII. CONGRUENCE\na ≡ b [n] signifie que n divise (a-b), i.e. a mod n = b mod n.\nEx : 47 ≡ 7 [8] car 47-7=40 et 8|40.\nPropriétés : si a≡b[n] et c≡d[n] alors (a+c)≡(b+d)[n] et a×c≡b×d[n].\n\nIII. PGCD ET ALGORITHME D'EUCLIDE\nPGCD(a,b) = plus grand commun diviseur de a et b.\nAlgorithme d'Euclide : pgcd(a,b) = pgcd(b, a mod b), avec pgcd(a,0) = a.\nEx : pgcd(48,18) : pgcd(48,18)→pgcd(18,12)→pgcd(12,6)→pgcd(6,0)=6\n\nIV. INDICATRICE D'EULER\nφ(n) = nombre d'entiers de 1 à n premiers avec n (pgcd(k,n)=1).\nSi p premier : φ(p) = p-1. Si n=p×q (p,q premiers) : φ(n) = (p-1)(q-1).\nEx : φ(33) = φ(3×11) = 2×10 = 20.\n\nV. INVERSE MODULAIRE\nd est l'inverse de e modulo n si e×d ≡ 1 [n].\nExiste si et seulement si pgcd(e,n) = 1.\nSe calcule par l'algorithme d'Euclide étendu.\n\nVI. APPLICATION EN CRYPTOGRAPHIE — RSA\nRSA repose sur l'exponentiation modulaire : c = m^e mod n.\nLa sécurité repose sur la difficulté de factoriser n = p×q pour de grands nombres.\nChiffrement : c = m^e mod n. Déchiffrement : m = c^d mod n.\nCondition : e×d ≡ 1 [φ(n)].",
+    "notions_cles": [
+      "Division euclidienne",
+      "Modulo",
+      "Congruence",
+      "PGCD",
+      "Algorithme d'Euclide",
+      "Indicatrice d'Euler",
+      "Inverse modulaire",
+      "Exponentiation modulaire"
+    ],
+    "exemple_concret": "47 mod 8 : 47 = 8×5 + 7, donc 47 mod 8 = 7. Algorithme d'Euclide pour pgcd(48,18) : pgcd(48,18)=pgcd(18,12)=pgcd(12,6)=pgcd(6,0)=6.",
+    "fiche_revision": [
+      "Division euclidienne : a = b×q + r avec 0 ≤ r < b",
+      "a mod n = reste de la division de a par n (toujours entre 0 et n-1)",
+      "a ≡ b [n] signifie n divise (a-b), ou a mod n = b mod n",
+      "Propriété : (a+b) mod n = ((a mod n)+(b mod n)) mod n",
+      "Algorithme d'Euclide : pgcd(a,b) = pgcd(b, a mod b), s'arrête quand r=0",
+      "φ(n) indicatrice d'Euler : pour n=p×q premiers, φ(n)=(p-1)(q-1)",
+      "Inverse modulaire de e mod n : e×d ≡ 1 [n], existe si pgcd(e,n)=1",
+      "RSA : chiffrement c=m^e mod n, déchiffrement m=c^d mod n"
+    ]
+  },
+  {
+    "id": "maths-04",
+    "chapitre": "Domaine 4 — Statistiques",
+    "titre": "Chapitre 4 — Statistiques descriptives",
+    "domaine": "Statistiques",
+    "cours": "STATISTIQUES DESCRIPTIVES\n\nI. VOCABULAIRE DE BASE\nPopulation : ensemble étudié (ex : tous les serveurs d'un datacenter).\nÉchantillon : sous-ensemble représentatif de la population.\nVariable statistique qualitative : modalités non numériques (ex : type de panne).\nVariable statistique quantitative : valeurs numériques (ex : temps de réponse en ms).\n\nII. FRÉQUENCES\nEffectif total : N = Σ ni\nFréquence absolue ni : nombre d'occurrences de la valeur xi.\nFréquence relative fi = ni / N (exprimée en proportion ou pourcentage).\nFréquence cumulée Fi = f1 + f2 + ... + fi (Fi ≤ 1, FN = 1).\n\nIII. INDICATEURS DE POSITION\nMode : valeur xi ayant la fréquence absolue ni la plus élevée.\nMédiane Me : valeur qui partage la distribution en deux parties égales de 50%.\nMoyenne arithmétique : x̄ = (1/N) × Σ ni×xi = Σ fi×xi\nEx : série [12,15,8,20,10] → x̄ = (12+15+8+20+10)/5 = 65/5 = 13\n\nIV. INDICATEURS DE DISPERSION\nÉtendue : e = xmax - xmin\nVariance : V = (1/N) × Σ ni×(xi - x̄)²\nÉcart-type : σ = √V (même unité que les données, toujours ≥ 0)\nEx : [12,15,8,20,10], x̄=13 → V=[(−1)²+(2)²+(−5)²+(7)²+(−3)²]/5 = 88/5 = 17.6, σ≈4.2\n\nV. REPRÉSENTATIONS GRAPHIQUES\nHistogramme : classes (intervalles) en abscisse, fréquences en ordonnée.\nCourbe des fréquences cumulées (ogive) : permet de lire la médiane graphiquement.\nDiagramme en barres : pour variables qualitatives ou discrètes.\n\nVI. APPLICATION INFORMATIQUE\nAnalyser les temps de réponse d'un serveur (latences).\nÉtudier la distribution des tailles de paquets réseau.\nDétecter des anomalies via l'écart-type (valeurs à plus de 2σ de la moyenne).",
+    "notions_cles": [
+      "Population/Échantillon",
+      "Fréquences absolues et relatives",
+      "Mode",
+      "Médiane",
+      "Moyenne",
+      "Variance",
+      "Écart-type",
+      "Histogramme"
+    ],
+    "exemple_concret": "Analyse des temps de réponse d'un serveur (en ms) : [12, 15, 8, 20, 10]. Moyenne = (12+15+8+20+10)/5 = 65/5 = 13 ms. Variance = [(1)²+(2)²+(5)²+(7)²+(3)²]/5 = (1+4+25+49+9)/5 = 88/5 = 17.6. Écart-type = √17.6 ≈ 4.2 ms.",
+    "fiche_revision": [
+      "Fréquence relative fi = ni/N, fréquence cumulée Fi = somme des fi jusqu'à i",
+      "Mode = valeur la plus fréquente dans la série",
+      "Médiane = valeur qui divise la distribution en deux moitiés égales (50%/50%)",
+      "Moyenne x̄ = (1/N) × Σ ni×xi = somme pondérée par les effectifs",
+      "Variance V = (1/N) × Σ ni×(xi-x̄)² : toujours ≥ 0",
+      "Écart-type σ = √V : même unité que les données, mesure la dispersion",
+      "Étendue = xmax - xmin : indicateur simple mais sensible aux valeurs extrêmes",
+      "Application : détecter des anomalies réseau si valeur > x̄ + 2σ"
+    ]
+  },
+  {
+    "id": "maths-05",
+    "chapitre": "Domaine 5 — Probabilités",
+    "titre": "Chapitre 5 — Probabilités",
+    "domaine": "Probabilités",
+    "cours": "PROBABILITÉS\n\nI. VOCABULAIRE FONDAMENTAL\nExpérience aléatoire : expérience dont le résultat est imprévisible.\nUnivers Ω : ensemble de toutes les issues possibles.\nÉvénement A : sous-ensemble de Ω (A ⊆ Ω).\nÉvénement certain : Ω. Événement impossible : ∅.\n\nII. PROBABILITÉ CLASSIQUE (CAS ÉQUIPROBABLE)\nP(A) = card(A) / card(Ω)\nPropriétés : 0 ≤ P(A) ≤ 1, P(Ω) = 1, P(∅) = 0\n\nIII. RÈGLES DE CALCUL\nÉvénement contraire : P(Ā) = 1 - P(A)\nRègle de l'union : P(A∪B) = P(A) + P(B) - P(A∩B)\nRègle de l'union (événements incompatibles) : si A∩B=∅ → P(A∪B) = P(A) + P(B)\n\nIV. PROBABILITÉ CONDITIONNELLE ET INDÉPENDANCE\nP(A|B) = P(A∩B) / P(B)  (probabilité de A sachant B, avec P(B)>0)\nA et B indépendants si P(A∩B) = P(A) × P(B), ce qui implique P(A|B) = P(A).\n\nV. THÉORÈME DE BAYES\nP(A|B) = P(B|A) × P(A) / P(B)\nFormule des probabilités totales : P(B) = Σ P(B|Ai) × P(Ai) pour une partition (Ai).\n\nVI. LOI BINOMIALE B(n,p)\nP(X=k) = C(n,k) × p^k × (1-p)^(n-k)\nExpérimenter n fois une épreuve de Bernoulli de probabilité p.\nEspérance E(X) = n×p ; Variance V(X) = n×p×(1-p)\nEx : P(X=2) pour n=5, p=0.3 : C(5,2)×0.3²×0.7³ = 10×0.09×0.343 = 0.3087\n\nVII. APPLICATION INFORMATIQUE\nTaux de panne matériel : P(panne au moins 1 fois en 7 jours) = 1 - (1-p)^7\nModélisation des intrusions réseau (loi de Poisson pour événements rares).\nTest de charge serveur : probabilité de dépassement de capacité.",
+    "notions_cles": [
+      "Univers Ω",
+      "Événement",
+      "Probabilité classique",
+      "Probabilité conditionnelle",
+      "Indépendance",
+      "Théorème de Bayes",
+      "Loi binomiale B(n,p)",
+      "Espérance et variance"
+    ],
+    "exemple_concret": "Un serveur a 5% de probabilité de panne par jour. P(panne au moins 1 fois en 7 jours) = 1 - P(aucune panne en 7 jours) = 1 - (0.95)^7 = 1 - 0.6983 ≈ 0.3017 soit environ 30.2%.",
+    "fiche_revision": [
+      "Univers Ω = ensemble de toutes les issues possibles d'une expérience aléatoire",
+      "P(A) = card(A)/card(Ω) en cas équiprobable, avec 0 ≤ P(A) ≤ 1",
+      "Événement contraire : P(Ā) = 1 - P(A) — très utile pour 'au moins une fois'",
+      "P(A∪B) = P(A) + P(B) - P(A∩B) — éviter le double comptage",
+      "P(A|B) = P(A∩B)/P(B) — probabilité conditionnelle sachant B",
+      "Indépendance : P(A∩B) = P(A)×P(B) — les événements ne s'influencent pas",
+      "Loi binomiale B(n,p) : P(X=k) = C(n,k)×p^k×(1-p)^(n-k), E(X)=np",
+      "Astuce 'au moins 1' : P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n"
+    ]
+  },
+  {
+    "id": "maths-06",
+    "chapitre": "Domaine 6 — Suites",
+    "titre": "Chapitre 6 — Suites et récurrences",
+    "domaine": "Analyse",
+    "cours": "SUITES ET RÉCURRENCES\n\nI. SUITES ARITHMÉTIQUES\nDéfinition : un+1 = un + r (r = raison constante).\nFormule explicite : un = u0 + n×r\nSomme des n+1 premiers termes : Sn = (n+1)×(u0+un)/2\nEx : r=3, u0=2 → u5 = 2+5×3 = 17\n\nII. SUITES GÉOMÉTRIQUES\nDéfinition : un+1 = un × q (q = raison, q≠0).\nFormule explicite : un = u0 × q^n\nSomme des n+1 premiers termes (q≠1) : Sn = u0×(1-q^(n+1))/(1-q)\nEx : u0=1000, q=1.03 → u10 = 1000×1.03^10 ≈ 1343.9 (intérêts composés)\n\nIII. SUITES DÉFINIES PAR RÉCURRENCE\nun+1 = f(un), nécessite un terme initial u0.\nExemple : suite de Fibonacci F(0)=0, F(1)=1, F(n)=F(n-1)+F(n-2).\nF : 0,1,1,2,3,5,8,13,21,34,55,...\n\nIV. ALGORITHMES RÉCURSIFS ET COMPLEXITÉ\nFactorielle : n! = n×(n-1)! avec 0!=1. Complexité O(n).\nFibonacci récursif naïf : T(n) = T(n-1)+T(n-2) → complexité O(2^n) ! (exponentielle)\nFibonacci itératif : complexité O(n)\nComplexité algorithmique :\nO(1) : constante (accès tableau par index)\nO(log n) : logarithmique (recherche dichotomique)\nO(n) : linéaire (parcours de liste)\nO(n log n) : tri rapide, tri fusion (efficace)\nO(n²) : quadratique (tri à bulles, boucles imbriquées)\nO(2^n) : exponentielle (Fibonacci naïf)\nO(n!) : factorielle (permutations, voyageur de commerce)\n\nV. APPLICATIONS INFORMATIQUE\nAmortissement matériel (suite géométrique) : un = u0×q^n avec q<1.\nIntérêts composés bancaires (suite géométrique) : un = u0×(1+t)^n.\nAnalyse de la complexité des algorithmes de tri réseau.",
+    "notions_cles": [
+      "Suite arithmétique",
+      "Suite géométrique",
+      "Raison",
+      "Somme des termes",
+      "Algorithme récursif",
+      "Factorielle",
+      "Fibonacci",
+      "Complexité O(n)"
+    ],
+    "exemple_concret": "Amortissement matériel : un serveur coûte 10 000€, se déprécie de 20% par an. Suite géométrique : u0=10000, q=0.8. Après 3 ans : u3 = 10000 × 0.8³ = 10000 × 0.512 = 5 120€. Intérêts composés 1000€ à 3%/an : un = 1000 × 1.03^n.",
+    "fiche_revision": [
+      "Suite arithmétique : un = u0 + n×r, raison r constante entre deux termes consécutifs",
+      "Suite géométrique : un = u0 × q^n, raison q constante (rapport de deux termes consécutifs)",
+      "Somme arithmétique : Sn = (n+1)×(u0+un)/2 — moyenne des premier et dernier termes × nombre de termes",
+      "Somme géométrique (q≠1) : Sn = u0×(1-q^(n+1))/(1-q)",
+      "Fibonacci : F(n) = F(n-1)+F(n-2), F(0)=0, F(1)=1 — suite récurrente d'ordre 2",
+      "Complexité : O(1)<O(log n)<O(n)<O(n log n)<O(n²)<O(2^n)<O(n!)",
+      "Amortissement : suite géométrique de raison q<1 (dépréciation annuelle)",
+      "Intérêts composés : suite géométrique de raison q=1+taux (croissance)"
+    ]
+  },
+  {
+    "id": "maths-07",
+    "chapitre": "Domaine 7 — Cryptographie",
+    "titre": "Chapitre 7 — Cryptographie mathématique",
+    "domaine": "Sécurité",
+    "cours": "CRYPTOGRAPHIE MATHÉMATIQUE\n\nI. CHIFFREMENT PAR SUBSTITUTION\nChiffre de César : décalage fixe de k positions dans l'alphabet.\nChiffrement : ci = (mi + k) mod 26\nDéchiffrement : mi = (ci - k) mod 26\nEx : k=3, 'A'→'D', 'Z'→'C'. Facile à casser (26 clés seulement).\nChiffre de Vigenère : clé répétée, ci = (mi + ki) mod 26. Plus résistant.\n\nII. CHIFFREMENT RSA — ALGORITHME COMPLET\nÉtape 1 : Choisir p et q deux nombres premiers distincts (grands en pratique).\nÉtape 2 : Calculer n = p×q (module public).\nÉtape 3 : Calculer φ(n) = (p-1)×(q-1) (indicatrice d'Euler, secret).\nÉtape 4 : Choisir e tel que 1 < e < φ(n) et pgcd(e, φ(n)) = 1 (clé publique chiffrement).\nÉtape 5 : Calculer d = e^(-1) mod φ(n) (inverse modulaire de e, clé privée).\nÉtape 6 : Clé publique = (n, e) ; Clé privée = (n, d). Publier (n,e), garder d secret.\nÉtape 7 : Chiffrement : c = m^e mod n\nÉtape 8 : Déchiffrement : m = c^d mod n\n\nIII. EXEMPLE NUMÉRIQUE COMPLET\np=3, q=11 → n=33, φ(n)=2×10=20\nChoisir e=3 (pgcd(3,20)=1 ✓)\nTrouver d : 3×d ≡ 1 [20] → d=7 (car 3×7=21=20+1≡1[20]) ✓\nChiffrer m=4 : c = 4^3 mod 33 = 64 mod 33 = 31\nDéchiffrer c=31 : 31^7 mod 33. 31²=961=29×33+4≡4[33], 31⁴≡16[33], 31⁷=31⁴×31²×31≡16×4×31=1984≡4[33] ✓\n\nIV. SÉCURITÉ RSA\nRepose sur la difficulté de factoriser n=p×q pour de grands nombres (2048 bits).\nConnaître n mais pas p et q rend φ(n) incalculable → d introuvable.\nRSA en pratique : p et q sont des nombres premiers de ~1024 bits chacun.",
+    "notions_cles": [
+      "Chiffrement César",
+      "Chiffrement Vigenère",
+      "RSA",
+      "Clé publique/privée",
+      "Module n=p×q",
+      "Indicatrice d'Euler φ(n)",
+      "Exponentiation modulaire",
+      "Sécurité par factorisation"
+    ],
+    "exemple_concret": "RSA avec p=3, q=11 : n=33, φ(n)=20, e=3 (pgcd(3,20)=1 ✓), d=7 (3×7=21≡1 mod 20 ✓). Pour chiffrer m=4 : c = 4^3 mod 33 = 64 mod 33 = 31. Pour déchiffrer c=31 : m = 31^7 mod 33. Calcul : 31²=961≡4[33], 31⁴≡16[33], 31⁷=31⁴×31²×31≡16×4×31=1984≡4[33]. ✓",
+    "fiche_revision": [
+      "César : ci = (mi + k) mod 26, décalage fixe, 26 clés possibles → très faible",
+      "Vigenère : clé répétée sur le message, plus robuste que César",
+      "RSA étape 1-2 : choisir p, q premiers, calculer n=p×q (module public)",
+      "RSA étape 3 : φ(n)=(p-1)(q-1) — indicatrice d'Euler, reste secret",
+      "RSA étape 4-5 : choisir e tel que pgcd(e,φ(n))=1, calculer d=e^(-1) mod φ(n)",
+      "Clé publique (n,e) pour chiffrer : c=m^e mod n",
+      "Clé privée (n,d) pour déchiffrer : m=c^d mod n",
+      "Sécurité RSA : factoriser n=p×q est infaisable pour des nombres de 2048 bits"
+    ]
+  },
+  {
+    "id": "maths-08",
+    "chapitre": "Domaine 8 — Graphes",
+    "titre": "Chapitre 8 — Graphes et algorithmes",
+    "domaine": "Algorithmique",
+    "cours": "GRAPHES ET ALGORITHMES\n\nI. DÉFINITIONS FONDAMENTALES\nGraphe G = (V, E) : V = ensemble de sommets (vertices), E = ensemble d'arêtes (edges).\nGraphe non orienté : arête {u,v} = {v,u} (pas de direction).\nGraphe orienté (digraphe) : arc (u,v) ≠ (v,u).\nDegré d'un sommet v : nombre d'arêtes incidentes à v.\nChemin : suite de sommets reliés par des arêtes.\nCycle : chemin qui revient au sommet de départ.\nGraphe connexe : il existe un chemin entre tout couple de sommets.\n\nII. REPRÉSENTATIONS\nMatrice d'adjacence M (n×n) : Mij=1 si arête i→j, sinon 0. Espace O(n²).\nListe d'adjacence : pour chaque sommet, liste de ses voisins. Espace O(V+E).\n\nIII. PARCOURS DE GRAPHES\nBFS (Breadth-First Search) : parcours en largeur, utilise une file (FIFO).\nExplore d'abord les voisins directs, puis les voisins des voisins, etc.\nComplexité : O(V+E). Trouve le plus court chemin (en nombre d'arêtes).\nDFS (Depth-First Search) : parcours en profondeur, utilise une pile (LIFO) ou récursion.\nComplexité : O(V+E). Utile pour détecter les cycles.\n\nIV. ALGORITHME DE DIJKSTRA (PLUS COURT CHEMIN PONDÉRÉ)\nInitialiser : d(source)=0, d(autres)=+∞, tous sommets non visités.\nRépéter : extraire le sommet u de distance minimale non visité.\nPour chaque voisin v de u : si d(u)+w(u,v) < d(v) → mettre à jour d(v).\nMarquer u comme visité.\nComplexité : O(V²) naïf, O((V+E)logV) avec tas binaire.\nApplication : protocole OSPF dans les routeurs pour le routage.\n\nV. ARBRES COUVRANTS MINIMAUX\nArbre couvrant : graphe connexe sans cycle reliant tous les sommets.\nKruskal : trier les arêtes par poids croissant, ajouter si ne crée pas de cycle. O(E log E).\nPrim : partir d'un sommet, ajouter l'arête de poids min reliant l'arbre au reste. O(E log V).\n\nVI. COMPLEXITÉ ALGORITHMIQUE — RÉCAPITULATIF\nO(1) : accès direct (tableau). O(log n) : dichotomie.\nO(n) : parcours liste. O(n log n) : tri rapide/fusion.\nO(n²) : Dijkstra naïf, tri bulles. O(n!) : permutations.",
+    "notions_cles": [
+      "Graphe orienté/non orienté",
+      "Matrice d'adjacence",
+      "Algorithme de Dijkstra",
+      "BFS/DFS",
+      "Arbre couvrant minimal",
+      "Kruskal",
+      "Complexité algorithmique",
+      "Routage réseau"
+    ],
+    "exemple_concret": "Dijkstra pour routage : nœuds A,B,C,D. Poids : A-B=4, A-C=2, C-B=1, B-D=3, C-D=5. Depuis A : d(A)=0, d(B)=∞, d(C)=∞, d(D)=∞. Étape 1 : visite A → d(B)=4, d(C)=2. Étape 2 : visite C (min) → d(B)=min(4,3)=3, d(D)=7. Étape 3 : visite B → d(D)=min(7,6)=6. Chemin A→D : A→C→B→D, coût=6.",
+    "fiche_revision": [
+      "Graphe G=(V,E) : V=sommets, E=arêtes. Orienté (arc dirigé) ou non orienté",
+      "Matrice d'adjacence : Mij=1 si arête i→j. Espace O(n²), rapide pour tester une arête",
+      "Liste d'adjacence : espace O(V+E), efficace pour parcourir les voisins",
+      "BFS (file FIFO) : parcours en largeur, trouve le plus court chemin (nb arêtes)",
+      "DFS (pile LIFO) : parcours en profondeur, détecte les cycles",
+      "Dijkstra : plus court chemin avec poids positifs, O(V²) naïf ou O((V+E)log V) avec tas",
+      "Kruskal : arbre couvrant minimal, trier arêtes par poids, ajouter sans cycle",
+      "OSPF : protocole de routage utilisant Dijkstra pour calculer les meilleures routes"
+    ]
+  }
+]

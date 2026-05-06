@@ -1,0 +1,65 @@
+﻿[
+  {
+    "id": "sa-01",
+    "titre": "Cloud Security — Reading + Writing",
+    "duree": "1h30",
+    "niveau": "BTS SIO",
+    "description": "This exam tests your ability to read and understand a technical text in English about cloud security, and to write a short essay on the topic.",
+    "texte_support": "Cloud Security: Challenges and Best Practices\n\nCloud computing has revolutionised the way organisations store and process data. By moving their infrastructure to cloud platforms such as AWS, Microsoft Azure, or Google Cloud, companies can benefit from scalability, cost efficiency, and high availability. However, this shift also introduces significant security challenges that must be carefully addressed.\n\nOne of the primary concerns is data breaches. When sensitive information is stored in the cloud, it becomes a target for cybercriminals. Misconfigured storage buckets, for instance, have led to massive data leaks affecting millions of users. In 2019, a major financial company exposed over 100 million customer records due to a misconfigured AWS S3 bucket.\n\nAnother critical threat is the lack of visibility and control. Unlike on-premises infrastructure, organisations using cloud services may not have full control over their data or the underlying hardware. This creates potential vulnerabilities, particularly when dealing with multi-tenant environments where multiple clients share the same physical resources.\n\nTo mitigate these risks, security experts recommend implementing the Zero Trust model, which assumes that no user or device should be trusted by default, even inside the network perimeter. Additionally, organisations should enforce strong Identity and Access Management (IAM) policies, encrypt data both at rest and in transit, and regularly audit their cloud configurations.\n\nCompliance with regulations such as GDPR in Europe also plays a crucial role. Companies must ensure that personal data is processed lawfully and stored securely, with clear data retention policies and breach notification procedures in place.",
+    "exercices": [
+      {
+        "numero": 1,
+        "titre": "Reading Comprehension",
+        "enonce": "Answer the following questions based on the text above.",
+        "points": 12,
+        "questions": [
+          {
+            "numero": "1",
+            "question": "According to the text, what are the main advantages of cloud computing? Give two examples.",
+            "points": 2,
+            "correction": "According to the text, the main advantages of cloud computing are: (1) scalability (2) cost efficiency (3) high availability. Any two of these are acceptable. Quote from text: 'companies can benefit from scalability, cost efficiency, and high availability'."
+          },
+          {
+            "numero": "2",
+            "question": "What caused the data leak mentioned in the text? How many users were affected?",
+            "points": 2,
+            "correction": "The data leak was caused by a misconfigured AWS S3 bucket (misconfigured storage). Over 100 million customer records were affected. Quote: 'a major financial company exposed over 100 million customer records due to a misconfigured AWS S3 bucket'."
+          },
+          {
+            "numero": "3",
+            "question": "Explain in French what the 'Zero Trust model' means according to the text.",
+            "points": 3,
+            "correction": "Le modèle Zero Trust (confiance zéro) part du principe qu'aucun utilisateur ou appareil ne doit être considéré comme fiable par défaut, même à l'intérieur du périmètre réseau de l'entreprise. Cela signifie que chaque accès doit être vérifié et authentifié, contrairement au modèle traditionnel où tout ce qui est à l'intérieur du réseau est considéré comme sûr."
+          },
+          {
+            "numero": "4",
+            "question": "What does IAM stand for, and what does it involve according to the text?",
+            "points": 2,
+            "correction": "IAM stands for Identity and Access Management. According to the text, organisations should 'enforce strong Identity and Access Management (IAM) policies' — this involves controlling who has access to which resources in the cloud environment."
+          },
+          {
+            "numero": "5",
+            "question": "Find in the text: (a) two synonyms or near-synonyms for 'security problem', (b) the name of a European regulation mentioned, (c) what companies must do regarding personal data breaches.",
+            "points": 3,
+            "correction": "(a) 'challenges', 'vulnerabilities', 'threats', 'risks', 'concerns' — any two. (b) GDPR (General Data Protection Regulation). (c) Companies must have 'breach notification procedures in place' — they must notify authorities/users when a breach occurs."
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "titre": "Written Expression",
+        "enonce": "In approximately 100 words, describe the main cloud security risks and suggest two measures to protect a company's cloud infrastructure. Write in English.",
+        "points": 8,
+        "question": "In approximately 100 words, describe the main cloud security risks and suggest two measures to protect a company's cloud infrastructure. Write in English.",
+        "correction_modele": "Cloud computing offers many advantages, but it also introduces significant security risks. The most common threats include data breaches caused by misconfigurations, ransomware attacks targeting cloud storage, and unauthorised access due to weak authentication.\n\nTo protect cloud infrastructure, companies should first implement a Zero Trust security model, verifying every user and device before granting access. Second, they should ensure all data is encrypted both at rest and in transit, and regularly audit cloud configurations to detect vulnerabilities early.\n\nCompliance with regulations like GDPR is also essential to ensure personal data is handled responsibly.\n\n(Word count: ~100 words)",
+        "criteres_evaluation": [
+          "Pertinence du contenu (2 pts): mention d'au moins 2 risques et 2 mesures",
+          "Grammaire (2 pts): temps corrects, accords, ponctuation",
+          "Vocabulaire (2 pts): termes IT appropriés, variété lexicale",
+          "Structure (2 pts): introduction, développement, conclusion, cohérence"
+        ]
+      }
+    ],
+    "bareme_total": 20
+  }
+]

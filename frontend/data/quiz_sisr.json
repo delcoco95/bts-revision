@@ -1,0 +1,104 @@
+[
+  {
+    "id": "q-sisr-001",
+    "type": "qcm",
+    "subject": "SISR",
+    "chapitre": "Modele OSI",
+    "question": "A quelle couche du modele OSI appartient le protocole IP ?",
+    "choices": ["Couche 2 — Liaison", "Couche 3 — Reseau", "Couche 4 — Transport", "Couche 7 — Application"],
+    "correct": "Couche 3 — Reseau",
+    "correction": "IP (Internet Protocol) est un protocole de couche 3 (Reseau). Il gere l'adressage logique et le routage des paquets entre reseaux. La couche 2 gere les adresses MAC, la couche 4 gere TCP/UDP, la couche 7 les applications (HTTP, DNS...)."
+  },
+  {
+    "id": "q-sisr-002",
+    "type": "qcm",
+    "subject": "SISR",
+    "chapitre": "Adressage IP",
+    "question": "Combien d'adresses hotes sont disponibles dans un sous-reseau /26 ?",
+    "choices": ["62", "64", "126", "254"],
+    "correct": "62",
+    "correction": "/26 = masque 255.255.255.192 = 64 adresses totales. On soustrait l'adresse reseau et le broadcast : 64 - 2 = 62 hotes utilisables."
+  },
+  {
+    "id": "q-sisr-003",
+    "type": "qcm",
+    "subject": "SISR",
+    "chapitre": "802.1X",
+    "question": "Dans le protocole 802.1X, quel composant est charge de bloquer ou autoriser l'acces au reseau ?",
+    "choices": ["Le supplicant", "L'authenticator", "Le serveur RADIUS", "L'Active Directory"],
+    "correct": "L'authenticator",
+    "correction": "L'authenticator (switch ou borne Wi-Fi) est le composant qui controle physiquement l'acces au port reseau. Il recoit la demande du supplicant (PC), la transmet au serveur RADIUS, et applique la decision (autoriser/bloquer/assigner un VLAN)."
+  },
+  {
+    "id": "q-sisr-004",
+    "type": "qcm",
+    "subject": "SISR",
+    "chapitre": "PRA/PCA",
+    "question": "Quelle metrique definit la perte de donnees maximale acceptable apres un incident ?",
+    "choices": ["RTO", "RPO", "MTD", "MTTR"],
+    "correct": "RPO",
+    "correction": "RPO (Recovery Point Objective) = perte de donnees maximale acceptable. Ex : RPO = 1h signifie que les sauvegardes doivent etre effectuees au moins toutes les heures. RTO (Recovery Time Objective) = temps maximal de reprise apres incident."
+  },
+  {
+    "id": "q-sisr-005",
+    "type": "qcm",
+    "subject": "SISR",
+    "chapitre": "VLANs",
+    "question": "Quel type de port permet de transporter plusieurs VLANs sur un seul lien Cisco ?",
+    "choices": ["Access port", "Trunk port", "Routed port", "Hybrid port"],
+    "correct": "Trunk port",
+    "correction": "Un trunk port utilise le protocole 802.1Q pour encapsuler les trames avec un tag VLAN ID. Il permet de transporter plusieurs VLANs sur un seul cable physique, generalement entre deux switchs ou entre un switch et un routeur."
+  },
+  {
+    "id": "q-sisr-006",
+    "type": "qcm",
+    "subject": "SISR",
+    "chapitre": "Cybersecurite",
+    "question": "Que signifie la triade CIA en cybersecurite ?",
+    "choices": [
+      "Connexion, Identification, Authentification",
+      "Confidentialite, Integrite, Disponibilite",
+      "Controle, Integration, Acces",
+      "Certification, Infrastructure, Audit"
+    ],
+    "correct": "Confidentialite, Integrite, Disponibilite",
+    "correction": "CIA = Confidentiality, Integrity, Availability (Confidentialite, Integrite, Disponibilite). C'est la triade fondamentale de la securite des SI. Confidentialite = acces aux seules personnes autorisees. Integrite = donnees non alterees. Disponibilite = service accessible quand besoin."
+  },
+  {
+    "id": "q-sisr-007",
+    "type": "qcm",
+    "subject": "SISR",
+    "chapitre": "Active Directory",
+    "question": "Quel protocole d'authentification est utilise par defaut dans un domaine Active Directory ?",
+    "choices": ["LDAP", "RADIUS", "Kerberos", "TACACS+"],
+    "correct": "Kerberos",
+    "correction": "Kerberos est le protocole d'authentification par defaut dans un domaine Active Directory depuis Windows 2000. Il repose sur un systeme de tickets (TGT, TGS) delivres par le KDC (Key Distribution Center = le controleur de domaine). LDAP est utilise pour les requetes d'annuaire, pas l'authentification principale."
+  },
+  {
+    "id": "q-sisr-008",
+    "type": "vrai-faux",
+    "subject": "SISR",
+    "chapitre": "Docker",
+    "question": "Un conteneur Docker possede son propre noyau systeme (kernel) independant de l'hote.",
+    "correct": "Faux",
+    "correction": "FAUX. Un conteneur Docker partage le noyau (kernel) du systeme hote. C'est ce qui le rend beaucoup plus leger et rapide qu'une VM. Les conteneurs sont isoles au niveau des processus, du systeme de fichiers et du reseau, mais partagent le kernel Linux/Windows de l'hote."
+  },
+  {
+    "id": "q-sisr-009",
+    "type": "qcm",
+    "subject": "SISR",
+    "chapitre": "Supervision",
+    "question": "Quel composant Prometheus est installe sur les serveurs surveilles pour collecter les metriques systeme ?",
+    "choices": ["Grafana Agent", "Node Exporter", "Alertmanager", "Prometheus Server"],
+    "correct": "Node Exporter",
+    "correction": "Node Exporter est un agent leger installe sur chaque serveur Linux surveille. Il expose les metriques systeme (CPU, RAM, disque, reseau) sur le port 9100 via HTTP. Prometheus vient 'scraper' (collecter) ces metriques periodiquement."
+  },
+  {
+    "id": "q-sisr-010",
+    "type": "cas-pratique",
+    "subject": "SISR",
+    "chapitre": "Routage",
+    "question": "Un routeur Cisco a l'interface Gi0/0 sur 192.168.1.1/24 et Gi0/1 sur 10.0.0.1/24. Un PC sur 192.168.1.0/24 veut contacter un serveur sur 172.16.0.5/24. Quelle commande ajouter sur le routeur pour que les paquets atteignent 172.16.0.0/24 via le prochain saut 10.0.0.254 ?",
+    "correction": "La commande a saisir en mode configuration est :\n\nRouter(config)# ip route 172.16.0.0 255.255.255.0 10.0.0.254\n\nExplication :\n- 172.16.0.0 = reseau destination\n- 255.255.255.0 = masque du reseau destination (/24)\n- 10.0.0.254 = adresse du prochain saut (next-hop) accessible via Gi0/1\n\nVerification : show ip route"
+  }
+]

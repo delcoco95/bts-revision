@@ -1,0 +1,177 @@
+﻿[
+  {
+    "id": "qcyber-01",
+    "question": "Quel pilier de la triade CIA garantit que les données ne sont accessibles qu'aux utilisateurs autorisés ?",
+    "choix": ["Disponibilité", "Intégrité", "Confidentialité", "Traçabilité"],
+    "reponse_correcte": "Confidentialité",
+    "type": "qcm",
+    "explication": "La confidentialité (C de CIA) garantit que seules les personnes autorisées peuvent accéder à l'information. Exemple : chiffrement AES-256 d'une base de données."
+  },
+  {
+    "id": "qcyber-02",
+    "question": "L'ANSSI a été créée en quelle année ?",
+    "choix": ["2005", "2007", "2009", "2012"],
+    "reponse_correcte": "2009",
+    "type": "qcm",
+    "explication": "L'ANSSI (Agence Nationale de la Sécurité des Systèmes d'Information) a été créée par décret le 7 juillet 2009."
+  },
+  {
+    "id": "qcyber-03",
+    "question": "Dans la méthode EBIOS Risk Manager, combien d'ateliers composent la démarche ?",
+    "choix": ["3", "4", "5", "6"],
+    "reponse_correcte": "5",
+    "type": "qcm",
+    "explication": "EBIOS RM comprend 5 ateliers : (1) Cadrage, (2) Sources de risque, (3) Scénarios stratégiques, (4) Scénarios opérationnels, (5) Traitement du risque."
+  },
+  {
+    "id": "qcyber-04",
+    "question": "Quelle faille a exploité le ransomware WannaCry pour se propager automatiquement ?",
+    "choix": ["CVE-2014-0160 (Heartbleed)", "CVE-2017-0144 (EternalBlue)", "CVE-2021-44228 (Log4Shell)", "CVE-2020-1472 (Zerologon)"],
+    "reponse_correcte": "CVE-2017-0144 (EternalBlue)",
+    "type": "qcm",
+    "explication": "WannaCry a exploité CVE-2017-0144 (EternalBlue), une faille critique du protocole SMBv1 Windows, permettant la propagation automatique sans interaction utilisateur."
+  },
+  {
+    "id": "qcyber-05",
+    "question": "À quelle phase de la Cyber Kill Chain correspond l'envoi d'un email de phishing contenant une pièce jointe malveillante ?",
+    "choix": ["Weaponization", "Delivery", "Exploitation", "Installation"],
+    "reponse_correcte": "Delivery",
+    "type": "qcm",
+    "explication": "La phase Delivery (livraison) correspond au vecteur de transmission du payload vers la cible — l'email de phishing est le vecteur de livraison le plus courant."
+  },
+  {
+    "id": "qcyber-06",
+    "question": "Quel type de pare-feu analyse les requêtes au niveau applicatif (couche 7 OSI) et peut inspecter le contenu HTTPS ?",
+    "choix": ["Pare-feu stateless", "Pare-feu stateful", "NGFW (Next-Generation Firewall)", "ACL sur routeur"],
+    "reponse_correcte": "NGFW (Next-Generation Firewall)",
+    "type": "qcm",
+    "explication": "Le NGFW intègre une inspection applicative (couche 7), déchiffrement TLS, IPS intégré et identification des utilisateurs. Exemples : FortiGate, Palo Alto, Cisco FTD."
+  },
+  {
+    "id": "qcyber-07",
+    "question": "Quelle zone réseau est conçue pour héberger les serveurs accessibles depuis Internet en protégeant le LAN interne ?",
+    "choix": ["VLAN de management", "DMZ", "Backbone", "Zone de confiance étendue"],
+    "reponse_correcte": "DMZ",
+    "type": "qcm",
+    "explication": "La DMZ (Demilitarized Zone) est placée entre le pare-feu externe (Internet) et le pare-feu interne (LAN). Elle héberge les serveurs web, mail, DNS externe, etc."
+  },
+  {
+    "id": "qcyber-08",
+    "question": "Quel algorithme de chiffrement symétrique est le standard actuel recommandé par l'ANSSI ?",
+    "choix": ["DES", "3DES", "AES-256", "RC4"],
+    "reponse_correcte": "AES-256",
+    "type": "qcm",
+    "explication": "AES (Advanced Encryption Standard) avec une clé de 256 bits est l'algorithme symétrique de référence. RC4, DES et 3DES sont obsolètes et ne doivent plus être utilisés."
+  },
+  {
+    "id": "qcyber-09",
+    "question": "Quelle propriété cryptographique garantit que la compromission d'une clé à long terme ne permet pas de déchiffrer les sessions passées ?",
+    "choix": ["Non-répudiation", "Perfect Forward Secrecy", "Intégrité HMAC", "Chiffrement de bout en bout"],
+    "reponse_correcte": "Perfect Forward Secrecy",
+    "type": "qcm",
+    "explication": "PFS (Perfect Forward Secrecy) utilise des clés de session éphémères (DHE ou ECDHE). Chaque session a sa propre clé — si la clé maître est compromise, les sessions passées restent protégées."
+  },
+  {
+    "id": "qcyber-10",
+    "question": "Quel composant Kerberos émet le Ticket Granting Ticket (TGT) ?",
+    "choix": ["TGS (Ticket Granting Server)", "KDC/AS (Authentication Server)", "Client Kerberos", "Service cible"],
+    "reponse_correcte": "KDC/AS (Authentication Server)",
+    "type": "qcm",
+    "explication": "L'AS (Authentication Server), partie du KDC, émet le TGT après vérification des credentials de l'utilisateur. Le TGT est ensuite présenté au TGS pour obtenir des tickets de service."
+  },
+  {
+    "id": "qcyber-11",
+    "question": "Quelle attaque Kerberos consiste à demander des tickets de service pour des comptes SPN afin de craquer les hashes hors ligne ?",
+    "choix": ["Pass-the-Hash", "Golden Ticket", "Kerberoasting", "AS-REP Roasting"],
+    "reponse_correcte": "Kerberoasting",
+    "type": "qcm",
+    "explication": "Le Kerberoasting cible les comptes de service avec SPN (Service Principal Name). L'attaquant demande un ticket TGS, récupère le hash et le craque hors ligne avec Hashcat ou John the Ripper."
+  },
+  {
+    "id": "qcyber-12",
+    "question": "Quelle méthode EAP pour l'authentification Wi-Fi 802.1X nécessite un certificat côté client ET côté serveur ?",
+    "choix": ["PEAP-MSCHAPv2", "EAP-TTLS", "EAP-TLS", "EAP-LEAP"],
+    "reponse_correcte": "EAP-TLS",
+    "type": "qcm",
+    "explication": "EAP-TLS est la méthode la plus sécurisée : elle requiert un certificat sur le serveur RADIUS ET sur chaque client. Elle nécessite une PKI mais offre une authentification mutuelle complète."
+  },
+  {
+    "id": "qcyber-13",
+    "question": "Quelle version de WPA utilise SAE (Simultaneous Authentication of Equals) pour remplacer le PSK et résister aux attaques dictionnaire hors ligne ?",
+    "choix": ["WEP", "WPA (TKIP)", "WPA2", "WPA3"],
+    "reponse_correcte": "WPA3",
+    "type": "qcm",
+    "explication": "WPA3 (2018) introduit SAE, basé sur un échange Diffie-Hellman qui ne permet pas le crack hors ligne du PMK. Il remplace le 4-way handshake PSK de WPA2 vulnérable aux attaques dictionnaire."
+  },
+  {
+    "id": "qcyber-14",
+    "question": "Quelle est la différence entre un IDS et un IPS ?",
+    "choix": [
+      "IDS chiffre le trafic, IPS le filtre",
+      "IDS détecte et alerte (passif), IPS détecte et bloque (actif en ligne)",
+      "IDS est réseau, IPS est hôte uniquement",
+      "Ce sont des synonymes"
+    ],
+    "reponse_correcte": "IDS détecte et alerte (passif), IPS détecte et bloque (actif en ligne)",
+    "type": "qcm",
+    "explication": "Un IDS (Intrusion Detection System) est passif — il écoute le trafic et génère des alertes. Un IPS (Intrusion Prevention System) est inséré en ligne dans le flux réseau et peut bloquer activement le trafic malveillant."
+  },
+  {
+    "id": "qcyber-15",
+    "question": "Quel outil SIEM open source intègre à la fois un HIDS (agent sur les hôtes) et des règles de détection MITRE ATT&CK ?",
+    "choix": ["Splunk", "Wazuh", "QRadar", "ArcSight"],
+    "reponse_correcte": "Wazuh",
+    "type": "qcm",
+    "explication": "Wazuh est un SIEM/XDR open source qui déploie des agents sur les endpoints pour collecter les logs, surveiller l'intégrité des fichiers (FIM), détecter les anomalies et mapper les alertes sur MITRE ATT&CK."
+  },
+  {
+    "id": "qcyber-16",
+    "question": "Dans quel délai une organisation doit-elle notifier la CNIL en cas de violation de données personnelles (RGPD) ?",
+    "choix": ["12 heures", "24 heures", "48 heures", "72 heures"],
+    "reponse_correcte": "72 heures",
+    "type": "qcm",
+    "explication": "L'Article 33 du RGPD impose une notification à l'autorité de contrôle compétente (CNIL en France) dans un délai de 72 heures suivant la prise de connaissance de la violation."
+  },
+  {
+    "id": "qcyber-17",
+    "question": "Quel est le montant maximal de sanction RGPD pour une infraction grave (niveau 2) ?",
+    "choix": ["1 million d'euros", "5 millions d'euros ou 1% du CA", "10 millions d'euros ou 2% du CA", "20 millions d'euros ou 4% du CA mondial"],
+    "reponse_correcte": "20 millions d'euros ou 4% du CA mondial",
+    "type": "qcm",
+    "explication": "Le niveau 2 de sanction RGPD peut atteindre 20 millions d'euros ou 4% du chiffre d'affaires mondial annuel — la sanction la plus élevée des deux s'applique."
+  },
+  {
+    "id": "qcyber-18",
+    "question": "Quelle est la première vulnérabilité du Top 10 OWASP 2021 (classée #1) ?",
+    "choix": ["Injection SQL", "Broken Access Control", "Security Misconfiguration", "Cryptographic Failures"],
+    "reponse_correcte": "Broken Access Control",
+    "type": "qcm",
+    "explication": "En 2021, Broken Access Control (contrôles d'accès défaillants) est passé de la 5e à la 1re place. Cela inclut l'IDOR, la violation du moindre privilège, la modification de métadonnées pour élever ses droits."
+  },
+  {
+    "id": "qcyber-19",
+    "question": "Qu'est-ce que le RPO (Recovery Point Objective) dans un PRA ?",
+    "choix": [
+      "Durée maximale d'interruption acceptable",
+      "Perte de données maximale acceptable (exprimée en temps)",
+      "Coût maximal de la reprise",
+      "Nombre maximum de serveurs de secours"
+    ],
+    "reponse_correcte": "Perte de données maximale acceptable (exprimée en temps)",
+    "type": "qcm",
+    "explication": "Le RPO définit la quantité maximale de données qu'on accepte de perdre, exprimée en durée. Un RPO de 2h signifie qu'on doit sauvegarder toutes les 2h pour ne jamais perdre plus de 2h de données."
+  },
+  {
+    "id": "qcyber-20",
+    "question": "Quel principe du modèle Zero Trust stipule que la confiance ne doit jamais être accordée implicitement, même à l'intérieur du réseau de l'entreprise ?",
+    "choix": [
+      "Défense en profondeur",
+      "Moindre privilège",
+      "Ne jamais faire confiance, toujours vérifier (Never Trust, Always Verify)",
+      "Segmentation réseau"
+    ],
+    "reponse_correcte": "Ne jamais faire confiance, toujours vérifier (Never Trust, Always Verify)",
+    "type": "qcm",
+    "explication": "Le Zero Trust repose sur le principe 'Never Trust, Always Verify' (NIST SP 800-207). Contrairement au modèle périmétrique, même les utilisateurs internes doivent être authentifiés et autorisés pour chaque accès."
+  }
+]

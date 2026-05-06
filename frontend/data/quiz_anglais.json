@@ -1,0 +1,122 @@
+﻿[
+  {
+    "id": "qa-01",
+    "type": "qcm",
+    "question": "What does VPN stand for?",
+    "options": ["Virtual Private Network", "Virtual Public Network", "Verified Private Node", "Virtual Protocol Network"],
+    "reponse": "Virtual Private Network",
+    "correction_detaillee": "VPN stands for Virtual Private Network. It creates an encrypted tunnel between the user's device and a remote server, ensuring privacy and security over public networks. VPNs are widely used in corporate environments to allow remote workers to securely access internal resources.",
+    "chapitre_ref": "ang-01",
+    "difficulte": "facile"
+  },
+  {
+    "id": "qa-02",
+    "type": "vrai_faux",
+    "question": "Is this sentence written in passive voice? 'The data was stolen by hackers.'",
+    "options": ["True", "False"],
+    "reponse": "True",
+    "correction_detaillee": "True. The sentence is in passive voice. Structure: Subject (The data) + auxiliary 'was' + past participle (stolen) + optional agent (by hackers). In active voice, it would be: 'Hackers stole the data.' Passive voice is commonly used in IT reports when the focus is on the action/result rather than the doer.",
+    "chapitre_ref": "ang-03",
+    "difficulte": "facile"
+  },
+  {
+    "id": "qa-03",
+    "type": "qcm",
+    "question": "Choose the grammatically correct sentence:",
+    "options": ["He has worked here since 5 years.", "He has worked here for 5 years.", "He is working here since 5 years.", "He worked here for 5 years ago."],
+    "reponse": "He has worked here for 5 years.",
+    "correction_detaillee": "'For' is used with a duration (for 5 years, for 3 months). 'Since' is used with a point in time (since 2020, since Monday). The present perfect (has worked) is correct because the action started in the past and continues to the present. 'He worked here for 5 years ago' is wrong because 'ago' requires past simple without 'for'.",
+    "chapitre_ref": "ang-03",
+    "difficulte": "moyen"
+  },
+  {
+    "id": "qa-04",
+    "type": "translation",
+    "question": "Translate into English: 'Le serveur a été compromis par une attaque par force brute.'",
+    "options": [],
+    "reponse": "The server was compromised by a brute-force attack.",
+    "correction_detaillee": "Key elements: 'a été compromis' = passive voice 'was compromised'. 'attaque par force brute' = brute-force attack (hyphenated as adjective). Note the passive construction: Subject + was/were + past participle + by + agent. Alternative: 'The server has been compromised by a brute-force attack' (present perfect, emphasising current impact).",
+    "chapitre_ref": "ang-02",
+    "difficulte": "moyen"
+  },
+  {
+    "id": "qa-05",
+    "type": "qcm",
+    "question": "Which word means 'faille de sécurité' in English?",
+    "options": ["vulnerability", "breach", "exploit", "All of these can mean 'faille de sécurité' depending on context"],
+    "reponse": "All of these can mean 'faille de sécurité' depending on context",
+    "correction_detaillee": "All three are related but distinct: 'vulnerability' = a weakness in a system that could be exploited. 'breach' = when the security is actually violated (the faille has been exploited). 'exploit' = code/technique that takes advantage of a vulnerability. In a BTS context, 'vulnerability' is the closest translation of 'faille de sécurité'.",
+    "chapitre_ref": "ang-02",
+    "difficulte": "moyen"
+  },
+  {
+    "id": "qa-06",
+    "type": "writing",
+    "question": "Write a professional email subject line to report a network outage affecting all users.",
+    "options": [],
+    "reponse": "[URGENT] Network Outage — All Users Affected — Immediate Action Required",
+    "correction_detaillee": "A good subject line should be: Clear and specific (identify the issue), include urgency level ([URGENT] or [CRITICAL]), mention scope (all users, production environment), and suggest action if needed. Examples of good subject lines: '[INCIDENT] Network Outage — Production — 2024-01-15 09:30 UTC', '[URGENT] Complete Network Failure — Investigation in Progress'. Avoid vague subjects like 'Problem' or 'Issue'.",
+    "chapitre_ref": "ang-05",
+    "difficulte": "moyen"
+  },
+  {
+    "id": "qa-07",
+    "type": "qcm",
+    "question": "Choose the correct modal verb: 'You ___ change your password regularly to maintain security.'",
+    "options": ["should", "would", "could have", "might have"],
+    "reponse": "should",
+    "correction_detaillee": "'Should' expresses a recommendation or best practice. It's the appropriate modal for security recommendations. 'Must' would be stronger (obligation/rule). 'Could' expresses ability or possibility. In IT security documentation, 'should' follows RFC 2119 standard meaning 'recommended but not mandatory', while 'must' means 'mandatory'.",
+    "chapitre_ref": "ang-03",
+    "difficulte": "facile"
+  },
+  {
+    "id": "qa-08",
+    "type": "vrai_faux",
+    "question": "A 'zero-day vulnerability' is a security flaw that has been patched for exactly 0 days.",
+    "options": ["True", "False"],
+    "reponse": "False",
+    "correction_detaillee": "False. A zero-day vulnerability is a security flaw that is UNKNOWN to the software vendor or has not yet been patched. The 'zero' refers to the number of days the developer has had to fix it — meaning zero days of protection. Once a patch is released, it is no longer a zero-day. Zero-day exploits are particularly dangerous because no official fix exists yet.",
+    "chapitre_ref": "ang-02",
+    "difficulte": "moyen"
+  },
+  {
+    "id": "qa-09",
+    "type": "qcm",
+    "question": "What does CDN stand for?",
+    "options": ["Content Delivery Network", "Central Data Node", "Cyber Defence Network", "Cloud Distribution Node"],
+    "reponse": "Content Delivery Network",
+    "correction_detaillee": "CDN stands for Content Delivery Network. It is a geographically distributed network of servers that delivers web content (images, videos, scripts) to users from the nearest server, reducing latency. Major CDN providers include Cloudflare, Akamai, and AWS CloudFront. CDNs also provide DDoS protection and improve website availability.",
+    "chapitre_ref": "ang-01",
+    "difficulte": "facile"
+  },
+  {
+    "id": "qa-10",
+    "type": "translation",
+    "question": "Translate into English: 'Mettre en place une politique de sauvegarde des données.'",
+    "options": [],
+    "reponse": "Implement a data backup policy.",
+    "correction_detaillee": "'Mettre en place' = implement / set up / establish / deploy. 'politique' = policy. 'sauvegarde des données' = data backup / data backup policy. Other valid translations: 'Set up a data backup policy', 'Establish a backup policy for data', 'Deploy a data backup strategy'. In a professional IT context, 'implement' is most commonly used for policies and systems.",
+    "chapitre_ref": "ang-05",
+    "difficulte": "moyen"
+  },
+  {
+    "id": "qa-11",
+    "type": "qcm",
+    "question": "What is the passive voice transformation of: 'The administrator reset the password'?",
+    "options": ["The password was reset by the administrator.", "The password has reset by the administrator.", "The password is resetting by the administrator.", "The password reset by the administrator."],
+    "reponse": "The password was reset by the administrator.",
+    "correction_detaillee": "Passive voice formula: Object → Subject + was/were + past participle + by + original subject. 'Reset' is irregular: reset/reset/reset (same form for all tenses). 'The administrator reset the password' (past simple active) → 'The password was reset by the administrator' (past simple passive). The agent 'by the administrator' can be omitted if not important.",
+    "chapitre_ref": "ang-03",
+    "difficulte": "moyen"
+  },
+  {
+    "id": "qa-12",
+    "type": "cas_pratique",
+    "question": "Read this CVE summary and identify: (1) vulnerability type, (2) impact, (3) affected system.\n\nCVE-2023-1234: A SQL injection vulnerability exists in ExampleApp version 2.1.3 and earlier. An unauthenticated remote attacker can exploit this vulnerability to execute arbitrary SQL commands, potentially leading to unauthorized access to the database, data exfiltration, and in some configurations, remote code execution. CVSS Score: 9.8 (Critical).",
+    "options": [],
+    "reponse": "(1) SQL injection, (2) Unauthorized database access, data theft, potential RCE — CVSS 9.8 Critical, (3) ExampleApp v2.1.3 and earlier",
+    "correction_detaillee": "(1) Vulnerability type: SQL injection — keywords: 'SQL injection vulnerability', 'execute arbitrary SQL commands'. (2) Impact: unauthorized database access + data exfiltration + potential remote code execution, rated 9.8 CRITICAL on CVSS scale (out of 10, 9.0+ = Critical). (3) Affected system: ExampleApp version 2.1.3 and all earlier versions. Reading strategy: in CVE advisories, look for the pattern 'A [type] vulnerability exists in [product] [version]. An attacker can [impact]. CVSS Score: [score]'.",
+    "chapitre_ref": "ang-04",
+    "difficulte": "difficile"
+  }
+]

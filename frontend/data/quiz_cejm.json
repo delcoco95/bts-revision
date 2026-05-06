@@ -1,0 +1,167 @@
+[
+  {
+    "id": "q-cejm-001",
+    "type": "qcm",
+    "subject": "CEJM",
+    "domaine": "Droit",
+    "chapitre": "Structures juridiques",
+    "question": "Quelle forme juridique impose une responsabilité ILLIMITÉE et SOLIDAIRE à tous les associés ?",
+    "choices": ["A. La SARL", "B. La SAS", "C. La SNC", "D. La SA"],
+    "correct": "C",
+    "correction": "La SNC (Société en Nom Collectif) impose à tous les associés une responsabilité indéfinie (sur tout leur patrimoine personnel) et solidaire (chaque associé répond de la totalité des dettes). C'est la forme juridique la plus risquée pour le patrimoine personnel. La SARL, SAS et SA offrent une responsabilité limitée aux apports."
+  },
+  {
+    "id": "q-cejm-002",
+    "type": "vrai_faux",
+    "subject": "CEJM",
+    "domaine": "Droit",
+    "chapitre": "RGPD",
+    "question": "Le RGPD s'applique UNIQUEMENT aux entreprises dont le siège social est situé dans l'Union Européenne.",
+    "choices": ["Vrai", "Faux"],
+    "correct": "Faux",
+    "correction": "FAUX. Le RGPD s'applique à toute organisation traitant des données de résidents européens, qu'elle soit établie ou non dans l'UE. Une entreprise américaine, chinoise ou autre qui collecte des données de citoyens européens est soumise au RGPD. C'est le principe d'extraterritorialité du règlement (art. 3 RGPD)."
+  },
+  {
+    "id": "q-cejm-003",
+    "type": "qcm",
+    "subject": "CEJM",
+    "domaine": "Economie",
+    "chapitre": "Financement de l'entreprise",
+    "question": "Qu'est-ce que le seuil de rentabilité ?",
+    "choices": ["A. Le montant total des dettes de l'entreprise", "B. Le chiffre d'affaires à partir duquel l'entreprise commence à réaliser des bénéfices", "C. Le bénéfice net divisé par le chiffre d'affaires", "D. La différence entre l'actif et le passif du bilan"],
+    "correct": "B",
+    "correction": "Le seuil de rentabilité (ou point mort) est le chiffre d'affaires minimum que l'entreprise doit atteindre pour couvrir la totalité de ses charges (fixes + variables) et ne pas être déficitaire. Formule : SR = Charges fixes / Taux de marge sur coûts variables (TMCV). En dessous du SR = perte ; au-dessus = bénéfice."
+  },
+  {
+    "id": "q-cejm-004",
+    "type": "cas_pratique",
+    "subject": "CEJM",
+    "domaine": "Droit",
+    "chapitre": "RGPD",
+    "question": "Une PME de 80 salariés subit une cyberattaque : des données personnelles de 2 000 clients (noms, emails, données bancaires) sont exfiltrées. Quelles sont ses obligations au titre du RGPD ?",
+    "choices": [],
+    "correct": "",
+    "correction": "OBLIGATIONS DE LA PME : 1) NOTIFICATION CNIL (obligatoire) : notifier la violation à la CNIL dans un délai de 72 heures maximum après en avoir pris connaissance (art. 33 RGPD). Contenu : nature de la violation, catégories/nombre de personnes, conséquences probables, mesures prises. 2) INFORMATION DES PERSONNES (selon le risque) : les données bancaires étant concernées, le risque est élevé → obligation d'informer les 2 000 clients (art. 34 RGPD). L'information doit être claire, précise, dans les meilleurs délais. 3) DOCUMENTATION : consigner la violation dans le registre interne des violations. 4) MESURES CORRECTIVES : identifier la faille, la corriger, renforcer la sécurité. 5) SANCTIONS POSSIBLES : si manquements constatés → jusqu'à 4% du CA mondial annuel ou 20M€."
+  },
+  {
+    "id": "q-cejm-005",
+    "type": "qcm",
+    "subject": "CEJM",
+    "domaine": "Droit",
+    "chapitre": "RGPD",
+    "question": "Quel est le délai légal pour notifier une violation de données personnelles à la CNIL ?",
+    "choices": ["A. 24 heures", "B. 48 heures", "C. 72 heures", "D. 7 jours"],
+    "correct": "C",
+    "correction": "L'article 33 du RGPD impose une notification à l'autorité de contrôle compétente (en France : la CNIL) dans un délai de 72 heures après avoir pris connaissance d'une violation de données personnelles. Si ce délai ne peut être respecté, la notification doit être accompagnée d'une justification du retard. Attention : certaines violations à faible risque peuvent ne pas nécessiter de notification."
+  },
+  {
+    "id": "q-cejm-006",
+    "type": "qcm",
+    "subject": "CEJM",
+    "domaine": "Economie",
+    "chapitre": "Marché et concurrence",
+    "question": "L'élasticité-prix de la demande d'un bien est de -2. Que signifie ce résultat ?",
+    "choices": ["A. Une hausse de 1% du prix entraîne une baisse de 2% de la quantité demandée", "B. Une baisse de 1% du prix entraîne une hausse de 1% de la quantité demandée", "C. La demande est parfaitement inélastique", "D. Une hausse de 2% du prix entraîne une hausse de 1% de la demande"],
+    "correct": "A",
+    "correction": "L'élasticité-prix de la demande (Ed) mesure la sensibilité de la demande à une variation de prix. Ed = (variation Q/Q) / (variation P/P). Avec Ed = -2 : une variation de prix de +1% entraîne une variation de la demande de -2% → la demande est très élastique (sensible au prix). Le signe négatif reflète la loi de la demande (prix augmente → demande baisse). Si |Ed| > 1 : demande élastique. Si |Ed| < 1 : demande inélastique."
+  },
+  {
+    "id": "q-cejm-007",
+    "type": "vrai_faux",
+    "subject": "CEJM",
+    "domaine": "Droit du travail",
+    "chapitre": "Contrat de travail",
+    "question": "Un CDD peut être rompu avant son terme uniquement par accord mutuel entre l'employeur et le salarié.",
+    "choices": ["Vrai", "Faux"],
+    "correct": "Faux",
+    "correction": "FAUX. Un CDD peut être rompu avant son terme dans 5 cas légaux (art. L1243-1 CT) : 1) Accord commun des parties (rupture anticipée amiable) ; 2) Faute grave ou lourde du salarié ; 3) Force majeure ; 4) Inaptitude constatée par le médecin du travail ; 5) À l'initiative du salarié qui justifie d'une embauche en CDI ailleurs. La rupture anticipée injustifiée d'un CDD par l'employeur oblige à verser au salarié les salaires restants jusqu'au terme du contrat."
+  },
+  {
+    "id": "q-cejm-008",
+    "type": "qcm",
+    "subject": "CEJM",
+    "domaine": "Management",
+    "chapitre": "Management et organisation",
+    "question": "Quelle théorie associe-t-on à la 'pyramide des besoins' établissant une hiérarchie des motivations humaines ?",
+    "choices": ["A. Frederick Taylor", "B. Abraham Maslow", "C. Frederick Herzberg", "D. Douglas McGregor"],
+    "correct": "B",
+    "correction": "Abraham Maslow (psychologue américain, 1943) a théorisé la pyramide des besoins à 5 niveaux : 1) Besoins physiologiques (manger, dormir) ; 2) Sécurité (emploi stable, logement) ; 3) Appartenance sociale (relations, équipe) ; 4) Estime (reconnaissance, statut) ; 5) Accomplissement de soi (réalisation, créativité). Maslow postule que les besoins de niveau inférieur doivent être satisfaits avant que les besoins supérieurs deviennent des motivateurs. Herzberg complétera avec la théorie bi-factorielle (hygiène vs motivation)."
+  },
+  {
+    "id": "q-cejm-009",
+    "type": "cas_pratique",
+    "subject": "CEJM",
+    "domaine": "Numerique",
+    "chapitre": "Transformation numérique",
+    "question": "Une startup SaaS hésite entre IaaS, PaaS et SaaS pour développer son application. Expliquez ces 3 modèles et conseillez-la.",
+    "choices": [],
+    "correct": "",
+    "correction": "LES 3 MODÈLES CLOUD : IaaS (Infrastructure as a Service) : location de ressources d'infrastructure virtualisées (serveurs, stockage, réseau). L'entreprise gère OS, middleware, applications. Ex: AWS EC2, Microsoft Azure VMs, Google Compute Engine. POUR QUI : équipes IT expérimentées souhaitant contrôle total. PaaS (Platform as a Service) : environnement complet de développement et déploiement. Le fournisseur gère l'infrastructure et le middleware. L'entreprise se concentre sur le code. Ex: Heroku, Google App Engine, AWS Elastic Beanstalk. POUR QUI : développeurs voulant se concentrer sur le code sans gérer l'infra. SaaS (Software as a Service) : application prête à l'emploi accessible via navigateur. Rien à installer ni maintenir. Ex: Salesforce, Google Workspace, Slack, GitHub. POUR QUI : utilisateurs métiers, pas de compétences IT requises. CONSEIL POUR LA STARTUP : utiliser PaaS (ex: Heroku ou AWS Elastic Beanstalk) pour développer et déployer rapidement l'application, avec éventuellement des briques IaaS pour les composants nécessitant plus de contrôle (base de données, CDN), et des SaaS pour les outils métier (CRM, comptabilité, communication)."
+  },
+  {
+    "id": "q-cejm-010",
+    "type": "qcm",
+    "subject": "CEJM",
+    "domaine": "Economie",
+    "chapitre": "L'entreprise acteur économique",
+    "question": "Qu'est-ce que la valeur ajoutée (VA) d'une entreprise ?",
+    "choices": ["A. Le bénéfice net après impôts", "B. La différence entre la production et les consommations intermédiaires", "C. Le chiffre d'affaires hors taxes", "D. La somme des salaires versés aux employés"],
+    "correct": "B",
+    "correction": "La valeur ajoutée (VA) mesure la richesse réellement créée par l'entreprise. VA = Production de l'exercice - Consommations intermédiaires. Les consommations intermédiaires sont les biens et services achetés à d'autres entreprises et incorporés dans la production (matières premières, énergie, sous-traitance). La VA sert à rémunérer : les salariés (salaires), l'État (impôts), les actionnaires (dividendes), les créanciers (intérêts), et l'entreprise elle-même (autofinancement). La somme des VA de tous les agents économiques = PIB."
+  },
+  {
+    "id": "q-cejm-011",
+    "type": "qcm",
+    "subject": "CEJM",
+    "domaine": "Economie",
+    "chapitre": "Marché et concurrence",
+    "question": "Dans quel type de structure de marché y a-t-il un seul vendeur face à de très nombreux acheteurs ?",
+    "choices": ["A. Oligopole", "B. Monopsone", "C. Duopole", "D. Monopole"],
+    "correct": "D",
+    "correction": "Le monopole est une structure de marché caractérisée par un seul offreur (vendeur) face à une multitude de demandeurs (acheteurs). Le monopoleur fixe son prix librement (price maker), maximise son profit en égalisant recette marginale et coût marginal. Ex: SNCF sur certaines lignes, EDF historiquement sur l'électricité, certains brevets pharmaceutiques. À distinguer du monopsone (un seul acheteur) et de l'oligopole (quelques vendeurs). Le monopole peut être naturel (économies d'échelle) ou artificiel (brevet, licence)."
+  },
+  {
+    "id": "q-cejm-012",
+    "type": "vrai_faux",
+    "subject": "CEJM",
+    "domaine": "Droit du travail",
+    "chapitre": "Contrat de travail",
+    "question": "Un contrat d'apprentissage est obligatoirement un CDI (Contrat à Durée Indéterminée).",
+    "choices": ["Vrai", "Faux"],
+    "correct": "Faux",
+    "correction": "FAUX. Le contrat d'apprentissage est un CDD (Contrat à Durée Déterminée) dans la grande majorité des cas, d'une durée correspondant au cycle de formation préparé (1 à 3 ans). Il peut exceptionnellement prendre la forme d'un CDI lorsque l'apprenti est embauché avant la signature du contrat d'apprentissage. La rémunération est un pourcentage du SMIC variable selon l'âge et l'année de formation (de 27% à 100% du SMIC)."
+  },
+  {
+    "id": "q-cejm-013",
+    "type": "qcm",
+    "subject": "CEJM",
+    "domaine": "Droit",
+    "chapitre": "Droit du travail",
+    "question": "Qu'est-ce que le Comité Social et Économique (CSE) ?",
+    "choices": ["A. Un organe de direction de l'entreprise composé de managers", "B. Une instance représentative du personnel obligatoire dans les entreprises d'au moins 11 salariés", "C. Un comité gouvernemental de contrôle des entreprises", "D. Une association professionnelle des employeurs"],
+    "correct": "B",
+    "correction": "Le CSE (Comité Social et Économique) est l'instance représentative du personnel unique résultant de la fusion des délégués du personnel (DP), du comité d'entreprise (CE) et du CHSCT, créée par les ordonnances Macron de 2017. Obligatoire dès 11 salariés. Missions : expression collective des salariés, consultation sur les orientations stratégiques, les conditions de travail, l'emploi, la formation. Dans les entreprises de 50 salariés et plus : attributions économiques élargies, budget de fonctionnement, expertises. Membres élus par les salariés pour 4 ans."
+  },
+  {
+    "id": "q-cejm-014",
+    "type": "cas_pratique",
+    "subject": "CEJM",
+    "domaine": "Management",
+    "chapitre": "Management et organisation",
+    "question": "Une ESN (Entreprise de Services du Numérique) emploie 500 personnes réparties en équipes projet et en pôles d'expertise technique. Quelle structure organisationnelle est la plus adaptée ? Justifiez.",
+    "choices": [],
+    "correct": "",
+    "correction": "STRUCTURE RECOMMANDÉE : La structure MATRICIELLE est la plus adaptée pour une ESN de 500 personnes. PRINCIPE : Chaque collaborateur a une double appartenance : (1) verticale à un pôle d'expertise (ex: développement Java, DevOps, cybersécurité, data) et (2) horizontale à un projet client. AVANTAGES POUR UNE ESN : Flexibilité dans l'affectation des ressources aux projets clients ; Partage et capitalisation des expertises techniques entre projets ; Adaptation rapide aux demandes variées des clients ; Montée en compétences continue via les pôles métier. INCONVÉNIENTS À GÉRER : Double hiérarchie (chef de projet + responsable technique) pouvant créer des conflits ; Nécessité d'une communication forte entre les deux axes ; Risque de surcharge si un expert est sollicité sur trop de projets simultanément. MISE EN OEUVRE : Utiliser des outils de gestion de ressources (ERP, outil de staffing), des méthodes agiles (Scrum/Kanban) au niveau projets, et des communautés de pratique (CoP) pour animer les pôles experts."
+  },
+  {
+    "id": "q-cejm-015",
+    "type": "qcm",
+    "subject": "CEJM",
+    "domaine": "Droit",
+    "chapitre": "Structures juridiques",
+    "question": "Quel est le capital social minimum légal pour créer une SARL en France ?",
+    "choices": ["A. 1 euro", "B. 1 000 euros", "C. 7 500 euros", "D. 37 000 euros"],
+    "correct": "A",
+    "correction": "Depuis la loi du 1er août 2003 (Loi Dutreil), le capital minimum d'une SARL est fixé à 1 euro symbolique. En pratique, un capital trop faible signale un manque de crédibilité auprès des banques, fournisseurs et clients. Les professionnels recommandent un capital cohérent avec l'activité (au moins quelques milliers d'euros). À distinguer : la SA exige un capital minimum de 37 000€ (225 000€ si appel public à l'épargne). La SAS et la SARL ont toutes deux un capital minimum de 1€. La SNC n'a pas de capital minimum légal."
+  }
+]

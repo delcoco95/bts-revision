@@ -1,0 +1,170 @@
+﻿[
+  {
+    "id": "sm-01",
+    "titre": "Analyse d'un réseau et adressage IP",
+    "duree": "2h",
+    "niveau": "BTS SIO",
+    "description": "Ce sujet porte sur l'adressage réseau, les conversions binaire/hexadécimale et l'application de l'algèbre de Boole aux règles de sécurité réseau.",
+    "exercices": [
+      {
+        "numero": 1,
+        "titre": "Conversions et adressage",
+        "enonce": "Répondez aux questions suivantes sur les conversions et l'adressage IP.",
+        "points": 8,
+        "questions": [
+          {
+            "numero": "1.1",
+            "question": "Convertir l'adresse IP 192.168.10.5 en notation binaire complète (32 bits).",
+            "points": 2,
+            "correction": "192=11000000, 168=10101000, 10=00001010, 5=00000101. Adresse complète: 11000000.10101000.00001010.00000101"
+          },
+          {
+            "numero": "1.2",
+            "question": "Sachant que le masque réseau est /27 (255.255.255.224), quel est le nombre maximum d'hôtes utilisables dans ce sous-réseau ?",
+            "points": 2,
+            "correction": "/27 signifie 27 bits pour le réseau, 5 bits pour les hôtes. Nombre d'hôtes = 2^5 - 2 = 32 - 2 = 30 hôtes utilisables (on soustrait l'adresse réseau et l'adresse de broadcast)."
+          },
+          {
+            "numero": "1.3",
+            "question": "Convertir le masque 255.255.255.224 en hexadécimal.",
+            "points": 2,
+            "correction": "255=FF, 255=FF, 255=FF, 224=E0 (128+64+32=224 en décimal = 11100000 en binaire = E0 en hexa). Masque hexa: FF.FF.FF.E0"
+          },
+          {
+            "numero": "1.4",
+            "question": "L'adresse MAC d'une carte réseau est AC:DE:48:23:45:67. Convertir le premier octet AC en décimal et en binaire.",
+            "points": 2,
+            "correction": "AC en hexa = A×16 + C = 10×16 + 12 = 160+12 = 172 en décimal. 172 en binaire: 172=128+32+8+4=10101100"
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "titre": "Algèbre de Boole et pare-feu",
+        "enonce": "Application de l'algèbre de Boole aux règles de sécurité réseau.",
+        "points": 7,
+        "questions": [
+          {
+            "numero": "2.1",
+            "question": "Un administrateur réseau définit les règles de pare-feu suivantes : Règle A : autoriser si (port=443 ET protocole=HTTPS). Règle B : autoriser si (port=80 ET protocole=HTTP). Écrire l'expression booléenne globale 'Autoriser' en fonction des variables p443, p80, HTTP, HTTPS.",
+            "points": 2,
+            "correction": "Autoriser = (p443 ∧ HTTPS) ∨ (p80 ∧ HTTP)"
+          },
+          {
+            "numero": "2.2",
+            "question": "Dresser la table de vérité complète pour l'expression : F = A ∧ (B ∨ ¬C) avec toutes les combinaisons de A, B, C.",
+            "points": 2,
+            "correction": "8 lignes (2^3=8). A=0: F=0 toujours. A=1,B=0,C=0: F=1∧(0∨1)=1. A=1,B=0,C=1: F=1∧(0∨0)=0. A=1,B=1,C=0: F=1∧(1∨1)=1. A=1,B=1,C=1: F=1∧(1∨0)=1. Donc F=1 pour (1,0,0), (1,1,0), (1,1,1) et F=0 pour tous les autres."
+          },
+          {
+            "numero": "2.3",
+            "question": "Simplifier l'expression booléenne suivante en utilisant les lois de De Morgan et les propriétés de l'algèbre de Boole : F = ¬(¬A ∧ ¬B) ∨ (A ∧ B).",
+            "points": 3,
+            "correction": "F = ¬(¬A ∧ ¬B) ∨ (A ∧ B). Étape 1 — De Morgan sur ¬(¬A ∧ ¬B) = ¬(¬A) ∨ ¬(¬B) = A ∨ B. Donc F = (A ∨ B) ∨ (A ∧ B). Étape 2 — Absorption : (A ∨ B) ∨ (A ∧ B) = A ∨ B (car A∧B implique A∨B). Résultat : F = A ∨ B"
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "titre": "Application réseau",
+        "enonce": "Calculs appliqués sur les réseaux IP.",
+        "points": 5,
+        "questions": [
+          {
+            "numero": "3.1",
+            "question": "Un réseau est 172.16.0.0/20. Calculer : l'adresse de broadcast, l'adresse de la première machine, l'adresse de la dernière machine.",
+            "points": 2,
+            "correction": "/20 = masque 255.255.240.0 = 11111111.11111111.11110000.00000000. Réseau: 172.16.0.0. Broadcast: 172.16.15.255 (les 12 bits hôtes à 1). Première machine: 172.16.0.1. Dernière machine: 172.16.15.254. Nombre d'hôtes: 2^12-2=4094."
+          },
+          {
+            "numero": "3.2",
+            "question": "Vous devez créer 6 sous-réseaux à partir du réseau 192.168.1.0/24. Quel préfixe minimum faut-il utiliser ? Combien d'hôtes par sous-réseau ? Lister les 3 premiers sous-réseaux.",
+            "points": 3,
+            "correction": "Pour 6 sous-réseaux, il faut 2^n ≥ 6, donc n=3 bits supplémentaires. Nouveau préfixe: /24+3=/27. Hôtes par sous-réseau: 2^5-2=30. Sous-réseaux: 192.168.1.0/27 (hôtes .1-.30), 192.168.1.32/27 (hôtes .33-.62), 192.168.1.64/27 (hôtes .65-.94)."
+          }
+        ]
+      }
+    ],
+    "bareme_total": 20
+  },
+  {
+    "id": "sm-02",
+    "titre": "Sécurité et chiffrement RSA",
+    "duree": "2h",
+    "niveau": "BTS SIO",
+    "description": "Ce sujet porte sur la cryptographie mathématique (algorithme RSA) et l'application des probabilités à la sécurité informatique.",
+    "exercices": [
+      {
+        "numero": 1,
+        "titre": "Chiffrement RSA",
+        "enonce": "Application de l'algorithme RSA pour la cryptographie asymétrique.",
+        "points": 10,
+        "questions": [
+          {
+            "numero": "1.1",
+            "question": "Vérifier que p=7 et q=13 sont premiers. Calculer n=p×q.",
+            "points": 1,
+            "correction": "7 est premier (diviseurs: 1 et 7 uniquement). 13 est premier (diviseurs: 1 et 13 uniquement). n = 7 × 13 = 91."
+          },
+          {
+            "numero": "1.2",
+            "question": "Calculer φ(n) = (p-1)(q-1). Expliquer la signification de φ(n).",
+            "points": 2,
+            "correction": "φ(91) = (7-1)(13-1) = 6 × 12 = 72. φ(n) est l'indicatrice d'Euler: le nombre d'entiers entre 1 et n qui sont premiers avec n (pgcd=1)."
+          },
+          {
+            "numero": "1.3",
+            "question": "Choisir e=5. Vérifier que pgcd(5, 72)=1 en utilisant l'algorithme d'Euclide.",
+            "points": 2,
+            "correction": "pgcd(72,5): 72=5×14+2, pgcd(5,2): 5=2×2+1, pgcd(2,1)=1. Donc pgcd(5,72)=1 ✓. e=5 est valide car premier avec φ(n)=72."
+          },
+          {
+            "numero": "1.4",
+            "question": "Calculer d = e^(-1) mod φ(n) = 5^(-1) mod 72. Utiliser l'algorithme d'Euclide étendu ou une méthode par essai.",
+            "points": 3,
+            "correction": "On cherche d tel que 5d ≡ 1 [72]. Par essai: 5×1=5, 5×2=10, 5×13=65, 5×14=70, 5×15=75=72+3, 5×29=145=2×72+1 ✓. Donc d=29. Vérification: 5×29=145=2×72+1≡1[72] ✓"
+          },
+          {
+            "numero": "1.5",
+            "question": "Chiffrer le message m=3 avec la clé publique (91, 5). Déchiffrer ensuite c avec la clé privée (91, 29) pour vérifier.",
+            "points": 2,
+            "correction": "Chiffrement: c = m^e mod n = 3^5 mod 91 = 243 mod 91. 243 = 2×91 + 61. Donc c = 61. Déchiffrement: m = c^d mod n = 61^29 mod 91. Calcul par exponentiations successives: 61²=3721≡3721-40×91=3721-3640=81[91], 61⁴≡81²=6561≡6561-72×91=6561-6552=9[91], 61⁸≡81[91], 61^16≡81²≡9[91], 61^29=61^16×61^8×61^4×61^1≡9×81×9×61=9×81×549≡9×81×(549-6×91)≡9×81×3=9×243=9×(243-2×91)=9×61=549≡549-6×91=549-546=3[91] ✓. m=3 retrouvé ✓"
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "titre": "Probabilités et sécurité",
+        "enonce": "Application des probabilités à des scénarios de sécurité informatique.",
+        "points": 10,
+        "questions": [
+          {
+            "numero": "2.1",
+            "question": "Un attaquant essaie de deviner un mot de passe de 8 caractères composé uniquement de lettres minuscules (26 lettres). Combien de mots de passe possibles existe-t-il ?",
+            "points": 2,
+            "correction": "26^8 = 208 827 064 576 ≈ 2.09 × 10^11 combinaisons possibles."
+          },
+          {
+            "numero": "2.2",
+            "question": "L'attaquant peut tester 1 000 mots de passe par seconde. Quelle est la probabilité de trouver le mot de passe en moins d'une heure ? (en supposant une recherche exhaustive aléatoire sans répétition)",
+            "points": 2,
+            "correction": "En 1 heure = 3600 secondes → 3 600 000 essais. P = 3 600 000 / 208 827 064 576 ≈ 0.0000172 ≈ 0.00172%. La probabilité est très faible. Si on ajoute chiffres+majuscules (62 caractères): 62^8 ≈ 2.18×10^14, encore plus difficile."
+          },
+          {
+            "numero": "2.3",
+            "question": "Un système de détection d'intrusion (IDS) a les propriétés suivantes: P(alerte | intrusion) = 0.95 (taux de détection), P(alerte | pas d'intrusion) = 0.02 (faux positifs). On sait que P(intrusion) = 0.01. Calculer P(intrusion | alerte) avec le théorème de Bayes.",
+            "points": 3,
+            "correction": "Théorème de Bayes: P(I|A) = P(A|I)×P(I) / P(A). P(A) = P(A|I)×P(I) + P(A|¬I)×P(¬I) = 0.95×0.01 + 0.02×0.99 = 0.0095 + 0.0198 = 0.0293. P(I|A) = 0.95×0.01 / 0.0293 = 0.0095/0.0293 ≈ 0.324 ≈ 32.4%. Malgré un bon taux de détection, seulement 32.4% des alertes correspondent à une vraie intrusion, à cause du faible taux d'intrusion réel."
+          },
+          {
+            "numero": "2.4",
+            "question": "Sur 30 jours, un serveur web subit en moyenne 2 attaques DDoS par mois. En modélisant par une loi de Poisson de paramètre λ=2, calculer la probabilité de : (a) exactement 0 attaque, (b) au moins 1 attaque, (c) plus de 3 attaques.",
+            "points": 3,
+            "correction": "Loi de Poisson P(X=k) = λ^k × e^(-λ) / k! avec λ=2, e^(-2)≈0.1353. (a) P(X=0)=e^(-2)≈0.1353 soit 13.5%. (b) P(X≥1)=1-P(X=0)=1-0.1353=0.8647 soit 86.5%. (c) P(X>3)=1-P(X≤3)=1-[P(0)+P(1)+P(2)+P(3)]. P(1)=2e^(-2)≈0.2707, P(2)=2e^(-2)≈0.2707, P(3)=(8/6)e^(-2)≈0.1804. P(X≤3)=0.1353+0.2707+0.2707+0.1804=0.8571. P(X>3)=1-0.8571=0.1429 soit 14.3%."
+          }
+        ]
+      }
+    ],
+    "bareme_total": 20
+  }
+]

@@ -1,0 +1,103 @@
+﻿[
+  {
+    "id": "sujet-culture-01",
+    "titre": "Le numérique et la vie privée",
+    "type": "synthese",
+    "difficulte": "standard",
+    "duree_estimee": "2h30",
+    "consigne": "À partir du corpus de trois documents proposés ci-dessous, vous rédigerez une synthèse de 300 mots environ, organisée en deux parties thématiques. Vous présenterez les documents dans l'introduction sans donner votre avis personnel. Aucune conclusion n'est attendue.",
+    "corpus": [
+      {
+        "doc_id": "D1",
+        "titre": "Le RGPD, bouclier ou illusion ?",
+        "auteur": "Sophie Mercier, juriste en droit numérique",
+        "source": "Revue Numérique & Droit, n°47, mars 2023",
+        "type": "article_specialise",
+        "texte": "Depuis son entrée en vigueur en mai 2018, le Règlement Général sur la Protection des Données a profondément transformé le paysage juridique européen. Pour la première fois, les citoyens disposent d'un droit effectif à l'accès, à la rectification et à l'oubli de leurs données personnelles. Les premières sanctions tombent : Amazon écope de 746 millions d'euros d'amende en 2021, signal fort envoyé aux géants du numérique. Pourtant, des limites persistent : la majorité des internautes clique sur 'J'accepte' sans lire les politiques de confidentialité, réduisant le consentement éclairé à une formalité. Le règlement protège, mais encore faut-il que les utilisateurs s'en emparent réellement."
+      },
+      {
+        "doc_id": "D2",
+        "titre": "La donnée, nouveau pétrole ou nouvelle liberté ?",
+        "auteur": "Marc Fontaine, entrepreneur et fondateur d'une startup EdTech",
+        "source": "Tribune publiée sur TechCrunch France, janvier 2023",
+        "type": "tribune",
+        "texte": "On présente souvent la collecte de données comme une menace. C'est oublier l'envers du décor : les services gratuits que nous utilisons quotidiennement — Gmail, Google Maps, Spotify — ne le sont que parce que nos données en constituent la contrepartie. Ce modèle a permis l'émergence d'une économie numérique créatrice d'emplois et de services inaccessibles il y a vingt ans. Brider la collecte de données au nom de la vie privée risque de freiner l'innovation européenne face à des concurrents américains et chinois moins contraints. La vraie question n'est pas de savoir si nos données sont collectées, mais comment elles sont utilisées et par qui."
+      },
+      {
+        "doc_id": "D3",
+        "titre": "Cambridge Analytica : quand les données changent des élections",
+        "auteur": "Rédaction",
+        "source": "Le Monde Numérique, dossier spécial, 15 octobre 2022",
+        "type": "article_journalistique",
+        "texte": "En 2018, le scandale Cambridge Analytica révélait au grand public une réalité que les spécialistes connaissaient depuis longtemps : les données personnelles collectées sur les réseaux sociaux peuvent être utilisées pour modeler l'opinion politique à grande échelle. Quatre-vingt-sept millions de profils Facebook avaient été exploités sans consentement pour cibler des messages politiques lors du Brexit et de l'élection de Donald Trump. Depuis, la méfiance vis-à-vis des plateformes n'a cessé de croître. Selon un sondage YouGov (2022), 71% des Français considèrent que leurs données personnelles sont insuffisamment protégées, révélant un fossé croissant entre les promesses des acteurs du numérique et la perception citoyenne."
+      }
+    ],
+    "correction": {
+      "plan_detaille": {
+        "introduction": "Accroche : '71% des Français estiment leurs données insuffisamment protégées (YouGov, 2022). Ce chiffre illustre une inquiétude grandissante...' → Présentation du corpus : 3 documents (article juridique de S. Mercier, tribune de M. Fontaine, article du Monde Numérique) → Problématique : Dans quelle mesure le développement du numérique menace-t-il la protection de la vie privée, et quelles réponses ce défi appelle-t-il ? → Plan : nous verrons d'abord que la vie privée est exposée à des risques réels, avant d'examiner les réponses — juridiques et économiques — apportées.",
+        "partie_1": {
+          "titre": "I. Une vie privée exposée : les risques documentés de la collecte de données",
+          "sous_partie_A": "A. L'exploitation à grande échelle des données personnelles : le cas Cambridge Analytica (D3) montre que 87M de profils ont été détournés sans consentement pour influencer des processus démocratiques.",
+          "sous_partie_B": "B. Un consentement souvent formel : S. Mercier (D1) souligne que les internautes acceptent les CGU sans les lire, vidant le consentement éclairé de sa substance."
+        },
+        "partie_2": {
+          "titre": "II. Des réponses contrastées : protection réglementaire et enjeux économiques",
+          "sous_partie_A": "A. Le RGPD, bouclier juridique réel mais imparfait : les sanctions existent (Amazon, 746M€), mais leur effet dissuasif reste à prouver sur les comportements des utilisateurs (D1).",
+          "sous_partie_B": "B. Le modèle économique des données, entre innovation et surveillance : M. Fontaine (D2) rappelle que les services numériques gratuits reposent sur la monétisation des données — une dépendance difficile à remettre en cause sans pénaliser l'innovation."
+        }
+      },
+      "synthese_redigee": "71% des Français estiment que leurs données personnelles sont insuffisamment protégées, révèle un sondage YouGov de 2022. Ce constat illustre une défiance croissante envers les acteurs du numérique. Ce corpus de trois documents — un article de juriste spécialisée (Revue Numérique & Droit, 2023), une tribune d'entrepreneur publiée sur TechCrunch France (2023) et un dossier du Monde Numérique (2022) — interroge les conditions de protection de la vie privée à l'ère numérique. Dans quelle mesure le développement du numérique constitue-t-il une menace pour la vie privée, et quelles réponses ce défi appelle-t-il ? Nous verrons d'abord que la vie privée est effectivement exposée à des risques documentés, avant d'examiner les réponses — juridiques et économiques — proposées.\n\nI. UNE VIE PRIVÉE EXPOSÉE AUX RISQUES DE LA COLLECTE DE DONNÉES\n\nLe scandale Cambridge Analytica, rappelé par Le Monde Numérique, illustre dramatiquement ces risques : 87 millions de profils Facebook ont été exploités sans consentement pour cibler des messages politiques lors du Brexit et de l'élection présidentielle américaine de 2016. Au-delà de ce cas extrême, Sophie Mercier souligne que le problème est plus systémique : la majorité des internautes accepte les politiques de confidentialité sans les lire, réduisant le consentement — pourtant pierre angulaire du droit numérique — à une simple formalité. La protection de la vie privée se heurte ainsi autant aux pratiques des plateformes qu'aux comportements des utilisateurs eux-mêmes.\n\nII. DES RÉPONSES CONTRASTÉES : CADRE RÉGLEMENTAIRE ET ENJEUX ÉCONOMIQUES\n\nFace à ces risques, le RGPD représente une avancée juridique significative : Sophie Mercier rappelle que les premières sanctions, comme l'amende record de 746 millions d'euros infligée à Amazon en 2021, signalent une volonté de régulation effective. Cependant, cette vision protectrice est nuancée par Marc Fontaine, qui soulève un paradoxe économique : les services numériques gratuits — messagerie, cartographie, streaming — ne subsistent que grâce à la monétisation des données personnelles. Réduire cette collecte au nom de la vie privée risquerait, selon lui, de fragiliser l'innovation européenne face à des concurrents moins contraints. Les documents révèlent ainsi une tension profonde entre protection des individus et dynamisme économique du secteur numérique.",
+      "conseils_jury": [
+        "Bien équilibrer les deux parties en longueur",
+        "Citer les trois documents dans chaque partie si possible",
+        "Ne jamais conclure par une opinion personnelle",
+        "Soigner les connecteurs logiques en début de paragraphe"
+      ]
+    }
+  },
+  {
+    "id": "sujet-culture-02",
+    "titre": "L'intelligence artificielle : opportunité ou menace pour le technicien IT ?",
+    "type": "dissertation_guidee",
+    "difficulte": "intermédiaire",
+    "duree_estimee": "3h",
+    "consigne": "En vous appuyant sur votre culture générale et sur vos expériences en BTS SIO, vous rédigerez une dissertation structurée répondant à la question suivante : 'L'intelligence artificielle représente-t-elle une opportunité ou une menace pour les techniciens informatiques ?'. Votre développement comprendra une introduction rédigée, deux ou trois parties équilibrées avec transitions, et une conclusion avec ouverture.",
+    "corpus": null,
+    "aide_documentaire": [
+      "L'IA générative (ChatGPT, GitHub Copilot) automatise une partie du code et du diagnostic",
+      "Le rapport McKinsey (2023) : 30% des tâches seront automatisées d'ici 2030",
+      "Nouveaux métiers : prompt engineer, ML engineer, data analyst, AI security specialist",
+      "Risques : biais algorithmiques, chômage technologique, dépendance aux outils IA",
+      "GitHub Copilot : gain de productivité de 55% sur les tâches de codage répétitif",
+      "Forum Économique Mondial 2023 : l'IA détruira 85M d'emplois et en créera 97M"
+    ],
+    "correction": {
+      "plan_dialectique_complet": {
+        "these": {
+          "titre": "I. L'IA : un accélérateur de compétences et de productivité pour les techniciens IT",
+          "sous_partie_A": "A. L'automatisation des tâches répétitives comme levier de montée en compétences\nArgument : L'IA prend en charge les tâches de bas niveau (génération de scripts, ticketing automatisé, monitoring), libérant le technicien pour des activités à plus forte valeur ajoutée.\nExemple : GitHub Copilot, selon une étude GitHub 2023, réduit de 55% le temps consacré à l'écriture de code répétitif, permettant aux développeurs de se concentrer sur l'architecture et la sécurité.",
+          "sous_partie_B": "B. L'émergence de nouveaux métiers IT portés par l'IA\nArgument : L'IA ne supprime pas les emplois IT, elle les transforme et en crée de nouveaux.\nExemple : Les métiers de prompt engineer, ML engineer, AI security specialist et data analyst connaissent une croissance exponentielle. AWS, Microsoft et Google recrutent massivement des profils hybrides technique-IA.",
+          "sous_partie_C": "C. L'IA comme outil d'assistance au diagnostic et à la cybersécurité\nArgument : Les outils AIOps (IA appliquée aux opérations IT) améliorent la détection d'anomalies et réduisent le MTTR (Mean Time To Repair).\nExemple : Microsoft Sentinel, outil SIEM intégrant l'IA, réduit le temps de détection des cybermenaces de 60% selon Microsoft Azure Blog (2023)."
+        },
+        "antithese": {
+          "titre": "II. L'IA : une menace réelle pour certains profils et certaines pratiques professionnelles",
+          "sous_partie_A": "A. La compression des emplois de niveau 1 et des profils peu qualifiés\nArgument : Les techniciens support N1 dont les tâches sont entièrement scriptables sont directement menacés par l'automatisation.\nExemple : Les chatbots IA de support (Freshdesk, Zendesk) résolvent désormais 40 à 60% des tickets de niveau 1 sans intervention humaine.",
+          "sous_partie_B": "B. L'obsolescence rapide des compétences et la pression sur la formation continue\nArgument : Le rythme d'évolution de l'IA impose une mise à jour permanente des compétences techniques, créant une pression considérable sur les professionnels IT.\nExemple : Une certification AWS valide en 2020 est souvent obsolète en 2024 face aux nouveaux services IA cloud. La durée de vie des compétences techniques se réduit à 2-3 ans.",
+          "sous_partie_C": "C. Les biais algorithmiques et les risques éthiques pour les praticiens IT\nArgument : Les techniciens déployant des solutions IA peuvent involontairement perpetuer des discriminations algorithmiques, engageant leur responsabilité professionnelle.\nExemple : Amazon a abandonné en 2018 un outil de recrutement basé sur l'IA qui défavorisait systématiquement les candidatures féminines, révélant les biais intégrés dans les données d'entraînement."
+        },
+        "synthese": {
+          "titre": "III. Vers un technicien IT augmenté : les nouvelles compétences comme réponse à la transformation par l'IA",
+          "sous_partie_A": "A. La maîtrise des outils IA comme nouvelle compétence fondamentale\nArgument : Plutôt que de subir l'IA, les techniciens IT doivent apprendre à la piloter, la configurer et en auditer les résultats.\nExemple : La certification 'AI-900 : Azure AI Fundamentals' de Microsoft est devenue en deux ans l'une des certifications les plus demandées par les employeurs du secteur IT.",
+          "sous_partie_B": "B. Le maintien de compétences humaines irremplaçables\nArgument : L'IA ne peut pas reproduire le jugement situationnel, l'empathie client, la créativité face aux situations inédites ou la responsabilité éthique.\nExemple : Face à un ransomware dans un hôpital, la décision de couper les systèmes (au risque de mettre des vies en danger) ne peut reposer sur un algorithme — elle engage la responsabilité humaine du technicien.",
+          "sous_partie_C": "C. La nécessité d'une formation professionnelle continue et d'une culture de l'IA responsable\nArgument : Les entreprises et les institutions de formation (BTS, licences pro) doivent intégrer systématiquement l'IA dans leurs cursus pour préparer les techniciens à cette transition.\nExemple : Le Forum Économique Mondial (2023) estime que l'IA créera 97 millions de nouveaux emplois d'ici 2025, à condition que 50% de la main-d'œuvre bénéficie d'une reconversion adaptée."
+        }
+      },
+      "introduction_redigee": "En novembre 2022, la mise en ligne de ChatGPT a provoqué un séisme dans le monde professionnel : en quelques semaines, des millions de travailleurs, y compris dans le secteur informatique, ont découvert qu'une intelligence artificielle pouvait rédiger du code, diagnostiquer des pannes réseau et configurer des serveurs avec une efficacité troublante. Pour les 500 000 techniciens informatiques que compte la France, cette révolution soulève une question existentielle : l'intelligence artificielle est-elle l'alliée ou l'adversaire de leur avenir professionnel ? Dans quelle mesure l'IA transforme-t-elle le rôle du technicien IT, entre menace d'automatisation et opportunité de reconversion vers des métiers plus qualifiés ? Nous verrons d'abord que l'IA constitue un formidable accélérateur de compétences pour ceux qui s'en emparent, avant d'examiner les risques réels qu'elle fait peser sur certains profils, pour envisager enfin les conditions d'une coexistence fructueuse entre l'humain et la machine dans les métiers IT.",
+      "transitions": [
+        "TRANSITION I→II : 'Ainsi, pour les techniciens IT qui parviennent à s'adapter, l'IA apparaît comme un levier de progression professionnelle inédit. Cependant, ce tableau optimiste ne doit pas occulter les tensions réelles que cette révolution technologique crée sur le marché du travail informatique — et notamment les risques qui pèsent sur les profils les moins spécialisés.'",
+        "TRANSITION II→III : 'Ces risques sont donc bien réels et documentés. Pour autant, ils ne constituent pas une fatalité : la véritable question n'est pas de savoir si l'IA remplacera les techniciens, mais comment ces derniers doivent se réinventer pour rester indispensables dans un écosystème professionnel en profonde mutation.'"
+      ],
+      "conclusion_redigee": "L'intelligence artificielle ne représente ni une opportunité pure ni une menace absolue pour les techniciens informatiques : elle est avant tout un miroir des évolutions du secteur et un accélérateur des tendances déjà à l'œuvre. Nous avons vu qu'elle libère les techniciens des tâches répétitives et crée de nouveaux métiers porteurs, mais qu'elle comprime aussi les profils peu qualifiés et impose un rythme de reconversion inédit. La réponse à ce défi ne peut être individuelle : elle appelle une transformation des formations — BTS, licences pro, certifications — pour y intégrer la culture de l'IA, ainsi qu'une politique de formation continue ambitieuse dans les entreprises. La véritable question, au fond, n'est peut-être pas 'l'IA menace-t-elle les techniciens ?' mais 'les systèmes de formation sont-ils prêts à accompagner cette mutation ?' — ce qui nous renvoie au rôle de l'État et des partenaires sociaux dans la gouvernance des transitions technologiques."
+    }
+  }
+]

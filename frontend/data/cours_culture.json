@@ -1,0 +1,300 @@
+﻿[
+  {
+    "id": "culture-01",
+    "chapitre": "culture-01",
+    "titre": "Méthode — Synthèse de documents",
+    "domaine": "Culture générale et expression",
+    "sections": [
+      {
+        "titre": "1. Qu'est-ce que la synthèse de documents ?",
+        "contenu": "La synthèse de documents est un exercice qui consiste à dégager la problématique commune à plusieurs textes (en général 3 à 5) et à en restituer les idées essentielles de façon organisée, sans jugement personnel.\n\n**Caractéristiques fondamentales :**\n- Objective : aucune opinion personnelle\n- Fidèle : aucune déformation des idées sources\n- Hiérarchisée : les idées sont organisées selon un plan logique\n- Concise : environ 200 mots pour un corpus de 3 documents (BTS)\n- Rédigée : pas de tirets ni de liste, mais des paragraphes\n\n**Ce que la synthèse N'EST PAS :**\n- Un résumé successif des documents (l'un après l'autre)\n- Un commentaire ou une analyse critique\n- Un texte mélangeant ses propres idées aux idées des auteurs"
+      },
+      {
+        "titre": "2. Étapes de la méthode",
+        "contenu": "**Étape 1 — Lecture et annotation des documents**\nLire chaque document en soulignant les idées principales. Identifier la thèse défendue par chaque auteur.\n\n**Étape 2 — Formulation de la problématique**\nDégager la question centrale que le corpus pose. La problématique doit englober tous les documents.\nEx. : « Dans quelle mesure le numérique transforme-t-il les rapports au travail ? »\n\n**Étape 3 — Tableau de confrontation des idées**\nCréer un tableau avec les thèmes en colonnes et les documents en lignes. Identifier convergences, divergences, complémentarités.\n\n**Étape 4 — Rédaction du plan**\nOrganiser les idées en 2 ou 3 parties équilibrées. Chaque partie = un angle d'analyse du sujet.\n\n**Étape 5 — Rédaction de la synthèse**\n- Introduction : présentation du corpus, problématique, annonce du plan\n- Développement : chaque partie cite les documents par leur référence (Doc. 1, Doc. 2...)\n- Conclusion : bilan objectif, sans ajout d'idées nouvelles\n\n**Formules utiles pour citer sans opinion :**\n- « Selon l'auteur... », « D'après le document 2... »\n- « Tandis que Doc. 1 soutient que... Doc. 3 nuance cette position en affirmant... »\n- « Les auteurs s'accordent sur... bien que... »"
+      },
+      {
+        "titre": "3. Exemple de synthèse rédigée",
+        "contenu": "**Corpus fictif :** 3 documents sur le thème « L'intelligence artificielle et l'emploi »\n- Doc. 1 : article du Monde, « L'IA va détruire 85 millions d'emplois » (Forum économique mondial, 2020)\n- Doc. 2 : rapport McKinsey, « L'IA créera 97 millions de nouveaux emplois d'ici 2025 »\n- Doc. 3 : tribune de Erik Brynjolfsson (MIT), « Le problème n'est pas la destruction mais la transition »\n\n**Problématique :** L'essor de l'intelligence artificielle représente-t-il une menace ou une opportunité pour l'emploi ?\n\n**Exemple d'introduction rédigée :**\n« Alors que l'intelligence artificielle occupe une place croissante dans les processus de production, la question de son impact sur l'emploi divise économistes et chercheurs. Ce corpus réunit trois documents aux approches complémentaires : un article de presse alarmiste (Doc. 1), un rapport économique prospectif (Doc. 2) et une tribune universitaire nuancée (Doc. 3). Il s'agit de déterminer si l'IA constitue avant tout une menace ou une opportunité pour le marché du travail. Nous verrons d'abord que l'IA entraîne effectivement des destructions d'emplois, avant de montrer qu'elle en génère simultanément de nouveaux, et enfin que l'enjeu réel réside dans la gestion de la transition. »\n\n**Exemple de paragraphe de développement :**\n« Les auteurs s'accordent sur le fait que certaines tâches répétitives sont vouées à être automatisées. Ainsi, le Forum économique mondial (Doc. 1) estime que 85 millions d'emplois pourraient être supprimés d'ici 2025 dans les secteurs de la saisie de données et de la comptabilité. Toutefois, le rapport McKinsey (Doc. 2) tempère cette projection en soulignant que 97 millions de nouveaux postes devraient simultanément émerger, notamment dans les domaines de l'IA elle-même, de la maintenance robotique et des soins à la personne. »"
+      }
+    ],
+    "exercices": [
+      {
+        "type": "pratique",
+        "question": "Rédigez une phrase d'introduction pour une synthèse sur le thème 'Le numérique et la vie privée' à partir d'un corpus de 3 documents (article CNIL, extrait RGPD, tribune d'un philosophe).",
+        "reponse": "Introduction modèle : 'À l'heure où le numérique s'immisce dans tous les aspects de la vie quotidienne, la question de la protection des données personnelles est devenue centrale. Ce corpus rassemble trois documents aux perspectives complémentaires : une mise en garde institutionnelle (CNIL), un texte réglementaire (RGPD) et une réflexion philosophique. Il s'agit de s'interroger sur la capacité des individus et des institutions à préserver la vie privée à l'ère numérique.'"
+      }
+    ],
+    "liens": [
+      {"texte": "CNIL — RGPD expliqué", "url": "https://www.cnil.fr/fr/rgpd-de-quoi-parle-t-on"},
+      {"texte": "Méthode synthèse — Eduscol", "url": "https://eduscol.education.fr/"}
+    ]
+  },
+  {
+    "id": "culture-02",
+    "chapitre": "culture-02",
+    "titre": "Numérique et société — IA, RGPD, surveillance, désinformation",
+    "domaine": "Culture générale et expression",
+    "sections": [
+      {
+        "titre": "1. L'intelligence artificielle — dates et personnalités clés",
+        "contenu": "**Repères chronologiques :**\n- **1950** : Alan Turing publie « Computing Machinery and Intelligence » — il pose la question « Les machines peuvent-elles penser ? » et propose le Test de Turing.\n- **1956** : Conférence de Dartmouth (John McCarthy) — naissance officielle de l'IA comme discipline.\n- **2012** : Deep Learning — AlexNet (Geoffrey Hinton, U. Toronto) remporte ImageNet avec 26 points d'avance. Révolution des réseaux de neurones profonds.\n- **2016** : AlphaGo (DeepMind/Google) bat le champion du monde de Go Lee Sedol — 4 à 1.\n- **Novembre 2022** : Lancement de ChatGPT (OpenAI) — 1 million d'utilisateurs en 5 jours, 100 millions en 2 mois.\n- **Mars 2023** : GPT-4 lancé. Publication de la lettre ouverte « Pause Giant AI Experiments » signée par Elon Musk, Yoshua Bengio, Stuart Russell — 1 000+ signataires.\n- **2023** : Règlement européen sur l'IA (AI Act) adopté en principe — premier cadre légal mondial sur l'IA.\n\n**Personnalités clés :**\n- **Sam Altman** : PDG d'OpenAI, créateurs de ChatGPT. Brièvement licencié en nov. 2023 avant d'être réintégré.\n- **Yann LeCun** : chercheur français, chef scientifique IA de Meta, pionnier des CNN (réseaux convolutifs). Sceptique sur les risques AGI catastrophistes.\n- **Geoffrey Hinton** : « Parrain de l'IA », prix Turing 2018. A quitté Google en 2023 pour alerter sur les risques de l'IA.\n- **Yoshua Bengio** : chercheur canadien, prix Turing 2018, signataire de l'appel à la pause.\n- **Demis Hassabis** : fondateur de DeepMind (racheté par Google), créateur d'AlphaGo. Prix Nobel de chimie 2024 (AlphaFold)."
+      },
+      {
+        "titre": "2. RGPD et affaire Cambridge Analytica",
+        "contenu": "**RGPD (Règlement Général sur la Protection des Données)**\n- Adopté : 27 avril 2016 — Applicable : **25 mai 2018**\n- Objectif : donner aux citoyens européens le contrôle de leurs données personnelles\n- Remplace la directive 95/46/CE\n- Application extraterritoriale : toute organisation traitant des données d'Européens, même hors UE\n\n**Affaire Cambridge Analytica (2018)**\nRévélée par Christopher Wylie (lanceur d'alerte) en mars 2018 dans The Guardian et le New York Times.\n- 87 millions de profils Facebook collectés via une application de test de personnalité (quiz)\n- Données vendues à Cambridge Analytica sans consentement\n- Utilisées pour cibler des électeurs lors du Brexit (2016) et de la campagne Trump (2016)\n- Facebook condamné à 5 milliards de dollars d'amende (FTC, 2019)\n- Impact direct sur l'adoption du RGPD et la prise de conscience sur la valeur des données personnelles\n\n**Affaire Snowden (juin 2013)**\nEdward Snowden, ex-contractant NSA, révèle au Guardian l'existence de PRISM — programme de surveillance massif des communications par la NSA (emails, appels, données Google/Apple/Facebook).\n- Fuite de 1,7 million de documents classifiés\n- Demandes d'asile refusées — exilé en Russie depuis 2013\n- Impact : montée de la conscience citoyenne sur la surveillance numérique, développement de la cryptographie grand public (Signal, Tor)"
+      },
+      {
+        "titre": "3. Désinformation et DSA",
+        "contenu": "**La désinformation numérique**\nDéfinition : diffusion délibérée d'informations fausses ou trompeuses via les plateformes numériques.\n\nFormes :\n- Fake news : articles d'apparence journalistique contenant des informations fausses\n- Deepfakes : vidéos ou audios manipulés par IA (technologie GAN — Generative Adversarial Network)\n- Astroturfing : simulation d'un mouvement populaire en réalité organisé\n- Bots Twitter/X : comptes automatisés amplifiant des messages\n\nExemples marquants :\n- Élection US 2016 : ingérence russe via Internet Research Agency (IRA), étude Oxford Internet Institute\n- Covid-19 : « infodémie » — OMS déclare une épidémie de désinformation parallèle à la pandémie\n\n**DSA (Digital Services Act) — Règlement européen, octobre 2022**\nEntré en application pour les grandes plateformes (VLOP) le 25 août 2023.\nObligations :\n- Suppression rapide des contenus illégaux\n- Transparence des algorithmes de recommandation\n- Interdiction de ciblage publicitaire pour les mineurs\n- Évaluation annuelle des risques systémiques\n- Sanctions : jusqu'à 6% du CA mondial\n\nComplément DMA (Digital Markets Act) : régulation des gatekeepers (Apple, Google, Meta, Amazon)."
+      }
+    ],
+    "exercices": [
+      {
+        "type": "qcm",
+        "question": "En quelle année ChatGPT a-t-il été lancé publiquement ?",
+        "choix": ["2020", "2021", "2022", "2023"],
+        "reponse": "2022"
+      },
+      {
+        "type": "definition",
+        "terme": "Deepfake",
+        "definition": "Contenu audiovisuel (vidéo, audio, image) généré ou manipulé par intelligence artificielle (réseau GAN) pour faire dire ou faire quelque chose à une personne réelle. Utilisé dans la désinformation, la fraude et le harcèlement."
+      }
+    ],
+    "liens": [
+      {"texte": "AI Act — Parlement européen", "url": "https://www.europarl.europa.eu/topics/fr/article/20230601STO93804/loi-sur-l-ia-premiere-reglementation-europeenne-sur-l-intelligence-artificielle"},
+      {"texte": "CNIL — Cambridge Analytica", "url": "https://www.cnil.fr/fr/cambridge-analytica-ce-quil-sest-passe"}
+    ]
+  },
+  {
+    "id": "culture-03",
+    "chapitre": "culture-03",
+    "titre": "Travail et économie numérique — Télétravail, ubérisation, emploi",
+    "domaine": "Culture générale et expression",
+    "sections": [
+      {
+        "titre": "1. Télétravail — avant et après Covid",
+        "contenu": "**Définition légale (Art. L1222-9 Code du travail)**\nForme d'organisation du travail utilisant les technologies de l'information, hors des locaux de l'employeur, de façon régulière et volontaire.\n\n**Avant Covid :** en 2019, seulement 3% des salariés français télétravaillaient régulièrement (DARES).\n\n**Covid-19 et explosion du télétravail :**\n- Mars 2020 : premier confinement — 27% des salariés en télétravail du jour au lendemain\n- Ordonnances Macron (mars 2020) : droit unilatéral de l'employeur d'imposer le télétravail\n- Accord National Interprofessionnel (ANI) sur le télétravail — 26 novembre 2020 : formalise le droit à la déconnexion, l'équipement par l'employeur, le volontariat\n\n**Bilan post-Covid :**\n- 2023 : environ 25% des salariés télétravaillent régulièrement\n- Modèle hybride dominant : 2 à 3 jours par semaine\n- Inégalités : impossible dans les secteurs manuels, logistique, santé\n- Risques : isolement, hyperconnexion, blurring (frontière vie pro/perso), sécurité informatique (VPN, BYOD)\n\n**Droit à la déconnexion (Loi El Khomri, 8 août 2016)**\nPremier pays au monde à légiférer sur le droit à la déconnexion. Obligation de négociation dans les entreprises de +50 salariés."
+      },
+      {
+        "titre": "2. Ubérisation et économie de plateforme",
+        "contenu": "**Définition**\nL'ubérisation désigne la transformation des secteurs économiques par des plateformes numériques mettant en relation directe prestataires et clients, contournant les intermédiaires traditionnels.\nTerme issu d'Uber (fondé 2009, San Francisco).\n\n**Modèle économique :**\n- Les travailleurs sont des indépendants (auto-entrepreneurs), pas des salariés\n- La plateforme perçoit une commission (15-30%)\n- Pas de cotisations sociales employeur, pas de protection sociale complète\n\n**Arrêt Cour de Cassation — Take Eat Easy (28 novembre 2018)**\nPremier arrêt français requalifiant un livreur de plateformes en salarié :\n- Critères retenus : lien de subordination, tarifs imposés, système de géolocalisation, sanctions possibles\n- Ouvre la voie à la requalification Uber (arrêt Cour de Cass. 4 mars 2020)\n\n**Débat social :**\n- Syndicats (CGT, CFDT) : dénoncent le dumping social et la précarité\n- Plateformes : revendiquent la flexibilité appréciée par les travailleurs\n- Rapport Mettling (2015) : « Transformation numérique et vie au travail » — alerte sur la fragmentation du salariat\n- Directive européenne travailleurs de plateformes (2023) : présomption de salariat si 2 critères sur 5 remplis\n\n**Chiffres :**\n- 28 millions de travailleurs de plateforme dans l'UE en 2022 (Commission européenne)\n- Uber présent dans 70 pays, 130 millions d'utilisateurs actifs (2023)"
+      },
+      {
+        "titre": "3. IA et avenir du marché du travail",
+        "contenu": "**Rapport Forum Économique Mondial « Future of Jobs 2023 »**\n- 69 millions d'emplois créés vs 83 millions supprimés d'ici 2027\n- Solde net : -14 millions d'emplois\n- Emplois les plus menacés : commis de bureau, caissiers, opérateurs de saisie\n- Emplois en forte croissance : spécialistes IA/ML, data analysts, ingénieurs en énergies vertes, enseignants\n\n**Rapport McKinsey « Generative AI and the future of work » (2023)**\n- L'IA générative pourrait automatiser 60-70% des tâches actuelles des travailleurs du savoir\n- Mais crée une demande pour des compétences interpersonnelles, créatives et techniques\n\n**Concept d'augmentation vs remplacement**\n- Économiste Erik Brynjolfsson (MIT) : l'IA augmente la productivité des travailleurs qualifiés plutôt qu'elle ne les remplace\n- Étude Stanford/MIT (2023) sur GitHub Copilot : +55% de productivité pour les développeurs juniors\n\n**Formation et reconversion :**\n- Plan d'investissement dans les compétences (PIC) : 15 milliards € (2018-2022, France)\n- Upskilling / reskilling : enjeu majeur (Amazon : 700 millions $ pour former 100 000 employés)\n- Compte Personnel de Formation (CPF) : 500€/an (800€ pour non-qualifiés)"
+      }
+    ],
+    "exercices": [
+      {
+        "type": "definition",
+        "terme": "Ubérisation",
+        "definition": "Processus par lequel une plateforme numérique transforme un secteur économique en mettant en relation directe prestataires indépendants et clients, contournant les intermédiaires traditionnels et remettant en cause le modèle salarial classique."
+      },
+      {
+        "type": "qcm",
+        "question": "Quel arrêt de la Cour de Cassation (2018) a ouvert la voie à la requalification des livreurs de plateformes en salariés en France ?",
+        "choix": ["Arrêt Uber (2020)", "Arrêt Take Eat Easy (2018)", "Arrêt Deliveroo (2019)", "Arrêt Amazon (2021)"],
+        "reponse": "Arrêt Take Eat Easy (2018)"
+      }
+    ],
+    "liens": [
+      {"texte": "Forum Économique Mondial — Future of Jobs 2023", "url": "https://www.weforum.org/reports/the-future-of-jobs-report-2023/"},
+      {"texte": "Code du travail — Télétravail", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035646288"}
+    ]
+  },
+  {
+    "id": "culture-04",
+    "chapitre": "culture-04",
+    "titre": "Environnement et numérique — Impact écologique du digital",
+    "domaine": "Culture générale et expression",
+    "sections": [
+      {
+        "titre": "1. Empreinte carbone du numérique",
+        "contenu": "**Chiffres clés :**\n- Le numérique représente **4% des émissions mondiales de gaz à effet de serre** (GES) en 2020 — équivalent à l'aviation civile mondiale\n- Projection : 8% d'ici 2025 si les tendances actuelles continuent (The Shift Project, 2019)\n- La fabrication des équipements (terminaux, serveurs, câbles) représente **75% de l'empreinte** — davantage que l'usage\n- Un smartphone : 70 kg de CO₂ équivalent pour sa fabrication\n- Un datacenter : 200 à 1000 kWh/m² par an\n\n**Rapport « Lean ICT » — The Shift Project (2019)**\nPublié par Maxime Efoui-Hess, sous la direction de Jean-Marc Jancovici.\nConclusion principale : la croissance exponentielle des usages numériques (streaming vidéo = 60% du trafic internet) est incompatible avec les objectifs climatiques.\nRecommandations : sobre numérique, allongement de la durée de vie des équipements, régulation du streaming.\n\n**Accord de Paris (12 décembre 2015)**\nObjectif : limiter le réchauffement climatique à +1,5°C à +2°C par rapport à l'ère préindustrielle.\n196 parties signataires. Mécanisme : NDC (Nationally Determined Contributions) révisées tous les 5 ans.\n\n**COP28 — Dubaï (30 novembre – 12 décembre 2023)**\nPremier bilan mondial (Global Stocktake) : les engagements actuels mènent à +2,5°C minimum.\nAccord historique : mention explicite de la « transition hors des combustibles fossiles ».\nControverse : présidence assurée par Sultan Al-Jaber, PDG d'ADNOC (compagnie pétrolière des Émirats)."
+      },
+      {
+        "titre": "2. Numérique responsable et économie circulaire",
+        "contenu": "**Sobriété numérique**\nConcept promu par The Shift Project : réduire l'impact environnemental du numérique sans renoncer aux usages essentiels.\nExemples de bonnes pratiques :\n- Allonger la durée de vie des équipements (réparabilité)\n- Préférer le Wi-Fi au réseau mobile (3G/4G émet 20× plus que le Wi-Fi)\n- Désactiver la lecture auto des vidéos\n- Archiver et supprimer les emails inutiles (1 email = 4g CO₂)\n\n**Indice de réparabilité (France, janvier 2021)**\nPremier pays européen à imposer un score de réparabilité affiché sur les appareils électroniques.\nNote de 0 à 10. Indicateurs : disponibilité des pièces détachées, démontabilité, documentation.\n\n**DEEE (Déchets d'Équipements Électriques et Électroniques)**\n- 53,6 millions de tonnes de déchets électroniques en 2019 (Global E-waste Monitor 2020) — record mondial\n- Seulement 17,4% correctement recyclés\n- Contiennent métaux précieux (or, argent, cobalt) et substances dangereuses (plomb, mercure)\n\n**Green IT / IT durable**\n- Choix d'hébergeurs utilisant des énergies renouvelables\n- Optimisation du code pour réduire les calculs (eco-conception logicielle)\n- Labels : ISO 14001, NF Environnement, Green Grid PUE (Power Usage Effectiveness < 1,5)"
+      },
+      {
+        "titre": "3. Data centers et IA : une consommation croissante",
+        "contenu": "**Consommation des data centers**\n- 200 à 250 TWh par an mondialement (1% de la consommation électrique mondiale)\n- Amazon AWS, Microsoft Azure, Google Cloud : chacun s'est engagé à atteindre 100% d'énergie renouvelable\n- Microsoft : objectif carbone négatif d'ici 2030 (retirer plus de CO₂ qu'il n'en émet)\n\n**IA générative : impact environnemental majeur**\n- Entraînement de GPT-3 : ~550 tonnes de CO₂ équivalent (Univ. Massachusetts, 2019)\n- Entraînement de GPT-4 : non divulgué, estimé bien supérieur\n- Une requête ChatGPT consomme ~10× plus qu'une recherche Google\n- Google affirme que la généralisation de l'IA pourrait compromettre ses objectifs carbones\n\n**Eau :**\n- Les data centers refroidissent leurs serveurs avec de l'eau\n- Microsoft : 6,4 milliards de litres d'eau utilisés en 2022\n- ChatGPT consomme une bouteille d'eau (500ml) pour 20 à 50 questions posées (estimation UC Riverside 2023)"
+      }
+    ],
+    "exercices": [
+      {
+        "type": "qcm",
+        "question": "Selon The Shift Project (2019), quel pourcentage des émissions mondiales de GES représente le numérique ?",
+        "choix": ["1%", "2%", "4%", "10%"],
+        "reponse": "4%"
+      },
+      {
+        "type": "definition",
+        "terme": "PUE (Power Usage Effectiveness)",
+        "definition": "Indicateur d'efficacité énergétique d'un datacenter. PUE = Énergie totale consommée / Énergie consommée par les équipements IT. Un PUE de 1.0 est idéal (toute l'énergie va aux serveurs). La moyenne mondiale est d'environ 1.58."
+      }
+    ],
+    "liens": [
+      {"texte": "The Shift Project — Lean ICT", "url": "https://theshiftproject.org/article/lean-ict-our-new-report/"},
+      {"texte": "Accord de Paris — Nations Unies", "url": "https://unfccc.int/fr/a-propos-des-ndcs/l-accord-de-paris"}
+    ]
+  },
+  {
+    "id": "culture-05",
+    "chapitre": "culture-05",
+    "titre": "Méthode — Dissertation et essai argumenté",
+    "domaine": "Culture générale et expression",
+    "sections": [
+      {
+        "titre": "1. Structure de la dissertation",
+        "contenu": "La dissertation est un exercice d'argumentation structurée dans lequel l'auteur développe une réflexion personnelle et nuancée sur un sujet, en s'appuyant sur des arguments et des exemples.\n\n**Plan dialectique (thèse / antithèse / synthèse)**\n- Partie 1 — Thèse : première position, défendue avec arguments et exemples\n- Partie 2 — Antithèse : position contraire ou nuancée, remise en question de la thèse\n- Partie 3 — Synthèse : dépassement du conflit, position plus nuancée, ouverture\n\n**Plan analytique (adapté aux sujets non-conflictuels)**\n- Partie 1 : état des lieux (qu'est-ce qui se passe ?)\n- Partie 2 : causes et explications (pourquoi ?)\n- Partie 3 : conséquences et perspectives (et alors ?)\n\n**Structure type d'un devoir :**\n- Introduction (10-15%) : accroche → définition des termes → problématique → annonce du plan\n- Développement (75-80%) : 2 ou 3 parties, chacune divisée en 2-3 sous-parties avec argument + exemple + transition\n- Conclusion (10%) : bilan → réponse à la problématique → ouverture\n\n**Connecteurs logiques indispensables :**\n- Addition : de plus, par ailleurs, en outre, qui plus est\n- Opposition : cependant, néanmoins, toutefois, or\n- Cause : en effet, car, puisque, étant donné que\n- Conséquence : ainsi, c'est pourquoi, de ce fait, par conséquent\n- Concession : certes, il est vrai que... mais, même si\n- Illustration : par exemple, tel est le cas de, ainsi"
+      },
+      {
+        "titre": "2. Sujet 1 — \"L'intelligence artificielle est-elle une menace pour l'emploi ?\"",
+        "contenu": "**Accroche possible :**\n« En mars 2023, une lettre ouverte signée par plus de 1 000 experts, dont Elon Musk et Yoshua Bengio, appelait à une pause dans le développement des IA puissantes. Cette prise de position spectaculaire traduit une inquiétude grandissante sur la place que l'intelligence artificielle est appelée à occuper dans nos sociétés, et notamment sur son impact sur le marché du travail. »\n\n**Problématique :** Dans quelle mesure le développement de l'intelligence artificielle transforme-t-il le marché du travail, et peut-on parler de menace réelle sur l'emploi ?\n\n**Plan :**\n\nI. L'IA détruit effectivement des emplois\n1. Automatisation des tâches répétitives (caissiers, agents administratifs, opérateurs de saisie)\n2. Remplacement des métiers du savoir (diagnostic médical, analyse juridique, traduction)\nEx. : Forum économique mondial — 83 millions d'emplois menacés d'ici 2027\n\nII. L'IA crée également de nouveaux emplois et opportunités\n1. Émergence de nouveaux métiers (prompt engineers, data scientists, auditeurs d'IA)\n2. Augmentation de la productivité des travailleurs qualifiés\nEx. : McKinsey — 69 millions d'emplois créés ; étude GitHub Copilot +55% productivité\n\nIII. Le vrai défi est la transition, pas la destruction\n1. Nécessité de formation et de reconversion massives\n2. Responsabilité des politiques publiques (CPF, plan de compétences)\nEx. : Rapport Brynjolfsson (MIT) — l'IA augmente plus qu'elle ne remplace si la transition est gérée"
+      },
+      {
+        "titre": "3. Sujet 2 — \"Le numérique : instrument de liberté ou de contrôle ?\"",
+        "contenu": "**Accroche possible :**\n« 'Internet a été conçu pour résister à une guerre nucléaire, mais il ne résiste pas à l'État.' Cette formule provocatrice de Jacob Appelbaum, développeur du réseau Tor, résume le paradoxe fondamental d'une technologie née comme outil de liberté et aujourd'hui au cœur des dispositifs de surveillance les plus sophistiqués jamais créés. »\n\n**Problématique :** Si le numérique a indéniablement élargi les libertés individuelles et collectives, n'est-il pas simultanément devenu un outil de contrôle social et politique sans précédent ?\n\n**Plan :**\n\nI. Le numérique comme vecteur de liberté inédit\n1. Accès universel à l'information et démocratisation du savoir (Wikipedia, MOOCs)\n2. Outil de mobilisation citoyenne et politique (Printemps arabe 2011, #MeToo 2017)\n3. Liberté d'expression et protection des lanceurs d'alerte (Tor, Signal)\n\nII. Le numérique comme instrument de contrôle et de surveillance\n1. Surveillance de masse étatique — Affaire Snowden (PRISM, 2013)\n2. Contrôle algorithmique des comportements — Crédit social chinois (système pilote depuis 2014)\n3. Manipulation et désinformation — Cambridge Analytica, Internet Research Agency\n\nIII. Le numérique au cœur d'un équilibre démocratique à construire\n1. Régulation européenne : RGPD (2018), DSA (2022), AI Act (2024)\n2. Éducation aux médias et esprit critique\n3. Nécessité d'une gouvernance mondiale de l'internet (ICANN, IGF)"
+      }
+    ],
+    "exercices": [
+      {
+        "type": "pratique",
+        "question": "Rédigez une introduction complète (accroche, définition, problématique, annonce de plan) pour le sujet : 'Les réseaux sociaux sont-ils une menace pour la démocratie ?'",
+        "reponse": "Introduction modèle : 'En 2020, le documentaire The Social Dilemma sur Netflix révèle au grand public ce que les chercheurs en sciences politiques observent depuis plusieurs années : les algorithmes des réseaux sociaux, conçus pour maximiser l'engagement, favorisent la polarisation politique et la diffusion de désinformation. Les réseaux sociaux, plateformes numériques permettant à des millions d'individus de partager et interagir autour de contenus, sont aujourd'hui au cœur de nos démocraties. On peut alors se demander s'ils constituent davantage une menace ou une opportunité pour le fonctionnement démocratique. Après avoir montré que les réseaux sociaux amplifient les dérives anti-démocratiques, nous verrons qu'ils sont également des espaces d'engagement civique, avant d'examiner les conditions d'une régulation efficace.'"
+      }
+    ],
+    "liens": [
+      {"texte": "Méthodologie de la dissertation — Caféanlais", "url": "https://www.cafe-anlais.fr/"},
+      {"texte": "Forum économique mondial — Future of Jobs", "url": "https://www.weforum.org/reports/the-future-of-jobs-report-2023/"}
+    ]
+  },
+  {
+    "id": "culture-06",
+    "chapitre": "culture-06",
+    "titre": "Santé et numérique — E-santé, cybersécurité hospitalière, données médicales",
+    "domaine": "Culture générale et expression",
+    "sections": [
+      {
+        "titre": "1. L'e-santé et la transformation numérique médicale",
+        "contenu": "**Définition OMS :** « Utilisation des technologies de l'information et de la communication (TIC) au service de la santé. »\n\n**Principaux outils et plateformes :**\n- **Doctolib** (fondé en 2013) : premier service européen de prise de RDV médical en ligne. 80 000 praticiens, 60 millions de patients en France (2023). Levée de fonds de 500M€ en 2021, valorisation ~5 milliards €.\n- **Mon espace santé** (lancé 2022) : service public français, carnet de santé numérique, DMP (Dossier Médical Partagé), messagerie sécurisée de santé.\n- **Télémédecine** : 1 million de téléconsultations par semaine pendant le Covid. Remboursée à 100% par l'Assurance Maladie depuis 2018.\n- **IA médicale** : DeepMind (Google) détecte 50 maladies oculaires avec précision égale aux ophtalmologistes. Paige AI (FDA approuvé) : détection du cancer de la prostate.\n\n**Enjeux :**\n- Déserts médicaux : 6 millions de Français sans médecin traitant (2023, CNAM)\n- Vieillissement de la population : objets connectés de santé (téléassistance, monitoring cardiaque)\n- Partage des données : interopérabilité des systèmes (HL7 FHIR standard)\n- Protection des données : données de santé = données sensibles (Article 9 RGPD)"
+      },
+      {
+        "titre": "2. Cyberattaques contre les hôpitaux",
+        "contenu": "Les établissements de santé sont devenus des cibles prioritaires des cybercriminels pour plusieurs raisons :\n- Systèmes souvent anciens et non mis à jour (legacy)\n- Criticité des données (dossiers patients revendus 250€ sur le dark web vs 1€ pour une carte bancaire)\n- Pression maximale pour payer la rançon (vies en jeu)\n- Sous-investissement historique en cybersécurité\n\n**Attaque AP-HP — mars 2022**\n- L'AP-HP (Assistance Publique — Hôpitaux de Paris) subit une attaque : fuite de données de 1,4 million de patients (résultats de tests Covid-19)\n- Type : exfiltration de données, pas de ransomware\n- Données publiées sur un forum de hackers\n- CNIL saisie, enquête ANSSI ouverte\n\n**CH de Versailles (André-Mignot) — décembre 2022**\n- Attaque ransomware (groupe Vice Society)\n- Transfert de 6 patients en réanimation vers d'autres hôpitaux\n- Paralysie partielle pendant plusieurs semaines\n- Rançon : non payée, conformément aux recommandations de l'ANSSI\n\n**Plan Cyber gouvernemental (2021)**\n- Budget : 1 milliard € sur 5 ans pour renforcer la cybersécurité des établissements de santé\n- Objectif : doubler les effectifs ANSSI, 135 CSIRT régionaux\n- Programme CaRE (Cybersécurité accélération et Résilience des Établissements) : 750M€ pour l'hôpital"
+      },
+      {
+        "titre": "3. IA et éthique médicale",
+        "contenu": "**Opportunités de l'IA en médecine :**\n- Diagnostic : analyse d'imagerie médicale (scanner, IRM, radio) avec précision supérieure aux radiologues pour certaines pathologies\n- Prédiction : risque de réhospitalisation, détection précoce d'Alzheimer\n- Drug discovery : AlphaFold 2 (DeepMind, 2021) — structure de 200 millions de protéines prédites. Prix Nobel de chimie 2024 (Demis Hassabis)\n- Chirurgie robotique : Da Vinci Surgical System — plus de 10 millions d'opérations réalisées\n\n**Questions éthiques fondamentales :**\n- **Responsabilité** : en cas d'erreur de diagnostic IA, qui est responsable ? Médecin ? Éditeur du logiciel ?\n- **Biais algorithmiques** : les IA entraînées sur des données non représentatives peuvent discriminer. Ex. : systèmes moins performants sur les peaux foncées (dermatologie)\n- **Consentement** : les patients ont-ils été informés que leurs données servent à entraîner des IA ?\n- **Relation médecin-patient** : risque de déshumanisation des soins\n\n**Rapport CCNE (Comité Consultatif National d'Éthique) sur l'IA en santé (2022)**\nPlaide pour une IA « augmentante » du médecin, pas substituante. Recommande : transparence des algorithmes, audit indépendant, formation des professionnels de santé.\n\n**ChatGPT et médecine :**\n- Étude JAMA (2023) : ChatGPT répond mieux que des médecins aux questions des patients sur les forums en termes d'empathie\n- Mais hallucinations dangereuses documentées : prescriptions inexistantes, posologies incorrectes\n- OpenAI déconseille l'usage médical direct sans supervision"
+      }
+    ],
+    "exercices": [
+      {
+        "type": "definition",
+        "terme": "DMP (Dossier Médical Partagé)",
+        "definition": "Carnet de santé numérique sécurisé regroupant l'historique médical d'un patient (ordonnances, résultats d'analyses, comptes rendus hospitaliers). Accessible par le patient et les professionnels de santé autorisés via Mon espace santé."
+      }
+    ],
+    "liens": [
+      {"texte": "Mon espace santé", "url": "https://www.monespacesante.fr/"},
+      {"texte": "ANSSI — Secteur santé", "url": "https://www.ssi.gouv.fr/entreprise/secteurs-critiques/sante/"}
+    ]
+  },
+  {
+    "id": "culture-07",
+    "chapitre": "culture-07",
+    "titre": "Méthode — Présentation orale BTS (10 minutes)",
+    "domaine": "Culture générale et expression",
+    "sections": [
+      {
+        "titre": "1. Structure de la présentation E5 en 10 minutes",
+        "contenu": "La présentation orale de l'épreuve E5 du BTS SIO dure 10 minutes, suivie de 20 minutes de questions du jury. Elle suit le portfolio page par page.\n\n**Découpage recommandé :**\n\n**Page 1 — Présentation personnelle (1 min 30)**\n- Identité, parcours (logistique → informatique)\n- Motivations pour le BTS SIO SISR\n- Certifications obtenues (Cisco Network Basics, ANSSI, Fortinet)\n\n**Page 2-3 — Formation et entreprise (1 min 30)**\n- IRIS Nice : BTS SIO SISR\n- Groupe RAGNI : alternance technicien informatique, secteur éclairage public, envergure internationale\n- Missions quotidiennes réalisées en alternance\n\n**Page 4-5 — Tableau de synthèse et projets (3 min)**\n- Présentation du tableau de synthèse : compétences couverte\n- Focus sur 1-2 projets clés (infrastructure IRIS, projet Wi-Fi VLAN)\n- Pour chaque projet : contexte → objectif → technologies → réalisation → résultat\n\n**Page 6 — Compétences (1 min)**\n- Compétences SISR couvertes : C1 à C6\n- Lien entre projets et blocs de compétences\n\n**Page 7 — Veille technologique (1 min 30)**\n- Thème : cybersécurité / Cloud / réseau\n- Sources utilisées (ANSSI, CISA, CERT-FR, IT News)\n- Méthode et fréquence\n\n**Conclusion (30 sec)**\n- Bilan du BTS, projet professionnel (Administrateur système réseaux et cybersécurité orienté Cloud)\n- Perspectives (Bachelor, certifications CCNA, AZ-900)"
+      },
+      {
+        "titre": "2. Conseils de présentation et gestion du stress",
+        "contenu": "**Conseils de fond :**\n- Connaître ses projets par cœur (objectifs, choix techniques, difficultés, solutions, résultats)\n- Préparer des chiffres : nombre de machines, VLAN configurés, utilisateurs concernés\n- Avoir une réponse pour chaque technologie du tableau de synthèse\n- Anticiper les questions piège : « Pourquoi ce choix et pas une autre solution ? », « Quels problèmes avez-vous rencontrés ? »\n\n**Conseils de forme :**\n- Rythme : ne pas parler trop vite (120-150 mots/minute est optimal)\n- Contact visuel : alterner entre les membres du jury\n- Posture : debout ou assis bien droit, mains visibles\n- Portfolio sur tablette ou support imprimé de qualité\n\n**Gestion des questions :**\n- Si vous ne connaissez pas : « Je n'ai pas eu l'occasion de travailler sur ce point précis, mais je saurais l'aborder en... »\n- Reformuler avant de répondre : « Si je comprends bien, vous me demandez... »\n- Ne pas inventer : un jury détecte immédiatement une réponse approximative\n\n**Formules d'accroche recommandées :**\n- « Avant de vous présenter mes projets, permettez-moi de vous donner un contexte... »\n- « Ce projet m'a particulièrement formé parce que... »\n- « La difficulté principale était... et voici comment je l'ai résolue... »"
+      }
+    ],
+    "exercices": [
+      {
+        "type": "pratique",
+        "question": "Préparez une réponse de 30 secondes à la question du jury : 'Pourquoi avez-vous choisi FreeRADIUS plutôt qu'une solution commerciale pour votre projet 802.1X ?'",
+        "reponse": "Réponse modèle : 'Le choix de FreeRADIUS s'est imposé pour plusieurs raisons. D'abord, c'est la solution open source de référence pour le protocole RADIUS, utilisée par des milliers d'entreprises en production. Ensuite, dans le contexte d'un projet scolaire, elle nous permettait d'explorer la configuration en profondeur sans contrainte de licence. Enfin, FreeRADIUS supporte toutes les méthodes EAP nécessaires, notamment PEAP-MSCHAPv2 pour l'intégration avec Active Directory.'"
+      }
+    ],
+    "liens": [
+      {"texte": "Référentiel BTS SIO — Eduscol", "url": "https://eduscol.education.fr/sti/si-ens-sio"},
+      {"texte": "ANSSI — Cybersécurité", "url": "https://www.ssi.gouv.fr"}
+    ]
+  },
+  {
+    "id": "culture-08",
+    "chapitre": "culture-08",
+    "titre": "Corpus d'entraînement — Synthèses rédigées",
+    "domaine": "Culture générale et expression",
+    "sections": [
+      {
+        "titre": "Corpus 1 — IA et emploi : synthèse rédigée complète",
+        "contenu": "**Documents du corpus (fictifs représentatifs) :**\n- Doc. 1 : Forum économique mondial, « Future of Jobs Report 2023 » — 83 millions d'emplois détruits, 69 millions créés\n- Doc. 2 : Erik Brynjolfsson (MIT), « The AI Productivity Paradox » — l'IA augmente les travailleurs qualifiés\n- Doc. 3 : CGT, communiqué « L'IA, menace pour les travailleurs » (2023) — appel à une régulation stricte\n\n**Problématique :** L'essor de l'intelligence artificielle constitue-t-il une menace inévitable pour l'emploi ou une opportunité de transformation du travail ?\n\n**Synthèse rédigée (modèle BTS, ~200 mots) :**\n\n« L'intelligence artificielle s'impose aujourd'hui comme l'une des transformations les plus profondes du marché du travail depuis la révolution industrielle. Ce corpus réunit trois regards complémentaires : une analyse économique prospective (Doc. 1), une étude académique nuancée (Doc. 2) et une prise de position syndicale (Doc. 3). Il s'agit de déterminer si l'IA constitue principalement une menace ou une opportunité pour l'emploi.\n\nLes documents convergent pour reconnaître que l'IA supprime des emplois dans les secteurs répétitifs. Le Forum économique mondial (Doc. 1) chiffre à 83 millions les emplois menacés d'ici 2027, en particulier dans la comptabilité, la saisie de données et la logistique. La CGT (Doc. 3) insiste sur la précarisation des travailleurs peu qualifiés, qui subissent cette transformation sans filets de protection suffisants.\n\nCependant, les auteurs s'opposent sur la nature de cette mutation. Tandis que le Doc. 1 anticipe la création simultanée de 69 millions de nouveaux postes dans les secteurs technologiques et verts, Brynjolfsson (Doc. 2) nuance cette vision en soulignant que l'IA augmente surtout la productivité des travailleurs qualifiés déjà en poste, sans nécessairement créer d'emplois nouveaux.\n\nEn définitive, la question n'est pas tant celle du remplacement que celle de la transition : comme le montrent ces trois documents, le défi majeur est celui de la formation et de l'accompagnement des travailleurs, responsabilité partagée entre entreprises, syndicats et pouvoirs publics. »"
+      },
+      {
+        "titre": "Corpus 2 — Vie privée et numérique : synthèse rédigée complète",
+        "contenu": "**Documents du corpus (fictifs représentatifs) :**\n- Doc. 1 : CNIL, « Le droit à la vie privée à l'ère numérique » (2022)\n- Doc. 2 : Glenn Greenwald, « No Place to Hide » (2014) — révélations Snowden\n- Doc. 3 : Gilles Babinet (conseiller numérique), tribune « Nos données sont le pétrole du XXIe siècle » (Le Monde, 2021)\n\n**Problématique :** Dans quelle mesure le numérique remet-il en cause la protection de la vie privée, et quels mécanismes permettent de la préserver ?\n\n**Synthèse rédigée (modèle BTS, ~200 mots) :**\n\n« À l'heure où la quasi-totalité de nos activités laisse une trace numérique, la question de la protection de la vie privée est devenue centrale dans les démocraties contemporaines. Ce corpus confronte trois approches : institutionnelle (Doc. 1), journalistique (Doc. 2) et entrepreneuriale (Doc. 3). Il s'agit d'évaluer dans quelle mesure le numérique compromet la vie privée et si une protection effective est envisageable.\n\nLes auteurs s'accordent sur la fragilité de la vie privée à l'ère numérique. La CNIL (Doc. 1) rappelle que les données personnelles sont collectées massivement, souvent à l'insu des utilisateurs, et que seule une réglementation stricte peut contrebalancer les pratiques des géants du numérique. Greenwald (Doc. 2) illustre cette menace de façon saisissante : les révélations Snowden ont démontré que la surveillance de masse, étatique comme commerciale, est devenue une réalité globale.\n\nNéanmoins, Babinet (Doc. 3) adopte une posture plus pragmatique, soulignant que les données constituent désormais un actif économique majeur et qu'une régulation trop restrictive risquerait de freiner l'innovation européenne face aux géants américains et chinois. Il plaide pour un équilibre entre protection et valorisation.\n\nAinsi, si tous les auteurs reconnaissent la vulnérabilité de la vie privée numérique, ils divergent sur les solutions : réglementation coercitive pour la CNIL, vigilance citoyenne pour Greenwald, compromis économique pour Babinet. Cette tension constitue précisément le cœur du débat démocratique sur la gouvernance du numérique. »"
+      }
+    ],
+    "exercices": [
+      {
+        "type": "pratique",
+        "question": "En utilisant les techniques vues dans ce chapitre, identifiez la problématique et le plan possible pour un corpus composé de : (1) un article sur le crédit social chinois, (2) une tribune défendant la vidéosurveillance en France, (3) un rapport Amnesty International sur la surveillance numérique.",
+        "reponse": "Problématique possible : 'La surveillance numérique constitue-t-elle un instrument de sécurité légitime ou une menace pour les libertés individuelles ?' Plan : I. La surveillance numérique est présentée comme une nécessité sécuritaire (Doc.1 China, Doc.2 France) — II. Elle représente une menace documentée pour les droits fondamentaux (Doc.3 Amnesty) — III. Le débat révèle la nécessité d'un cadre démocratique de contrôle de la surveillance."
+      }
+    ],
+    "liens": [
+      {"texte": "CNIL — Fiches pratiques", "url": "https://www.cnil.fr/fr/textes-officiels-europeens-protection-donnees"},
+      {"texte": "Annales BTS Culture générale — APMEP", "url": "https://www.apmep.fr/Annales-BTS"}
+    ]
+  },
+  {
+    "id": "culture-09",
+    "titre": "Theme CGE 2026 — Les animaux et nous : imaginer, connaitre, comprendre l'animal",
+    "contenu": [
+      {
+        "sous_titre": "Presentation du theme officiel 2026",
+        "texte": "Le theme officiel de l'epreuve de Culture Generale et Expression (CGE) pour le BTS session 2026 est : 'Les animaux et nous : imaginer, connaitre, comprendre l'animal'.\n\nCe theme invite a interroger les multiples relations que l'etre humain entretient avec les animaux : relation affective (animaux de compagnie), relation scientifique (etude du comportement animal, cognition), relation ethique (bien-etre animal, droits des animaux), relation economique (elevage, experimentation), relation culturelle et imaginaire (mythes, litterature, symboles).\n\nL'epreuve CGE comporte deux parties :\n1. Synthese de documents : plusieurs textes / images / documents sur le theme, rediger une synthese objective de 200 mots environ.\n2. Ecriture personnelle : repondre a une question en exprimant son point de vue argumente.\n\nDuree : 3h — Coefficient : 3"
+      },
+      {
+        "sous_titre": "Reperes historiques et juridiques",
+        "texte": "Dates et lois cles :\n\n- 1850 : Loi Grammont (France) — premiere loi francaise contre la cruaute envers les animaux domestiques. Premier texte legislatif de protection animale en Europe.\n- 1963 : Convention europeenne pour la protection des animaux dans les elevages.\n- 1976 : Loi Bardot (France) — renforce la protection contre la maltraitance animale.\n- 1987 : Convention europeenne pour la protection des animaux de compagnie.\n- 1997 : Traite d'Amsterdam — reconnaissance de la sensibilite animale au sein de l'Union europeenne.\n- 2015 : Reforme du Code civil francais — l'article 515-14 reconnait les animaux comme 'etres vivants doues de sensibilite' (sortie du statut de bien meuble).\n- 2021 : Loi contre la maltraitance animale (France) — interdiction des delphinariums, spectacles avec animaux sauvages dans les cirques itinerants (delai de 7 ans), renforcement des peines.\n\nPersonnalites cles :\n- Peter Singer (ne 1946) : philosophe australien, auteur de 'La Liberation animale' (1975) — fondateur du mouvement antispéciste, concept de 'specisme' (discrimination fondee sur l'appartenance a une espece).\n- Tom Regan (1938-2017) : philosophe americain, theorie des 'droits des animaux' — les animaux ont des droits inherents.\n- Jane Goodall (nee 1934) : primatologue britannique, etude des chimpanzes en milieu naturel (Tanzania, 1960) — demontre que les chimpanzes fabriquent et utilisent des outils.\n- Konrad Lorenz (1903-1989) : ethologue autrichien, prix Nobel de medecine 1973, fondateur de l'ethologie moderne, concept d'empreinte (imprinting).\n- Boris Cyrulnik (ne 1937) : neuropsychiatre francais, travaux sur l'attachement homme-animal et la resilience."
+      },
+      {
+        "sous_titre": "Cognition et intelligence animale",
+        "texte": "Principales decouvertes scientifiques :\n\n1. Chimpanzes (Jane Goodall, 1960s) : utilisation d'outils (brindilles pour extraire des termites), comportements sociaux complexes, transmission culturelle.\n\n2. Alex le perroquet (Irene Pepperberg, 1977-2007) : perroquet gris d'Afrique capable d'identifier des couleurs, des formes, de compter jusqu'a 6, de formuler des demandes. Mort en 2007 en disant 'You be good. I love you'.\n\n3. Dauphin : reconnaissance de soi dans un miroir (test du miroir, Gordon Gallup Jr., 1970) — indicateur de conscience de soi. Demontre aussi chez les grands singes, elephants, pies.\n\n4. Elephants : memoire a long terme, empathie (comportement de deuil), utilisation d'outils, reconnaissance de soi.\n\n5. Poulpe/Pieuvre : systeme nerveux distribue (2/3 des neurones dans les tentacules), apprentissage par observation, camouflage contextuel adaptatif.\n\n6. Abeilles : danse des abeilles (Karl von Frisch, Nobel 1973) — communication de la direction et de la distance d'une source de nourriture par une danse ritualisee ('danse en frétillement').\n\nConceptes scientifiques a maitriser :\n- Ethologie : science du comportement animal en milieu naturel.\n- Cognition animale : capacites mentales (memoire, resolution de problemes, communication).\n- Theorie de l'esprit (Theory of Mind) : capacite a attribuer des etats mentaux a autrui — observee partiellement chez les grands singes.\n- Sentience : capacite a eprouver des sensations subjectives (plaisir, douleur, emotions)."
+      },
+      {
+        "sous_titre": "Ethique animale et specisme",
+        "texte": "Concepts philosophiques fondamentaux :\n\n1. Specisme (Peter Singer) : discrimination morale fondee sur l'appartenance a une espece, analogue au racisme ou au sexisme. Singer argumente que la capacite a souffrir est le critere moral pertinent, pas l'appartenance a l'espece Homo sapiens.\n\n2. Bien-etre animal (animal welfare) : approche pragmatique (≠ droits des animaux) qui accepte l'utilisation des animaux mais exige des conditions minimales. Les 5 libertes (Brambell, 1965) : absence de faim/soif, absence de souffrance physique, absence de douleur/maladie, expression du comportement naturel, absence de peur/detresse.\n\n3. Antispécisme : mouvement qui refuse toute hierarchie morale entre especes. Prone l'abolition de l'exploitation animale (elevage, experimentation, spectacles).\n\n4. Veganism vs vegetarisme : veganism = refus de tout produit d'origine animale (alimentaire, vestimentaire) ; vegetarisme = refus de chair animale.\n\n5. Experimentation animale : debat entre necessite scientifique et medicale vs souffrance infligee. Directive europeenne 2010/63/UE encadre l'experimentation : principe des 3R (Remplacer, Reduire, Raffiner).\n\nChiffres cles :\n- France 2022 : 1,88 million d'animaux utilises pour la recherche scientifique (source : Comite National de Reflexion Ethique sur l'Experimentation Animale — CNREEA).\n- 70% des medicaments mis sur le marche ont ete testes sur des animaux.\n- 65 milliards d'animaux terrestres abattus par an dans le monde pour l'alimentation (FAO)."
+      },
+      {
+        "sous_titre": "L'animal dans l'imaginaire culturel et litteraire",
+        "texte": "L'animal occupe une place centrale dans les representations humaines depuis la prehistoire.\n\nRepresentations historiques :\n- Grottes de Lascaux (17 000 ans av. J.-C.) : peintures rupestres representant des bovins, cerfs, chevaux — premiers temoignages de la fascination humaine pour l'animal.\n- Egypte antique : animaux sacres (Anubis/chacal, Bastet/chat, Horus/faucon) — l'animal comme intermediaire entre monde humain et divin.\n- Fables : Esope (VIe siecle av. J.-C.), La Fontaine (XVIIe siecle) — utilisation des animaux comme allegories de defauts et qualites humaines.\n\nLitterature et cinema :\n- 'La Ferme des animaux' (George Orwell, 1945) : allegorie politique — les animaux symbolisent les classes sociales et le totalitarisme stalinien.\n- 'Moby Dick' (Herman Melville, 1851) : la baleine comme symbole de l'inconnu, de la nature indomptable.\n- 'L'Etranger' (Albert Camus, 1942) : le chien du vieux Salamano — symbolise la solitude et l'incomprehension.\n- Cinema : 'Au hasard Balthazar' (Robert Bresson, 1966), 'La Planete des singes' (1968), 'Bambi' (Disney, 1942).\n\nBiomimetisme (lien avec SISR/Numerique) :\n- Definition : s'inspirer des solutions biologiques des animaux pour resoudre des problemes techniques.\n- Exemples : Velcro (inspire des crampons de la bardane), combinaison de natation (peau de requin), sonar des sous-marins (echolocation des chauves-souris), algorithmes de colonies de fourmis (optimisation de routes reseau), reseaux de neurones artificiels (inspire du cerveau humain).\n- IA et neurosciences computationnelles : DeepMind AlphaFold (prediction de la structure des proteines, 2020) inspire des mecanismes biologiques."
+      },
+      {
+        "sous_titre": "Methodologie : la synthese de documents sur ce theme",
+        "texte": "Exemple de plan pour une synthese sur 'La place de l'animal dans la societe contemporaine' :\n\nDocuments types susceptibles d'etre proposes :\n- Texte journalistique (ex : article du Monde sur la loi 2021)\n- Texte philosophique (extrait de Singer ou Cyrulnik)\n- Infographie (statistiques elevage, experimentation)\n- Photo ou dessin (representation symbolique)\n\nEtapes de la synthese :\n1. Lecture et annotation de chaque document (15 min)\n2. Tableau comparatif des idees par document (10 min)\n3. Identification de l'idee directrice commune\n4. Plan en 2 ou 3 parties (equilibrees)\n5. Redaction : introduction (presentation documents + problematique + annonce plan), developpement, conclusion (bilan objectif)\n\nConseils methodologiques :\n- Ne JAMAIS donner son avis dans la synthese (contrairement a l'ecriture personnelle)\n- Reformuler, ne pas copier-coller\n- Articuler les idees entre les documents (confrontation, convergence, complementarite)\n- Respecter la proportion : 200 mots minimum\n\nExemple de phrase d'introduction :\n'Les quatre documents proposes abordent, sous des angles complementaires, la question de la place des animaux dans la societe humaine. La these commune qui se degage est celle d'une relation en mutation, tiraillee entre exploitation traditionnelle et prise de conscience ethique croissante.'\n\nAxes de problematique frequents :\n- L'animal sujet de droit vs l'animal ressource economique\n- Intelligence animale : quelles consequences ethiques ?\n- La protection animale : evolution des mentalites ou contrainte legislative ?"
+      },
+      {
+        "sous_titre": "Ecriture personnelle — exemples de sujets et de reponses",
+        "texte": "Sujet type 1 :\n'Pensez-vous que la reconnaissance de la sensibilite animale doit conduire a accorder des droits aux animaux ? Vous repondrez en vous appuyant sur les documents et vos connaissances personnelles.'\n\nPlan suggere :\nI. La science confirme la sensibilite et l'intelligence des animaux → base pour une evolution juridique\nII. La protection animale progresse mais reste limitee (bien-etre vs droits)\nIII. Les enjeux economiques et culturels freinent une revolution juridique complete\nConclusion : une evolution graduelle est preferable a une rupture radicale.\n\n---\n\nSujet type 2 :\n'L'etre humain peut-il se passer des animaux ?'\n\nPlan :\nI. Des relations ancestrales et multifonctionnelles (alimentation, travail, compagnie, recherche)\nII. Des alternatives emergent mais restent partielles (proteine vegetale, IA, organoide)\nIII. La question n'est pas tant 'peut-il' mais 'doit-il' → glissement ethique\n\n---\n\nSujet type 3 (en lien avec le numerique / BTS SIO) :\n'En quoi le vivant inspire-t-il l'innovation technologique ?'\n\nPlan :\nI. Le biomimetisme : l'animal comme modele d'efficacite (velcro, sonar, algorithmes de fourmis)\nII. Les neurosciences computationnelles : le cerveau animal comme inspiration pour l'IA\nIII. Les limites ethiques du biomimetisme et de l'experimentation animale au service de la technologie\n\nCette question est particulierement pertinente pour les candidats BTS SIO car elle etablit un pont direct entre la culture generale et le domaine professionnel (reseaux, IA, cybersecurite)."
+      }
+    ],
+    "liens": [
+      {"label": "Loi contre maltraitance animale 2021 — Legifrance", "url": "https://www.legifrance.gouv.fr/"},
+      {"label": "CNREEA — Experimentation animale", "url": "https://agriculture.gouv.fr/"},
+      {"label": "Peter Singer — Animal Liberation Project", "url": "https://www.utilitarian.net/singer/"},
+      {"label": "Jane Goodall Institute", "url": "https://janegoodall.org/"}
+    ]
+  }
+]

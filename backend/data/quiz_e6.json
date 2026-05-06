@@ -1,0 +1,246 @@
+﻿[
+  {
+    "id": "qe6-01",
+    "type": "qcm",
+    "question": "Un utilisateur signale qu'il ne peut plus accéder au serveur de fichiers. Vous constatez que l'adresse IP du poste est 169.254.x.x. Quelle est la cause la plus probable ?",
+    "choix": [
+      "Le serveur de fichiers est hors ligne",
+      "Le poste n'a pas réussi à obtenir d'adresse IP via DHCP (APIPA actif)",
+      "Le mot de passe du domaine a expiré",
+      "La carte réseau est défectueuse"
+    ],
+    "reponse_correcte": "Le poste n'a pas réussi à obtenir d'adresse IP via DHCP (APIPA actif)",
+    "explication": "169.254.0.0/16 est la plage APIPA (Automatic Private IP Addressing). Windows l'attribue automatiquement quand le client DHCP ne reçoit pas de réponse. Vérifier : câble réseau, service DHCP (scope, étendue), connexion au commutateur, bail DHCP disponible. Commande de diagnostic : ipconfig /all puis ipconfig /release && ipconfig /renew."
+  },
+  {
+    "id": "qe6-02",
+    "type": "qcm",
+    "question": "Sur un serveur Windows Server 2022, quelle commande PowerShell permet de lister tous les utilisateurs d'un groupe de sécurité Active Directory nommé 'GRP_IT' ?",
+    "choix": [
+      "Get-ADUser -Filter * -SearchBase 'GRP_IT'",
+      "Get-ADGroupMember -Identity 'GRP_IT' | Select-Object Name, SamAccountName",
+      "Get-ADGroup -Identity 'GRP_IT' -Properties Members",
+      "Show-ADGroup -Name 'GRP_IT'"
+    ],
+    "reponse_correcte": "Get-ADGroupMember -Identity 'GRP_IT' | Select-Object Name, SamAccountName",
+    "explication": "Get-ADGroupMember retourne les membres d'un groupe AD. Le pipe vers Select-Object filtre les propriétés affichées. Pour obtenir les membres récursivement (sous-groupes inclus) : Get-ADGroupMember -Identity 'GRP_IT' -Recursive. Le module RSAT ActiveDirectory doit être installé."
+  },
+  {
+    "id": "qe6-03",
+    "type": "cas_pratique",
+    "question": "Un technicien junior vous demande la différence entre DNS A, AAAA, CNAME et MX. Expliquez chaque type d'enregistrement avec un exemple concret.",
+    "reponse_correcte": "A : associe un nom de domaine à une adresse IPv4. Ex: serveur.iris.local → 192.168.1.10\nAAAA : associe un nom de domaine à une adresse IPv6. Ex: serveur.iris.local → 2001:db8::1\nCNAME (alias) : pointe un nom vers un autre nom (pas une IP). Ex: www.iris.local → iris.local (le nom canonique). ATTENTION : un CNAME ne peut pas coexister avec d'autres enregistrements sur le même nom.\nMX (Mail Exchanger) : indique le serveur de messagerie pour le domaine, avec une priorité. Ex: iris.local MX 10 mail.iris.local (priorité 10, plus petit = plus prioritaire).",
+    "explication": "Comprendre les types d'enregistrements DNS est fondamental en SISR. Pour le BTS E6, savoir interpréter un 'dig' ou 'nslookup' et expliquer les enregistrements est attendu. Autres types importants : PTR (résolution inverse), SRV (services), TXT (SPF, DMARC, vérification de domaine)."
+  },
+  {
+    "id": "qe6-04",
+    "type": "qcm",
+    "question": "Dans Active Directory, qu'est-ce qu'une GPO (Group Policy Object) et sur quels conteneurs peut-elle être appliquée ?",
+    "choix": [
+      "Un script PowerShell appliqué uniquement aux serveurs",
+      "Un objet de stratégie de groupe définissant des paramètres de configuration appliqués aux utilisateurs et/ou ordinateurs d'un site, domaine ou OU",
+      "Un groupe de sécurité avec des permissions NTFS",
+      "Un rôle FSMO gérant les mots de passe"
+    ],
+    "reponse_correcte": "Un objet de stratégie de groupe définissant des paramètres de configuration appliqués aux utilisateurs et/ou ordinateurs d'un site, domaine ou OU",
+    "explication": "Une GPO est liée à un objet de type Site, Domaine ou OU (Organizational Unit). L'ordre d'application (LSDOU) : Local → Site → Domain → OU. En cas de conflit, la GPO la plus proche (OU la plus profonde) l'emporte. Exemples : déploiement logiciel, mappage de lecteurs réseau, configuration du pare-feu, fond d'écran, restriction d'accès au Panneau de configuration."
+  },
+  {
+    "id": "qe6-05",
+    "type": "qcm",
+    "question": "Un utilisateur ne peut pas joindre un serveur par son nom mais peut le pinger par IP. Quelle est la cause probable et comment la diagnostiquer ?",
+    "choix": [
+      "Problème de routage — vérifier la table de routage",
+      "Problème de résolution DNS — vérifier avec nslookup ou dig le nom du serveur",
+      "Problème de VLAN — le serveur est dans un VLAN différent",
+      "Problème de certificat SSL"
+    ],
+    "reponse_correcte": "Problème de résolution DNS — vérifier avec nslookup ou dig le nom du serveur",
+    "explication": "Si le ping IP fonctionne mais pas le nom → problème de résolution de noms. Diagnostic : nslookup nomserveur — vérifie si le serveur DNS répond correctement. Causes possibles : enregistrement A absent ou incorrect dans le DNS, client utilise un mauvais serveur DNS (ipconfig /all), cache DNS corrompu (ipconfig /flushdns), problème de propagation."
+  },
+  {
+    "id": "qe6-06",
+    "type": "qcm",
+    "question": "Sur un commutateur Cisco, quelle commande vérifie que le trunk est bien configuré entre deux switches et montre les VLANs autorisés ?",
+    "choix": [
+      "show vlan brief",
+      "show interfaces trunk",
+      "show ip interface brief",
+      "show cdp neighbors"
+    ],
+    "reponse_correcte": "show interfaces trunk",
+    "explication": "'show interfaces trunk' affiche : les interfaces en mode trunk, le mode d'encapsulation (802.1Q ou ISL), l'état du trunk, les VLANs autorisés, les VLANs actifs et en forwarding STP. 'show vlan brief' montre les VLANs et les ports en access. Pour les infos d'une interface spécifique : 'show interfaces Gi0/1 trunk'."
+  },
+  {
+    "id": "qe6-07",
+    "type": "cas_pratique",
+    "question": "Un ticket d'incident signale que le serveur de messagerie Exchange ne peut plus envoyer d'emails vers l'extérieur depuis ce matin. Décrivez votre démarche de diagnostic méthodique (au moins 5 étapes).",
+    "reponse_correcte": "1. Vérifier si le problème est total ou partiel (réception fonctionne ? Envoi interne fonctionne ?)\n2. Consulter les logs Exchange (Event Viewer → Application, Exchange Management Shell : Get-MessageTrackingLog) pour identifier les erreurs\n3. Tester la connectivité SMTP sortante : telnet smtp.fournisseur.com 25 ou Test-NetConnection smtp.fournisseur.com -Port 25\n4. Vérifier le pare-feu : le port 25 (SMTP) sortant est-il autorisé ? Une règle a-t-elle été modifiée ?\n5. Vérifier l'enregistrement SPF/MX du domaine (nslookup -type=txt domaine.fr) — l'IP publique est-elle dans le SPF ?\n6. Vérifier si l'IP publique n'est pas blacklistée (mxtoolbox.com/blacklists.aspx)\n7. Vérifier le connecteur d'envoi Exchange : état, adresse IP smarthost si applicable",
+    "explication": "La démarche de diagnostic doit être méthodique : du général au particulier, en commençant par isoler le périmètre du problème. La consultation des logs est toujours prioritaire. En E6, le jury évalue la rigueur de la démarche autant que les connaissances techniques."
+  },
+  {
+    "id": "qe6-08",
+    "type": "qcm",
+    "question": "Quelle est la différence entre RAID 1 et RAID 5 en termes de redondance et d'espace utilisable ?",
+    "choix": [
+      "RAID 1 = parité, RAID 5 = miroir",
+      "RAID 1 (miroir) : 2 disques, 50% espace utilisable, tolère 1 panne ; RAID 5 : minimum 3 disques, espace (n-1), tolère 1 panne disque",
+      "RAID 1 et RAID 5 ont les mêmes performances en lecture",
+      "RAID 5 nécessite un contrôleur matériel obligatoirement"
+    ],
+    "reponse_correcte": "RAID 1 (miroir) : 2 disques, 50% espace utilisable, tolère 1 panne ; RAID 5 : minimum 3 disques, espace (n-1), tolère 1 panne disque",
+    "explication": "RAID 0 : performances, aucune redondance. RAID 1 : miroir exact, 2 disques min, 50% utilisable, excellente lecture. RAID 5 : parité distribuée, 3 disques min, (n-1) utilisable (ex: 3x1To = 2To), bonnes perfs lecture, écriture plus lente (calcul parité). RAID 6 : 2 disques de parité, tolère 2 pannes. RAID 10 = RAID 1+0."
+  },
+  {
+    "id": "qe6-09",
+    "type": "qcm",
+    "question": "Dans un environnement virtualisé (VMware ESXi ou Hyper-V), qu'est-ce qu'un 'snapshot' et quand doit-on l'utiliser ?",
+    "choix": [
+      "Une sauvegarde complète de la VM stockée hors du serveur",
+      "Un état figé de la VM à un instant T permettant de revenir en arrière — à utiliser avant une mise à jour ou modification risquée, pas comme sauvegarde permanente",
+      "Un clone complet de la VM sur un autre hôte",
+      "Un rapport de performance de la VM"
+    ],
+    "reponse_correcte": "Un état figé de la VM à un instant T permettant de revenir en arrière — à utiliser avant une mise à jour ou modification risquée, pas comme sauvegarde permanente",
+    "explication": "Un snapshot capture l'état (mémoire + disque + config) de la VM. Il permet de revenir à cet état en cas de problème. ATTENTION : les snapshots s'accumulent et dégradent les performances. Ils ne remplacent pas une vraie sauvegarde (Veeam, Azure Backup). À supprimer dès la validation de la mise à jour. Sur Hyper-V : appelé 'Point de contrôle'."
+  },
+  {
+    "id": "qe6-10",
+    "type": "cas_pratique",
+    "question": "Vous devez créer un script PowerShell qui exporte la liste de tous les comptes utilisateurs AD désactivés depuis plus de 90 jours (lastLogonDate) dans un fichier CSV. Écrivez ce script.",
+    "reponse_correcte": "# Calcul de la date limite (90 jours en arrière)\n$dateLimite = (Get-Date).AddDays(-90)\n\n# Récupération des comptes désactivés dont la dernière connexion est antérieure à 90 jours\n$utilisateurs = Get-ADUser -Filter {Enabled -eq $false -and LastLogonDate -lt $dateLimite} `\n    -Properties DisplayName, SamAccountName, LastLogonDate, DistinguishedName | `\n    Select-Object DisplayName, SamAccountName, LastLogonDate, DistinguishedName\n\n# Export CSV\n$utilisateurs | Export-Csv -Path 'C:\\Exports\\comptes_desactives_90j.csv' -NoTypeInformation -Encoding UTF8\n\nWrite-Host \"Exporté : $($utilisateurs.Count) comptes\" -ForegroundColor Green",
+    "explication": "Ce type de script est typique d'une mission de gestion de parc AD. Points clés : Get-ADUser avec -Filter pour cibler les comptes désactivés, -Properties pour inclure LastLogonDate (attribut étendu non retourné par défaut), Export-Csv avec -NoTypeInformation pour un CSV propre. Prérequis : module ActiveDirectory (RSAT)."
+  },
+  {
+    "id": "qe6-11",
+    "type": "qcm",
+    "question": "Un serveur Linux (Debian) ne démarre plus après une mise à jour du kernel. Le GRUB charge mais le système s'arrête en 'kernel panic'. Quelle est votre première action ?",
+    "choix": [
+      "Réinstaller le système d'exploitation",
+      "Booter sur l'ancien kernel depuis le menu GRUB (Advanced options) pour restaurer un état fonctionnel",
+      "Remplacer le disque dur",
+      "Contacter le support constructeur"
+    ],
+    "reponse_correcte": "Booter sur l'ancien kernel depuis le menu GRUB (Advanced options) pour restaurer un état fonctionnel",
+    "explication": "GRUB conserve plusieurs versions du kernel. Au démarrage, maintenir Shift (BIOS) ou Echap (UEFI) → Advanced options for Debian → sélectionner l'avant-dernier kernel. Une fois démarré, on peut désinstaller le nouveau kernel (apt remove linux-image-X.X.X), analyser les logs (dmesg, journalctl -b -1) et réinstaller proprement."
+  },
+  {
+    "id": "qe6-12",
+    "type": "qcm",
+    "question": "Quelle est la différence entre un proxy et un reverse proxy ?",
+    "choix": [
+      "Un proxy protège les serveurs, un reverse proxy protège les clients",
+      "Un proxy (forward) est côté client et masque les clients vers Internet ; un reverse proxy est côté serveur, répartit le trafic et masque l'infrastructure serveur aux clients",
+      "Ce sont des synonymes pour des équipements réseau différents",
+      "Un proxy est matériel, un reverse proxy est logiciel"
+    ],
+    "reponse_correcte": "Un proxy (forward) est côté client et masque les clients vers Internet ; un reverse proxy est côté serveur, répartit le trafic et masque l'infrastructure serveur aux clients",
+    "explication": "Proxy forward : clients → Proxy → Internet (ex: Squid). Filtre les requêtes sortantes, cache web, contrôle des accès. Reverse proxy : Internet → Reverse Proxy → Serveurs (ex: Nginx, HAProxy, Apache mod_proxy). Fonctions : load balancing, terminaison SSL/TLS, cache, WAF, hide infrastructure. Nginx est le reverse proxy le plus utilisé."
+  },
+  {
+    "id": "qe6-13",
+    "type": "qcm",
+    "question": "Sur un pare-feu, vous devez autoriser uniquement le trafic HTTPS depuis Internet vers un serveur web en DMZ (192.168.50.10). Quelle règle (NAT + filtre) est nécessaire ?",
+    "choix": [
+      "NAT destination : WAN:443 → 192.168.50.10:443 ; Règle filtre : autoriser TCP port 443 WAN → DMZ 192.168.50.10",
+      "Autoriser tout le trafic de WAN vers DMZ",
+      "NAT source : 192.168.50.10 → WAN ; Règle filtre : ANY → ANY",
+      "Pas besoin de NAT si le serveur a une IP publique en DMZ"
+    ],
+    "reponse_correcte": "NAT destination : WAN:443 → 192.168.50.10:443 ; Règle filtre : autoriser TCP port 443 WAN → DMZ 192.168.50.10",
+    "explication": "Deux règles nécessaires : (1) DNAT (Destination NAT / Port Forwarding) : traduire l'IP publique:443 vers l'IP privée DMZ:443. (2) Règle de filtrage autorisant TCP/443 entrant vers la DMZ. Il ne faut autoriser QUE le port 443 (principe du moindre privilège). Sur pfSense : NAT → Port Forward puis règle de filtre associée automatiquement."
+  },
+  {
+    "id": "qe6-14",
+    "type": "vrai_faux",
+    "question": "Il est possible d'avoir plusieurs enregistrements MX sur un même domaine avec des priorités différentes pour assurer la redondance de la messagerie.",
+    "reponse_correcte": "Vrai",
+    "explication": "On peut définir plusieurs MX avec des priorités différentes (plus la valeur est basse, plus la priorité est haute). Ex: iris.fr MX 10 mail1.iris.fr et MX 20 mail2.iris.fr. Si mail1 est indisponible, les serveurs SMTP expéditeurs tentent mail2. C'est une pratique standard pour la haute disponibilité de la messagerie."
+  },
+  {
+    "id": "qe6-15",
+    "type": "cas_pratique",
+    "question": "Un utilisateur se plaint que son accès au partage réseau \\\\SERVEUR\\Documents est refusé malgré les bonnes permissions NTFS. Quelles vérifications effectuez-vous (au moins 4 points) ?",
+    "reponse_correcte": "1. Vérifier les permissions de PARTAGE (Share Permissions) : les permissions partage sont la première barrière. Même si NTFS autorise, si le partage est restreint à un groupe dont l'utilisateur ne fait pas partie, l'accès est refusé.\n2. Vérifier les permissions NTFS sur le dossier (icacls \\\\SERVEUR\\c$\\Documents ou propriétés → Sécurité) : chercher un DENY explicite qui écrase les ALLOW.\n3. Vérifier l'appartenance aux groupes AD de l'utilisateur (Get-ADGroupMember ou gpresult /r) — la permission peut être accordée via un groupe.\n4. Vérifier que le service Server (LanmanServer) est actif sur le serveur.\n5. Tester la résolution du nom SERVEUR (ping \\\\SERVEUR, nslookup SERVEUR).\n6. Vérifier le pare-feu Windows : autorisation partage de fichiers (port 445 TCP).",
+    "explication": "Le principe d'intersection : les permissions effectives sont les plus restrictives entre les permissions de partage et les permissions NTFS. Un DENY explicite écrase toujours un ALLOW. La démarche doit être méthodique : d'abord le réseau (connectivité), ensuite le partage (permissions share), ensuite NTFS."
+  },
+  {
+    "id": "qe6-16",
+    "type": "qcm",
+    "question": "Lors du déploiement d'un poste Windows 10 en entreprise via WDS/MDT, quelle technologie permet d'automatiser complètement l'installation sans intervention manuelle (réponses aux questions d'installation) ?",
+    "choix": [
+      "Un script batch lancé après installation",
+      "Un fichier de réponses (unattend.xml / autounattend.xml) injecté dans le WIM",
+      "Une GPO déployée sur le nouveau poste",
+      "Un snapshot VMware de la configuration de référence"
+    ],
+    "reponse_correcte": "Un fichier de réponses (unattend.xml / autounattend.xml) injecté dans le WIM",
+    "explication": "Le fichier autounattend.xml (Windows Setup Automation) répond automatiquement à toutes les questions d'installation Windows (partition, langue, clé produit, compte administrateur, etc.). Combiné à MDT (Microsoft Deployment Toolkit), il permet un déploiement zero-touch. Outil de création : Windows System Image Manager (WSIM)."
+  },
+  {
+    "id": "qe6-17",
+    "type": "qcm",
+    "question": "Quelle commande Linux affiche les connexions réseau actives, les ports en écoute et les processus associés ?",
+    "choix": [
+      "netstat -tulnp (ou ss -tulnp sur les systèmes récents)",
+      "ifconfig -a",
+      "route -n",
+      "lsof /dev/net"
+    ],
+    "reponse_correcte": "netstat -tulnp (ou ss -tulnp sur les systèmes récents)",
+    "explication": "Options : t=TCP, u=UDP, l=listening (ports en écoute), n=numérique (pas de résolution de nom), p=process (PID et nom du programme). ss est le successeur moderne de netstat sur les distributions récentes. Ex: ss -tulnp | grep :443 pour voir quel processus écoute sur le port HTTPS."
+  },
+  {
+    "id": "qe6-18",
+    "type": "qcm",
+    "question": "Quelle est la procédure de jointure d'un poste Linux (Ubuntu) au domaine Active Directory iris.local en utilisant realmd et SSSD ?",
+    "choix": [
+      "apt install samba winbind ; smbpasswd -j iris.local",
+      "realm discover iris.local ; realm join iris.local -U Administrateur ; puis configurer /etc/sssd/sssd.conf",
+      "dpkg-reconfigure krb5-config ; kinit Administrateur@IRIS.LOCAL",
+      "apt install ad-connector ; ad-join --domain iris.local"
+    ],
+    "reponse_correcte": "realm discover iris.local ; realm join iris.local -U Administrateur ; puis configurer /etc/sssd/sssd.conf",
+    "explication": "Procédure complète : apt install realmd sssd sssd-tools adcli → realm discover iris.local (vérifie la découverte du domaine) → realm join iris.local -U Administrateur (joint le domaine avec un compte admin AD) → configurer /etc/sssd/sssd.conf (authentification, répertoire home) → systemctl restart sssd. Les utilisateurs AD peuvent ensuite se connecter en SSH."
+  },
+  {
+    "id": "qe6-19",
+    "type": "cas_pratique",
+    "question": "Vous devez déployer un certificat SSL/TLS Let's Encrypt sur un serveur Nginx pour le domaine monsite.iris.fr. Décrivez les étapes avec les commandes Certbot.",
+    "reponse_correcte": "1. Installer Certbot et le plugin Nginx :\napt install certbot python3-certbot-nginx\n\n2. Obtenir et installer automatiquement le certificat (Certbot modifie la config Nginx) :\ncertbot --nginx -d monsite.iris.fr -d www.monsite.iris.fr --email admin@iris.fr --agree-tos\n\n3. Vérifier la configuration Nginx générée (listen 443 ssl, ssl_certificate, ssl_certificate_key)\n\n4. Tester le renouvellement automatique :\ncertbot renew --dry-run\n\n5. Le renouvellement automatique est configuré via systemd timer ou crontab (certificat valide 90 jours, renouvelé automatiquement à 30 jours de l'expiration)\n\n6. Vérifier le certificat : curl -I https://monsite.iris.fr ou openssl s_client -connect monsite.iris.fr:443",
+    "explication": "Let's Encrypt fournit des certificats DV (Domain Validation) gratuits, valides 90 jours, renouvelés automatiquement par Certbot. Prérequis : le domaine doit pointer vers l'IP du serveur (enregistrement A DNS), le port 80 doit être accessible pour le challenge HTTP-01. En production, compléter avec HSTS et notes de sécurité SSL Labs."
+  },
+  {
+    "id": "qe6-20",
+    "type": "qcm",
+    "question": "Dans un contexte de supervision Nagios/Zabbix, quelle est la différence entre un check 'actif' et un check 'passif' ?",
+    "choix": [
+      "Actif = le serveur Nagios interroge l'hôte ; Passif = l'hôte envoie lui-même les résultats au serveur",
+      "Actif = résultats en temps réel, Passif = résultats historiques",
+      "Actif = monitoring réseau, Passif = monitoring applicatif",
+      "Il n'y a pas de différence fonctionnelle"
+    ],
+    "reponse_correcte": "Actif = le serveur Nagios interroge l'hôte ; Passif = l'hôte envoie lui-même les résultats au serveur",
+    "explication": "Checks actifs : le serveur de supervision déclenche les vérifications (ping, requête SNMP, plugin NRPE). Checks passifs : l'agent sur l'hôte envoie proactivement ses résultats au serveur (via NSCA pour Nagios). Utile pour les ressources derrière un NAT, les événements déclenchés par des actions, ou les tâches planifiées à surveiller."
+  },
+  {
+    "id": "qe6-21",
+    "type": "vrai_faux",
+    "question": "Sur un serveur Windows, il est possible de configurer le pare-feu Windows Defender pour appliquer des règles différentes selon le profil réseau (Domaine, Privé, Public) de l'interface.",
+    "reponse_correcte": "Vrai",
+    "explication": "Le Pare-feu Windows Defender avec fonctions avancées de sécurité (wf.msc) gère trois profils : Domaine (réseau d'entreprise avec contrôleur de domaine détecté), Privé (réseau domestique/de confiance), Public (Wi-Fi public). Chaque profil peut avoir des règles et un comportement par défaut différents. Cela permet d'autoriser le partage de fichiers uniquement en profil Domaine."
+  },
+  {
+    "id": "qe6-22",
+    "type": "qcm",
+    "question": "Un administrateur souhaite automatiser la sauvegarde hebdomadaire d'une base MySQL sur un serveur Linux. Quelle combinaison d'outils est la plus adaptée ?",
+    "choix": [
+      "mysqldump + crontab + compression gzip",
+      "phpMyAdmin export manuel + copie FTP",
+      "rsync + SSH sans planification",
+      "cp /var/lib/mysql + tar"
+    ],
+    "reponse_correcte": "mysqldump + crontab + compression gzip",
+    "explication": "Script type : #!/bin/bash → DATE=$(date +%Y%m%d) → mysqldump -u root -pMOTDEPASSE mabase | gzip > /backup/mabase_$DATE.sql.gz → find /backup -name '*.sql.gz' -mtime +30 -delete (purge à 30j). Planification crontab : 0 2 * * 0 /scripts/backup_mysql.sh (tous les dimanche à 2h). Alternative moderne : mysqldump remplacé par mysqlbackup (MySQL Enterprise) ou xtrabackup (Percona) pour backups à chaud."
+  }
+]

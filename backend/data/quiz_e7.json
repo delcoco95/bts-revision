@@ -1,0 +1,167 @@
+﻿[
+  {
+    "id": "eq7-01",
+    "type": "qcm",
+    "question": "Quelle commande Cisco affiche le résumé de l'état des interfaces IP ?",
+    "options": ["show interfaces", "show ip int brief", "show ip route", "show running-config"],
+    "reponse": "show ip int brief",
+    "explication": "show ip int brief affiche en une ligne par interface : nom, adresse IP, méthode d'attribution, état (up/down) et protocol (up/down). C'est la commande de diagnostic réseau la plus utilisée sur IOS.",
+    "difficulte": 1,
+    "chapitre_ref": "e7-06"
+  },
+  {
+    "id": "eq7-02",
+    "type": "cas_pratique",
+    "question": "Vous devez configurer un trunk entre Switch1 et Switch2 sur GigabitEthernet0/1, autorisant les VLANs 10, 20 et 30. Le VLAN natif est le VLAN 99. Écrivez la configuration IOS complète.",
+    "options": null,
+    "reponse": "Switch1(config)# interface GigabitEthernet0/1\nSwitch1(config-if)# switchport trunk encapsulation dot1q\nSwitch1(config-if)# switchport mode trunk\nSwitch1(config-if)# switchport trunk allowed vlan 10,20,30\nSwitch1(config-if)# switchport trunk native vlan 99\nSwitch1(config-if)# no shutdown\n\nSwitch2(config)# interface GigabitEthernet0/1\nSwitch2(config-if)# switchport trunk encapsulation dot1q\nSwitch2(config-if)# switchport mode trunk\nSwitch2(config-if)# switchport trunk allowed vlan 10,20,30\nSwitch2(config-if)# switchport trunk native vlan 99\nSwitch2(config-if)# no shutdown",
+    "explication": "La configuration trunk nécessite : 1) encapsulation dot1q 2) switchport mode trunk 3) allowed vlan pour limiter les VLANs (bonne pratique sécurité) 4) native vlan 99 (VLAN 1 par défaut = risque VLAN hopping). Même config des deux côtés.",
+    "difficulte": 2,
+    "chapitre_ref": "e7-06"
+  },
+  {
+    "id": "eq7-03",
+    "type": "qcm",
+    "question": "Quel rôle FSMO est contacté en premier lors de l'authentification d'un utilisateur dans Active Directory ?",
+    "options": ["Schema Master", "PDC Emulator", "RID Master", "Infrastructure Master"],
+    "reponse": "PDC Emulator",
+    "explication": "Le PDC Emulator gère : la synchronisation de l'heure (Kerberos nécessite ±5 min), les verrouillages de comptes, la compatibilité NT4.",
+    "difficulte": 2,
+    "chapitre_ref": "e7-01"
+  },
+  {
+    "id": "eq7-04",
+    "type": "vrai_faux",
+    "question": "Dans DRBD avec le protocole C (synchrone), une écriture est confirmée à l'application uniquement lorsque les deux noeuds ont validé l'écriture sur disque.",
+    "options": null,
+    "reponse": "Vrai",
+    "explication": "DRBD Protocol C = synchrone complet. L'acquittement n'est envoyé à l'application que lorsque les deux noeuds ont écrit les données. Cela garantit un RPO=0. Contraste : Protocol A (asynchrone) = acquittement local uniquement, risque de perte données.",
+    "difficulte": 2,
+    "chapitre_ref": "e7-09"
+  },
+  {
+    "id": "eq7-05",
+    "type": "qcm",
+    "question": "Quelle option de la commande docker run permet de monter un dossier de l'hôte dans le conteneur ?",
+    "options": ["--mount", "--volume (-v)", "--bind", "--attach"],
+    "reponse": "--volume (-v)",
+    "explication": "L'option -v permet : 1) Bind mount : -v /chemin/hote:/chemin/conteneur 2) Volume nommé : -v nom_volume:/chemin/conteneur. L'option --mount existe aussi (syntaxe plus explicite) mais -v reste la plus courante.",
+    "difficulte": 1,
+    "chapitre_ref": "e7-05"
+  },
+  {
+    "id": "eq7-06",
+    "type": "cas_pratique",
+    "question": "Rédigez un Dockerfile complet pour créer une image Nginx qui sert une page index.html personnalisée. Basé sur nginx:alpine, non-root, expose le port 80.",
+    "options": null,
+    "reponse": "FROM nginx:alpine\n\nCOPY nginx.conf /etc/nginx/nginx.conf\nCOPY index.html /usr/share/nginx/html/index.html\n\nRUN addgroup -g 1001 nginxgroup && \\\n    adduser -D -u 1001 -G nginxgroup nginxuser && \\\n    chown -R nginxuser:nginxgroup /usr/share/nginx/html && \\\n    chown -R nginxuser:nginxgroup /var/cache/nginx && \\\n    touch /var/run/nginx.pid && \\\n    chown nginxuser:nginxgroup /var/run/nginx.pid\n\nUSER nginxuser\n\nEXPOSE 80\n\nHEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \\\n    CMD wget --quiet --tries=1 --spider http://localhost/ || exit 1\n\nCMD [\"nginx\", \"-g\", \"daemon off;\"]",
+    "explication": "Points : 1) nginx:alpine = image légère (5MB) 2) USER non-root = sécurité 3) EXPOSE 80 = documentation seulement 4) HEALTHCHECK = Docker vérifie la santé 5) CMD exec form préférable pour gestion signaux.",
+    "difficulte": 3,
+    "chapitre_ref": "e7-05"
+  },
+  {
+    "id": "eq7-07",
+    "type": "qcm",
+    "question": "Qu'est-ce que STP PortFast sur un switch Cisco ?",
+    "options": [
+      "Elle accélère la convergence STP en augmentant la priorité du port",
+      "Elle désactive l'attente des états STP (Listening/Learning) sur les ports d'accès connectés à des postes",
+      "Elle empêche les BPDU de quitter le port",
+      "Elle force le port en mode Forwarding en désactivant STP complètement"
+    ],
+    "reponse": "Elle désactive l'attente des états STP (Listening/Learning) sur les ports d'accès connectés à des postes",
+    "explication": "PortFast permet passage direct en Forwarding sans Listening (15s) + Learning (15s). À utiliser UNIQUEMENT sur ports d'accès vers postes, JAMAIS sur trunk. Toujours associer à BPDU Guard.",
+    "difficulte": 2,
+    "chapitre_ref": "e7-06"
+  },
+  {
+    "id": "eq7-08",
+    "type": "vrai_faux",
+    "question": "La règle iptables suivante bloque toutes les nouvelles connexions SSH entrantes : iptables -A INPUT -p tcp --dport 22 -j DROP",
+    "options": null,
+    "reponse": "Vrai",
+    "explication": "Cette règle droppe tous les paquets TCP port 22. Attention : si une règle précédente accepte ESTABLISHED,RELATED, les sessions déjà établies ne seront pas coupées. DROP = sans notification ; REJECT enverrait un RST TCP.",
+    "difficulte": 2,
+    "chapitre_ref": "e7-03"
+  },
+  {
+    "id": "eq7-09",
+    "type": "cas_pratique",
+    "question": "Décrivez la procédure complète pour joindre un poste Windows 10 au domaine iris.local (IP fixe 192.168.10.50/24, DNS 192.168.10.10). Donnez les deux méthodes : GUI et PowerShell.",
+    "options": null,
+    "reponse": "METHODE GUI :\n1. Vérifier config réseau : IP 192.168.10.50/24, GW 192.168.10.1, DNS 192.168.10.10\n2. Tester DNS : nslookup iris.local (doit retourner l'IP du DC)\n3. Tester connectivité : ping dc01.iris.local\n4. Clic droit Ce PC > Propriétés > Modifier les paramètres\n5. Onglet Nom de l'ordinateur > Modifier\n6. Sélectionner Domaine > Saisir iris.local\n7. Authentification avec compte admin domaine (IRIS\\admin)\n8. Message Bienvenue dans le domaine iris.local\n9. Redémarrer\n\nMETHODE POWERSHELL (en admin) :\n$credential = Get-Credential IRIS\\admin\nAdd-Computer -DomainName iris.local -Credential $credential -OUPath OU=Ordinateurs,DC=iris,DC=local -Restart -Force\n\nVerification post-jonction :\n(Get-WmiObject Win32_ComputerSystem).Domain",
+    "explication": "Points clés : 1) DNS DOIT pointer vers le DC avant jonction 2) Compte doit avoir droit Add workstations to domain 3) -OUPath place le compte au bon endroit 4) Redémarrage obligatoire pour appliquer GPO.",
+    "difficulte": 2,
+    "chapitre_ref": "e7-01"
+  },
+  {
+    "id": "eq7-10",
+    "type": "qcm",
+    "question": "Quelle est la différence correcte entre RPO et RTO ?",
+    "options": [
+      "RPO = durée d'indisponibilité max ; RTO = perte de données max",
+      "RPO = perte de données max (en temps) ; RTO = durée de reprise max",
+      "RPO = Recovery Procedure Objective ; RTO = Recovery Time Operation",
+      "RPO et RTO sont synonymes"
+    ],
+    "reponse": "RPO = perte de données max (en temps) ; RTO = durée de reprise max",
+    "explication": "RPO (Recovery Point Objective) = combien de données peut-on perdre en temps. Ex : RPO=4h = accepte perdre 4h de données. RTO (Recovery Time Objective) = combien de temps peut-on rester indisponible. Ex : RTO=1h = service rétabli en moins d'1h.",
+    "difficulte": 1,
+    "chapitre_ref": "e7-09"
+  },
+  {
+    "id": "eq7-11",
+    "type": "cas_pratique",
+    "question": "Écrivez les commandes BorgBackup pour : 1) Initialiser un dépôt chiffré dans /backup/repo-iris, 2) Créer une archive datée sauvegardant /etc, /var/www et /home avec compression lz4, 3) Lister les archives.",
+    "options": null,
+    "reponse": "# 1. Initialisation du dépôt\nexport BORG_REPO=/backup/repo-iris\nexport BORG_PASSPHRASE=MotDePasseChiffrementTresSecurise2024!\n\nborg init --encryption=repokey $BORG_REPO\n\n# 2. Créer l'archive\nborg create \\\n  --verbose \\\n  --filter AME \\\n  --list \\\n  --stats \\\n  --compression lz4 \\\n  --exclude-caches \\\n  --exclude /home/*/.cache \\\n  --exclude /var/www/*/cache \\\n  --exclude /tmp \\\n  $BORG_REPO::sauvegarde-$(date +%Y%m%d-%H%M%S) \\\n  /etc \\\n  /var/www \\\n  /home\n\n# 3. Lister les archives\nborg list $BORG_REPO\n\n# Prune : garder 7 jours, 4 semaines, 6 mois\nborg prune --list --keep-daily 7 --keep-weekly 4 --keep-monthly 6 $BORG_REPO",
+    "explication": "Points BorgBackup : 1) --encryption=repokey : clé dans dépôt, protégée par passphrase 2) Variables BORG_REPO/BORG_PASSPHRASE évitent répétition 3) --exclude-caches : ignore CACHEDIR.TAG 4) Déduplication automatique 5) borg prune : politique rétention obligatoire 6) SAUVEGARDER la passphrase séparément !",
+    "difficulte": 3,
+    "chapitre_ref": "e7-09"
+  },
+  {
+    "id": "eq7-12",
+    "type": "qcm",
+    "question": "Dans une architecture Prometheus, quel composant collecte et expose les métriques système (CPU, RAM, disque) des serveurs Linux ?",
+    "options": ["prometheus-agent", "cadvisor", "node_exporter", "metrics-server"],
+    "reponse": "node_exporter",
+    "explication": "node_exporter (port 9100) est l'exporter officiel Prometheus pour Linux/Unix. Il expose : node_cpu_seconds_total, node_memory_MemAvailable_bytes, node_filesystem_avail_bytes, node_network_receive_bytes_total. cAdvisor = Docker. metrics-server = Kubernetes.",
+    "difficulte": 1,
+    "chapitre_ref": "e7-07"
+  },
+  {
+    "id": "eq7-13",
+    "type": "cas_pratique",
+    "question": "Configurez une ACL Cisco étendue nommée BLOCK_10_TO_30 pour bloquer tout trafic du subnet 192.168.10.0/24 vers 192.168.30.0/24, autorisant le reste. Appliquez-la sur l'interface VLAN 10 en entrée.",
+    "options": null,
+    "reponse": "ip access-list extended BLOCK_10_TO_30\n remark Bloque le trafic du VLAN10 vers VLAN30\n deny ip 192.168.10.0 0.0.0.255 192.168.30.0 0.0.0.255\n permit ip any any\n!\ninterface Vlan10\n ip access-group BLOCK_10_TO_30 in\n!\nshow ip access-lists BLOCK_10_TO_30\nshow running-config interface Vlan10",
+    "explication": "Points : 1) ACL étendue NOMMÉE : plus lisible 2) Wildcard 0.0.0.255 = inverse /24 3) permit ip any any obligatoire (deny any any implicite final) 4) Application in sur VLAN10 SVI 5) deny d'abord, permit ensuite.",
+    "difficulte": 2,
+    "chapitre_ref": "e7-06"
+  },
+  {
+    "id": "eq7-14",
+    "type": "qcm",
+    "question": "Quelle commande PowerShell liste tous les membres d'un groupe Active Directory nommé GRP_Administrateurs ?",
+    "options": [
+      "Get-ADUser -Filter {MemberOf -eq GRP_Administrateurs}",
+      "Get-ADGroupMember -Identity GRP_Administrateurs",
+      "Get-ADGroup -Identity GRP_Administrateurs -Properties Members",
+      "Show-ADGroupMember GRP_Administrateurs"
+    ],
+    "reponse": "Get-ADGroupMember -Identity GRP_Administrateurs",
+    "explication": "Get-ADGroupMember -Identity GRP_Administrateurs liste tous les membres. Pour membres récursifs : -Recursive. Pour propriétés sup : | Get-ADUser -Properties DisplayName, EmailAddress. Show-ADGroupMember n'existe pas.",
+    "difficulte": 1,
+    "chapitre_ref": "e7-01"
+  },
+  {
+    "id": "eq7-15",
+    "type": "cas_pratique",
+    "question": "Proposez une architecture réseau redondante pour un site avec 2 FAI (FAI1 : 100Mbps fibre, FAI2 : 50Mbps ADSL backup), 150 postes, 10 serveurs (DMZ + LAN), SLA 99.9%.",
+    "options": null,
+    "reponse": "ARCHITECTURE PROPOSEE :\n\nFAI1 (100M) --- [Routeur Edge R1] --+\n                                   +-- [Firewall FW1 (actif)] --- [Core Switch L3]\nFAI2 (50M)  --- [Routeur Edge R2] --+   [Firewall FW2 (passif)]\n\nEquipements :\n- 2x Routeurs edge (R1 FAI1, R2 FAI2 backup)\n- 2x Firewall cluster HA (pfSense ou FortiGate)\n- 1x Core Switch L3 (Cisco 3850 stack)\n- 2x Access switches (VLANs : 10=Users, 20=Servers, 30=DMZ, 99=Mgmt)\n\nConfiguration bascule IP SLA :\nip sla 1\n icmp-echo 8.8.8.8 source-interface Fa0/0\n frequency 30\nip sla schedule 1 life forever start-time now\ntrack 1 ip sla 1 reachability\nip route 0.0.0.0 0.0.0.0 [GW-FAI1] track 1\nip route 0.0.0.0 0.0.0.0 [GW-FAI2] 10\n\nVLANs :\n- VLAN 10 (Users) : 192.168.10.0/24\n- VLAN 20 (Servers) : 192.168.20.0/27\n- VLAN 30 (DMZ) : 192.168.30.0/28\n- VLAN 99 (Mgmt) : 192.168.99.0/28",
+    "explication": "Architecture répond au SLA 99.9% par : 1) Double FAI + IP SLA bascule auto 2) Firewall HA actif/passif 3) Core Switch en stack 4) DMZ séparée 5) SLA 99.9% = 8h45 downtime/an autorisé.",
+    "difficulte": 3,
+    "chapitre_ref": "e7-06"
+  }
+]

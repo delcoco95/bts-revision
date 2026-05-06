@@ -1,0 +1,121 @@
+﻿[
+  {
+    "id": "s-e7-01",
+    "titre": "Infrastructure PME NEXUS 100 utilisateurs — Déploiement complet",
+    "contexte": "La PME NEXUS emploie 100 personnes réparties sur 2 sites : le siège social à Lyon (75 utilisateurs) et une agence à Grenoble (25 utilisateurs). L'entreprise dispose actuellement d'un réseau plat non segmenté, d'un serveur Windows Server 2016 unique (pas d'AD) et de postes en workgroup. La direction souhaite moderniser l'infrastructure : déploiement Active Directory, segmentation VLAN, conteneurisation des applications internes, VPN site-à-site et supervision. Budget : 20 000€. Contrainte : migration sans interruption de service le week-end.",
+    "duree_heures": 4,
+    "niveau": "BTS SIO SISR",
+    "parties": [
+      {
+        "numero": 1,
+        "titre": "Plan d'adressage et architecture réseau",
+        "duree_minutes": 60,
+        "questions": [
+          "Q1.1 — Proposez un plan d'adressage VLSM complet pour le réseau 192.168.0.0/22. Identifiez 5 VLANs : Utilisateurs-Lyon (70h), Serveurs-Lyon (20h), DMZ (10h), Utilisateurs-Grenoble (30h), Management (8h). Présentez votre résultat sous forme de tableau.",
+          "Q1.2 — Réalisez un schéma d'architecture réseau du site de Lyon incluant : routeur FAI, pare-feu, core switch L3, access switches, zones VLAN, et liens trunk/access.",
+          "Q1.3 — Justifiez le choix d'une segmentation VLAN pour cette infrastructure. Quels sont les bénéfices en termes de sécurité et de performance ?",
+          "Q1.4 — Configurez les VLANs et les interfaces SVI sur le core switch Cisco Catalyst 3850. Donnez la configuration IOS complète."
+        ],
+        "correction": "Q1.1 VLSM — Tri par taille décroissante :\n- Users-Lyon : 70h → /25 (126h) → 192.168.0.0/25 (plage .1-.126, broadcast .127)\n- Users-Grenoble : 30h → /26 (62h) → 192.168.0.128/26 (plage .129-.190, broadcast .191)\n- Serveurs-Lyon : 20h → /27 (30h) → 192.168.0.192/27 (plage .193-.222, broadcast .223)\n- DMZ : 10h → /28 (14h) → 192.168.0.224/28 (plage .225-.238, broadcast .239)\n- Management : 8h → /28 (14h) → 192.168.0.240/28 (plage .241-.254, broadcast .255)\n\nQ1.4 Configuration IOS Core Switch :\nip routing\nvlan 10\n name Users-Lyon\nvlan 20\n name Serveurs-Lyon\nvlan 30\n name DMZ\nvlan 40\n name Users-Grenoble\nvlan 99\n name Management\ninterface Vlan10\n ip address 192.168.0.1 255.255.255.128\n no shutdown\ninterface Vlan20\n ip address 192.168.0.193 255.255.255.224\n no shutdown\ninterface Vlan30\n ip address 192.168.0.225 255.255.255.240\n no shutdown\ninterface Vlan99\n ip address 192.168.0.241 255.255.255.240\n no shutdown"
+      },
+      {
+        "numero": 2,
+        "titre": "Active Directory et GPO",
+        "duree_minutes": 60,
+        "questions": [
+          "Q2.1 — Proposez une structure OU pour le domaine nexus.local avec les départements : Direction, RH, Comptabilité, Informatique, Commercial. Incluez les OU pour les ordinateurs et les groupes.",
+          "Q2.2 — Écrivez les commandes PowerShell pour : créer l'OU Utilisateurs/RH, créer l'utilisateur marie.dupont dans l'OU RH, l'ajouter au groupe GRP_RH, lui attribuer un mot de passe initial.",
+          "Q2.3 — Décrivez la configuration GPO pour les postes utilisateurs : désactivation USB, fond d'écran corporate, politique de mot de passe (12 caractères, complexité, expiration 90 jours).",
+          "Q2.4 — Quels sont les 5 rôles FSMO ? Quelle est la recommandation de placement pour une infrastructure à 2 DC ?"
+        ],
+        "correction": "Q2.1 Structure OU proposée :\nnexus.local\n├── OU=Utilisateurs\n│   ├── OU=Direction\n│   ├── OU=RH\n│   ├── OU=Comptabilite\n│   ├── OU=Informatique\n│   └── OU=Commercial\n├── OU=Ordinateurs\n│   ├── OU=Postes\n│   └── OU=Serveurs\n├── OU=Groupes\n│   ├── OU=Securite\n│   └── OU=Distribution\n└── OU=Comptes-Services\n\nQ2.2 PowerShell :\nNew-ADOrganizationalUnit -Name RH -Path OU=Utilisateurs,DC=nexus,DC=local\nNew-ADUser -Name marie.dupont -SamAccountName marie.dupont -UserPrincipalName marie.dupont@nexus.local -Path OU=RH,OU=Utilisateurs,DC=nexus,DC=local -AccountPassword (ConvertTo-SecureString P@ssw0rd2024! -AsPlainText -Force) -Enabled $true -ChangePasswordAtLogon $true\nAdd-ADGroupMember -Identity GRP_RH -Members marie.dupont\n\nQ2.4 FSMO :\n- Schema Master (forêt) : DC01\n- Domain Naming Master (forêt) : DC01\n- PDC Emulator (domaine) : DC01 (le plus critique)\n- RID Master (domaine) : DC01\n- Infrastructure Master (domaine) : DC02 (recommandé si pas GC)"
+      },
+      {
+        "numero": 3,
+        "titre": "Docker Compose — Application interne",
+        "duree_minutes": 45,
+        "questions": [
+          "Q3.1 — Écrivez un fichier docker-compose.yml complet pour déployer l'application interne NEXUS composée de : un frontend Nginx (port 80 exposé), un backend PHP-FPM, une base MariaDB (volume persistant), un Redis pour le cache.",
+          "Q3.2 — Expliquez la différence entre CMD et ENTRYPOINT dans un Dockerfile. Dans quel cas utiliser l'un ou l'autre ?",
+          "Q3.3 — Quelles mesures de sécurité doit-on appliquer dans un Dockerfile ? Citez au moins 4 bonnes pratiques."
+        ],
+        "correction": "Q3.1 docker-compose.yml :\nversion: '3.8'\nservices:\n  nginx:\n    image: nginx:alpine\n    ports:\n      - '80:80'\n    volumes:\n      - ./nginx.conf:/etc/nginx/nginx.conf:ro\n    networks:\n      - frontend\n    depends_on:\n      php-fpm:\n        condition: service_healthy\n    restart: unless-stopped\n\n  php-fpm:\n    build: ./app\n    networks:\n      - frontend\n      - backend\n    healthcheck:\n      test: [CMD, php-fpm, -t]\n      interval: 30s\n      timeout: 10s\n      retries: 3\n    restart: unless-stopped\n\n  mariadb:\n    image: mariadb:10.11\n    environment:\n      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}\n      MYSQL_DATABASE: nexus_db\n      MYSQL_USER: ${DB_USER}\n      MYSQL_PASSWORD: ${DB_PASSWORD}\n    volumes:\n      - db_data:/var/lib/mysql\n    networks:\n      - backend\n    restart: unless-stopped\n\n  redis:\n    image: redis:7-alpine\n    networks:\n      - backend\n    restart: unless-stopped\n\nvolumes:\n  db_data:\n\nnetworks:\n  frontend:\n  backend:"
+      },
+      {
+        "numero": 4,
+        "titre": "VPN WireGuard site-à-site",
+        "duree_minutes": 35,
+        "questions": [
+          "Q4.1 — Configurez un VPN WireGuard site-à-site entre Lyon (WAN : 203.0.113.1, LAN : 192.168.0.0/25) et Grenoble (WAN : 198.51.100.1, LAN : 192.168.0.128/26). Donnez la configuration des deux côtés.",
+          "Q4.2 — Comparez WireGuard et IPSec IKEv2. Quels sont les avantages de WireGuard pour cette infrastructure ?"
+        ],
+        "correction": "Q4.1 Configuration WireGuard :\n\nSERVEUR LYON (wg0) :\n[Interface]\nAddress = 10.10.0.1/30\nListenPort = 51820\nPrivateKey = <cle-privee-lyon>\nPostUp = iptables -A FORWARD -i wg0 -j ACCEPT\nPostDown = iptables -D FORWARD -i wg0 -j ACCEPT\n\n[Peer]\nPublicKey = <cle-publique-grenoble>\nAllowedIPs = 192.168.0.128/26, 10.10.0.2/32\nEndpoint = 198.51.100.1:51820\nPersistentKeepalive = 25\n\nSERVEUR GRENOBLE (wg0) :\n[Interface]\nAddress = 10.10.0.2/30\nListenPort = 51820\nPrivateKey = <cle-privee-grenoble>\n\n[Peer]\nPublicKey = <cle-publique-lyon>\nAllowedIPs = 192.168.0.0/25, 10.10.0.1/32\nEndpoint = 203.0.113.1:51820\nPersistentKeepalive = 25"
+      },
+      {
+        "numero": 5,
+        "titre": "Stratégie de sauvegarde et supervision",
+        "duree_minutes": 40,
+        "questions": [
+          "Q5.1 — Proposez une stratégie de sauvegarde 3-2-1+1 pour l'infrastructure NEXUS. Définissez le RPO et le RTO cibles. Donnez le script BorgBackup correspondant.",
+          "Q5.2 — Proposez une architecture de supervision pour NEXUS en utilisant Prometheus et Grafana. Identifiez les métriques clés à surveiller et rédigez 3 requêtes PromQL.",
+          "Q5.3 — Rédigez une règle d'alerte Prometheus (YAML) qui déclenche une alerte si un serveur est indisponible depuis plus de 2 minutes."
+        ],
+        "correction": "Q5.1 Stratégie 3-2-1+1 :\n- RPO cible : 4h (sauvegarde toutes les 4h en journée, nuit complète)\n- RTO cible : 2h (restauration serveur critique)\n- Support 1 : NAS local Lyon (NFS)\n- Support 2 : NAS Grenoble (via VPN WireGuard)\n- Hors-site : S3 compatible (Wasabi ou OVH)\n- Cloud immuable : S3 Object Lock 30 jours\n\nScript BorgBackup :\nexport BORG_REPO=nas.nexus.local:/backup/nexus\nexport BORG_PASSPHRASE=BackupSecure2024!\nborg create --compression lz4 --exclude-caches $BORG_REPO::$(hostname)-$(date +%Y%m%d-%H%M) /etc /var/www /home /opt\nborg prune --keep-daily 7 --keep-weekly 4 --keep-monthly 6 $BORG_REPO\n\nQ5.2 PromQL :\n# CPU usage > 80%\n100 - (avg by (instance)(rate(node_cpu_seconds_total{mode='idle'}[5m])) * 100)\n# RAM disponible < 10%\n(node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes) * 100\n# Disque libre < 15%\n(node_filesystem_avail_bytes{mountpoint='/'} / node_filesystem_size_bytes{mountpoint='/'}) * 100\n\nQ5.3 Règle alerte :\ngroups:\n- name: nexus.availability\n  rules:\n  - alert: InstanceDown\n    expr: up == 0\n    for: 2m\n    labels:\n      severity: critical\n    annotations:\n      summary: Instance {{ $labels.instance }} indisponible\n      description: Instance {{ $labels.instance }} down depuis plus de 2 minutes"
+      }
+    ]
+  },
+  {
+    "id": "s-e7-02",
+    "titre": "Incident de sécurité et reprise d'activité — Ransomware",
+    "contexte": "La société ORION SA (150 utilisateurs, 3 serveurs Linux, domaine AD Windows) a été victime d'une attaque ransomware un lundi matin. Les serveurs de fichiers et le serveur applicatif sont chiffrés. Le DC est opérationnel car il était hors réseau pour maintenance. La dernière sauvegarde BorgBackup date de dimanche 2h00 (J-1). Votre mission : gérer la crise, restaurer les services, renforcer la sécurité.",
+    "duree_heures": 4,
+    "niveau": "BTS SIO SISR",
+    "parties": [
+      {
+        "numero": 1,
+        "titre": "Gestion de crise et analyse",
+        "duree_minutes": 50,
+        "questions": [
+          "Q1.1 — Listez les premières actions à entreprendre dans les 30 premières minutes suivant la découverte de l'incident ransomware. Organisez-les par priorité.",
+          "Q1.2 — Quels journaux et artefacts collecter pour l'investigation forensique ? Sur quels systèmes ? Pourquoi est-il important de ne pas éteindre les machines immédiatement ?",
+          "Q1.3 — Calculez le RPO réel et expliquez l'impact pour l'entreprise. La dernière sauvegarde valide date de dimanche 2h00, l'incident a été détecté lundi 9h30.",
+          "Q1.4 — Identifiez les Windows Event IDs qui auraient pu alerter sur l'intrusion avant le déclenchement du ransomware."
+        ],
+        "correction": "Q1.1 Premières actions (30 min) :\n1. ISOLER le réseau (déconnecter switches, couper VLANs infectés) — priorité absolue\n2. NE PAS ETEINDRE les machines chiffrées (RAM peut contenir clés de chiffrement)\n3. ALERTER : DSI, Direction, RSSI, éventuellement ANSSI si critique\n4. DOCUMENTER : horodatage, machines affectées, étendue\n5. IDENTIFIER le vecteur d'entrée initial (logs pare-feu, AD, messagerie)\n6. VÉRIFIER les sauvegardes : intégrité et disponibilité\n7. ACTIVER le PRA\n8. DÉCLARER éventuellement à la CNIL (RGPD, si données perso impactées, sous 72h)\n\nQ1.3 RPO réel :\n- Dernière sauvegarde : dimanche 02h00\n- Détection incident : lundi 09h30\n- RPO réel = environ 31h30\n- Impact : toutes les données créées/modifiées entre dimanche 2h et lundi 9h30 sont perdues\n- En pratique : 1 journée de travail complète (lundi) + dimanche matin\n\nQ1.4 Event IDs suspects :\n- 4625 : nombreux échecs d'authentification (brute force)\n- 4648 : connexions avec credentials explicites (pass-the-hash)\n- 4624 type 3 : connexions réseau suspectes\n- 4776 : validation NTLM (mouvement latéral)\n- 4698 : création tâche planifiée (persistance)\n- 4702 : modification tâche planifiée\n- 7045 : nouveau service installé (payload)"
+      },
+      {
+        "numero": 2,
+        "titre": "Restauration BorgBackup",
+        "duree_minutes": 60,
+        "questions": [
+          "Q2.1 — Écrivez les commandes BorgBackup complètes pour : lister les archives disponibles dans le dépôt /backup/orion-repo, restaurer le contenu de /var/www depuis l'archive du dimanche 02h00 dans /restore/www, vérifier l'intégrité de l'archive avant restauration.",
+          "Q2.2 — Décrivez la procédure complète de restauration du serveur de fichiers Linux (Debian 12). Quelles sont les étapes post-restauration ?",
+          "Q2.3 — Pourquoi la stratégie 3-2-1+1 est-elle particulièrement importante dans un contexte ransomware ? Quel rôle joue le stockage immuable ?"
+        ],
+        "correction": "Q2.1 Commandes BorgBackup :\nexport BORG_REPO=/backup/orion-repo\nexport BORG_PASSPHRASE=MotDePasseSecurise!\n\n# Lister archives\nborg list $BORG_REPO\n\n# Vérifier intégrité avant restauration\nborg check --verify-data $BORG_REPO\nborg check $BORG_REPO::orion-srv-fichiers-20240114-020000\n\n# Restaurer /var/www depuis archive dimanche 2h\nmkdir -p /restore/www\ncd /restore/www\nborg extract $BORG_REPO::orion-srv-fichiers-20240114-020000 var/www\n\n# Comparer fichiers restaurés\nborg diff $BORG_REPO::orion-srv-fichiers-20240113-020000 $BORG_REPO::orion-srv-fichiers-20240114-020000\n\nQ2.3 3-2-1+1 vs ransomware :\n- Les ransomwares ciblent en premier les sauvegardes accessibles en réseau\n- Le +1 (stockage immuable S3 Object Lock) ne peut PAS être chiffré ou supprimé\n- Même si les 3 copies locales sont chiffrées, la copie immuable reste intacte\n- Object Lock = WORM (Write Once Read Many) : les données ne peuvent être modifiées pendant la période de rétention\n- Recommandation ANSSI : air-gap entre système de prod et sauvegardes"
+      },
+      {
+        "numero": 3,
+        "titre": "Hardening et PKI post-incident",
+        "duree_minutes": 55,
+        "questions": [
+          "Q3.1 — Listez 10 mesures de durcissement (hardening) à appliquer immédiatement sur les serveurs Windows Server post-incident. Donnez les commandes PowerShell correspondantes pour les mesures techniques.",
+          "Q3.2 — Proposez une architecture PKI à 2 niveaux pour ORION SA. Justifiez pourquoi la CA racine doit être offline. Décrivez les templates de certificats à créer.",
+          "Q3.3 — Expliquez le modèle de tiering ANSSI (T0/T1/T2). Comment aurait-il pu prévenir la propagation du ransomware ?"
+        ],
+        "correction": "Q3.1 Hardening Windows PowerShell :\n# Désactiver SMBv1 (vecteur EternalBlue)\nSet-SmbServerConfiguration -EnableSMB1Protocol $false -Force\n\n# Désactiver LLMNR\nSet-ItemProperty -Path HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\DNSClient -Name EnableMulticast -Value 0\n\n# Activer Windows Defender\nSet-MpPreference -DisableRealtimeMonitoring $false\n\n# Activer audit connexions\nAuditPol /set /subcategory:Logon /success:enable /failure:enable\nAuditPol /set /subcategory:Account Logon /success:enable /failure:enable\n\n# Désactiver compte Administrateur local (utiliser LAPS)\nDisable-LocalUser -Name Administrateur\n\n# Politique mot de passe forte\nnet accounts /minpwlen:14 /maxpwage:90 /minpwage:1 /uniquepw:24\n\n# Désactiver RDP si non nécessaire\nSet-ItemProperty -Path 'HKLM:\\System\\CurrentControlSet\\Control\\Terminal Server' -name fDenyTSConnections -value 1\n\nQ3.2 PKI 2 niveaux :\nNiveau 1 : Root CA ORION-ROOT-CA\n- Windows Server Core (sans GUI)\n- HORS LIGNE (pas de réseau) impératif\n- Certificat racine : RSA 4096 bits, durée 20 ans\n- Stockée dans coffre physique, allumée uniquement pour signer cert SubCA\n\nNiveau 2 : SubCA ORION-SUBCA-01\n- Windows Server, EN LIGNE\n- Durée certificat : 10 ans\n- Émet les certificats opérationnels\n- Templates : User (auth + email), Computer (auth machine), WebServer (HTTPS), DomainController\n\nQ3.3 Tiering ANSSI :\nT0 = Tier 0 : Active Directory, PKI, ADFS — comptes ultra-privilégiés, stations dédiées isolées, jamais connectés sur T1/T2\nT1 = Tier 1 : Serveurs applicatifs — comptes admin serveurs, pas connectés sur T2\nT2 = Tier 2 : Postes utilisateurs — comptes utilisateurs standards\n\nRansomware impact avec tiering : si l'attaquant compromet un poste T2, il ne peut pas élever ses privilèges vers T0 car les comptes domain admins ne se connectent JAMAIS sur les postes T2. La propagation est contenue au niveau compromis."
+      },
+      {
+        "numero": 4,
+        "titre": "Supervision et détection",
+        "duree_minutes": 35,
+        "questions": [
+          "Q4.1 — Proposez une architecture de supervision orientée sécurité pour ORION SA combinant Prometheus (métriques) et une collecte de logs centralisée. Quels agents déployer sur les serveurs ?",
+          "Q4.2 — Rédigez 3 règles d'alerte Prometheus YAML pour détecter des comportements anormaux : pic CPU soudain, connexions réseau sortantes anormales, espace disque critique.",
+          "Q4.3 — Quels indicateurs de compromission (IoC) surveiller dans les logs pour détecter précocement une future attaque ransomware ?"
+        ],
+        "correction": "Q4.1 Architecture supervision :\n- Prometheus : métriques système (node_exporter), métriques réseau (snmp_exporter), sondes HTTP (blackbox_exporter)\n- Grafana : dashboards Infrastructure + Sécurité\n- Loki : agrégation logs (remplace ELK pour logs)\n- Promtail : agent collecte logs Linux vers Loki\n- Wazuh : SIEM open-source, corrélation events Windows/Linux\n- Wazuh Agent : sur chaque serveur (remonte events Windows AD + Linux syslog)\n\nQ4.2 Règles alerte :\ngroups:\n- name: securite.orion\n  rules:\n  - alert: CPUSoudainEleve\n    expr: rate(node_cpu_seconds_total{mode!='idle'}[2m]) > 0.9\n    for: 5m\n    labels:\n      severity: warning\n    annotations:\n      summary: CPU anormalement élevé sur {{ $labels.instance }}\n\n  - alert: DisqueCritique\n    expr: (node_filesystem_avail_bytes{mountpoint='/'} / node_filesystem_size_bytes{mountpoint='/'}) < 0.10\n    for: 1m\n    labels:\n      severity: critical\n    annotations:\n      summary: Espace disque critique (< 10%) sur {{ $labels.instance }}\n\n  - alert: ServeurIndisponible\n    expr: up == 0\n    for: 2m\n    labels:\n      severity: critical\n    annotations:\n      summary: Serveur {{ $labels.instance }} indisponible\n\nQ4.3 IoC ransomware dans les logs :\n- Nombreux events 4625 (brute force) puis 4624 (succès) = credential stuffing\n- Création de tâches planifiées (Event 4698) = persistance\n- Accès massif à des partages réseau en écriture (audit SMB)\n- Processus chiffrement : vssadmin delete shadows (suppression VSS = indicateur fort)\n- Connexions sortantes vers IPs inconnues (C2 command & control)\n- Modification/suppression des sauvegardes accessibles\n- Exécution PowerShell encodé (Event 4104 Script Block Logging)"
+      }
+    ]
+  }
+]
