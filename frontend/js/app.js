@@ -18,6 +18,8 @@ const S = Object.fromEntries(SUBJECTS.map(s => [s.id, s]));
 // Static mode: detect GitHub Pages or any non-localhost environment
 const IS_STATIC = !['localhost','127.0.0.1'].includes(window.location.hostname);
 const DATA_BASE = IS_STATIC ? './data' : null;
+// Backend API URL: Render.com (production) ou localhost (developpement)
+const API_BASE = IS_STATIC ? 'https://bts-sio-api.onrender.com' : '';
 
 // Unified data fetcher: uses static files on GitHub Pages, API on localhost
 async function dataFetch(type, id) {
@@ -896,11 +898,10 @@ async function fetchQuiz(id) {
 }
 
 async function aiCall(endpoint, payload) {
-  if (IS_STATIC) {
-    return { error: "L'assistant IA nécessite le serveur local. Lance : cd backend && node server.js" };
-  }
+  // En mode statique, utiliser le backend Render
+  const fullEndpoint = IS_STATIC ? API_BASE + endpoint : endpoint;
   try {
-    const r = await fetch(endpoint, {
+    const r = await fetch(fullEndpoint, {
       method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload)
     });
     return r.ok ? await r.json() : { error: `Erreur ${r.status}` };

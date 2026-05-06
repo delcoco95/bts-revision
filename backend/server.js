@@ -34,7 +34,26 @@ const aiLimiter = rateLimit({
 });
 
 // ── Middlewares ────────────────────────────────────────────────────────────────
-app.use(cors({ origin: '*' }));
+// CORS: autorise GitHub Pages + localhost
+const allowedOrigins = [
+  'https://delcoco95.github.io',
+  'http://localhost:3000',
+  'http://127.0.0.1:3000',
+  'http://localhost:5500',
+  'http://127.0.0.1:5500'
+];
+app.use(cors({
+  origin: function(origin, callback) {
+    // Autorise les requetes sans origin (Postman, curl) et les origines connues
+    if (!origin || allowedOrigins.some(o => origin.startsWith(o))) {
+      callback(null, true);
+    } else {
+      callback(new Error('CORS bloque : origine non autorisee'));
+    }
+  },
+  methods: ['GET','POST','OPTIONS'],
+  allowedHeaders: ['Content-Type','Authorization']
+}));
 app.use(express.json({ limit: '2mb' }));
 app.use(morgan('dev'));
 app.use(session({
