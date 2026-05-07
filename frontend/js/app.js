@@ -8,7 +8,7 @@ const SUBJECTS = [
   { id:'cejm',    label:'CEJM (E3)',        desc:'Culture éco, juridique, managériale',         icon:'◇', chapters:10 },
   { id:'maths',   label:'Mathématiques',    desc:'Numération, Boole, stats, RSA, cryptographie',icon:'∑', chapters:8  },
   { id:'anglais', label:'Anglais',          desc:'IT English, progression A2 → B2',            icon:'◈', chapters:8  },
-  { id:'culture', label:'Culture Générale', desc:'Synthèse, dissertation, expression',         icon:'◐', chapters:6  },
+  { id:'culture', label:'Culture Générale', desc:'Synthèse, dissertation, expression',         icon:'◐', chapters:9  },
   { id:'e5',      label:'Épreuve E5',       desc:'Oral portfolio BTS SIO SISR',                icon:'▷', chapters:6  },
   { id:'e6',      label:'Épreuve E6',       desc:'Parcours de professionnalisation',           icon:'▷', chapters:8  },
   { id:'e7',      label:'Épreuve E7',       desc:'Admin systèmes et réseaux (SISR)',           icon:'▷', chapters:10 },
@@ -323,7 +323,7 @@ async function renderSubjectLanding(c, id) {
           <div class="cr-body">
             <div class="cr-sub">Chapitre ${i+1}</div>
             <div class="cr-title">${ch.titre||ch.chapitre||ch.title||'Sans titre'}</div>
-            <div class="cr-meta">${(ch.sections||[]).length} sections</div>
+            <div class="cr-meta">${(ch.sections||ch.sous_sections||[]).length > 0 ? (ch.sections||ch.sous_sections).length + " sections" : (ch.cours||ch.contenu ? "Cours complet" : "")}</div>
           </div>
           <div class="cr-arrow">›</div>
         </div>`;
@@ -442,13 +442,41 @@ function renderChapContent(ch, subjectId) {
     h += '</div>';
   });
 
-  if (ch.notions_cles && ch.notions_cles.length) {
-    h += '<div class="rc-section"><div class="rc-sec-title">Notions clés</div><div class="notions-wrap">';
-    ch.notions_cles.forEach(n => {
+  // Handle various notions field names across all JSON formats
+  const allNotions = ch.notions_cles || ch.notions || ch.key_vocabulary || [];
+  if (allNotions.length) {
+    h += '<div class="rc-section"><div class="rc-sec-title">Notions cl\u00e9s</div><div class="notions-wrap">';
+    allNotions.forEach(n => {
       if (typeof n==='string') h += `<div class="notion-pill">${n}</div>`;
-      else h += `<div class="notion-pill">${n.terme||n.nom}<div class="np-tooltip">${n.definition||n.desc||''}</div></div>`;
+      else h += `<div class="notion-pill">${n.terme||n.mot||n.word||n.nom||String(n)}<div class="np-tooltip">${n.definition||n.desc||n.traduction||n.meaning||''}</div></div>`;
     });
     h += '</div></div>';
+  }
+  // exemple_concret (maths/cejm/e7) and exemple_phrase (anglais)
+  if (ch.exemple_concret || ch.exemple_phrase) {
+    const ex = ch.exemple_concret || ch.exemple_phrase;
+    const exStr = typeof ex === 'string' ? ex : JSON.stringify(ex);
+    h += `<div class="rc-section"><div class="rc-sec-title">Exemple concret</div><div class="callout callout-example"><div class="c-title">Exemple</div><div class="rc-text">${md2html(exStr)}</div></div></div>`;
+  }
+  // fiche_revision (maths/cejm/e7/anglais)
+  if (ch.fiche_revision) {
+    const fiche = ch.fiche_revision;
+    h += '<div class="rc-section"><div class="rc-sec-title">Fiche de r\u00e9vision</div>';
+    if (typeof fiche === 'string') {
+      h += `<div class="rc-text">${md2html(fiche)}</div>`;
+    } else if (fiche.points_cles && fiche.points_cles.length) {
+      h += '<ul class="checklist">';
+      fiche.points_cles.forEach(pt => h += `<li>${pt}</li>`);
+      h += '</ul>';
+      if (fiche.formules && fiche.formules.length) {
+        h += '<div style="margin-top:12px"><div style="font-size:.72rem;text-transform:uppercase;letter-spacing:.8px;color:var(--text-3);margin-bottom:6px">Formules</div>';
+        fiche.formules.forEach(fm => h += `<div class="code-wrap" style="margin:4px 0"><pre><code>${escHtml(fm)}</code></pre></div>`);
+        h += '</div>';
+      }
+    } else {
+      h += `<div class="rc-text">${md2html(String(fiche))}</div>`;
+    }
+    h += '</div>';
   }
 
   // Exercises from JSON
@@ -681,8 +709,8 @@ async function renderSujetsPage(c, id) {
   c.innerHTML = '<div style="padding:40px;text-align:center"><span class="spinner"></span></div>';
   let sujets = [];
   try {
-    const r = await fetch(`/api/cours/sujets/${id}`);
-    if (r.ok) sujets = await r.json();
+    const data = await dataFetch('sujets', id);
+    if (data) sujets = Array.isArray(data) ? data : (data.sujets || []);
   } catch(e) {}
 
   c.innerHTML = `
@@ -697,11 +725,18 @@ async function renderSujetsPage(c, id) {
           </div>
           <div class="sj-badge">${sj.type||'Sujet type'}</div>
         </div>
-        <div class="sj-enonce">${sj.enonce||sj.sujet||''}</div>
+        ${sj.enonce||sj.sujet||sj.contexte ? `<div class="sj-enonce">${sj.enonce||sj.sujet||sj.contexte||''}</div>` : ''}
+        ${sj.parties && sj.parties.length ? sj.parties.map(p => `
+          <div style="border-top:1px solid var(--border);padding:14px 20px">
+            <div style="font-size:.78rem;font-weight:700;color:var(--text-2);margin-bottom:8px">${p.titre||p.nom||''}</div>
+            ${p.enonce||p.questions ? `<div class="sj-enonce" style="padding:0;border:none;margin-bottom:8px">${p.enonce||p.questions}</div>` : ''}
+            <div class="sj-correction-area"><button class="btn btn-sm" onclick="toggleCorr(this)">Afficher la correction</button>
+            <div class="sj-correction">${p.correction||p.corrige||''}</div></div>
+          </div>`).join('') : `
         <div class="sj-correction-area">
           <button class="btn btn-sm" onclick="toggleCorr(this)">Afficher la correction</button>
-          <div class="sj-correction">${typeof sj.correction === 'object' ? (sj.correction.contenu||'') : (sj.correction||'')}</div>
-        </div>
+          <div class="sj-correction">${typeof sj.correction === 'object' ? (sj.correction.contenu||JSON.stringify(sj.correction)) : (sj.correction||'')}</div>
+        </div>`}
       </div>`).join('')}`;
 }
 window.toggleCorr = function(btn) {

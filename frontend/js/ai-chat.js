@@ -1,6 +1,6 @@
 // === AI CHAT MODULE — ai-chat.js ===
 
-const API_BASE = '';
+// API_BASE declared in app.js (Render URL in prod)
 let chatMode = 'chat'; // chat | correct | english | jury
 let chatHistory = [];
 
