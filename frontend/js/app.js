@@ -1,4 +1,4 @@
-﻿/* ================================================================
+/* ================================================================
    BTS SIO SISR — SPA v2 — Black & White
    ================================================================ */
 
@@ -24,23 +24,26 @@ const API_BASE = IS_STATIC ? 'https://bts-sio-api.onrender.com' : '';
 // Unified data fetcher: uses static files on GitHub Pages, API on localhost
 async function dataFetch(type, id) {
   if (IS_STATIC) {
-    const fname = type === 'sujets' ? sujets_.json
-                : type === 'quiz'   ? quiz_.json
+    const fname = type === 'sujets'    ? `sujets_${id}.json`
+                : type === 'quiz'      ? `quiz_${id}.json`
                 : type === 'glossaire' ? 'glossaire.json'
                 : type === 'acronymes' ? 'acronymes.json'
-                : cours_.json;
-    const r = await fetch(${DATA_BASE}/);
-    return r.ok ? r.json() : null;
+                : `cours_${id}.json`;
+    try {
+      const r = await fetch(`${DATA_BASE}/${fname}`);
+      return r.ok ? r.json() : null;
+    } catch(e) { return null; }
   }
-  const url = type === 'sujets' ? /api/cours/sujets/
-            : type === 'quiz'   ? /api/quiz/
+  const url = type === 'sujets'    ? `/api/cours/sujets/${id}`
+            : type === 'quiz'      ? `/api/quiz/${id}`
             : type === 'glossaire' ? '/api/glossaire'
             : type === 'acronymes' ? '/api/acronymes'
-            : /api/cours/;
-  const r = await fetch(url);
-  return r.ok ? r.json() : null;
+            : `/api/cours/${id}`;
+  try {
+    const r = await fetch(url);
+    return r.ok ? r.json() : null;
+  } catch(e) { return null; }
 }
-
 
 const EXT_LINKS = {
   sisr:    [
