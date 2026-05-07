@@ -1,65 +1,101 @@
-﻿[
+[
   {
-    "id": "sa-01",
-    "titre": "Cloud Security — Reading + Writing",
-    "duree": "1h30",
-    "niveau": "BTS SIO",
-    "description": "This exam tests your ability to read and understand a technical text in English about cloud security, and to write a short essay on the topic.",
-    "texte_support": "Cloud Security: Challenges and Best Practices\n\nCloud computing has revolutionised the way organisations store and process data. By moving their infrastructure to cloud platforms such as AWS, Microsoft Azure, or Google Cloud, companies can benefit from scalability, cost efficiency, and high availability. However, this shift also introduces significant security challenges that must be carefully addressed.\n\nOne of the primary concerns is data breaches. When sensitive information is stored in the cloud, it becomes a target for cybercriminals. Misconfigured storage buckets, for instance, have led to massive data leaks affecting millions of users. In 2019, a major financial company exposed over 100 million customer records due to a misconfigured AWS S3 bucket.\n\nAnother critical threat is the lack of visibility and control. Unlike on-premises infrastructure, organisations using cloud services may not have full control over their data or the underlying hardware. This creates potential vulnerabilities, particularly when dealing with multi-tenant environments where multiple clients share the same physical resources.\n\nTo mitigate these risks, security experts recommend implementing the Zero Trust model, which assumes that no user or device should be trusted by default, even inside the network perimeter. Additionally, organisations should enforce strong Identity and Access Management (IAM) policies, encrypt data both at rest and in transit, and regularly audit their cloud configurations.\n\nCompliance with regulations such as GDPR in Europe also plays a crucial role. Companies must ensure that personal data is processed lawfully and stored securely, with clear data retention policies and breach notification procedures in place.",
-    "exercices": [
+    "id": "sujet-1",
+    "annee": "2024",
+    "titre": "Cloud Migration: The New IT Paradigm",
+    "document": {
+      "titre": "Cloud Migration: The New IT Paradigm",
+      "source": "TechRepublic",
+      "texte": "Cloud Migration: The New IT Paradigm\n\nFor decades, companies relied on on-premise infrastructure to manage their IT operations. Servers, storage systems, and networking equipment were housed in corporate data centres, requiring significant capital investment and dedicated maintenance teams. Today, however, organisations of all sizes are accelerating their migration to cloud platforms such as Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP).\n\nThe primary driver behind cloud adoption is cost reduction. By replacing physical hardware with cloud services, companies eliminate upfront capital expenditure and move to a predictable, subscription-based operating expenditure model. A 2024 Gartner study estimated that organisations migrating to the cloud reduce their infrastructure costs by an average of 30 to 40 percent within the first two years.\n\nHowever, the journey to the cloud is not without its challenges. Security remains the most cited concern: when sensitive data is stored on third-party infrastructure, questions of data sovereignty, compliance with regulations such as GDPR, and protection against breaches become critical. The shared responsibility model — where the cloud provider secures the infrastructure while the customer secures its data and applications — requires IT teams to develop new security competencies.\n\nMany organisations are therefore adopting a hybrid approach, maintaining critical systems and sensitive data on-premise while migrating less critical workloads to the cloud. This hybrid cloud strategy offers the best of both worlds: the control and security of on-premise infrastructure combined with the scalability and cost efficiency of cloud services. Industry analysts predict that by 2026, over 85 percent of enterprises will operate hybrid cloud environments."
+    },
+    "questions": [
       {
-        "numero": 1,
-        "titre": "Reading Comprehension",
-        "enonce": "Answer the following questions based on the text above.",
-        "points": 12,
-        "questions": [
-          {
-            "numero": "1",
-            "question": "According to the text, what are the main advantages of cloud computing? Give two examples.",
-            "points": 2,
-            "correction": "According to the text, the main advantages of cloud computing are: (1) scalability (2) cost efficiency (3) high availability. Any two of these are acceptable. Quote from text: 'companies can benefit from scalability, cost efficiency, and high availability'."
-          },
-          {
-            "numero": "2",
-            "question": "What caused the data leak mentioned in the text? How many users were affected?",
-            "points": 2,
-            "correction": "The data leak was caused by a misconfigured AWS S3 bucket (misconfigured storage). Over 100 million customer records were affected. Quote: 'a major financial company exposed over 100 million customer records due to a misconfigured AWS S3 bucket'."
-          },
-          {
-            "numero": "3",
-            "question": "Explain in French what the 'Zero Trust model' means according to the text.",
-            "points": 3,
-            "correction": "Le modèle Zero Trust (confiance zéro) part du principe qu'aucun utilisateur ou appareil ne doit être considéré comme fiable par défaut, même à l'intérieur du périmètre réseau de l'entreprise. Cela signifie que chaque accès doit être vérifié et authentifié, contrairement au modèle traditionnel où tout ce qui est à l'intérieur du réseau est considéré comme sûr."
-          },
-          {
-            "numero": "4",
-            "question": "What does IAM stand for, and what does it involve according to the text?",
-            "points": 2,
-            "correction": "IAM stands for Identity and Access Management. According to the text, organisations should 'enforce strong Identity and Access Management (IAM) policies' — this involves controlling who has access to which resources in the cloud environment."
-          },
-          {
-            "numero": "5",
-            "question": "Find in the text: (a) two synonyms or near-synonyms for 'security problem', (b) the name of a European regulation mentioned, (c) what companies must do regarding personal data breaches.",
-            "points": 3,
-            "correction": "(a) 'challenges', 'vulnerabilities', 'threats', 'risks', 'concerns' — any two. (b) GDPR (General Data Protection Regulation). (c) Companies must have 'breach notification procedures in place' — they must notify authorities/users when a breach occurs."
-          }
-        ]
+        "numero": "1",
+        "type": "comprehension",
+        "question": "According to the text, what are the two main challenges of cloud migration mentioned by the author?",
+        "bareme": 4,
+        "correction": "According to the text, the two main challenges of cloud migration are:\n1. Security: when sensitive data is stored on third-party infrastructure, issues of data sovereignty, GDPR compliance, and protection against data breaches become critical concerns. The shared responsibility model requires IT teams to develop new security competencies.\n2. The complexity of the shared responsibility model: companies must clearly understand that while the cloud provider secures the infrastructure, the customer remains responsible for securing its own data and applications."
       },
       {
-        "numero": 2,
-        "titre": "Written Expression",
-        "enonce": "In approximately 100 words, describe the main cloud security risks and suggest two measures to protect a company's cloud infrastructure. Write in English.",
-        "points": 8,
-        "question": "In approximately 100 words, describe the main cloud security risks and suggest two measures to protect a company's cloud infrastructure. Write in English.",
-        "correction_modele": "Cloud computing offers many advantages, but it also introduces significant security risks. The most common threats include data breaches caused by misconfigurations, ransomware attacks targeting cloud storage, and unauthorised access due to weak authentication.\n\nTo protect cloud infrastructure, companies should first implement a Zero Trust security model, verifying every user and device before granting access. Second, they should ensure all data is encrypted both at rest and in transit, and regularly audit cloud configurations to detect vulnerabilities early.\n\nCompliance with regulations like GDPR is also essential to ensure personal data is handled responsibly.\n\n(Word count: ~100 words)",
-        "criteres_evaluation": [
-          "Pertinence du contenu (2 pts): mention d'au moins 2 risques et 2 mesures",
-          "Grammaire (2 pts): temps corrects, accords, ponctuation",
-          "Vocabulaire (2 pts): termes IT appropriés, variété lexicale",
-          "Structure (2 pts): introduction, développement, conclusion, cohérence"
-        ]
+        "numero": "2",
+        "type": "compte_rendu",
+        "question": "Rédigez un compte rendu de ce document en français (180-220 mots). Vous présenterez le document, ses idées principales et la conclusion de l'auteur. N'exprimez pas votre opinion personnelle.",
+        "bareme": 8,
+        "correction": "L'article intitulé « Cloud Migration: The New IT Paradigm », publié dans TechRepublic en 2024, traite de la migration des entreprises vers les infrastructures cloud et de ses implications.\n\nDans un premier temps, l'auteur explique que les entreprises abandonnent progressivement leurs infrastructures physiques traditionnelles au profit de plateformes cloud telles qu'AWS, Microsoft Azure ou Google Cloud. La principale motivation est économique : selon une étude Gartner de 2024, les organisations concernées réduiraient leurs coûts d'infrastructure de 30 à 40 % dans les deux premières années grâce au passage d'un modèle d'investissement en capital à un modèle d'abonnement.\n\nCependant, le texte souligne que cette transition n'est pas sans difficultés. La sécurité constitue le principal obstacle : le stockage de données sensibles chez des prestataires tiers soulève des questions de souveraineté des données, de conformité au RGPD et de protection contre les violations. Le modèle de responsabilité partagée impose aux équipes informatiques de développer de nouvelles compétences en matière de sécurité cloud.\n\nEn conclusion, l'auteur indique que la majorité des entreprises adoptent une approche hybride, conservant les systèmes critiques sur site tout en migrant les charges moins sensibles vers le cloud. Selon les analystes, 85 % des grandes entreprises devraient opérer dans un environnement cloud hybride d'ici 2026. (195 mots)"
+      },
+      {
+        "numero": "3",
+        "type": "expression_ecrite",
+        "question": "You are the IT manager of a medium-sized company. Write a professional email to your CEO recommending a cloud migration strategy. Justify your recommendation with at least two arguments and mention one risk to address. (150-180 words)",
+        "bareme": 8,
+        "correction": "Subject: Cloud Migration Strategy — Recommendation\n\nDear Mr [Name],\n\nI am writing to recommend that our company begins a phased migration to a hybrid cloud environment over the next 18 months.\n\nFirstly, migrating our non-critical workloads to Microsoft Azure would significantly reduce our infrastructure costs. According to recent industry data, companies of our size typically achieve cost reductions of 30 to 40 percent within two years, primarily by eliminating hardware refresh cycles and reducing data centre operational costs.\n\nSecondly, cloud platforms offer on-demand scalability, allowing us to respond rapidly to business growth without the delays associated with hardware procurement.\n\nHowever, I would like to highlight one key risk: data security and GDPR compliance. I recommend that we retain all personally identifiable data on-premise initially and work with our legal team to establish a clear shared responsibility policy before migrating sensitive systems.\n\nI would welcome the opportunity to present a detailed migration roadmap at your convenience.\n\nBest regards,\n[Name], IT Manager"
       }
-    ],
-    "bareme_total": 20
+    ]
+  },
+  {
+    "id": "sujet-2",
+    "annee": "2023",
+    "titre": "Zero Trust: The Future of Enterprise Security",
+    "document": {
+      "titre": "Zero Trust: The Future of Enterprise Security",
+      "source": "CSO Online",
+      "texte": "Zero Trust: The Future of Enterprise Security\n\nTraditional enterprise security was built on a simple premise: trust everything inside the corporate network perimeter and block everything outside. This castle-and-moat approach worked reasonably well when employees worked exclusively in the office and all applications ran on internal servers. However, the rise of remote work, cloud computing, and sophisticated cyberattacks has exposed the fundamental weakness of perimeter-based security.\n\nThe Zero Trust model, first articulated by Forrester Research analyst John Kindervag in 2010, operates on the opposite principle: 'never trust, always verify.' In a Zero Trust architecture, no user, device, or application is trusted by default — even if it is already inside the network. Every access request must be authenticated, authorised, and continuously validated.\n\nThe practical implementation of Zero Trust relies on several key technologies. Micro-segmentation divides the network into small isolated zones, so that if an attacker compromises one segment, they cannot move laterally to other systems. Multi-factor authentication (MFA) ensures that stolen passwords alone are not sufficient to gain access. Identity and Access Management (IAM) systems enforce the principle of least privilege, granting users only the minimum permissions they need.\n\nHigh-profile security breaches — including the 2020 SolarWinds attack and the 2021 Colonial Pipeline ransomware incident — have accelerated corporate adoption of Zero Trust. A 2023 Microsoft report found that 76 percent of organisations have begun implementing Zero Trust strategies. However, full implementation remains a multi-year journey that requires significant investment in technology, training, and process redesign."
+    },
+    "questions": [
+      {
+        "numero": "1",
+        "type": "comprehension",
+        "question": "What does the Zero Trust principle 'never trust, always verify' mean in practice? Mention TWO specific technologies used to implement it.",
+        "bareme": 4,
+        "correction": "'Never trust, always verify' means that no user, device, or application is trusted by default — even if it is already inside the corporate network. Every single access request must be authenticated, authorised, and continuously validated, regardless of where it originates.\n\nTwo specific technologies used to implement Zero Trust:\n1. Micro-segmentation: divides the network into small isolated zones to prevent lateral movement if an attacker compromises one segment.\n2. Multi-factor authentication (MFA): ensures that a stolen password alone is not sufficient to gain unauthorised access — a second verification factor is always required.\n(Also acceptable: Identity and Access Management / IAM / principle of least privilege)"
+      },
+      {
+        "numero": "2",
+        "type": "compte_rendu",
+        "question": "Rédigez un compte rendu de ce document en français (180-220 mots). Présentez le document, ses idées principales et la conclusion. N'exprimez pas votre opinion personnelle.",
+        "bareme": 8,
+        "correction": "L'article intitulé « Zero Trust: The Future of Enterprise Security », publié dans CSO Online en 2023, traite de l'évolution des modèles de sécurité informatique en entreprise.\n\nDans un premier temps, l'auteur explique que le modèle de sécurité traditionnel, basé sur la protection du périmètre réseau, est devenu obsolète face à l'essor du télétravail, du cloud et des cyberattaques sophistiquées. En effet, l'approche dite « château et douves » supposait que tout ce qui se trouvait à l'intérieur du réseau était de confiance.\n\nEn revanche, le modèle Zero Trust, conceptualisé par John Kindervag en 2010, repose sur le principe inverse : « ne jamais faire confiance, toujours vérifier ». Ainsi, chaque demande d'accès doit être authentifiée et validée en permanence. L'auteur présente les technologies clés de cette approche : la micro-segmentation, qui isole les zones réseau pour limiter les déplacements latéraux, et l'authentification multifacteur (MFA), qui empêche l'utilisation frauduleuse de mots de passe volés.\n\nEn conclusion, l'auteur souligne que des cyberattaques majeures, telles que SolarWinds en 2020 et Colonial Pipeline en 2021, ont accéléré l'adoption du Zero Trust. Si 76 % des organisations ont commencé à le déployer, sa mise en œuvre complète reste un processus complexe et coûteux. (204 mots)"
+      },
+      {
+        "numero": "3",
+        "type": "expression_ecrite",
+        "question": "Your company has decided to adopt a Zero Trust security approach. Write a proposal (150-180 words) addressed to your IT director explaining what Zero Trust is, recommending two specific measures to implement, and identifying one challenge.",
+        "bareme": 8,
+        "correction": "Subject: Zero Trust Security Implementation Proposal\n\nDear [IT Director],\n\nFollowing recent high-profile security incidents in our sector, I would like to propose the adoption of a Zero Trust security architecture for our organisation.\n\nZero Trust operates on the principle of 'never trust, always verify', meaning that every user, device, and application must be authenticated and authorised continuously, regardless of their location within or outside our network.\n\nI recommend two immediate measures. First, we should deploy multi-factor authentication across all systems, particularly for remote access and administrative accounts, to ensure that compromised passwords cannot be used alone to gain access. Second, implementing network micro-segmentation would limit lateral movement in the event of a breach, containing any attacker within a single isolated zone.\n\nThe main challenge will be the cost and complexity of full implementation, which is typically a multi-year project requiring staff training and significant investment in IAM tools.\n\nI am available to discuss this proposal further at your convenience.\n\nKind regards,\n[Name]"
+      }
+    ]
+  },
+  {
+    "id": "sujet-3",
+    "annee": "2022",
+    "titre": "The Most In-Demand IT Skills in 2022",
+    "document": {
+      "titre": "The Most In-Demand IT Skills in 2022",
+      "source": "InfoWorld",
+      "texte": "The Most In-Demand IT Skills in 2022\n\nThe IT job market is experiencing unprecedented growth, driven by digital transformation, the expansion of cloud infrastructure, and an escalating wave of cybersecurity threats. For IT professionals and students entering the workforce, understanding which skills command the highest demand — and the highest salaries — is more important than ever.\n\nCybersecurity tops the list of most sought-after competencies. According to the (ISC)² 2022 Cybersecurity Workforce Study, the global cybersecurity workforce gap stands at 3.4 million professionals. Certifications such as CompTIA Security+, Certified Ethical Hacker (CEH), and Cisco's CCNA Security are frequently listed in job postings. Entry-level cybersecurity analysts in France earn between €32,000 and €42,000 annually, while senior security engineers with five or more years of experience can command salaries exceeding €70,000.\n\nCloud skills are equally in demand. Proficiency with AWS, Azure, or GCP — demonstrated through vendor certifications such as AWS Solutions Architect or Microsoft Azure Administrator — significantly enhances employability. Cloud architects and DevOps engineers are among the highest-paid IT professionals, with average salaries 20 to 30 percent above traditional on-premise infrastructure roles.\n\nRemote work has fundamentally reshaped the IT landscape. Employers increasingly seek professionals who can work autonomously, manage their time effectively, and communicate clearly in written English — as many IT teams are now distributed across multiple countries. Soft skills such as problem-solving, adaptability, and cross-cultural communication are therefore as important as technical expertise. For BTS SIO graduates, the combination of solid SISR or SLAM skills and professional English proficiency represents a strong competitive advantage."
+    },
+    "questions": [
+      {
+        "numero": "1",
+        "type": "comprehension",
+        "question": "According to the text, what makes cybersecurity the most in-demand IT skill? Mention a specific statistic and two certifications cited by the author.",
+        "bareme": 4,
+        "correction": "According to the text, cybersecurity is the most in-demand IT skill because of the massive global workforce gap: the (ISC)² 2022 Cybersecurity Workforce Study identified a shortage of 3.4 million cybersecurity professionals worldwide. This gap means employers are competing to recruit qualified candidates.\n\nTwo certifications cited by the author:\n1. CompTIA Security+ — a widely recognised entry-level cybersecurity certification.\n2. CEH (Certified Ethical Hacker) — a certification for penetration testing professionals.\n(Also acceptable: CCNA Security from Cisco)\n\nBonus: the text also mentions that entry-level cybersecurity analysts in France earn between €32,000 and €42,000 annually."
+      },
+      {
+        "numero": "2",
+        "type": "compte_rendu",
+        "question": "Rédigez un compte rendu de ce document en français (180-220 mots). Présentez le document, ses idées principales et la conclusion de l'auteur. N'exprimez pas votre opinion personnelle.",
+        "bareme": 8,
+        "correction": "L'article intitulé « The Most In-Demand IT Skills in 2022 », publié dans InfoWorld en 2022, traite des compétences informatiques les plus recherchées par les employeurs et de leurs perspectives salariales.\n\nDans un premier temps, l'auteur explique que la cybersécurité est la compétence la plus demandée sur le marché de l'emploi informatique. Il s'appuie sur une étude de l'(ISC)² qui révèle un manque mondial de 3,4 millions de professionnels dans ce domaine. Les certifications les plus citées dans les offres d'emploi sont le CompTIA Security+, le CEH et le CCNA Security. Les salaires varient entre 32 000 et 42 000 euros annuels pour les profils débutants, et peuvent dépasser 70 000 euros pour les ingénieurs confirmés.\n\nEnsuite, l'auteur souligne que les compétences cloud sont tout aussi recherchées. La maîtrise d'AWS, Azure ou GCP, attestée par des certifications reconnues, augmente considérablement l'employabilité, avec des salaires supérieurs de 20 à 30 % à ceux des postes traditionnels.\n\nEn conclusion, le texte met en évidence l'importance croissante des compétences non techniques : l'autonomie, la communication écrite en anglais et l'adaptabilité sont désormais aussi valorisées que l'expertise technique, notamment dans des équipes IT internationales. (200 mots)"
+      },
+      {
+        "numero": "3",
+        "type": "expression_ecrite",
+        "question": "You are a BTS SIO SISR student about to enter the job market. Write a short article (150-180 words) for your school's newsletter explaining which IT skills you plan to develop, why, and how your BTS training has prepared you.",
+        "bareme": 8,
+        "correction": "Preparing for the IT Job Market: My Career Development Plan\n\nAs a second-year BTS SIO SISR student, I am already planning my professional development with the current IT job market in mind.\n\nFirstly, I plan to obtain the CompTIA Security+ certification within six months of graduating. Cybersecurity is the most in-demand IT skill globally, and this certification is widely recognised by employers. My BTS training has given me a solid foundation in network security, firewall configuration, and vulnerability management — all of which align directly with the Security+ syllabus.\n\nSecondly, I intend to develop my cloud skills by pursuing the Microsoft Azure Administrator certification. Cloud infrastructure management is increasingly part of the SISR role, and Azure skills carry a significant salary premium.\n\nFinally, I recognise that professional English is as important as technical skills. Working on IT teams spread across multiple countries requires clear written communication and the ability to present technical solutions confidently in English.\n\nMy BTS SIO training has provided an excellent technical foundation. Now I need to build on it with targeted certifications and language skills."
+      }
+    ]
   }
 ]

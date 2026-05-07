@@ -1,84 +1,245 @@
 [
   {
-    "id": "sujet-cejm-01",
-    "titre": "RevizApp — Une startup EdTech face à sa croissance",
-    "theme": "Entrepreneuriat, droit des sociétés et protection des données",
-    "contexte": "RevizApp est une startup fondée en 2022 par trois amis ingénieurs : Sofia (CEO, développement produit), Marcus (CTO, architecture technique) et Lucie (CMO, marketing). Leur application mobile de révision scolaire par intelligence artificielle rencontre un succès inattendu : 50 000 utilisateurs actifs (dont 60% mineurs), un chiffre d'affaires de 180 000€ et une croissance de 300% en 6 mois. Actuellement en SAS avec un capital de 3 000€, ils reçoivent une offre d'un fonds de capital-risque (VC) proposant 500 000€ en échange de 30% du capital. Ils envisagent de recruter 5 développeurs. Annexe 1 : Extrait bilan — Actif total 85 000€ dont immobilisations 40 000€, actif circulant 35 000€, trésorerie 10 000€. Passif : capitaux propres 15 000€, dettes court terme 20 000€, dettes long terme 50 000€. Annexe 2 : Charges fixes mensuelles 12 000€, charges variables = 40% du CA, CA mensuel actuel 15 000€.",
-    "questions": [
+    "id": "sujet-1",
+    "annee": "2024",
+    "titre": "La digitalisation de l'entreprise Technova",
+    "contexte": "Technova est une entreprise de services numériques fondée en 2015, employant 250 salariés répartis sur 3 sites en France. Spécialisée dans le développement de logiciels cloud pour le secteur industriel, elle réalise un chiffre d'affaires de 42 M€ avec une croissance annuelle de 18%. Face à l'évolution rapide de son secteur, la direction souhaite accélérer la transformation de ses processus internes, notamment en adoptant des méthodes agiles et en renforçant la formation de ses équipes.",
+    "documents": [
       {
-        "numero": 1,
-        "question": "Analysez la pertinence du choix de la SAS pour RevizApp. Quels auraient été les avantages et inconvénients d'une SARL ? (Mobilisez vos connaissances sur les structures juridiques)",
-        "points": 4,
-        "correction": "ANALYSE DE LA SAS POUR REVIZAPP : Pertinence de la SAS (avantages confirmés) : 1) Liberté statutaire maximale : les statuts peuvent organiser librement la gouvernance, créer des actions de préférence permettant de différencier les droits des fondateurs de ceux des investisseurs, instaurer des clauses d'agrément ou de préemption pour contrôler l'entrée de nouveaux associés. 2) Accueil des investisseurs facilité : la SAS est la forme juridique privilégiée par les fonds de capital-risque car elle permet d'émettre facilement des actions, de prévoir des clauses d'earn-out, de ratchet ou de liquidation préférentielle typiques des pactes d'actionnaires VC. 3) Responsabilité limitée : Sofia, Marcus et Lucie ne risquent que leurs apports, leur patrimoine personnel est protégé. 4) Capital minimum 1€ : adapté au démarrage avec peu de fonds. 5) Pas de limite du nombre d'associés. COMPARAISON AVEC LA SARL : Avantages SARL : image plus rassurante pour certains partenaires bancaires, gérance plus simple. Inconvénients SARL : limitation à 100 associés (problème si nombreux investisseurs), moindre flexibilité statutaire, parts sociales moins facilement cessibles (agrément des associés obligatoire), moins adaptée aux levées de fonds en capital-risque. CONCLUSION : La SAS est clairement le meilleur choix pour RevizApp étant donné le projet de levée de fonds. La SARL aurait été inadaptée à cette ambition de croissance."
+        "id": "doc1",
+        "titre": "Tableau de bord de performance Technova - Exercice 2023",
+        "contenu": "Le tableau de bord annuel de Technova présente les indicateurs clés suivants : Chiffre d'affaires 2023 : 42 M€ (+18% vs 2022). Résultat net : 3,36 M€ (soit 8% du CA). Capitaux propres : 12 M€. Effectif total : 250 salariés dont 180 développeurs (72%). Taux d'absentéisme : 2,8% (moyenne secteur : 3,5%). Index Égalité Professionnelle : 78/100 (obligation légale : publication si >50 salariés). Part de marché sur le marché des logiciels industriels cloud France (CA total marché : 280 M€) : 15%. Investissement R&D : 4,2 M€ (10% du CA). Nombre de projets agiles en cours : 23 projets Scrum, vélocité moyenne équipe : 42 points/sprint."
       },
       {
-        "numero": 2,
-        "question": "Calculez le seuil de rentabilité mensuel de RevizApp. L'entreprise est-elle actuellement bénéficiaire ? Calculez la marge de sécurité.",
-        "points": 3,
-        "correction": "CALCUL DU SEUIL DE RENTABILITÉ : Données : Charges fixes (CF) = 12 000€/mois ; Charges variables = 40% du CA → Taux de marge sur coûts variables (TMCV) = 1 - 0,40 = 60% = 0,60 ; CA mensuel actuel = 15 000€. FORMULE : SR = CF / TMCV = 12 000 / 0,60 = 20 000€ de CA mensuel. ANALYSE : CA actuel (15 000€) inférieur au SR (20 000€) → RevizApp est DÉFICITAIRE sur le mois. Résultat = CA - CF - CV = 15 000 - 12 000 - (0,40 × 15 000) = 15 000 - 12 000 - 6 000 = -3 000€ de perte mensuelle. MARGE DE SÉCURITÉ : MS = CA réel - SR = 15 000 - 20 000 = -5 000€ (marge de sécurité négative, confirmation du déficit). PERSPECTIVES : Avec la croissance de 300%, si le CA atteint 20 001€/mois, RevizApp bascule en bénéfice. La levée de fonds de 500 000€ permettrait d'absorber les pertes le temps d'atteindre le seuil."
-      },
-      {
-        "numero": 3,
-        "question": "RevizApp envisage de recruter 5 développeurs. Comparez les avantages du contrat d'apprentissage versus le CDI pour ces recrutements, en tenant compte de la situation financière de l'entreprise.",
-        "points": 4,
-        "correction": "ANALYSE COMPARATIVE : CONTRAT D'APPRENTISSAGE - Avantages financiers majeurs pour RevizApp : rémunération entre 27% et 100% du SMIC selon âge/année (environ 500-1750€/mois brut vs 2500-4000€ pour un développeur en CDI) ; exonérations de charges sociales importantes (jusqu'à 100% pour les entreprises de moins de 250 salariés) ; crédit d'impôt apprentissage. Avantages opérationnels : formation adaptée aux besoins de l'entreprise, fidélisation possible (embauche post-diplôme), obligation de tutorat favorisant la transmission des compétences. Inconvénients : compétences en cours d'acquisition (moins productifs), obligation de tutorat (charge pour les seniors), durée limitée à la formation (1-3 ans). CDI - Avantages : compétences immédiatement opérationnelles, engagement long terme, disponibilité totale. Inconvénients pour RevizApp : coût élevé (salaire + charges), sécurité de l'emploi contraignante si activité ralentit. RECOMMANDATION VU LA SITUATION FINANCIÈRE : RevizApp est déficitaire (-3000€/mois). Privilégier les contrats d'apprentissage pour 3-4 postes afin de maîtriser les coûts, et le CDI pour 1-2 postes clés nécessitant une expertise immédiate senior. La levée de fonds de 500k€ donnera une marge pour les CDI."
-      },
-      {
-        "numero": 4,
-        "question": "RevizApp collecte des données d'élèves dont 60% sont mineurs. Identifiez les obligations spécifiques au titre du RGPD et les risques en cas de non-conformité.",
-        "points": 4,
-        "correction": "OBLIGATIONS RGPD SPÉCIFIQUES À REVIZAPP : 1) BASE LÉGALE ADAPTÉE AUX MINEURS : pour les mineurs de moins de 15 ans (en France), le consentement doit être donné par le titulaire de l'autorité parentale (art. 8 RGPD et loi informatique et libertés). Obligation d'obtenir et de prouver ce consentement parental. 2) PRINCIPE DE MINIMISATION : ne collecter que les données strictement nécessaires au service (pas de données superflues). 3) DPIA (ANALYSE D'IMPACT) OBLIGATOIRE : traitement de données de mineurs à grande échelle = catégorie à risque élevé → DPIA obligatoire avant le lancement ou dès maintenant. 4) DPO (DÉLÉGUÉ À LA PROTECTION DES DONNÉES) : avec 50 000 utilisateurs, RevizApp dépasse probablement le seuil nécessitant un DPO. Désignation et déclaration à la CNIL obligatoires. 5) REGISTRE DES TRAITEMENTS : documenter tous les traitements (finalité, base légale, durée conservation, destinataires, mesures de sécurité). 6) POLITIQUE DE CONFIDENTIALITÉ : information claire et accessible, langage adapté aux jeunes utilisateurs. 7) MESURES DE SÉCURITÉ RENFORCÉES : chiffrement des données, accès restreint, tests de pénétration réguliers. 8) PROCÉDURE DE VIOLATION : plan de réponse aux incidents (notification CNIL sous 72h, information utilisateurs). RISQUES EN CAS DE NON-CONFORMITÉ : Sanctions CNIL : jusqu'à 4% du CA mondial ou 20M€ (le plus élevé) ; pour RevizApp (CA 180k€) = risque jusqu'à 20M€. Risque de réputation catastrophique (données d'enfants). Interdiction de traitement par la CNIL. Actions judiciaires des parents."
-      },
-      {
-        "numero": 5,
-        "question": "À partir du bilan fourni en annexe, analysez la structure financière de RevizApp. La levée de fonds de 500 000€ est-elle justifiée ?",
-        "points": 5,
-        "correction": "ANALYSE DE LA STRUCTURE FINANCIÈRE : BILAN SIMPLIFIÉ : Actif : Immobilisations 40 000€ (47%), Actif circulant 35 000€ (41%), Trésorerie 10 000€ (12%). Total Actif = 85 000€. Passif : Capitaux propres 15 000€ (18%), Dettes LT 50 000€ (59%), Dettes CT 20 000€ (24%). Total Passif = 85 000€. INDICATEURS FINANCIERS : Autonomie financière = Capitaux propres / Total dettes = 15 000 / 70 000 = 21% → FAIBLE (norme : supérieur à 33%). Endettement = Dettes / Capitaux propres = 70 000 / 15 000 = 4,67 → TRÈS ÉLEVÉ (norme : inférieur à 2). Fonds de Roulement (FR) = Capitaux permanents - Actif immobilisé = (15 000 + 50 000) - 40 000 = 25 000€ > 0 → structure correcte mais fragile. Trésorerie nette = 10 000€ (positive mais insuffisante). DIAGNOSTIC : RevizApp est très endettée pour une startup. La trésorerie de 10 000€ couvre à peine 10 jours de charges fixes. JUSTIFICATION DE LA LEVÉE DE FONDS 500 000€ : Oui, la levée est pleinement justifiée pour : couvrir les pertes opérationnelles (-3 000€/mois le temps d'atteindre le SR), financer le recrutement des 5 développeurs, investir en marketing pour accélérer la croissance, renforcer les fonds propres (autonomie financière). Après levée : capitaux propres = 15 000 + 500 000 x 0,70 = 15 000 + 350 000 = 365 000€ → structure financière assainie. Contrepartie : dilution de 30% du capital des fondateurs."
+        "id": "doc2",
+        "titre": "Organigramme et organisation managériale de Technova",
+        "contenu": "Technova est organisée en structure matricielle : d'un côté, 4 directions fonctionnelles (R&D, Commercial, RH, Finance), de l'autre, 8 équipes projet autonomes de 6 à 12 personnes chacune. Chaque équipe projet dispose d'un Product Owner (PO) et d'un Scrum Master. Le PDG, Marie Dubois, applique un style de management participatif (système 4 de Likert) : les décisions stratégiques sont prises en comité de direction élargi avec les chefs d'équipe. La politique RH prévoit : CPF activé pour 85% des salariés (budget formation 620 000€/an), télétravail 2 jours/semaine, prime d'intéressement représentant 8% du salaire annuel brut."
       }
     ],
-    "bareme_total": 20,
-    "duree": "3h",
-    "competences_evaluees": ["Analyse structures juridiques", "Calcul seuil de rentabilité", "Droit du travail et contrats", "RGPD et protection données mineurs", "Analyse financière de bilan"]
+    "parties": [
+      {
+        "titre": "Partie 1 - Analyse de l'environnement de Technova",
+        "questions": [
+          {
+            "numero": "1.1",
+            "question": "En vous appuyant sur le document 1 et vos connaissances, réalisez une analyse PESTEL partielle de Technova en développant au minimum 3 dimensions. (4 points)",
+            "bareme": 4,
+            "correction": "P — L'analyse PESTEL est un outil de diagnostic macro-environnemental identifiant les facteurs externes influençant l'entreprise selon 6 dimensions : Politique, Économique, Socioculturel, Technologique, Écologique, Légal.\n\nE — Chaque dimension peut constituer une opportunité ou une menace pour l'activité de Technova.\n\nI — Dimension Technologique (opportunité majeure) : investissement R&D de 4,2 M€ (10% du CA) positionne Technova dans l'innovation continue. L'essor du cloud computing et de l'IA crée de nouvelles opportunités de marchés. Dimension Économique : croissance du secteur des logiciels cloud (+18% pour Technova), contexte de transformation numérique des industriels = marché porteur de 280 M€. Dimension Légal : RGPD contraignant pour les logiciels cloud (obligation DPO, notification violations 72h, amendes 4% CA). Dimension Socioculturel : montée du télétravail (2j/semaine chez Technova) et attentes des salariés en matière de flexibilité et de formation (85% CPF activé)."
+          },
+          {
+            "numero": "1.2",
+            "question": "Calculez et commentez les principaux indicateurs de performance économique et commerciale de Technova à partir du document 1. (4 points)",
+            "bareme": 4,
+            "correction": "P — La performance économique et financière mesure la capacité de Technova à créer de la valeur. Elle s'évalue via le taux de profitabilité (rentabilité commerciale) et le taux de rentabilité (rendement des capitaux). La performance commerciale s'analyse par la part de marché.\n\nE — Taux de profitabilité = (Résultat net / CA) × 100. Taux de rentabilité = (Résultat net / Capitaux propres) × 100. Part de marché = (CA entreprise / CA total marché) × 100.\n\nI — Calculs : Taux de profitabilité = (3,36 M / 42 M) × 100 = 8% → chaque euro de CA génère 0,08€ de bénéfice, performance correcte dans le secteur IT. Taux de rentabilité = (3,36 M / 12 M) × 100 = 28% → excellent rendement pour les actionnaires. Part de marché = (42 M / 280 M) × 100 = 15% → position significative sur un marché concurrentiel. Ces indicateurs confirment la bonne santé financière de Technova et sa position concurrentielle solide."
+          }
+        ]
+      },
+      {
+        "titre": "Partie 2 - La performance globale de Technova",
+        "questions": [
+          {
+            "numero": "2.1",
+            "question": "En vous appuyant sur le Triangle de performance de Gilbert et le document 1, évaluez la performance sociale de Technova. (4 points)",
+            "bareme": 4,
+            "correction": "P — Le Triangle de performance de Gilbert distingue 3 dimensions : Pertinence (adéquation objectifs/ressources), Efficacité (atteinte des objectifs), Efficience (résultats/moyens). La performance sociale évalue la qualité des relations de travail.\n\nE — La performance sociale se mesure par des indicateurs comme le taux d'absentéisme, l'Index Égalité Professionnelle et la politique de formation. Selon Gilbert, une politique RH est efficiente si elle obtient des résultats (faible absentéisme, engagement salarié) avec des ressources optimisées.\n\nI — Technova présente : taux d'absentéisme de 2,8% (inférieur à la moyenne secteur 3,5%) → efficience de la politique RH. Index Égalité Pro : 78/100, en progression mais perfectible (objectif 100). Budget formation : 620 000€ pour 250 salariés = 2 480€/salarié/an, bien au-dessus du minimum légal. La politique télétravail (2j/semaine) et l'intéressement (8% salaire) renforcent l'attractivité (pertinence des ressources allouées). Performance sociale globalement satisfaisante avec axes d'amélioration sur l'égalité H/F."
+          },
+          {
+            "numero": "2.2",
+            "question": "Analysez l'organisation managériale de Technova (document 2) en mobilisant les théories de la motivation. (3 points)",
+            "bareme": 3,
+            "correction": "P — Les théories de la motivation (Maslow, Herzberg, McGregor) permettent d'analyser les leviers utilisés par l'entreprise pour engager ses salariés.\n\nE — Maslow hiérarchise 5 besoins (physiologique→sécurité→social→estime→accomplissement). Herzberg distingue facteurs d'hygiène (évitent insatisfaction) et facteurs de motivation (créent satisfaction). McGregor Y postule que l'employé est naturellement motivé et cherche les responsabilités.\n\nI — Chez Technova, l'organisation Scrum (autonomie des équipes, Product Owner, Scrum Master) correspond à la Théorie Y de McGregor : on fait confiance à des équipes auto-organisées. Les primes d'intéressement (8%) et le salaire constituent des facteurs d'hygiène (Herzberg) évitant l'insatisfaction. La formation CPF (accomplissement), les responsabilités en équipe projet (estime, accomplissement selon Maslow) et le télétravail (flexibilité) sont de vrais facteurs de motivation. Le management participatif (système 4 de Likert) renforce l'implication collective."
+          },
+          {
+            "numero": "2.3",
+            "question": "Construisez une matrice RACI pour le lancement d'un nouveau produit logiciel impliquant : PDG, Chef de projet, Équipe dev, Département commercial, Service RH. (3 points)",
+            "bareme": 3,
+            "correction": "P — La matrice RACI est un outil de clarification des responsabilités dans un projet. Pour chaque tâche, elle désigne : R (Responsible = réalise), A (Accountable = responsable final), C (Consulted = consulté), I (Informed = informé).\n\nE — Chaque tâche ne peut avoir qu'un seul Accountable mais peut avoir plusieurs Responsible. La matrice évite les zones grises et les conflits de responsabilité.\n\nI — Matrice RACI pour lancement produit Technova :\n- Définition cahier des charges : Chef de projet=A, Équipe dev=R, Commercial=C, PDG=I, RH=I\n- Développement logiciel : Équipe dev=R/A, Chef de projet=C, Commercial=I, PDG=I\n- Tests et validation qualité : Équipe dev=R, Chef de projet=A, Commercial=C, PDG=I\n- Plan marketing et lancement commercial : Commercial=R/A, Chef de projet=C, PDG=A, Équipe dev=I\n- Recrutement ressources complémentaires : RH=R/A, Chef de projet=C, PDG=A, Équipe dev=I\nLa matrice garantit une responsabilité claire pour chaque livrable du projet."
+          }
+        ]
+      },
+      {
+        "titre": "Partie 3 - Management des équipes et conduite du changement",
+        "questions": [
+          {
+            "numero": "3.1",
+            "question": "La direction de Technova souhaite généraliser les méthodes agiles à l'ensemble des équipes. Identifiez les freins potentiels et proposez des leviers de conduite du changement. (4 points)",
+            "bareme": 4,
+            "correction": "P — La conduite du changement désigne l'ensemble des actions menées pour faciliter la transition vers de nouvelles pratiques de travail. La généralisation des méthodes agiles constitue un changement organisationnel majeur.\n\nE — Les freins au changement sont de nature individuelle (résistance au changement, peur de l'inconnu, perte de repères hiérarchiques), collective (culture organisationnelle établie, habitudes) et structurelle (organigramme fonctionnel incompatible avec l'agilité). Les leviers mobilisables sont : communication (expliquer le pourquoi), formation (accompagner la montée en compétences), participation (impliquer les équipes dans la transition), reconnaissance (valoriser les premières réussites).\n\nI — Pour Technova : freins identifiables — les managers fonctionnels (R&D, Finance) pourraient craindre une perte d'autorité face aux Scrum Masters. Certains développeurs seniors résistent aux rituels agiles (daily scrum, rétrospectives). Leviers : organiser des formations Scrum certifiantes (CPF = 500€/an), nommer des ambassadeurs agiles dans chaque équipe, communiquer sur les résultats des 23 équipes agiles déjà opérationnelles (vélocité 42 pts/sprint), instaurer un management participatif (déjà pratiqué par le PDG — système 4 Likert)."
+          },
+          {
+            "numero": "3.2",
+            "question": "L'Index Égalité Professionnelle de Technova est de 78/100. Expliquez ce que cela signifie et proposez 2 actions concrètes pour l'améliorer. (3 points)",
+            "bareme": 3,
+            "correction": "P — L'Index Égalité Professionnelle est un indicateur légal obligatoire pour les entreprises de plus de 50 salariés. Il mesure les écarts de rémunération et de progression entre les femmes et les hommes sur 5 critères notés sur 100 points.\n\nE — Les 5 indicateurs sont : écart de rémunération H/F (40 pts), écart de taux d'augmentation individuelle (20 pts), écart de taux de promotion (15 pts), pourcentage de salariées augmentées au retour de congé maternité (15 pts), nombre de femmes dans les 10 plus hautes rémunérations (10 pts). Un score <75 oblige à des mesures correctives sous 3 ans.\n\nI — Score Technova = 78/100 (>75, pas de sanction immédiate mais perfectible). Actions concrètes : 1) Analyse des écarts de rémunération H/F par métier et correction des disparités lors des NAO (Négociations Annuelles Obligatoires). 2) Programme de mentoring et de promotion active des femmes développeuses vers des postes de Product Owner ou de chef de projet (actuellement 72% d'effectif masculin dans les 180 développeurs). Objectif : index 90/100 à 2 ans."
+          }
+        ]
+      }
+    ]
   },
   {
-    "id": "sujet-cejm-02",
-    "titre": "Groupe Ragni — Internationalisation et management d'équipe IT",
-    "theme": "Commerce international, management et transformation numérique",
-    "contexte": "Le Groupe Ragni est une ETI française fondée en 1952, spécialisée dans la conception et fabrication de solutions d'éclairage public urbain (luminaires LED, mâts, systèmes de gestion intelligente). Siège à Carros (Alpes-Maritimes), 420 salariés, CA de 98M€ dont 65% à l'export dans 62 pays. L'entreprise a récemment lancé une transformation numérique ambitieuse : plateforme IoT de gestion des éclairages publics connectés, déploiement d'AWS cloud, application mobile pour les techniciens. Elle emploie une équipe IT de 35 personnes (développeurs, data engineers, DevOps, RSSI). Annexe 1 : Répartition CA — France 35M€, Europe (hors France) 28M€, Maghreb-Afrique 20M€, Amérique 10M€, Asie-Pacifique 5M€. Annexe 2 : Analyse de marché éclairage public — Marché mondial 15Md€, 5 acteurs principaux (Signify/Philips, Osram, GE Current, Ragni, Schréder), des dizaines de fabricants asiatiques low-cost. Annexe 3 : Équipe IT — 12 seniors (>5 ans exp), 15 mid-level, 8 juniors. Taux de turnover : 18%/an.",
-    "questions": [
+    "id": "sujet-2",
+    "annee": "2023",
+    "titre": "L'entreprise Bio-Innov et la RSE",
+    "contexte": "Bio-Innov est une startup agroalimentaire créée en 2018, spécialisée dans la production et distribution de produits biologiques certifiés (label AB et Demeter). Implantée en Bretagne, elle emploie 45 salariés permanents et recourt à 25 saisonniers chaque été pour la récolte. Son chiffre d'affaires a progressé de 40% en 2 ans pour atteindre 8,5 M€. La direction souhaite renforcer sa démarche RSE et professionnaliser sa gestion des ressources humaines face à la croissance rapide.",
+    "documents": [
       {
-        "numero": 1,
-        "question": "À partir de l'annexe 2, identifiez la structure de marché de l'éclairage public mondial. Quelles stratégies concurrentielles Ragni peut-elle adopter face aux fabricants asiatiques ?",
-        "points": 4,
-        "correction": "STRUCTURE DE MARCHÉ : Oligopole concentré : peu d'acteurs majeurs (5 grands groupes) qui se partagent une part significative du marché mondial, avec des barrières à l'entrée élevées (R&D, normes, certifications, réseaux de distribution). Présence également d'une frange concurrentielle de petits fabricants asiatiques low-cost. Caractéristiques oligopolistiques : interdépendance entre acteurs majeurs (décision de l'un influence les autres), forte asymétrie d'information, différenciation possible. ANALYSE CONCURRENTIELLE (5 FORCES DE PORTER) : Menace nouveaux entrants : FAIBLE pour le haut de gamme (barrières technologiques, normes), FORTE pour le low-cost asiatique. Pouvoir clients (collectivités) : FORT (appels d'offres publics, critère prix important). Produits de substitution : MODÉRÉ (éclairage solaire, solutions alternatives). Fournisseurs : MODÉRÉ (composants LED, semi-conducteurs). Rivalité : FORTE. STRATÉGIES RECOMMANDÉES POUR RAGNI : 1) DIFFÉRENCIATION (stratégie principale) : se positionner sur l'innovation (IoT, gestion intelligente, efficacité énergétique), la qualité et la durabilité (garanties longues, recyclabilité), les services associés (maintenance, monitoring, data analytique), l'accompagnement réglementaire (normes européennes complexes). 2) FOCALISATION sur niches à forte valeur ajoutée : éclairage de monuments historiques, ports, aéroports, projets smart city premium. 3) NE PAS S'ENGAGER dans une stratégie domination par les coûts face aux Asiatiques (impossible à compétitivité équivalente)."
+        "id": "doc1",
+        "titre": "Données marché et concurrence - Secteur agroalimentaire bio France 2023",
+        "contenu": "Le marché des produits biologiques en France représente un CA total de 13,2 Md€ en 2023, avec une croissance de +7% vs 2022 après une légère contraction post-COVID. Les parts de marché se répartissent entre : grandes surfaces spécialisées bio (Biocoop 12%, Naturalia 8%, La Vie Claire 6%), grandes surfaces conventionnelles (rayons bio : 35%), vente directe et circuits courts (15%), e-commerce bio (10%). Principaux concurrents de Bio-Innov sur le segment des producteurs bio bretons : CoopBio Bretagne (CA 22 M€), NaturBreiz (CA 15 M€), Bio-Innov (CA 8,5 M€). Le marché est en phase de maturité progressive avec une intensification concurrentielle."
       },
       {
-        "numero": 2,
-        "question": "Analysez la stratégie d'internationalisation de Ragni à partir de l'annexe 1. Quels modes de présence à l'étranger conseillez-vous pour chaque zone géographique ?",
-        "points": 4,
-        "correction": "ANALYSE DE LA RÉPARTITION DU CA INTERNATIONAL : CA total = 98M€ ; Export = 63M€ = 64,3% du CA → Ragni est fortement internationalisée. ANALYSE PAR ZONE : Europe (28M€/29%) : Zone prioritaire, marché le plus mature, normes communes. MODES CONSEILLÉS : filiales commerciales dans les grands marchés (Allemagne, Espagne, Italie, Royaume-Uni) pour contrôle maximal et proximité clients ; distributeurs agréés dans les petits marchés européens. Maghreb-Afrique (20M€/20%) : Zone à fort potentiel (urbanisation rapide, éclairage public encore peu développé). MODES CONSEILLÉS : agents commerciaux exclusifs dans les pays matures (Maroc, Tunisie, Algérie) ; joint-ventures avec partenaires locaux dans les marchés complexes (Afrique sub-saharienne, réglementations difficiles) ; participation à des consortiums pour les grands projets. Amérique (10M€/10%) : Marchés très divers (USA vs Amérique latine). MODES CONSEILLÉS : distributeur exclusif aux USA (certifications UL/CSA spécifiques) ; agents commerciaux en Amérique latine. Asie-Pacifique (5M€/5%) : Zone difficile (concurrence locale intense). MODES CONSEILLÉS : export direct sur projets spécifiques (ambassades, projets français), partenariats ponctuels. RECOMMANDATION GLOBALE : Consolider l'Europe (filiales), accélérer sur l'Afrique (joint-ventures), maintenir présence sélective en Amérique et Asie. Éviter la dispersion géographique : mieux vaut être fort dans 20 pays que présent dans 60."
+        "id": "doc2",
+        "titre": "Rapport RSE et politique sociale de Bio-Innov 2023",
+        "contenu": "Bio-Innov a engagé sa démarche RSE en 2021 autour de 4 axes : Environnement (certification AB et Demeter, 0 pesticide, empreinte carbone -45% vs agriculture conventionnelle, consommation eau -30%), Social (accord de télétravail 1j/semaine pour administratifs, taux absentéisme 2,1%, formation professionnelle 3,2% de la masse salariale), Économique (CA 8,5 M€, résultat net 595 000€, capitaux propres 2,8 M€, 100% circuits courts Bretagne), Gouvernance (Statut SA transformée en SAS en 2022 pour plus de flexibilité, Comité RSE avec représentants salariés). L'entreprise emploie 25 saisonniers en CDD de juin à septembre pour la récolte des légumes biologiques."
       },
       {
-        "numero": 3,
-        "question": "L'équipe IT de Ragni (35 personnes, 18% de turnover) développe la plateforme IoT. Quel style de management et quelle structure organisationnelle recommandez-vous ? Justifiez avec les théories managériales.",
-        "points": 4,
-        "correction": "DIAGNOSTIC DU CONTEXTE IT : Équipe hétérogène (12 seniors + 15 mid + 8 juniors) → niveaux de maturité très différents. Turnover de 18% = élevé (moyenne IT France : 15-20%), signal de problèmes de motivation ou d'organisation. Projet complexe (IoT, cloud, mobile) nécessitant coordination forte. STYLE DE MANAGEMENT ADAPTÉ (Hersey-Blanchard) : Pour les SENIORS (12 personnes) : Style DÉLÉGATIF — faible directivité, faible soutien. Ces experts ont les compétences ET la motivation → leur déléguer des périmètres avec autonomie totale (ownership de composants architecturaux). Pour les MID-LEVEL (15 personnes) : Style PARTICIPATIF — faible directivité, fort soutien. Compétences présentes mais besoin de reconnaissance et d'implication dans les décisions → les associer aux choix techniques, feedback régulier. Pour les JUNIORS (8 personnes) : Style DIRECTIF puis PERSUASIF selon évolution. Débutants → fournir cadre, procédures claires (directif), puis les motiver en expliquant le pourquoi (persuasif). STRUCTURE ORGANISATIONNELLE : Structure MATRICIELLE recommandée : axe vertical = pôles d'expertise (Frontend, Backend, DevOps/Cloud, Data/IoT, RSSI) ; axe horizontal = squads projets (IoT Platform, Application Mobile, Infrastructure). APPORT DES THÉORIES : Maslow : le turnover (18%) suggère des besoins d'estime et d'accomplissement non satisfaits → créer des parcours de carrière clairs, valoriser les contributions techniques. Herzberg : revoir les facteurs d'hygiène (salaires compétitifs, conditions de travail) ET activer les facteurs de motivation (projets stimulants, responsabilités, reconnaissance). ACTIONS CONCRÈTES : Instaurer des guildes techniques (Scrum of Scrums), conférences internes, contribution open source autorisée, budget formation individuel."
+        "id": "doc3",
+        "titre": "Extrait convention collective de l'agriculture et accord d'entreprise Bio-Innov",
+        "contenu": "La convention collective nationale de la production agricole s'applique à Bio-Innov. Elle prévoit des dispositions spécifiques aux emplois saisonniers : salaire minimum conventionnel agricole (SMAC) supérieur au SMIC de 8%, logement possible sur site, transport pris en charge si >10 km. L'accord d'entreprise Bio-Innov signé en 2023 améliore ces dispositions : prime de fidélité saisonnière 150€ pour tout saisonnier revenant deux années consécutives, formation HACCP (hygiène alimentaire) prise en charge à 100% sur CPF, priorité de réembauche en CDI pour les saisonniers de plus de 2 ans d'ancienneté."
       },
       {
-        "numero": 4,
-        "question": "La plateforme IoT de Ragni collecte des données sur les éclairages publics de 15 villes françaises et européennes. Identifiez les enjeux RGPD et cybersécurité pour ce système.",
-        "points": 4,
-        "correction": "ENJEUX RGPD : Analyse des données collectées : données techniques des luminaires (consommation, état, position GPS) → données d'équipements, pas de données personnelles directes. MAIS : données de localisation GPS des luminaires pouvant révéler des comportements (passages piétons, activités nocturnes) → potentiellement des données personnelles indirectes. Données d'utilisation des techniciens (applications mobiles) → données personnelles des employés. OBLIGATIONS RGPD POUR RAGNI : Registre des traitements : documenter les traitements de données des techniciens, clients collectivités. DPIA : recommandée pour la plateforme IoT (traitement innovant, grande échelle, surveillance d'espaces publics). Contractualisation : Ragni agit comme sous-traitant des collectivités → contrats DPA (Data Processing Agreement) obligatoires avec chaque ville cliente (art. 28 RGPD). Sécurité des données : chiffrement des données en transit (TLS) et au repos, gestion des accès (IAM), journalisation. ENJEUX CYBERSÉCURITÉ CRITIQUES : Infrastructure critique : éclairage public = infrastructure d'importance vitale (IIV) dans certains cas → obligations réglementaires supplémentaires (directive NIS2). Menaces spécifiques IoT : appareils souvent peu sécurisés, firmware à mettre à jour, protocoles de communication (LoRaWAN, Zigbee, 4G) à protéger. Scénarios d'attaque : prise de contrôle des luminaires (extinction de toute une ville), espionnage des données de consommation, ransomware sur la plateforme de gestion. Mesures recommandées : segmentation réseau, authentification forte (MFA), tests de pénétration réguliers, plan de continuité d'activité (PCA), SIEM pour monitoring, conformité ISO 27001."
-      },
-      {
-        "numero": 5,
-        "question": "Ragni envisage d'embaucher 5 développeurs seniors via CDI. Rédigez une note synthétique sur les éléments essentiels des contrats et les risques juridiques à anticiper.",
-        "points": 4,
-        "correction": "NOTE SYNTHÉTIQUE — RECRUTEMENT DE 5 DÉVELOPPEURS SENIORS EN CDI : ÉLÉMENTS ESSENTIELS DES CONTRATS : 1) Qualification et classification : appliquer la convention collective SYNTEC (applicable aux ESN et aux sociétés numériques) → coefficient selon niveau (position 2.2 à 3.3 selon expérience), salaires minimaux conventionnels à respecter. 2) Période d'essai : cadres → 4 mois renouvelables une fois (maximum 8 mois). Doit être explicitement mentionnée dans le contrat. 3) Rémunération : salaire de base + éventuels variables (bonus, intéressement), avantages (mutuelle, ticket restaurant, participation). 4) Télétravail : prévoir un accord ou avenant spécifique (jours/semaine, frais, équipements) — fort enjeu d'attractivité dans le secteur IT. 5) Clauses spécifiques à intégrer : Clause de confidentialité (protection du code source, secrets commerciaux) ; Clause de propriété intellectuelle (articles L113-9 et L611-7 CPI : les créations dans le cadre du travail appartiennent à l'employeur) ; Clause de non-concurrence (si justifiée par les fonctions exercées, limitée dans le temps et l'espace, avec contrepartie financière obligatoire supérieure ou égale à 25% du salaire mensuel). 6) Lieu de travail : Carros (06) — difficile d'attirer des seniors dans une zone non-métropolitaine → prévoir clause de télétravail attractif. RISQUES JURIDIQUES À ANTICIPER : Requalification forfait jours si mal encadré (suivi du temps de travail). Contentieux prud'homal si licenciement mal motivé (documenter les entretiens d'évaluation). Risque de débauchage par concurrents (clause non-concurrence à calibrer). Obligations RGPD sur les données RH des nouveaux salariés (dossiers personnels, monitoring, géolocalisation éventuels)."
+        "id": "doc4",
+        "titre": "Extrait du bilan social et indicateurs RH Bio-Innov 2023",
+        "contenu": "Effectif permanent : 45 CDI (32 femmes/13 hommes — 71% de femmes). Effectif saisonnier : 25 CDD saisonniers (15 femmes/10 hommes). Masse salariale : 1,85 M€ (permanents) + 280 000€ (saisonniers). Taux d'absentéisme permanent : 2,1%. Taux de turnover permanent : 4,2% (très faible). Index Égalité Professionnelle : 82/100. Accidents du travail : 2 (légers, liés à la manutention). Formation : budget 59 200€ (3,2% MS), 38 salariés formés sur 45. CPF activé : 28 salariés. Mutuelle collective : cotisation 75€/mois, employeur 50% (37,50€), salarié 50% (37,50€)."
       }
     ],
-    "bareme_total": 20,
-    "duree": "3h",
-    "competences_evaluees": ["Structure de marché et stratégies concurrentielles", "Stratégies d'internationalisation", "Management et théories organisationnelles", "RGPD et cybersécurité IoT", "Droit du travail et contrats CDI"]
+    "parties": [
+      {
+        "titre": "Partie 1 - Analyse du marché et positionnement de Bio-Innov",
+        "questions": [
+          {
+            "numero": "1.1",
+            "question": "En vous appuyant sur le document 1, calculez la part de marché de Bio-Innov et analysez la structure concurrentielle de son marché en utilisant les concepts appropriés. (5 points)",
+            "bareme": 5,
+            "correction": "P — La part de marché mesure la position concurrentielle d'une entreprise sur son marché. Elle se calcule ainsi : Part de marché = (CA entreprise / CA total marché) × 100. La structure de marché caractérise l'organisation des offreurs et demandeurs.\n\nE — Un marché peut être en concurrence pure et parfaite (nombreux acteurs, produits homogènes), en oligopole (quelques acteurs dominants) ou en monopole (un seul vendeur). L'analyse des 5 forces de Porter permet d'évaluer l'intensité concurrentielle.\n\nI — Part de marché Bio-Innov sur le marché bio France : (8,5 M€ / 13 200 M€) × 100 = 0,064% — très faible sur le marché total. Sur le segment producteurs bio bretons : (8,5 / (22+15+8,5)) × 100 = 18,7% — position de n°3 sur ce segment. Le marché bio est un oligopole local (3 acteurs bretons : CoopBio 48%, NaturBreiz 33%, Bio-Innov 18%). Intensité concurrentielle croissante (phase de maturité). La menace des substituts (grandes surfaces bio) est forte (35% du marché). L'avantage concurrentiel de Bio-Innov repose sur la différenciation (certifications AB+Demeter, circuits courts)."
+          },
+          {
+            "numero": "1.2",
+            "question": "Réalisez un diagnostic SWOT complet de Bio-Innov en vous appuyant sur les 4 documents. (5 points)",
+            "bareme": 5,
+            "correction": "P — L'analyse SWOT est un outil de diagnostic stratégique combinant analyse interne (Forces/Faiblesses) et analyse externe (Opportunités/Menaces).\n\nE — Les Forces sont des avantages compétitifs à exploiter, les Faiblesses des lacunes à corriger, les Opportunités des tendances externes favorables à saisir, les Menaces des risques à anticiper.\n\nI — SWOT Bio-Innov :\nFORCES : double certification AB+Demeter (différenciation premium), croissance CA +40% sur 2 ans, démarche RSE structurée (4 axes), faible absentéisme (2,1%), fidélité salariés (turnover 4,2%), circuits courts 100% Bretagne.\nFAIBLESSES : PME de 45 salariés (ressources limitées vs CoopBio 22 M€), dépendance aux 25 saisonniers (risque RH), positionnement prix élevé (bio premium), part de marché nationale <1%.\nOPPORTUNITÉS : marché bio France 13,2 Md€ en croissance +7%, attentes consommateurs pour le local et le bio, soutiens publics à l'agriculture biologique, plan France 2030 (transition agricole).\nMENACES : intensification concurrence (CoopBio, grandes surfaces bio), hausse coûts des intrants biologiques, aléas climatiques (sécheresses), risque de déclassification des certifications."
+          }
+        ]
+      },
+      {
+        "titre": "Partie 2 - La performance environnementale et la RSE",
+        "questions": [
+          {
+            "numero": "2.1",
+            "question": "En vous appuyant sur le document 2 et vos connaissances, expliquez ce qu'est la RSE et évaluez la démarche RSE de Bio-Innov selon la norme ISO 26000. (4 points)",
+            "bareme": 4,
+            "correction": "P — La RSE (Responsabilité Sociétale des Entreprises) désigne l'intégration volontaire par les entreprises des préoccupations sociales, environnementales et éthiques dans leurs activités et dans leur interaction avec les parties prenantes. La norme ISO 26000 guide cette démarche autour de 7 domaines.\n\nE — Les 7 domaines ISO 26000 sont : gouvernance de l'organisation, droits de l'homme, relations et conditions de travail, environnement, loyauté des pratiques, questions relatives aux consommateurs, communautés et développement local. La RSE repose sur 3 piliers : économique (viabilité), social (équité), environnemental (durabilité) — développement durable.\n\nI — Bio-Innov couvre 5 domaines ISO 26000 : Environnement (0 pesticide, -45% empreinte carbone, certifications bio), Conditions de travail (taux absentéisme 2,1%, formation 3,2% MS, mutuelle), Gouvernance (Comité RSE paritaire, transformation en SAS), Consommateurs (transparence labels bio, circuits courts), Communautés locales (100% Bretagne, emploi saisonnier local). Axe moins développé : relations avec les sous-traitants/fournisseurs (loyauté des pratiques). Démarche RSE sincère et bien documentée, cohérente avec le positionnement premium."
+          }
+        ]
+      },
+      {
+        "titre": "Partie 3 - Le droit du travail et la gestion des saisonniers",
+        "questions": [
+          {
+            "numero": "3.1",
+            "question": "Bio-Innov emploie 25 saisonniers en CDD chaque été. En vous appuyant sur les documents 3 et 4, analysez le cadre juridique de ces contrats et les améliorations apportées par la convention collective et l'accord d'entreprise. (5 points)",
+            "bareme": 5,
+            "correction": "P — Le CDD saisonnier est un contrat à durée déterminée dont le recours est autorisé pour les emplois liés aux variations saisonnières d'activité (art. L1242-2 du Code du Travail). La convention collective et les accords d'entreprise peuvent améliorer les dispositions légales en faveur des salariés.\n\nE — Régime légal du CDD saisonnier : motif obligatoire (emploi saisonnier), pas de durée maximale fixe (dérogation aux 18 mois), renouvelable, pas d'indemnité de fin de contrat (exception légale aux 10%). La convention collective s'applique à tout le secteur et constitue un minimum que l'accord d'entreprise peut dépasser (principe de faveur).\n\nI — Pour les 25 saisonniers de Bio-Innov (juin-septembre, 280 000€ masse salariale, ~11 200€ brut moyen) : la convention collective agricole impose un SMAC supérieur de 8% au SMIC, logement et transport. L'accord d'entreprise Bio-Innov 2023 va au-delà : prime fidélité 150€ (2ème saison), formation HACCP gratuite (CPF), priorité CDI après 2 ans. Ces améliorations illustrent le principe de faveur : ni la convention ni l'accord ne peuvent être moins favorables que la loi, et l'accord d'entreprise améliore encore la convention."
+          }
+        ]
+      },
+      {
+        "titre": "Partie 4 - La protection sociale chez Bio-Innov",
+        "questions": [
+          {
+            "numero": "4.1",
+            "question": "En vous appuyant sur le document 4, analysez la politique de protection sociale de Bio-Innov en étudiant la mutuelle d'entreprise obligatoire et la formation professionnelle. (4 points)",
+            "bareme": 4,
+            "correction": "P — La protection sociale complémentaire en entreprise comprend la mutuelle collective (couverture santé) et la prévoyance (risques lourds). La mutuelle d'entreprise est obligatoire depuis l'ANI du 11 janvier 2013 (Accord National Interprofessionnel). La formation professionnelle est un droit garanti par le CPF.\n\nE — ANI 2013 : tout employeur doit proposer une mutuelle collective avec participation minimale de 50% de la cotisation. Le CPF (Compte Personnel de Formation) permet à chaque salarié de cumuler 500€/an (max 5 000€) pour financer des formations. L'employeur doit consacrer une contribution formation (1% de la masse salariale pour <11 salariés, selon barème).\n\nI — Bio-Innov respecte scrupuleusement l'ANI 2013 : cotisation mutuelle 75€/mois, employeur 50% (37,50€), salarié 50% (37,50€). CPF activé pour 28 des 45 salariés (62%). Budget formation 59 200€ (3,2% de la masse salariale 1,85 M€) soit bien au-dessus du minimum légal. 38/45 salariés formés en 2023 (84%). La formation HACCP gratuite pour les saisonniers (accord d'entreprise) valorise le CPF et favorise leur employabilité. Démarche sociale cohérente avec la RSE."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sujet-3",
+    "annee": "2022",
+    "titre": "Le projet de transformation digitale de MediaPlus",
+    "contexte": "MediaPlus est un groupe de médias traditionnel fondé en 1985, combinant presse écrite (3 quotidiens régionaux, 2 magazines), radio (2 stations) et télévision locale (1 chaîne). Il emploie 800 salariés et réalise un CA de 95 M€, en recul de -8% sur 5 ans sous l'effet de la digitalisation. Face à l'érosion de ses audiences et de ses revenus publicitaires, la direction a décidé de lancer un vaste projet de transformation digitale baptisé 'MediaPlus 2025', visant à développer ses offres numériques et à réorganiser ses équipes.",
+    "documents": [
+      {
+        "id": "doc1",
+        "titre": "Note de cadrage du projet MediaPlus 2025",
+        "contenu": "Le projet MediaPlus 2025 vise à transformer le groupe en acteur multiplateforme numérique. Objectifs : créer une application mobile unifiée (presse, radio, TV en streaming), migrer les systèmes informatiques vers le cloud (AWS), former 600 salariés aux outils numériques, développer une offre d'abonnement digital (objectif 50 000 abonnés à 2 ans). Budget total : 4,2 M€ sur 24 mois. Chef de projet : Directeur Technique, Thomas Laurent. Commanditaire : PDG, Sophie Durand. Méthode retenue : approche hybride (Gantt macro-planning + sprints Scrum pour les développements). Risques identifiés : résistance au changement des équipes rédactionnelles (probabilité : haute, impact : élevé = criticité très haute), dépassement budgétaire (probabilité : moyenne, impact : élevé), retard de migration cloud (probabilité : moyenne, impact : moyen)."
+      },
+      {
+        "id": "doc2",
+        "titre": "Diagnostic stratégique interne de MediaPlus - Extraits",
+        "contenu": "Forces : marque reconnue depuis 37 ans, réseau de 220 journalistes expérimentés, archives numériques de valeur (37 ans de contenu), partenariats publicitaires régionaux solides, studio radio et TV équipé. Faiblesses : dette technique (SI vieillissant, serveurs on-premise non évolutifs), faible présence numérique (site web : 180 000 visiteurs/mois, app mobile inexistante), résistance culturelle au changement (moyenne d'âge équipe éditoriale : 48 ans), déficit de compétences numériques (seulement 12% des journalistes ont suivi une formation au data journalism), CA numérique = 7% du CA total (vs 35% chez les concurrents numériques)."
+      },
+      {
+        "id": "doc3",
+        "titre": "Données RH et organisation de MediaPlus",
+        "contenu": "Structure organisationnelle : organigramme hiérarchique classique avec 5 directions (Rédaction, Technique, Commercial, RH, Finance) et 12 niveaux hiérarchiques. Effectif : 800 salariés (520 CDI journalistes, 180 CDI techniques/administratifs, 100 CDD et pigistes). Moyenne d'âge : 46 ans. Budget formation 2022 : 720 000€ (soit 0,9% de la MS 80 M€ — minimum légal non atteint). CPF activé : seulement 28% des salariés. Index Égalité Professionnelle : 71/100. Taux d'absentéisme : 5,8% (supérieur à la moyenne secteur médias 4,2%). Résultats entretien annuel 2022 : 67% des salariés se déclarent peu ou pas satisfaits de l'organisation du travail."
+      },
+      {
+        "id": "doc4",
+        "titre": "Analyse de l'environnement externe et concurrentiel",
+        "contenu": "Le marché des médias en France connaît une transformation structurelle : recettes publicitaires print en baisse de -22% sur 5 ans, publicité digitale en hausse de +35%. Les concurrents numériques (Brut, Konbini, Loopsider) ont capté 18% des moins de 35 ans. Les GAFAM captent 73% des revenus publicitaires numériques. Opportunités : développement du podcast (marché +45%/an en France), streaming vidéo, abonnements numériques (Le Monde a atteint 500 000 abonnés digitaux en 2023), fonds européen pour les médias indépendants (MediaEurope 2027 : 1,2 Md€). Réglementation favorable : crédit d'impôt abonnement presse numérique, aides à la presse (APE), obligation légale des GAFAM de rémunérer les droits voisins des éditeurs de presse."
+      }
+    ],
+    "parties": [
+      {
+        "titre": "Partie 1 - Diagnostic stratégique de MediaPlus",
+        "questions": [
+          {
+            "numero": "1.1",
+            "question": "En vous appuyant sur les documents 2 et 4, réalisez un diagnostic SWOT complet de MediaPlus en justifiant chaque élément retenu. (6 points)",
+            "bareme": 6,
+            "correction": "P — L'analyse SWOT est un outil de diagnostic stratégique complet combinant deux niveaux d'analyse : interne (Forces et Faiblesses spécifiques à MediaPlus) et externe (Opportunités et Menaces de l'environnement médiatique).\n\nE — L'analyse interne identifie les avantages compétitifs à exploiter et les lacunes à corriger. L'analyse externe repère les tendances favorables à saisir et les risques à anticiper. Le croisement Forces-Opportunités oriente la stratégie de développement.\n\nI — SWOT MediaPlus :\nFORCES (doc 2) : marque établie 37 ans (légitimité), 220 journalistes expérimentés (capital humain), archives 37 ans (actif numérique valorisable), partenariats publicitaires régionaux (revenus stables), infrastructure studio complète.\nFAIBLESSES (doc 2&3) : SI vieillissant (dette technique), app mobile absente (retard numérique), compétences numériques faibles (12% data journalism), CA digital = 7% vs 35% concurrents, absentéisme élevé (5,8%), résistance au changement (âge moyen 48 ans).\nOPPORTUNITÉS (doc 4) : marché podcast +45%/an, abonnements numériques (Le Monde = 500 000), fonds MediaEurope 2027, droits voisins GAFAM, crédit d'impôt abonnement.\nMENACES (doc 4) : publicité print -22%, concurrents natifs numériques (Brut, Konbini), GAFAM captent 73% pub digitale, désaffection des moins de 35 ans (-18% audience captée)."
+          },
+          {
+            "numero": "1.2",
+            "question": "Réalisez une analyse PESTEL de l'environnement de MediaPlus en vous appuyant sur le document 4. Développez au moins 4 dimensions. (4 points)",
+            "bareme": 4,
+            "correction": "P — L'analyse PESTEL est un outil de diagnostic macro-environnemental permettant d'identifier les facteurs externes influençant l'activité de MediaPlus selon 6 dimensions.\n\nE — Chaque dimension peut représenter une opportunité ou une menace. L'analyse PESTEL complète le SWOT en approfondissant l'analyse externe.\n\nI — Dimension Économique : recul des recettes pub print -22% (menace majeure), croissance pub digitale +35% (opportunité). CA MediaPlus en recul -8%/5 ans. Dimension Technologique : streaming, podcasts (+45%/an), IA rédactionnelle, cloud AWS (migration prévue) = opportunités de disruption interne. Dimension Légal : crédit impôt presse numérique (opportunité), droits voisins obligatoires GAFAM (gain revenus), réglementation aides à la presse APE. Dimension Socioculturel : désaffection des <35 ans pour la presse print (menace), essor des usages mobiles (opportunité si app lancée), consommation vidéo/podcast en hausse. Dimension Politique : soutien européen MediaEurope 2027 (1,2 Md€) = opportunité de financement pour la transformation."
+          }
+        ]
+      },
+      {
+        "titre": "Partie 2 - La gestion du projet de transformation digitale",
+        "questions": [
+          {
+            "numero": "2.1",
+            "question": "En vous appuyant sur le document 1, analysez la gestion des risques du projet MediaPlus 2025 et expliquez comment le triangle d'or s'applique à ce projet. (4 points)",
+            "bareme": 4,
+            "correction": "P — Le triangle d'or (ou triangle des contraintes) est un modèle fondamental de gestion de projet qui établit une relation d'interdépendance entre les 3 contraintes : Coût, Délai et Qualité. La gestion des risques vise à anticiper et mitiger les événements susceptibles de compromettre ces contraintes.\n\nE — La criticité d'un risque = Probabilité × Impact. Les stratégies de traitement sont : mitiger (réduire probabilité ou impact), transférer (assurance, sous-traitance), éviter (modifier le projet) ou accepter. Toute modification d'une contrainte du triangle d'or impacte les deux autres.\n\nI — Triangle d'or MediaPlus 2025 : Coût = 4,2 M€ (budget fixé), Délai = 24 mois (objectif 2025), Qualité = 50 000 abonnés digitaux + migration cloud complète. Risques (doc 1) : résistance au changement (criticité très haute = probabilité haute × impact élevé) → si non traité, retard sur formation 600 salariés = dépassement délai → hausse coûts ou réduction scope. Dépassement budgétaire (criticité haute) → réduction qualité des développements. Plan mitigation : programme conduite du changement dédié (budget 300 000€), sprints Scrum permettant des ajustements continus du scope tout en maintenant délai et coût."
+          },
+          {
+            "numero": "2.2",
+            "question": "Le chef de projet Thomas Laurent hésite entre méthode Gantt classique et méthode Scrum pour les développements applicatifs. Comparez ces deux approches et justifiez le choix d'une approche hybride. (4 points)",
+            "bareme": 4,
+            "correction": "P — La gestion de projet connaît deux grands paradigmes : l'approche prédictive (Gantt/PERT) qui planifie l'ensemble du projet dès le départ, et l'approche agile (Scrum) qui procède par itérations courtes et adaptations continues.\n\nE — Gantt (méthode prédictive) : définition exhaustive des tâches, planning en barres chronologiques, adapté aux projets stables à exigences fixes (construction, infrastructure). Scrum (méthode agile) : sprints de 1-4 semaines, Product Backlog priorisé, Daily Scrum, Sprint Review et rétrospective, vélocité mesurée. Adapté aux environnements changeants où les besoins évoluent.\n\nI — Contexte MediaPlus 2025 : le projet combine des éléments stables (migration cloud, infrastructure = approche Gantt pertinente pour planifier les jalons sur 24 mois) et des éléments évolutifs (développements app mobile, nouvelles fonctionnalités = besoins qui évoluent avec les retours utilisateurs, nécessitant Scrum). L'approche hybride retenue (Gantt macro + sprints Scrum) est judicieuse : le Gantt assure la visibilité globale pour la direction et le contrôle du budget 4,2 M€, les sprints Scrum permettent des livraisons rapides et des ajustements. Exemple : sprint 1 = fonctionnalités MVP de l'app mobile, sprint 2 = module abonnement..."
+          }
+        ]
+      },
+      {
+        "titre": "Partie 3 - Management des équipes",
+        "questions": [
+          {
+            "numero": "3.1",
+            "question": "En vous appuyant sur le document 3, analysez les problèmes RH de MediaPlus et proposez un plan d'action managérial pour accompagner la transformation digitale. (5 points)",
+            "bareme": 5,
+            "correction": "P — Le management des équipes durant une transformation organisationnelle requiert de mobiliser les leviers de motivation et d'adapter le style de management. Les indicateurs RH du document 3 révèlent des dysfonctionnements significatifs.\n\nE — Les théories de la motivation (Maslow, Herzberg, McGregor) et les styles de management (Hersey & Blanchard : directif, persuasif, participatif, délégatif) permettent de concevoir un plan d'action adapté. Le modèle de Thomas-Kilmann guide la gestion des conflits inévitables lors d'une transformation.\n\nI — Problèmes identifiés (doc 3) : absentéisme 5,8% (>secteur 4,2%) = signal de mal-être, 67% insatisfaits de l'organisation = crise managériale, budget formation sous le minimum légal (0,9% vs 1% minimum) = non-conformité juridique, CPF activé seulement 28% = faible culture formation. Plan d'action : 1) Formation urgente (porter budget à 1,5% MS = 1,2 M€) avec priorité data journalism et outils numériques pour 600 salariés ciblés. 2) Modifier le style managérial : passer du style hiérarchique actuel (12 niveaux = directif) à un style participatif pour co-construire la transformation (système 4 de Likert). 3) Groupes de travail mixtes journalistes/techniques pour co-créer les nouvelles pratiques. 4) Accompagnement individuel par le CEP pour les salariés les plus éloignés du numérique."
+          }
+        ]
+      },
+      {
+        "titre": "Partie 4 - Communication professionnelle et marque employeur",
+        "questions": [
+          {
+            "numero": "4.1",
+            "question": "MediaPlus souhaite améliorer sa marque employeur pour attirer des profils numériques (développeurs, data journalists, community managers). Expliquez ce concept et proposez 3 actions concrètes adaptées au contexte de MediaPlus. (5 points)",
+            "bareme": 5,
+            "correction": "P — La marque employeur désigne l'ensemble des représentations et perceptions d'une entreprise en tant qu'employeur. Elle vise à attirer de nouveaux talents, retenir les collaborateurs existants et construire une image positive sur le marché de l'emploi.\n\nE — La marque employeur se construit sur 3 piliers : l'identité (valeurs, culture, mission), l'expérience collaborateur (conditions de travail, management, développement RH) et la communication RH (présence sur les réseaux sociaux, Glassdoor, LinkedIn, site carrières). Dans un marché IT en tension (pénurie de développeurs), une marque employeur forte est un avantage concurrentiel décisif.\n\nI — Pour MediaPlus : problèmes actuels (Index Égalité Pro 71/100, absentéisme 5,8%, 67% insatisfaits) dégradent la marque employeur. 3 actions concrètes : 1) Communication externe renforcée — créer un compte LinkedIn carrières 'MediaPlus Tech' mettant en avant les projets innovants (app mobile, streaming, data journalism) pour attirer les profils digitaux. 2) Amélioration des conditions de travail — introduire le télétravail 2j/semaine pour les équipes tech et éditoriales, flex office, outils collaboratifs modernes (Teams, Notion) = facteurs d'hygiène (Herzberg) améliorés. 3) Programme de développement professionnel — parcours de reconversion interne journaliste → data journalist avec financement CPF, partenariat avec des écoles de journalisme numérique pour les stages et recrutements juniors."
+          }
+        ]
+      }
+    ]
   }
 ]

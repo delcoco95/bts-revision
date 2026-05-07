@@ -1,304 +1,787 @@
-﻿[
+[
   {
-    "id": "ang-01",
-    "chapitre": "Domain 1 — Networks & Systems Vocabulary",
-    "titre": "Chapter 1 — IT Vocabulary: Networks & Systems",
-    "domain": "Vocabulary",
-    "cours": "This chapter covers the essential English vocabulary used in networking, systems administration, security, and cloud computing — the four core areas of BTS SIO.\n\n**Network Terms**\n- Bandwidth (débit disponible): the maximum data transfer rate of a network link, measured in Mbps or Gbps. Example: 'Our new fibre link provides 1 Gbps of bandwidth.'\n- Latency (délai de transmission): the time it takes for a packet to travel from source to destination. Lower is better. Example: 'High latency causes video calls to freeze.'\n- Throughput (débit effectif): the actual data transfer rate achieved in practice, always ≤ bandwidth. Example: 'Despite 1 Gbps bandwidth, the throughput was only 600 Mbps due to congestion.'\n- Packet loss (perte de paquets): percentage of packets that fail to reach their destination. Example: 'A 5% packet loss is causing VoIP quality issues.'\n- Firewall (pare-feu): a network security device that monitors and filters incoming/outgoing traffic based on rules. Example: 'The firewall blocked the suspicious connection attempt.'\n- Router (routeur): a device that forwards packets between different networks. Example: 'The router connects the internal LAN to the internet.'\n- Switch (commutateur): a device that connects devices within the same network (Layer 2). Example: 'We installed a 48-port managed switch in the server room.'\n- VLAN (réseau local virtuel): a logical subdivision of a LAN. Example: 'We created a VLAN to isolate guest Wi-Fi from the corporate network.'\n- Subnet (sous-réseau): a logical division of an IP network. Example: 'The servers are on subnet 192.168.10.0/24.'\n\n**Systems Terms**\n- Server (serveur): a computer that provides services to other computers (clients) on a network.\n- Virtual Machine (machine virtuelle): a software emulation of a physical computer, running an OS within a host system.\n- Container (conteneur): a lightweight, isolated environment sharing the host OS kernel (e.g. Docker containers).\n- Daemon (processus de fond): a background process that runs continuously, waiting for requests (e.g. sshd, httpd).\n- Kernel (noyau): the core component of an OS, managing hardware resources.\n- Process (processus): an instance of a running program.\n- Thread (fil d'exécution): a unit of execution within a process; a process can have multiple threads.\n- Socket (interface réseau logicielle): a software endpoint for network communication, defined by IP address and port.\n\n**Security Terms**\n- Vulnerability (vulnérabilité): a weakness in a system that can be exploited.\n- Exploit (exploitation): code or technique used to take advantage of a vulnerability.\n- Patch (correctif): a software update that fixes a vulnerability or bug.\n- Breach (violation): a security incident where data or systems are accessed without authorisation.\n- Encryption (chiffrement): the process of encoding data so only authorised parties can read it.\n- Authentication (authentification): verifying the identity of a user or system.\n- Authorisation (autorisation): granting or denying access rights after authentication.\n\n**Cloud Terms**\n- Instance (instance): a virtual server running in the cloud (e.g. an EC2 instance on AWS).\n- Scalability (évolutivité): the ability to increase or decrease resources in response to demand.\n- Load balancer (répartiteur de charge): distributes incoming traffic across multiple servers.\n- CDN (réseau de diffusion de contenu): Content Delivery Network — delivers content from geographically distributed servers.\n- Microservice (microservice): an architectural pattern where an application is split into small, independent services.\n- API (interface de programmation): Application Programming Interface — a set of rules allowing software to communicate.\n- Endpoint (point de terminaison): a specific URL or address where an API or service is accessible.",
-    "key_vocabulary": [
-      "bandwidth: maximum data transfer rate of a network, measured in Mbps/Gbps",
-      "latency: time delay for a packet to travel from source to destination",
-      "throughput: actual data transfer rate achieved in practice",
-      "packet loss: percentage of packets that do not reach their destination",
-      "firewall: security device that filters network traffic based on rules",
-      "router: device that forwards packets between different networks",
-      "switch: device connecting devices within the same LAN at Layer 2",
-      "VLAN: Virtual Local Area Network — a logical subdivision of a LAN",
-      "subnet: a logical subdivision of an IP network (e.g. 192.168.1.0/24)",
-      "server: computer providing services to other computers on a network",
-      "virtual machine: software emulation of a physical computer",
-      "container: lightweight isolated environment sharing the host OS kernel",
-      "daemon: background process running continuously waiting for requests",
-      "kernel: core component of an operating system managing hardware",
-      "process: an instance of a running program",
-      "thread: unit of execution within a process",
-      "socket: software endpoint for network communication (IP + port)",
-      "vulnerability: a weakness in a system that can be exploited",
-      "patch: software update that fixes a vulnerability or bug",
-      "encryption: encoding data so only authorised parties can read it",
-      "authentication: verifying the identity of a user or system",
-      "authorisation: granting or denying access rights after authentication",
-      "scalability: ability to increase/decrease resources in response to demand",
-      "load balancer: distributes incoming traffic across multiple servers",
-      "CDN: Content Delivery Network — delivers content from distributed servers",
-      "API: Application Programming Interface — rules for software communication",
-      "endpoint: specific URL/address where an API or service is accessible"
+    "id": "chap-01",
+    "chapitre": "1",
+    "titre": "Grammar Foundations (A2)",
+    "cours": "CHAPTER 1 — GRAMMAR FOUNDATIONS (A2)\n\n1. PRESENT SIMPLE vs PRESENT CONTINUOUS\n\nThe present simple is used to describe habitual actions, permanent states, and general truths. It is the default tense for things that happen regularly or are always true. Affirmative: I work / she works / they work. Negative: I do not work / she does not work. Interrogative: Do you work? / Does she work?\nThe present continuous (present progressive) describes an action happening right now or around the time of speaking. It is formed with: subject + am/is/are + verb-ing. Affirmative: I am working / she is configuring / they are testing. Negative: I am not working / she is not running the script. Interrogative: Are you working? / Is the server running?\nIT examples: 'The firewall blocks all unauthorized traffic.' (present simple — always true) vs 'The firewall is blocking a suspicious IP right now.' (present continuous — happening now).\n\n2. PAST SIMPLE vs PAST CONTINUOUS\n\nThe past simple describes a completed action at a specific time in the past. Regular verbs add -ed: I worked, I configured, I installed. Irregular verbs change form: I went, I found, I wrote, I ran. Negative: I did not work / she did not install. Interrogative: Did you configure the router? Did she run the backup?\nThe past continuous describes an action that was in progress at a specific moment in the past. It is often used with the past simple to show an interruption: 'I was configuring the switch when the power went out.' Formation: subject + was/were + verb-ing.\nIT example: 'The technician was monitoring the logs when the alert appeared.'\n\n3. QUESTION FORMATION\n\nYes/No questions use an auxiliary verb before the subject. Present: Do you manage the servers? / Does the DHCP server assign IPs automatically? Past: Did the backup complete successfully? Did you patch the vulnerability?\nWH questions use a question word + auxiliary + subject + verb. Where do you store the backups? When did the incident occur? How does the VPN work? Who configured the firewall? Why did the server crash?\n\n4. BASIC SENTENCE STRUCTURE (SVO)\n\nEnglish follows Subject + Verb + Object order. 'The technician installs the server.' (S=technician, V=installs, O=server). 'The administrator created a new user account.' 'The router forwards packets to the correct network.' Adhering to SVO order is essential; unlike French, subject and verb do not invert in statements.\n\n5. MODAL VERBS\n\nCan expresses ability: 'I can configure VLANs on this switch.' Could expresses past ability or a polite request: 'Could you check the logs?' / 'The old server could handle 100 users.' Should expresses advice or recommendation: 'You should update the firmware regularly.' Must expresses strong obligation or logical deduction: 'You must back up your data daily.' / 'The server must be overloaded — it is very slow.' Will expresses future actions or promises: 'I will deploy the patch tonight.' Would expresses conditional or polite requests: 'Would you restart the service?' / 'That would improve performance.'\n\n6. ARTICLES: A / AN / THE / ZERO ARTICLE\n\nUse a/an for indefinite reference, especially the first time you mention something. A before consonant sounds: a server, a firewall, a user. An before vowel sounds: an error, an IP address, an update. Use the for specific, previously mentioned, or unique items: 'Please restart the server' (you both know which one). Zero article for general statements: 'Routers forward packets.' / 'Hackers exploit vulnerabilities.'\n\n7. PREPOSITIONS OF TIME AND PLACE\n\nTime: at for specific times (at 9am, at midnight), on for days and dates (on Monday, on 15 March), in for months, years, periods (in July, in 2024, in the morning). Place: in for enclosed spaces (in the server room, in the cloud), on for surfaces or OS (on the desk, on Windows), at for specific points or locations (at the office, at the data centre).\n\n8. COMPARATIVES AND SUPERLATIVES\n\nShort adjectives add -er / -est: fast → faster → the fastest; big → bigger → the biggest. Long adjectives use more / the most: complex → more complex → the most complex; secure → more secure → the most secure. Irregular: good → better → the best; bad → worse → the worst. IT examples: 'Fibre is faster than ADSL.' / 'This firewall is more reliable than the previous one.' / 'The most critical vulnerability must be patched first.'",
+    "notions_cles": [
+      {
+        "terme": "Present simple",
+        "definition": "Tense for habitual actions and general truths (I work, she works)"
+      },
+      {
+        "terme": "Present continuous",
+        "definition": "Tense for actions happening right now, formed with am/is/are + verb-ing (I am working)"
+      },
+      {
+        "terme": "Past simple",
+        "definition": "Tense for completed past actions (I configured, she installed)"
+      },
+      {
+        "terme": "Past continuous",
+        "definition": "Tense for ongoing past actions, often interrupted (I was monitoring when...)"
+      },
+      {
+        "terme": "Modal verb",
+        "definition": "Auxiliary expressing ability (can), advice (should), obligation (must), future (will)"
+      },
+      {
+        "terme": "SVO structure",
+        "definition": "Subject + Verb + Object — the standard English sentence order"
+      },
+      {
+        "terme": "Definite article (the)",
+        "definition": "Used before specific or previously mentioned nouns (the server, the firewall)"
+      },
+      {
+        "terme": "Indefinite article (a/an)",
+        "definition": "Used before non-specific nouns mentioned for the first time (a router, an error)"
+      },
+      {
+        "terme": "Comparative",
+        "definition": "Form comparing two things: faster than, more secure than"
+      },
+      {
+        "terme": "Superlative",
+        "definition": "Form expressing the highest degree: the fastest, the most complex"
+      },
+      {
+        "terme": "Preposition of time",
+        "definition": "at (time), on (day/date), in (month/year/period)"
+      },
+      {
+        "terme": "Auxiliary verb (do/does/did)",
+        "definition": "Helper verb used to form questions and negatives in present/past simple"
+      }
     ],
-    "exemple_phrase": "The firewall detected an intrusion attempt and immediately blocked the source IP address. Our cloud infrastructure uses a load balancer to distribute traffic across three virtual machines, ensuring high availability. The API endpoint requires authentication via a Bearer token before returning any data. After applying the security patch, the vulnerability was no longer exploitable.",
-    "fiche_revision": [
-      "Bandwidth = maximum capacity; throughput = actual speed achieved (always ≤ bandwidth)",
-      "Latency = delay in ms; high latency = slow response times in real-time applications",
-      "Firewall filters traffic (Layer 3-4+); WAF filters HTTP traffic specifically",
-      "Router = connects networks (Layer 3); Switch = connects devices within a network (Layer 2)",
-      "VLAN = logical network segmentation without physical separation",
-      "VM = full OS virtualisation; Container = shares host kernel, much lighter",
-      "Authentication = WHO are you? | Authorisation = WHAT can you do?",
-      "API endpoint = the specific address (URL + method) used to call a service"
-    ]
+    "exemple_concret": "IT support situation: 'The technician is configuring the new switch.' (present continuous — right now). 'Every morning, the monitoring tool checks all services.' (present simple — habitual). 'Yesterday, the administrator patched the vulnerability.' (past simple — completed). 'She was running the backup when the power cut occurred.' (past continuous interrupted by past simple). 'You must update the firmware and you should document every change.' (modals).",
+    "fiche_revision": {
+      "points_cles": [
+        "Present simple = habit/truth; present continuous = now (am/is/are + -ing)",
+        "Past simple = finished action; past continuous = action in progress when interrupted",
+        "Questions: auxiliary (do/does/did) + subject + verb",
+        "Modals: can (ability), should (advice), must (obligation/deduction), will (future)",
+        "Articles: a/an (first mention, indefinite), the (specific), zero article (general)",
+        "Comparatives: -er than / more … than; superlatives: the -est / the most …",
+        "SVO word order is obligatory in English statements"
+      ],
+      "formules": [
+        "Present simple: S + V(s) | Do/Does + S + V? | S + do/does + not + V",
+        "Present continuous: S + am/is/are + V-ing | Am/Is/Are + S + V-ing?",
+        "Past simple: S + V-ed/irregular | Did + S + V? | S + did not + V",
+        "Past continuous: S + was/were + V-ing",
+        "Comparative short: adj + -er + than | Comparative long: more + adj + than",
+        "Superlative short: the + adj + -est | Superlative long: the most + adj"
+      ]
+    }
   },
   {
-    "id": "ang-02",
-    "chapitre": "Domain 2 — Cybersecurity Vocabulary",
-    "titre": "Chapter 2 — IT Vocabulary: Cybersecurity",
-    "domain": "Vocabulary",
-    "cours": "Cybersecurity has its own rich vocabulary in English, which is essential for BTS SIO students working in the SISR (infrastructure) or SLAM (development) stream. This chapter covers the main threats, defences, and professional phrasing used in security reports.\n\n**Threats**\n- Ransomware (rançongiciel): malware that encrypts a victim's files and demands a ransom payment for the decryption key. Famous examples: WannaCry (2017), LockBit. Example: 'The hospital's systems were taken offline after a ransomware attack encrypted all patient records.'\n- Phishing (hameçonnage): a social engineering attack using fraudulent emails or messages to trick users into revealing credentials or clicking malicious links. Example: 'The employee clicked a phishing link and entered their credentials on a fake login page.'\n- Social engineering (ingénierie sociale): manipulating people into performing actions or revealing confidential information. Includes vishing (voice phishing), smishing (SMS phishing), pretexting.\n- Zero-day (faille zero-day / faille inconnue du fabricant): a vulnerability that is unknown to the software vendor and therefore unpatched. The attacker has a window of opportunity before a patch is released. Example: 'Threat actors exploited a zero-day in the VPN appliance before the vendor released a patch.'\n- DDoS — Distributed Denial of Service (déni de service distribué): an attack that overwhelms a server with traffic from multiple sources, making it unavailable. Example: 'The e-commerce site suffered a DDoS attack, causing 4 hours of downtime during peak sales.'\n- MITM — Man-in-the-Middle (attaque de l'homme du milieu): an attacker intercepts communication between two parties without their knowledge. Example: 'The attacker used ARP spoofing to perform a man-in-the-middle attack on the corporate Wi-Fi.'\n- SQL Injection (injection SQL): inserting malicious SQL code into an input field to manipulate the database. Example: 'The login form was vulnerable to SQL injection, allowing the attacker to bypass authentication.'\n\n**Defence & Security Tools**\n- Antivirus: software that detects and removes known malware using signature-based detection.\n- EDR — Endpoint Detection and Response: advanced security solution that monitors endpoints in real time, detects threats, and enables incident response. Goes beyond antivirus.\n- SIEM — Security Information and Event Management: collects and correlates logs from multiple sources to detect suspicious activity and generate alerts.\n- IDS — Intrusion Detection System: monitors network/system activity and alerts on suspicious behaviour (passive).\n- IPS — Intrusion Prevention System: like IDS but actively blocks detected threats (active).\n- WAF — Web Application Firewall: filters HTTP/HTTPS traffic to protect web applications from attacks like SQL injection and XSS.\n- Penetration testing (test d'intrusion): a simulated cyberattack performed by authorised security professionals to identify vulnerabilities before attackers do.\n- Hardening (durcissement): the process of securing a system by reducing its attack surface — disabling unnecessary services, applying patches, setting strict permissions.\n\n**Standards & Frameworks**\n- ISO 27001: international standard for Information Security Management Systems (ISMS). Defines requirements for managing information security risks.\n- NIST (National Institute of Standards and Technology): US government agency that publishes cybersecurity frameworks including the NIST Cybersecurity Framework (CSF) with 5 functions: Identify, Protect, Detect, Respond, Recover.\n- CIS Controls (Centre for Internet Security): a set of 18 prioritised security best practices for defending against common cyberattacks.\n\n**Professional Security Phrasing**\nIn security reports and advisories, these phrases are commonly used:\n- 'A critical vulnerability has been identified in [system]...'\n- 'The system was compromised via a phishing attack targeting...'\n- 'Immediate remediation is recommended...'\n- 'The threat actor exploited CVE-XXXX-XXXX to gain initial access...'\n- 'No evidence of data exfiltration was found at this time...'",
-    "key_vocabulary": [
-      "ransomware: malware that encrypts files and demands payment for decryption",
-      "phishing: fraudulent emails/messages to steal credentials or install malware",
-      "social engineering: manipulating humans to bypass security controls",
-      "zero-day: vulnerability unknown to the vendor and therefore unpatched",
-      "DDoS: Distributed Denial of Service — overwhelming a server with traffic",
-      "MITM: Man-in-the-Middle — attacker intercepts communications between two parties",
-      "SQL injection: inserting malicious SQL into input fields to attack databases",
-      "XSS: Cross-Site Scripting — injecting malicious scripts into web pages",
-      "malware: malicious software (umbrella term covering viruses, trojans, ransomware)",
-      "payload: the malicious component of an attack or malware",
-      "C2: Command and Control server — attacker's server used to control malware",
-      "exfiltration: unauthorised transfer of data out of an organisation",
-      "lateral movement: attacker moving through a network after initial compromise",
-      "privilege escalation: gaining higher access rights than initially obtained",
-      "antivirus: software detecting known malware via signature matching",
-      "EDR: Endpoint Detection and Response — real-time endpoint monitoring and response",
-      "SIEM: Security Information and Event Management — log correlation and alerting",
-      "IDS: Intrusion Detection System — monitors and alerts on suspicious activity",
-      "IPS: Intrusion Prevention System — monitors and actively blocks threats",
-      "WAF: Web Application Firewall — filters HTTP traffic to protect web apps",
-      "penetration testing: authorised simulated attack to find vulnerabilities",
-      "hardening: securing a system by reducing its attack surface",
-      "ISO 27001: international standard for information security management",
-      "CVSS: Common Vulnerability Scoring System — rates vulnerability severity 0-10",
-      "CVE: Common Vulnerabilities and Exposures — public database of known vulnerabilities"
+    "id": "chap-02",
+    "chapitre": "2",
+    "titre": "Essential IT Vocabulary (A2-B1)",
+    "cours": "CHAPTER 2 — ESSENTIAL IT VOCABULARY (A2-B1)\n\nMastering IT vocabulary in English is fundamental for any BTS SIO SISR student. Below are key domains of vocabulary you need to know.\n\nNETWORKING TERMS\nA firewall is a network security device that monitors and filters incoming and outgoing traffic based on rules. A router is a device that routes data packets between different networks. A switch connects multiple devices within a LAN (Local Area Network) and forwards frames using MAC addresses. A VLAN (Virtual Local Area Network) is a logical network segmentation at layer 2. A VPN (Virtual Private Network) creates an encrypted tunnel over a public network. DNS (Domain Name System) translates human-readable domain names into IP addresses. DHCP (Dynamic Host Configuration Protocol) automatically assigns IP addresses to devices on a network. An IP address is a unique numerical label assigned to each device on a network. A subnet mask defines which portion of an IP address represents the network and which the host. A gateway is a node that connects two different networks, typically a router.\n\nINFRASTRUCTURE AND SERVICES\nA server is a computer that provides services or resources to other computers (clients) on a network. Cloud computing refers to internet-based delivery of computing services such as storage, servers, and software. Virtualization is the process of creating a virtual (software-based) version of hardware, OS, or network resources. A backup is a copy of data made to protect against accidental loss or corruption. Bandwidth is the maximum data transfer capacity of a network connection. Latency is the delay experienced in data transmission across a network. A protocol is a set of rules that governs how data is communicated between devices. TCP/IP is the fundamental suite of communication protocols used on the internet. HTTP/HTTPS are the protocols used for web communication; HTTPS adds TLS encryption. SSH (Secure Shell) provides an encrypted channel for remote command-line access. RDP (Remote Desktop Protocol) allows graphical remote access to Windows systems. A proxy server acts as an intermediary between clients and servers. A load balancer distributes incoming network traffic across multiple servers.\n\nSECURITY TERMS\nEncryption is the process of encoding data so that only authorized parties can read it. Authentication is the process of verifying the identity of a user or system. Authorization is granting permissions to an authenticated user. A vulnerability is a weakness in a system that can be exploited by attackers. A patch is a software update that fixes security flaws or bugs. Malware is any software designed to damage or disrupt systems. Ransomware is a type of malware that encrypts files and demands a ransom for decryption. Phishing is a fraudulent attempt to steal credentials by impersonating legitimate entities. An antivirus is software that detects and removes malicious programs. Two-factor authentication (2FA) requires two forms of identity verification. A certificate is a digital document that verifies the identity of an entity. PKI (Public Key Infrastructure) is the framework for managing digital certificates.\n\nWINDOWS/ACTIVE DIRECTORY\nActive Directory is Microsoft's directory service that stores information about users, computers, and groups. A domain controller is a server that runs Active Directory and authenticates users. A GPO (Group Policy Object) is a set of rules enforced across computers in a domain. A log is a recorded sequence of events in a system, used for auditing and troubleshooting. An audit is a systematic review of IT systems to assess security and compliance. Compliance refers to adherence to laws, regulations, or standards.\n\nITSM AND SUPPORT\nRAID is a storage technology that combines multiple disks for redundancy or performance. An SLA (Service Level Agreement) defines the expected level of service between a provider and client. RPO (Recovery Point Objective) defines the maximum acceptable amount of data loss. RTO (Recovery Time Objective) defines the maximum acceptable downtime after an incident. Disaster recovery is the process of restoring IT systems after a major incident. An incident is an unplanned interruption or reduction in quality of an IT service. A ticket is a record of a support request in an ITSM tool. Monitoring is the continuous observation of system performance and availability. BYOD (Bring Your Own Device) refers to the policy allowing employees to use personal devices for work. IoT (Internet of Things) refers to the network of physical objects connected to the internet. An API (Application Programming Interface) allows software applications to communicate. A container is an isolated software package containing code and its dependencies. Docker is the most popular containerization platform.",
+    "notions_cles": [
+      {
+        "terme": "Firewall",
+        "definition": "Network security device that monitors and filters traffic / pare-feu"
+      },
+      {
+        "terme": "Router",
+        "definition": "Device that routes packets between networks / routeur"
+      },
+      {
+        "terme": "Switch",
+        "definition": "Device that connects devices in a LAN / commutateur"
+      },
+      {
+        "terme": "VLAN",
+        "definition": "Virtual Local Area Network — logical network segmentation / réseau local virtuel"
+      },
+      {
+        "terme": "VPN",
+        "definition": "Virtual Private Network — encrypted tunnel over public network / réseau privé virtuel"
+      },
+      {
+        "terme": "DNS",
+        "definition": "Domain Name System — translates domain names to IP addresses / système de noms de domaine"
+      },
+      {
+        "terme": "DHCP",
+        "definition": "Dynamic Host Configuration Protocol — auto-assigns IP addresses / protocole de configuration dynamique"
+      },
+      {
+        "terme": "IP address",
+        "definition": "Unique numerical label for a network device / adresse IP"
+      },
+      {
+        "terme": "Subnet mask",
+        "definition": "Defines network and host portions of an IP address / masque de sous-réseau"
+      },
+      {
+        "terme": "Gateway",
+        "definition": "Node connecting two different networks / passerelle"
+      },
+      {
+        "terme": "Server",
+        "definition": "Computer providing services to clients / serveur"
+      },
+      {
+        "terme": "Cloud",
+        "definition": "Internet-based computing services / nuage informatique"
+      },
+      {
+        "terme": "Virtualization",
+        "definition": "Creating virtual version of hardware or OS / virtualisation"
+      },
+      {
+        "terme": "Backup",
+        "definition": "Copy of data made for recovery purposes / sauvegarde"
+      },
+      {
+        "terme": "Encryption",
+        "definition": "Encoding data to prevent unauthorized access / chiffrement"
+      },
+      {
+        "terme": "Authentication",
+        "definition": "Verifying the identity of a user or system / authentification"
+      },
+      {
+        "terme": "Authorization",
+        "definition": "Granting permissions to an authenticated user / autorisation"
+      },
+      {
+        "terme": "Vulnerability",
+        "definition": "Weakness in a system that can be exploited / vulnérabilité"
+      },
+      {
+        "terme": "Patch",
+        "definition": "Software update fixing a security issue or bug / correctif"
+      },
+      {
+        "terme": "Bandwidth",
+        "definition": "Maximum data transfer capacity of a connection / bande passante"
+      },
+      {
+        "terme": "Latency",
+        "definition": "Delay in data transmission across a network / latence"
+      },
+      {
+        "terme": "Protocol",
+        "definition": "Rules governing data communication between devices / protocole"
+      },
+      {
+        "terme": "TCP/IP",
+        "definition": "Fundamental suite of internet communication protocols / suite de protocoles réseau"
+      },
+      {
+        "terme": "HTTP/HTTPS",
+        "definition": "Web communication protocol; HTTPS adds TLS encryption / protocole web sécurisé"
+      },
+      {
+        "terme": "SSH",
+        "definition": "Secure Shell — encrypted remote command-line access / accès distant sécurisé"
+      },
+      {
+        "terme": "RDP",
+        "definition": "Remote Desktop Protocol — graphical remote access / protocole bureau à distance"
+      },
+      {
+        "terme": "Active Directory",
+        "definition": "Microsoft directory service managing users and computers / annuaire Microsoft"
+      },
+      {
+        "terme": "Domain controller",
+        "definition": "Server running Active Directory and authenticating users / contrôleur de domaine"
+      },
+      {
+        "terme": "GPO",
+        "definition": "Group Policy Object — enforces settings across a domain / objet de stratégie de groupe"
+      },
+      {
+        "terme": "Proxy",
+        "definition": "Intermediary server between clients and servers / serveur mandataire"
+      },
+      {
+        "terme": "Load balancer",
+        "definition": "Distributes traffic across multiple servers / répartiteur de charge"
+      },
+      {
+        "terme": "Monitoring",
+        "definition": "Continuous observation of system performance / supervision"
+      },
+      {
+        "terme": "RAID",
+        "definition": "Redundant storage configuration combining multiple disks / configuration stockage redondant"
+      },
+      {
+        "terme": "SLA",
+        "definition": "Service Level Agreement — defines expected service quality / accord de niveau de service"
+      },
+      {
+        "terme": "RPO",
+        "definition": "Recovery Point Objective — maximum acceptable data loss / objectif de point de reprise"
+      },
+      {
+        "terme": "RTO",
+        "definition": "Recovery Time Objective — maximum acceptable downtime / objectif de délai de reprise"
+      },
+      {
+        "terme": "Disaster recovery",
+        "definition": "Plan to restore IT systems after a major incident / plan de reprise"
+      },
+      {
+        "terme": "Incident",
+        "definition": "Unplanned IT service disruption / incident"
+      },
+      {
+        "terme": "Ticket",
+        "definition": "Record of a support request in ITSM tool / ticket de support"
+      },
+      {
+        "terme": "Helpdesk",
+        "definition": "IT support service for users / service d'assistance"
+      },
+      {
+        "terme": "User",
+        "definition": "Person using the IT system / utilisateur"
+      },
+      {
+        "terme": "Password",
+        "definition": "Secret credential used for authentication / mot de passe"
+      },
+      {
+        "terme": "Certificate",
+        "definition": "Digital document verifying the identity of an entity / certificat numérique"
+      },
+      {
+        "terme": "PKI",
+        "definition": "Public Key Infrastructure — framework for managing digital certificates / infrastructure à clés publiques"
+      },
+      {
+        "terme": "2FA",
+        "definition": "Two-Factor Authentication — two verification methods required / authentification à deux facteurs"
+      },
+      {
+        "terme": "BYOD",
+        "definition": "Bring Your Own Device — using personal devices for work / apportez votre appareil personnel"
+      },
+      {
+        "terme": "IoT",
+        "definition": "Internet of Things — network of connected physical objects / internet des objets"
+      },
+      {
+        "terme": "API",
+        "definition": "Application Programming Interface — allows software to communicate / interface de programmation"
+      },
+      {
+        "terme": "Container",
+        "definition": "Isolated software package with code and dependencies / conteneur"
+      },
+      {
+        "terme": "Docker",
+        "definition": "Leading containerization platform / plateforme de conteneurisation"
+      },
+      {
+        "terme": "Malware",
+        "definition": "Malicious software designed to damage systems / logiciel malveillant"
+      },
+      {
+        "terme": "Ransomware",
+        "definition": "Malware that encrypts files and demands ransom / rançongiciel"
+      },
+      {
+        "terme": "Phishing",
+        "definition": "Fraudulent email to steal credentials / hameçonnage"
+      },
+      {
+        "terme": "Antivirus",
+        "definition": "Software that detects and removes malicious programs / antivirus"
+      },
+      {
+        "terme": "Firewall rule",
+        "definition": "Policy that controls which traffic is allowed or blocked / règle de pare-feu"
+      },
+      {
+        "terme": "Log",
+        "definition": "Recorded sequence of system events used for auditing / journal d'événements"
+      },
+      {
+        "terme": "Audit",
+        "definition": "Systematic security review of IT systems / audit"
+      },
+      {
+        "terme": "Compliance",
+        "definition": "Adherence to regulations, standards, or policies / conformité"
+      }
     ],
-    "exemple_phrase": "A critical vulnerability has been identified in the authentication module. The threat actor exploited a zero-day vulnerability to gain initial access, then performed lateral movement to reach the domain controller. Immediate remediation is recommended: apply the vendor patch, reset all privileged accounts, and review SIEM alerts for the past 30 days. No evidence of data exfiltration has been found at this time.",
-    "fiche_revision": [
-      "Ransomware = encrypt + demand ransom | Phishing = fraudulent email to steal credentials",
-      "Zero-day = unknown to vendor = no patch available = maximum danger",
-      "DDoS = availability attack (makes service unavailable) | MITM = confidentiality/integrity attack",
-      "SQL injection = input not sanitised → attacker controls database queries",
-      "IDS = detects and alerts (passive) | IPS = detects and blocks (active)",
-      "EDR > Antivirus: EDR detects unknown threats via behaviour analysis, not just signatures",
-      "SIEM = centralised log collection + correlation + alerting = SOC's main tool",
-      "Penetration testing = legal, authorised, planned | Cyberattack = illegal, unauthorised"
-    ]
+    "exemple_concret": "During an IT audit, the administrator reviewed the firewall logs and discovered that a phishing campaign had attempted to compromise user credentials. The DHCP server had assigned an IP address to an unknown device, which triggered a monitoring alert. The team applied a patch to fix the vulnerability, enabled 2FA on Active Directory accounts, and updated the GPO to enforce stronger password policies.",
+    "fiche_revision": {
+      "points_cles": [
+        "Firewall = filters traffic; Router = routes between networks; Switch = connects LAN devices",
+        "DNS translates domain → IP; DHCP auto-assigns IPs",
+        "VPN = encrypted tunnel; SSH = encrypted remote CLI access; RDP = graphical remote access",
+        "Authentication = who you are; Authorization = what you can do",
+        "Backup → RPO (data loss limit); Disaster recovery → RTO (downtime limit)",
+        "Malware > Ransomware (encrypts for ransom) > Phishing (steals credentials)",
+        "Active Directory + Domain Controller + GPO = Windows enterprise management trio"
+      ],
+      "formules": [
+        "VLAN = logical segmentation at Layer 2",
+        "RAID = Redundancy + performance for storage",
+        "SLA = contractual promise of service quality",
+        "PKI = framework for issuing and managing digital certificates",
+        "2FA = password + second factor (app, SMS, token)"
+      ]
+    }
   },
   {
-    "id": "ang-03",
-    "chapitre": "Domain 3 — Grammar",
-    "titre": "Chapter 3 — Grammar Essentials",
-    "domain": "Grammar",
-    "cours": "Good grammar is essential for writing professional IT documents and performing well in the BTS SIO English exam. This chapter covers the key grammar points with IT-specific examples.\n\n**1. Present Simple vs Present Continuous**\nPresent simple: used for routines, general truths, scheduled events, and regular processes.\n- 'The server checks connections every 5 minutes.' (regular process)\n- 'The firewall blocks unauthorised traffic.' (general truth / system behaviour)\n- 'The maintenance window starts at 02:00 AM every Sunday.' (scheduled)\nPresent continuous: used for actions happening right now or temporary ongoing actions.\n- 'We are currently deploying the update.' (ongoing right now)\n- 'The team is investigating the incident.' (ongoing investigation)\n- 'The system is experiencing high load.' (temporary situation)\n\n**2. Past Simple vs Present Perfect**\nPast simple: for completed actions at a specific time in the past.\n- 'The system crashed yesterday at 14:32.' (specific time)\n- 'We deployed the patch last night.' (completed action)\n- 'The attacker gained access on Monday.' (specific past event)\nPresent perfect: for past actions with relevance to the present, or recent events without a specific time.\n- 'The server has been compromised.' (current state — relevant now)\n- 'We have identified the vulnerability.' (recent action, relevance to present)\n- 'The patch has not been applied yet.' (current situation)\nKey rule: use 'for' (duration) and 'since' (point in time) with present perfect: 'We have been investigating this issue FOR two hours / SINCE 9 AM.'\n\n**3. Future Forms**\nWill: predictions, spontaneous decisions, promises.\n- 'This upgrade will improve performance by 40%.'\n- 'I will send you the report tomorrow.' (promise)\nGoing to: planned intentions, evidence-based predictions.\n- 'We are going to upgrade the infrastructure next quarter.' (plan)\n- 'The disk is nearly full — it is going to fail soon.' (evidence-based)\nPresent continuous for future: scheduled events in the near future.\n- 'We are deploying the new firewall next Monday at 02:00.' (scheduled)\n\n**4. Passive Voice**\nPassive voice is very common in IT documentation, security reports, and technical writing. It is used when:\n- The doer is unknown: 'The server was compromised.' (we don't know who)\n- The doer is unimportant: 'The data is encrypted using AES-256.'\n- Focus on the action/result: 'The vulnerability was patched within 24 hours.'\nFormation: Subject + to be (conjugated) + past participle [+ by + agent]\n- Present: 'The traffic IS filtered by the firewall.'\n- Past simple: 'The password WAS reset.'\n- Present perfect: 'The update HAS BEEN applied.'\n- Future: 'The server WILL BE restarted at midnight.'\n\n**5. Modal Verbs in IT Context**\nModals are essential for recommendations, obligations, and possibilities in IT:\n- Must: obligation / rule — 'You MUST enable two-factor authentication.'\n- Should: recommendation / best practice — 'You SHOULD update your password every 90 days.'\n- Can: ability / permission — 'This tool CAN scan for open ports.'\n- Could: past ability / polite suggestion — 'You COULD use Wireshark to analyse the traffic.'\n- May / Might: possibility — 'The issue MIGHT be caused by a misconfigured DNS server.'\n- Would: conditional / polite request — 'WOULD you be able to send the logs?'\nNote: In RFCs and security standards, MUST = mandatory, SHOULD = recommended, MAY = optional.\n\n**6. Conditional Sentences**\nType 1 (real/likely): If + present simple, will + infinitive\n- 'If the firewall detects an intrusion, it will block the IP address.'\n- 'If you restart the service, the changes will take effect.'\nType 2 (hypothetical): If + past simple, would + infinitive\n- 'If we had more bandwidth, the video conferencing quality would improve.'\n- 'If the server were in Europe, latency would be lower.'\nType 3 (impossible/past): If + past perfect, would have + past participle\n- 'If we had applied the patch earlier, the breach would not have occurred.'",
-    "key_vocabulary": [
-      "present simple: used for routines, general truths, scheduled events",
-      "present continuous: used for actions happening right now or temporary situations",
-      "past simple: completed actions at a specific past time",
-      "present perfect: past actions with present relevance (has/have + past participle)",
-      "for vs since: 'for' + duration | 'since' + point in time",
-      "future with will: predictions and spontaneous decisions",
-      "future going to: planned intentions and evidence-based predictions",
-      "passive voice: Subject + to be + past participle [+ by + agent]",
-      "must: obligation — mandatory action",
-      "should: recommendation — best practice",
-      "can: ability or permission",
-      "might/may: possibility — not certain",
-      "conditional type 1: If + present simple, will + infinitive (real/likely)",
-      "conditional type 2: If + past simple, would + infinitive (hypothetical)",
-      "conditional type 3: If + past perfect, would have + past participle (impossible/past)"
+    "id": "chap-03",
+    "chapitre": "3",
+    "titre": "Workplace Communication (B1)",
+    "cours": "CHAPTER 3 — WORKPLACE COMMUNICATION (B1)\n\n1. PROFESSIONAL EMAILS\n\nProfessional emails in IT follow a clear structure. Opening phrases: 'Dear Mr Smith,' / 'Dear IT Team,' / 'To whom it may concern,' — always use a comma after the salutation. Introductory sentences: 'I am writing to inform you that...' / 'I hope this email finds you well.' / 'Further to our conversation this morning, I would like to...' / 'I am contacting you regarding the network incident of 14 March.' Body structure: (1) Context — explain why you are writing. (2) Information or request — state the main content clearly. (3) Action needed — what you expect the recipient to do. Closing phrases: 'Please do not hesitate to contact me should you have any questions.' / 'I look forward to hearing from you.' / 'Thank you for your time and assistance.' Sign-off: 'Best regards,' (neutral/professional), 'Yours sincerely,' (formal, named recipient), 'Kind regards,' (slightly warmer).\n\n2. WRITING IT INCIDENT REPORTS\n\nAn IT incident report documents what happened during an outage or security event. Header: Date, incident reference (INC-2024-0312), severity level (P1 Critical / P2 High / P3 Medium / P4 Low). Description section: clearly state what happened, when it started, which systems were affected, and the business impact. 'On 12 March 2024 at 14:35 UTC, the primary web server became unresponsive, affecting all external users.' Resolution section: list the actions taken and the timeline. 'At 14:40, the on-call engineer was paged. At 15:02, the service was restored by restarting the Apache process.' Prevention section: describe measures implemented to prevent recurrence. 'Automatic restart scripts have been deployed and monitoring thresholds have been adjusted.'\n\n3. MEETING VOCABULARY\n\nAgenda: list of topics to be discussed at a meeting. Minutes: official written record of what was discussed and decided. Action points: specific tasks assigned to individuals with a deadline. AOB (Any Other Business): items not on the agenda, raised at the end. Chair: the person leading and facilitating the meeting. Quorum: minimum number of participants required to make decisions. Useful phrases: 'Shall we move to the next agenda item?' / 'Could you take the minutes?' / 'Who is responsible for this action point?' / 'Let us set a deadline of Friday.'\n\n4. PHONE CALLS FOR IT SUPPORT\n\nAnswering: 'Good morning, IT Support, [Name] speaking. How can I help you?' User's opening: 'I am calling about a network connectivity issue.' / 'I cannot access my emails.' Clarifying: 'Could you describe the problem in more detail?' / 'When did this start?' / 'Are other users affected?' / 'Have you tried restarting your workstation?' Escalating: 'I am going to escalate your ticket to the network team.' / 'Your reference number is INC-2024-0415.' Closing: 'I will update you by end of day.' / 'Thank you for calling IT Support. Goodbye.'\n\n5. FORMAL vs INFORMAL LANGUAGE\n\nIn professional IT contexts, formal language is expected in emails, reports, and documentation. Formal: 'I would like to request access to the production server.' Informal: 'Can I get access to the prod server?' Formal: 'The issue has been resolved and services have been restored.' Informal: 'It is fixed now.' Formal: 'I am unable to attend the meeting due to a prior commitment.' Informal: 'I cannot make it.' Rule: in professional written communication, always prefer formal register.\n\n6. LINKING WORDS\n\nContrast: however, nevertheless, on the other hand, although, despite, in spite of. Example: 'The firewall was configured correctly; however, the intrusion still occurred.' Addition: furthermore, in addition, moreover, also, besides. Example: 'The VPN was slow. Furthermore, authentication was failing intermittently.' Cause/Result: because (cause), therefore/as a result/consequently (result), since, due to. Example: 'The server crashed because the disk was full. As a result, all services were unavailable.' Sequence: firstly, secondly, then, next, after that, subsequently, finally. Example: 'Firstly, identify the incident. Then, assess the impact. Finally, implement a fix.'\n\n7. COMPLAINT HANDLING\n\nStep 1 — Acknowledge: 'I understand your frustration and I am sorry for the inconvenience.' Step 2 — Apologize: 'I sincerely apologize for the disruption this has caused.' Step 3 — Explain: 'The issue was caused by a hardware failure in the primary storage unit.' Step 4 — Offer solution: 'We have restored services from backup and the system is now fully operational.' Step 5 — Follow up: 'I will personally follow up with you within 24 hours to confirm everything is working correctly.'\n\n8. WRITING A PROFESSIONAL IT SUPPORT TICKET\n\nTitle: short, clear summary — 'Cannot print to network printer on Floor 3'. Priority: Critical (system down, all users affected) / High / Medium / Low. Description: include who is affected, what the problem is, when it started, and the business impact. Steps already tried: 'Restarted the print spooler service — issue persists. Reinstalled printer driver — no change.'",
+    "notions_cles": [
+      {
+        "terme": "Professional email structure",
+        "definition": "Salutation → context → request/information → action needed → closing"
+      },
+      {
+        "terme": "Incident report",
+        "definition": "Document recording what happened, when, impact, resolution, and prevention"
+      },
+      {
+        "terme": "Meeting minutes",
+        "definition": "Official written record of what was discussed and decided at a meeting"
+      },
+      {
+        "terme": "Action point",
+        "definition": "Specific task assigned to a person with a deadline during a meeting"
+      },
+      {
+        "terme": "Agenda",
+        "definition": "List of topics to be covered at a meeting"
+      },
+      {
+        "terme": "Formal register",
+        "definition": "Professional, polite language used in official written communication"
+      },
+      {
+        "terme": "Linking word (contrast)",
+        "definition": "however, nevertheless, on the other hand — connects contrasting ideas"
+      },
+      {
+        "terme": "Linking word (addition)",
+        "definition": "furthermore, moreover, in addition — adds complementary information"
+      },
+      {
+        "terme": "Linking word (result)",
+        "definition": "therefore, as a result, consequently — expresses the consequence of an action"
+      },
+      {
+        "terme": "Complaint handling",
+        "definition": "Five-step process: acknowledge, apologize, explain, offer solution, follow up"
+      },
+      {
+        "terme": "Escalation",
+        "definition": "Transferring a ticket to a higher-level support team when the first-line cannot resolve it"
+      },
+      {
+        "terme": "Priority level",
+        "definition": "Ticket classification: Critical / High / Medium / Low based on impact"
+      }
     ],
-    "exemple_phrase": "The server was compromised last night (past simple — specific time). The vulnerability has been patched (present perfect — current relevance). We are currently investigating the incident (present continuous — ongoing). If the backup had been configured correctly, data loss would not have occurred (conditional type 3). You must enable 2FA immediately (modal — obligation). The logs are being analysed by the security team (passive voice — present continuous).",
-    "fiche_revision": [
-      "Present simple = facts/routines | Present continuous = right now/temporary",
-      "Past simple + specific time (yesterday, last week) | Present perfect = relevance to NOW",
-      "Use 'for' with duration (for 3 hours) | Use 'since' with a point in time (since Monday)",
-      "Passive = Subject + to be + past participle | Use when doer unknown or unimportant",
-      "Must = obligation | Should = recommendation | Might = possibility",
-      "Future: will = prediction/promise | going to = plan | present continuous = scheduled",
-      "Conditional 1 = real/likely (if + present, will) | Conditional 2 = hypothetical (if + past, would)",
-      "RFC 2119: MUST = mandatory | SHOULD = recommended | MAY = optional"
-    ]
+    "exemple_concret": "Email example: 'Dear Mr Johnson, I am writing to inform you that the network outage you reported (INC-2024-0218) has been resolved. The issue was caused by a misconfigured VLAN trunk port. The configuration has been corrected and services were restored at 16:45 today. Furthermore, we have implemented additional monitoring to prevent recurrence. Please do not hesitate to contact us if you experience any further issues. Kind regards, N. Boudjenah, IT Support Team.'",
+    "fiche_revision": {
+      "points_cles": [
+        "Email structure: salutation → context → request → action → closing",
+        "Incident report: header (date/ref/severity), description (what/when/impact), resolution (actions/timeline), prevention",
+        "Formal language is mandatory in professional written IT communication",
+        "Contrast: however / nevertheless; Addition: furthermore / moreover; Result: therefore / as a result",
+        "Complaint handling: 5 steps — acknowledge, apologize, explain, solve, follow up",
+        "Meeting vocabulary: agenda, minutes, action points, AOB, chair, quorum",
+        "Ticket = title + priority + description + steps already tried"
+      ],
+      "formules": [
+        "Opening: 'I am writing to inform you that...' / 'Further to our conversation...'",
+        "Closing: 'Please do not hesitate to contact me.' / 'I look forward to hearing from you.'",
+        "Sign-off: Best regards (neutral) / Yours sincerely (formal) / Kind regards (warm professional)",
+        "Escalation phrase: 'I am going to escalate your ticket to [team]. Your reference is [number].'"
+      ]
+    }
   },
   {
-    "id": "ang-04",
-    "chapitre": "Domain 4 — Reading Comprehension",
-    "titre": "Chapter 4 — Reading Comprehension",
-    "domain": "Comprehension",
-    "cours": "Reading comprehension is tested in the BTS SIO English exam with texts of 200-400 words, typically about a current IT topic. This chapter provides strategies and practice for reading technical English documents efficiently.\n\n**Reading Strategies**\n\nSkimming: reading the whole text quickly (30-60 seconds) to get the main idea.\n- Read the title, subtitles, and first sentence of each paragraph.\n- Do NOT read every word — get the overall picture.\n- Ask yourself: 'What is this text about? What is the main message?'\n\nScanning: looking for specific information without reading everything.\n- You already know what you're looking for (a date, a number, a name, a term).\n- Let your eyes move quickly over the text until you spot the target.\n- Useful for answering questions like 'What year did...?', 'How many...?'\n\n**Document Types in IT English**\n\n1. Technical documentation: user manuals, API docs, configuration guides. Dense, precise language.\n2. Security advisories (CVE): structured documents reporting vulnerabilities. Format: CVE ID, description, CVSS score, affected versions, remediation.\n3. Job postings: list requirements (must have, nice to have), responsibilities, and benefits. Key sections: About the role, Qualifications, What we offer.\n4. Professional emails: formal or semi-formal, structured (subject, greeting, body, closing).\n5. Release notes: document changes in a software version. Structure: New features, Bug fixes, Known issues, Breaking changes.\n\n**Connector Words (Essential for Comprehension)**\n- However (cependant): contrasts two ideas — 'The system was patched; however, the threat remains.'\n- Therefore (donc): introduces a consequence — 'The disk was full; therefore, the server crashed.'\n- Moreover / Furthermore (de plus / en outre): adds information — 'The system is fast. Moreover, it is cost-effective.'\n- Although / Even though (bien que): introduces a concession — 'Although the patch was applied, the vulnerability persisted.'\n- In contrast (en revanche): shows opposition — 'Cloud solutions are flexible. In contrast, on-premises systems offer more control.'\n- As a result (par conséquent): shows consequence — 'The server was overloaded; as a result, users experienced downtime.'\n- Nevertheless (néanmoins): concession — 'The budget was limited; nevertheless, the team delivered the project on time.'\n- In addition (de plus): adds a point — 'The system requires a reboot. In addition, all users must re-authenticate.'\n\n**Reading a CVE Advisory — Step-by-Step Strategy**\nStep 1: Read the CVE ID and CVSS score (severity: 0-10, Critical = 9.0+).\nStep 2: Identify the affected product and version.\nStep 3: Identify the vulnerability type (SQL injection, buffer overflow, etc.).\nStep 4: Understand the impact (what can an attacker do?).\nStep 5: Find the remediation (update to version X, apply patch, disable feature).\nStep 6: Note who can exploit it (authenticated vs unauthenticated, remote vs local).\n\n**Sample CVE Advisory Text**\nCVE-2023-4567: A buffer overflow vulnerability exists in ExampleOS kernel version 5.4.x before 5.4.210. A local attacker with low privileges can exploit this vulnerability to escalate privileges to root level. CVSS Base Score: 7.8 (High). Affected versions: ExampleOS 5.4.0 through 5.4.209. Remediation: upgrade to version 5.4.210 or later.",
-    "key_vocabulary": [
-      "skimming: reading quickly to get the main idea of a text",
-      "scanning: searching for specific information in a text",
-      "however: cependant — contrasts two ideas",
-      "therefore: donc — introduces a consequence",
-      "moreover: de plus — adds information",
-      "furthermore: en outre — adds information (more formal)",
-      "although: bien que — introduces a concession",
-      "in contrast: en revanche — shows opposition between ideas",
-      "as a result: par conséquent — shows consequence",
-      "nevertheless: néanmoins — concession despite the previous point",
-      "in addition: de plus — adds a new point",
-      "CVE: Common Vulnerabilities and Exposures — public vulnerability database",
-      "CVSS: Common Vulnerability Scoring System — rates severity 0-10",
-      "remediation: the action taken to fix or mitigate a vulnerability",
-      "advisory: an official notification warning about a security issue"
+    "id": "chap-04",
+    "chapitre": "4",
+    "titre": "Reading Comprehension (B1)",
+    "cours": "CHAPTER 4 — READING COMPREHENSION (B1)\n\n1. STRATEGIES FOR IT TEXTS\n\nSkimming means reading quickly to get the general idea of a text. Focus on: the title, headings and subheadings, the first and last sentence of each paragraph, any bold or italic text, captions under images. Skimming tells you: what is the topic? what type of document is it? is it positive, negative, or neutral? Scanning means searching for specific information. You look for: dates, figures, names, technical terms, acronyms. Do not read every word — let your eyes move quickly until you spot what you need. In the BTS exam, always skim first (30 seconds), then scan for answers to specific questions.\n\n2. UNDERSTANDING IT DOCUMENTATION\n\nYou do not need to know every word. Use these strategies: Context clues: the surrounding words often reveal the meaning of an unknown term. 'The technician configured the proxy, an intermediary server that filters web requests.' — you can infer the meaning. Cognates: many IT terms are almost identical in French and English. configuration → configuration, protocol → protocole, authentication → authentification, infrastructure → infrastructure, vulnerability → vulnérabilité. Technical acronyms: if you know the full form, you can often work out the context. DNS = Domain Name System (you know DNS from SISR, so you can understand any sentence using it).\n\n3. READING ERROR MESSAGES AND LOGS\n\nA system log entry typically contains: Timestamp (when): '2024-03-12 14:35:02' Severity level (how serious): ERROR (critical problem), WARN (potential issue), INFO (normal event), DEBUG (diagnostic detail). Source (where): the service or process generating the message. Event description (what): 'Connection timeout to database server at 192.168.1.10:3306'. Common HTTP status codes you must know: 200 OK (success), 301/302 Redirect, 400 Bad Request (client error), 401 Unauthorized (authentication required), 403 Forbidden (access denied), 404 Not Found (resource does not exist), 500 Internal Server Error (server-side fault).\n\n4. UNDERSTANDING SECURITY BULLETINS\n\nCVE (Common Vulnerabilities and Exposures) number: uniquely identifies a known vulnerability (e.g., CVE-2023-44487). CVSS score: Common Vulnerability Scoring System, rated 0 to 10. 0-3.9: Low, 4-6.9: Medium, 7-8.9: High, 9-10: Critical. A security bulletin typically contains: CVE ID, description of the vulnerability, affected products and versions, CVSS score, remediation (patch, workaround, update). Example: 'CVE-2023-44487 (CVSS 7.5 High): HTTP/2 Rapid Reset Attack affecting NGINX before version 1.25.3. Recommendation: update to version 1.25.3 or apply the provided workaround configuration.'\n\n5. WHITE PAPER STRUCTURE\n\nWhite papers are authoritative documents used in IT to explain technologies or propose solutions. Typical structure: Executive summary (1 page): key points for decision-makers. Problem statement: describes the challenge being addressed. Solution: describes the proposed approach. Technical details: implementation, architecture, specifications. Conclusion: summarizes benefits and next steps. When reading a white paper in an exam, focus on the executive summary and conclusion first.\n\n6. TECHNICAL SPECIFICATIONS\n\nNetwork diagrams: identify device types (router, switch, firewall symbols), connections (WAN/LAN links), IP addressing, VLAN assignments. Configuration tables: read left-to-right, understand column headers. IP addressing tables typically contain: Device name, Interface, IP address, Subnet mask, Gateway.\n\n7. EXAM COMPREHENSION STRATEGIES\n\nStep 1: Identify the text type (article, report, email, security bulletin, documentation). Step 2: Read the questions before reading the text in detail — know what to look for. Step 3: Answer exactly what is asked. Do not write everything you know about the topic. Step 4: Support your answers with evidence from the text: 'According to the text...' / 'The author states that...' / 'In paragraph 2, it is mentioned that...' Step 5: Never leave a question blank — use partial information or inference if needed.\n\n8. AUTHENTIC IT TEXT TYPES\n\nRFC (Request for Comments): technical standards documents from the IETF, e.g., RFC 7540 defines HTTP/2. Vendor documentation: official guides from Cisco, Microsoft, etc. Use the table of contents and index. Security advisories: issued by CERT, CISA, or vendors like Microsoft Security Response Center (MSRC). Job postings: read for required skills, certifications (CCNA, Security+), and tools.",
+    "notions_cles": [
+      {
+        "terme": "Skimming",
+        "definition": "Reading quickly to get the general meaning — focus on titles, first sentences"
+      },
+      {
+        "terme": "Scanning",
+        "definition": "Searching for specific information such as dates, names, figures"
+      },
+      {
+        "terme": "Context clue",
+        "definition": "Surrounding words that help deduce the meaning of an unknown term"
+      },
+      {
+        "terme": "Cognate",
+        "definition": "Word that looks similar in French and English (configuration, protocol, infrastructure)"
+      },
+      {
+        "terme": "Log entry",
+        "definition": "A recorded system event containing timestamp, severity, source, and description"
+      },
+      {
+        "terme": "Severity level",
+        "definition": "Classification of log events: ERROR, WARN, INFO, DEBUG"
+      },
+      {
+        "terme": "HTTP 404",
+        "definition": "HTTP error code meaning the requested resource was not found"
+      },
+      {
+        "terme": "HTTP 500",
+        "definition": "HTTP error code meaning an internal server error occurred"
+      },
+      {
+        "terme": "CVE",
+        "definition": "Common Vulnerabilities and Exposures — unique identifier for a known security vulnerability"
+      },
+      {
+        "terme": "CVSS score",
+        "definition": "Numerical severity rating for a vulnerability from 0 (none) to 10 (critical)"
+      },
+      {
+        "terme": "RFC",
+        "definition": "Request for Comments — official technical standard document from the IETF"
+      },
+      {
+        "terme": "White paper",
+        "definition": "Authoritative document explaining a technology or proposing a solution"
+      },
+      {
+        "terme": "Executive summary",
+        "definition": "Brief overview of key points in a white paper aimed at decision-makers"
+      }
     ],
-    "exemple_phrase": "CVE-2024-1234: A SQL injection vulnerability exists in WebApp Pro version 3.2.1 and earlier. An unauthenticated remote attacker can exploit this flaw to execute arbitrary SQL commands against the database. As a result, sensitive data may be exposed or modified. However, the vendor has released a patch (version 3.2.2). Therefore, administrators should upgrade immediately. Furthermore, network-level filtering may reduce exposure while patching is in progress.",
-    "fiche_revision": [
-      "Skimming = fast reading for main idea | Scanning = targeted search for specific info",
-      "Read questions BEFORE the text — you know what to look for when scanning",
-      "CVE format: ID + description + CVSS score + affected versions + remediation",
-      "CVSS scale: 0-3.9 Low | 4.0-6.9 Medium | 7.0-8.9 High | 9.0-10 Critical",
-      "Connector: however/although = contrast | therefore/as a result = consequence",
-      "moreover/furthermore/in addition = add information | nevertheless = concession",
-      "In BTS exam: quote from the text to support your answers (avoids paraphrasing errors)",
-      "Release notes: always check 'Breaking changes' before updating a production system"
-    ]
+    "exemple_concret": "Exam technique: You receive a security bulletin. Step 1 — skim: it is about a critical vulnerability in OpenSSL. Step 2 — scan for CVE number (CVE-2022-0778), CVSS score (7.5 High), and affected versions (OpenSSL < 1.1.1n). Step 3 — answer: 'According to the bulletin, all systems running OpenSSL prior to version 1.1.1n are vulnerable. The recommended remediation is to update to version 1.1.1n or higher immediately.'",
+    "fiche_revision": {
+      "points_cles": [
+        "Skim first (global understanding), then scan (specific answers)",
+        "Use context clues and cognates to understand unknown words",
+        "Log severity: ERROR > WARN > INFO > DEBUG",
+        "HTTP codes: 200=OK, 403=Forbidden, 404=Not Found, 500=Server Error",
+        "CVE = vulnerability ID; CVSS 0-10 = severity (9-10 = Critical)",
+        "Always support answers with text evidence: 'According to the text...'",
+        "Read exam questions BEFORE reading the text to know what to look for"
+      ],
+      "formules": [
+        "Log format: [timestamp] [LEVEL] [source] — event description",
+        "CVE format: CVE-YEAR-NUMBER (e.g., CVE-2023-44487)",
+        "White paper order: Executive Summary → Problem → Solution → Technical → Conclusion",
+        "Answer phrase: 'According to the text...' / 'The author states that...'"
+      ]
+    }
   },
   {
-    "id": "ang-05",
-    "chapitre": "Domain 5 — Professional Writing",
-    "titre": "Chapter 5 — Professional Writing",
-    "domain": "Writing",
-    "cours": "Professional writing in English is a key skill for IT professionals. This chapter covers emails, incident reports, cover letters, and the differences between British and American English.\n\n**Professional Email Structure**\n\nSubject line: clear, specific, and concise.\n- Good: '[URGENT] Database Server Down — Production — Action Required'\n- Bad: 'Problem with server'\n\nGreeting:\n- Formal: 'Dear Mr Smith,' / 'Dear Ms Johnson,'\n- Semi-formal: 'Dear John,' / 'Hi Sarah,'\n- When unsure: 'Dear Sir/Madam,' or 'To Whom It May Concern,'\n\nBody:\n1. Context: 'I am writing to inform you that...'\n2. Issue/Request: 'Following the incident on [date], we have identified...'\n3. Action needed: 'Could you please...?' / 'I would appreciate if you could...'\n\nClosing:\n- Formal: 'Yours sincerely,' (when you know the name) / 'Yours faithfully,' (Dear Sir/Madam)\n- Semi-formal: 'Kind regards,' / 'Best regards,'\n- Informal: 'Best,' / 'Thanks,'\n\nSample email:\nSubject: [INCIDENT] Network Outage — Production — 2024-01-15\nDear Team,\nI am writing to inform you of a network outage that began at 09:45 UTC today. The issue affected all users on the London site. Our team has identified the root cause as a misconfigured BGP route and has implemented a fix. Service was restored at 11:30 UTC. A full incident report will be shared within 24 hours.\nKind regards,\nThe IT Operations Team\n\n**Incident Report Structure**\n\n1. Executive Summary: a brief (2-3 sentence) overview of what happened, when, and the impact.\n2. Timeline: chronological list of events with timestamps.\n - 09:45 — Users report inability to access network resources\n - 09:52 — IT team notified, investigation begins\n - 10:15 — Root cause identified: misconfigured BGP route\n - 11:30 — Fix applied, service restored\n3. Impact: which systems/services/users were affected and for how long.\n4. Root Cause: technical explanation of why the incident occurred.\n5. Remediation: what was done immediately and what will be done to prevent recurrence.\n\n**Cover Letter for IT Jobs**\nOpening: 'I am writing to apply for the position of [role] at [company], as advertised on [platform].'\nBody paragraph 1: 'With [X] years of experience in [area], I have developed strong skills in [skill1] and [skill2].'\nBody paragraph 2: 'In my current role at [company], I [achievement relevant to the job].'\nClosing: 'I would welcome the opportunity to discuss how my experience aligns with your requirements. I am available for interview at your convenience.'\n\n**British vs American English (key differences for BTS)**\n- colour (BR) / color (US)\n- analyse (BR) / analyze (US)\n- programme (BR) / program (US) [Note: 'program' is also used in BR for computer programs]\n- licence (BR noun) / license (US noun & verb) [BR: 'a driving licence' / 'to license a software']\n- organisation (BR) / organization (US)\n- centre (BR) / center (US)\n- defence (BR) / defense (US)\nBTS SIO exams generally accept both, but be consistent within a single piece of writing.",
-    "key_vocabulary": [
-      "subject line: the title of a professional email — must be clear and specific",
-      "Dear Sir/Madam: formal greeting when recipient's name is unknown",
-      "Yours sincerely: formal closing when recipient's name is known",
-      "Yours faithfully: formal closing used after 'Dear Sir/Madam'",
-      "Kind regards: semi-formal closing — most common in IT environments",
-      "executive summary: brief overview at the start of a report",
-      "timeline: chronological sequence of events with timestamps",
-      "root cause: the underlying technical reason an incident occurred",
-      "remediation: corrective actions taken to fix an issue and prevent recurrence",
-      "I am writing to inform you: formal opening phrase for professional emails",
-      "Further to our conversation: reference to a previous discussion",
-      "Please find attached: phrase used when sending documents",
-      "I would appreciate if you could: polite request in professional emails",
-      "cover letter: letter accompanying a CV when applying for a job",
-      "colour/color: British/American spelling difference",
-      "programme/program: British/American spelling difference"
+    "id": "chap-05",
+    "chapitre": "5",
+    "titre": "Listening & Oral Skills (B1)",
+    "cours": "CHAPTER 5 — LISTENING & ORAL SKILLS (B1)\n\n1. BTS ORAL PRESENTATION — COMPTE RENDU METHOD\n\nThe BTS oral exam requires you to present a document in English and answer questions. Follow this four-part structure:\nTITLE: Announce the document type and source. 'The document is an article from [source], published in [year], entitled [title].' If it is a video: 'The document is a video from [channel/website], published in [year], about...'\nCONTEXT: Explain the who/what/when/where. 'This article deals with the growing importance of cybersecurity in enterprises.' 'It is about the challenges faced by IT teams when migrating to the cloud.' 'The author describes the evolution of Zero Trust security models.'\nMAIN POINTS (present 2-3 key ideas from the document): 'The first main point is that... / Firstly, the author explains that...' 'Secondly/Moreover/Furthermore, the text highlights that...' 'Finally, the author concludes that...'\nCONCLUSION: State the author's position and give a brief personal opinion. 'To conclude, the author argues that cloud adoption is inevitable for modern businesses.' 'In my opinion, this is relevant to my work as a future SISR technician because...'\n\n2. CONNECTOR WORDS FOR ORAL USE\n\nSequencing ideas: firstly, secondly, thirdly, then, next, after that, finally, subsequently. Contrasting: however, on the other hand, although, whereas, nevertheless, despite this. Adding information: moreover, furthermore, in addition, also, besides. Explaining cause: because, since, as, due to the fact that. Expressing result: therefore, as a result, consequently, thus, this means that. Concluding: to conclude, in conclusion, to sum up, all in all, overall.\n\n3. BTS ORAL EXAM TIPS\n\nSpeak clearly and at a moderate pace — examiners need to understand every word. Use pauses between ideas — they make your speech more understandable and give you thinking time. Do not apologize for mistakes — simply self-correct and continue. If you forget a word, reformulate: 'What I mean is...' / 'In other words...' / 'That is to say...' Use what you know confidently — better to say something simple and correct than something complex and wrong. Make eye contact with the examiner — do not read from your notes. Practice with a timer: your presentation should last 5-7 minutes.\n\n4. INTRODUCING YOURSELF\n\n'Good morning/afternoon. My name is [First Name] [Last Name]. I am a second-year BTS SIO student specializing in SISR at [School Name] in [City]. Today, I am going to present [document type] about [topic]. This document was published in [year] by [source].'\n\n5. PRESENTING AN IT PROJECT IN ENGLISH\n\nIntroduction: 'The context of this project is [company description and IT environment].' 'The main objective was to [describe the IT goal].'\nProject description: 'The project took place over [X] weeks. I worked with [team description].' 'The main tasks included [list of tasks].'\nTechnical details: 'The technologies I used were [list: pfSense, OpenVPN, Cisco switches, etc.].' 'The architecture consisted of [describe network/system architecture].'\nConclusion: 'As a result of this project, [describe outcome].' 'I learned [skills gained].' 'In the future, I would like to improve [further development].'\n\n6. COMMON EXAMINER QUESTIONS AND ANSWERS\n\n'Can you explain what a firewall does?' → 'A firewall is a security device that monitors and filters network traffic based on predefined rules. It can block unauthorized connections and allows only traffic that matches approved rules.'\n'What do you mean by network segmentation?' → 'Network segmentation means dividing a network into smaller zones using VLANs or subnets, which improves security by limiting the spread of threats and controlling access between zones.'\n'Give an example of a security measure you implemented.' → 'During my internship, I configured firewall rules to restrict traffic between VLANs and set up an OpenVPN server for secure remote access.'\n'What are the advantages of virtualization?' → 'Virtualization reduces hardware costs, improves resource utilization, simplifies backup and recovery, and allows faster deployment of new services.'\n'How does DNS work?' → 'When a user types a domain name, the DNS resolver sends a query to a DNS server, which returns the corresponding IP address, allowing the browser to connect to the correct server.'",
+    "notions_cles": [
+      {
+        "terme": "Compte rendu oral method",
+        "definition": "4-part structure: Title → Context → Main Points → Conclusion"
+      },
+      {
+        "terme": "Skimming (listening)",
+        "definition": "Identifying the main topic from the first few seconds of a document"
+      },
+      {
+        "terme": "Connector (sequence)",
+        "definition": "Firstly / then / finally — used to present ideas in order"
+      },
+      {
+        "terme": "Connector (contrast)",
+        "definition": "However / on the other hand / nevertheless — contrasts two ideas"
+      },
+      {
+        "terme": "Connector (addition)",
+        "definition": "Moreover / furthermore / in addition — adds a complementary point"
+      },
+      {
+        "terme": "Reformulation phrase",
+        "definition": "'What I mean is...' / 'In other words...' — used to rephrase when stuck"
+      },
+      {
+        "terme": "Self-introduction",
+        "definition": "Opening formula: name + BTS SIO SISR + school + today's presentation topic"
+      },
+      {
+        "terme": "IT project presentation",
+        "definition": "Context → Tasks → Technologies → Architecture → Results → Lessons learned"
+      },
+      {
+        "terme": "Oral exam tip",
+        "definition": "Speak clearly, use pauses, do not apologize for mistakes, make eye contact"
+      },
+      {
+        "terme": "Main points structure",
+        "definition": "'The first main point is... / Secondly... / Finally...'"
+      },
+      {
+        "terme": "Conclusion formula",
+        "definition": "'To conclude, the author argues that... / In my opinion...'"
+      },
+      {
+        "terme": "Examiner question types",
+        "definition": "Can you explain? / What do you mean by? / Give an example / What are the advantages?"
+      }
     ],
-    "exemple_phrase": "Subject: [URGENT] Critical Vulnerability Identified — Immediate Patching Required\nDear IT Security Team,\nI am writing to inform you that a critical vulnerability (CVE-2024-5678, CVSS 9.8) has been identified in our web application framework. Immediate action is required: please apply the vendor patch by 17:00 UTC today. Systems that cannot be patched immediately should be isolated from the network. I would appreciate your confirmation of remediation by end of day.\nKind regards,\nSecurity Operations Centre",
-    "fiche_revision": [
-      "Email structure: Subject → Greeting → Context → Issue → Action → Closing",
-      "'Yours sincerely' (know name) vs 'Yours faithfully' (don't know name = Dear Sir/Madam)",
-      "Incident report: Executive Summary → Timeline → Impact → Root Cause → Remediation",
-      "Cover letter: Why this role + Why this company + Your relevant achievement",
-      "British: colour, analyse, programme, licence (noun), organisation, centre, defence",
-      "American: color, analyze, program, license, organization, center, defense",
-      "Subject lines: include severity [URGENT/CRITICAL], type of issue, scope, action if needed",
-      "Always proofread: check subject-verb agreement, tense consistency, and formality level"
-    ]
+    "exemple_concret": "Sample oral opening: 'Good morning. My name is Nabil Boudjenah, I am a second-year BTS SIO SISR student at Lycée [Name] in Marseille. Today, I am going to present an article from TechCrunch published in 2024, entitled Cloud Security Challenges in Enterprise Environments. This article deals with the main security risks associated with cloud migration. The first main point is that data breaches are the primary concern. Furthermore, the author highlights the importance of shared responsibility models. To conclude, the author argues that companies must invest in cloud-native security tools. In my opinion, this is highly relevant to SISR technicians who will increasingly work with cloud infrastructure.'",
+    "fiche_revision": {
+      "points_cles": [
+        "Compte rendu: Title → Context → Main Points (2-3) → Conclusion",
+        "Start: 'The document is an article from [source], published in [year], entitled [title]'",
+        "Main points: 'The first main point is... / Secondly... / Finally...'",
+        "Conclusion: 'To conclude... / In my opinion...'",
+        "Reformulation when stuck: 'What I mean is...' / 'In other words...'",
+        "Do NOT apologize for mistakes — self-correct and continue",
+        "Presentation timing: ~5-7 minutes; speak slowly and clearly"
+      ],
+      "formules": [
+        "Opening: 'Good morning. My name is [Name], I am a BTS SIO SISR student at [School].'",
+        "Document intro: 'The document is a/an [type] from [source], published in [year], entitled [title].'",
+        "Main point: 'The first main point is that... / Secondly, the author highlights that...'",
+        "Conclusion: 'To conclude, the author argues that... In my opinion...'"
+      ]
+    }
   },
   {
-    "id": "ang-06",
-    "chapitre": "Domain 6 — Oral Expression",
-    "titre": "Chapter 6 — Oral Expression & Presentation",
-    "domain": "Speaking",
-    "cours": "Oral expression in English is assessed in some BTS SIO programmes and is essential in professional IT environments. This chapter covers presentations, job interviews, and IT pronunciation.\n\n**Presentation Structure**\n\nIntroduction:\n- 'Good morning/afternoon. My name is [name] and today I am going to present [topic].'\n- 'The purpose of this presentation is to explain how [topic].'\n- 'I will cover three main points: firstly... secondly... and finally...'\n\nDeveloping each section:\n- 'To begin with, let me explain...'\n- 'Moving on to the second point...'\n- 'As you can see in this diagram/slide...'\n- 'This brings us to the question of...'\n- 'To illustrate this point, consider...'\n\nConclusion:\n- 'To summarise, we have seen that...'\n- 'In conclusion, I would recommend...'\n- 'The key takeaways from this presentation are...'\n- 'Thank you for your attention. I would be happy to answer any questions.'\n\n**Handling Questions:**\n- 'That is an excellent question.'\n- 'If I understand correctly, you are asking about...'\n- 'I will have to get back to you on that.'\n- 'Could you please repeat the question?'\n\n**Job Interview: Common Questions and STAR Method**\n\n'Tell me about yourself.'\nModel: 'I am a second-year BTS SIO student specialising in [SLAM/SISR]. I have experience in [skills]. I am particularly interested in [area] and I am looking for an opportunity to...'\n\n'Why IT / why this company?'\nModel: 'I am passionate about IT because [reason — problem-solving, innovation, security]. I was particularly drawn to this company because [specific reason — technology used, reputation, projects].'\n\n'Describe a technical challenge you faced.'\nUse the STAR method:\n- Situation: 'During my internship at [company]...'\n- Task: 'I was responsible for...'\n- Action: 'I resolved the issue by...'\n- Result: 'As a result, [positive outcome — e.g., downtime reduced by 30%].'\n\n'What are your strengths?'\n'I am highly organised and detail-oriented. In IT, I believe accuracy is crucial — a misconfigured firewall rule can create a critical security gap.'\n\n'Where do you see yourself in 5 years?'\n'I hope to be working as a [role — network engineer, security analyst] with additional certifications such as [CCNA, CEH, AWS Solutions Architect].'\n\n**IT Pronunciation Guide**\n- Router: US pronunciation = ROO-ter | UK pronunciation = ROW-ter (like 'row a boat')\n- Cache: always pronounced KASH (rhymes with 'cash') — never 'catch-ay'\n- SQL: commonly pronounced SEQUEL by many professionals; S-Q-L is also accepted\n- Linux: LIN-ux (short i, like 'linoleum') — though LY-nux is also heard\n- GIF: officially JIF (as stated by its creator) but GIF (hard G) is also widely used\n- nginx: Engine-X — not 'en-JINX' or 'N-G-I-N-X'\n- Kubernetes: koo-ber-NET-eez\n- AWS: A-W-S (say each letter)\n- API: A-P-I (say each letter)\n- GUI: GOO-ee or G-U-I",
-    "key_vocabulary": [
-      "To begin with: phrase to introduce the first point in a presentation",
-      "Moving on to: transition phrase between presentation sections",
-      "As you can see: phrase directing audience attention to a diagram or slide",
-      "To summarise: signals the conclusion section of a presentation",
-      "In conclusion: formal phrase introducing the final statements",
-      "I'd be happy to take questions: closing phrase inviting audience questions",
-      "STAR method: Situation, Task, Action, Result — framework for interview answers",
-      "Tell me about yourself: common opening interview question",
-      "What are your strengths: common interview question about skills",
-      "I was responsible for: phrase for describing past role/responsibilities",
-      "As a result: used in STAR method to describe the outcome",
-      "I am particularly interested in: phrase for expressing professional interest",
-      "router: ROO-ter (US) / ROW-ter (UK)",
-      "cache: KASH — software/hardware memory store for fast access",
-      "nginx: Engine-X — popular open-source web server",
-      "Kubernetes: koo-ber-NET-eez — container orchestration platform"
+    "id": "chap-06",
+    "chapitre": "6",
+    "titre": "Advanced Grammar (B1-B2)",
+    "cours": "CHAPTER 6 — ADVANCED GRAMMAR (B1-B2)\n\n1. CONDITIONAL SENTENCES\n\nZero conditional — expresses facts and universal truths (if + present simple, present simple): 'If you press Enter, the command executes.' / 'If the server is overloaded, response times increase.'\nFirst conditional — expresses realistic future situations (if + present simple, will + infinitive): 'If the backup fails, we will lose the data.' / 'If you configure the VLAN correctly, users will have access.'\nSecond conditional — expresses unlikely or hypothetical situations (if + past simple, would + infinitive): 'If we had more bandwidth, the network would be faster.' / 'If I were the network administrator, I would implement QoS.'\nThird conditional — expresses past hypotheticals and regrets (if + past perfect, would have + past participle): 'If we had patched the system in time, the breach would not have occurred.' 'If the administrator had configured the firewall rule correctly, the attack would have been blocked.'\n\n2. PASSIVE VOICE\n\nThe passive voice is extensively used in IT documentation because the focus is on the action or the object, not the actor. Formation: subject + be (conjugated) + past participle.\nPresent passive: 'Data IS STORED on the server.' / 'Packets ARE ROUTED by the router.' / 'IPs ARE ASSIGNED by DHCP.'\nPast passive: 'The update WAS APPLIED last night.' / 'The vulnerability WAS DISCOVERED in 2023.' / 'The firewall WAS CONFIGURED by the intern.'\nPresent perfect passive: 'The patch HAS BEEN DEPLOYED.' / 'The user HAS BEEN NOTIFIED.' / 'All services HAVE BEEN RESTORED.'\nFuture passive: 'The server WILL BE RESTARTED tonight.' / 'The firmware WILL BE UPDATED during maintenance.'\nModal passive: 'The data SHOULD BE ENCRYPTED.' / 'The system MUST BE PATCHED immediately.' / 'Access CAN BE GRANTED by the admin.'\nWhen to use passive: when the actor is unknown, unimportant, or obvious; in technical documentation; in formal reports.\n\n3. RELATIVE CLAUSES\n\nRelative clauses add information about a noun using a relative pronoun. which/that for things: 'The server WHICH/THAT is in the rack room is overheating.' 'The firewall THAT blocks external traffic needs an update.' who for people: 'The technician WHO configured the switch is on leave.' whose for possession: 'The company WHOSE data was breached issued a statement.' where for places: 'The data centre WHERE our servers are hosted is in Paris.'\nDefining relative clauses (no commas) — essential information: 'The switch that connects floor 3 is down.' (tells us which switch — essential). Non-defining relative clauses (with commas) — extra, non-essential information: 'The router, which was installed last year, needs to be replaced.' (the commas indicate this is extra info).'\n\n4. REPORTED SPEECH\n\nReported speech (indirect speech) shifts the tense back one step. Direct: 'The server is down.' → Reported: 'She said (that) the server was down.' Direct: 'We have applied the patch.' → Reported: 'They said (that) they had applied the patch.' Direct: 'Has the update been deployed?' → Reported: 'He asked whether the update had been deployed.' Direct: 'Restart the service.' → Reported: 'The manager told us to restart the service.'\nTense shifts: present simple → past simple; present continuous → past continuous; present perfect → past perfect; will → would; can → could; must → had to.\n\n5. PERFECT TENSES\n\nPresent perfect (have/has + past participle) — for actions with relevance to now: 'I HAVE just configured the VLAN.' (just now) / 'We HAVE deployed the patch.' (result is current) 'The server HAS been down for two hours.' (started in the past, still relevant now) Never use present perfect with a specific past time: NOT 'I have configured it yesterday' → 'I configured it yesterday.'\nPast simple — for completed actions at a specific past time: 'I configured it yesterday at 3pm.' / 'They deployed it on Monday.' Present perfect continuous (have/has + been + verb-ing) — for ongoing actions started in the past: 'I HAVE BEEN monitoring the logs all morning.' / 'The server HAS BEEN running hot since the update.'\n\n6. MODALS OF DEDUCTION\n\nmust have + past participle (near certainty about past): 'The server must have crashed — all services went down simultaneously.' could have + past participle (past possibility): 'The attack could have been prevented with proper patch management.' might have + past participle (uncertain past possibility): 'The data might have been compromised during the breach.' can't have / couldn't have (impossibility in the past): 'The attacker can't have had administrator credentials — the account was disabled.'",
+    "notions_cles": [
+      {
+        "terme": "Zero conditional",
+        "definition": "Facts/always true: if + present simple, present simple ('If you reboot, it resets')"
+      },
+      {
+        "terme": "First conditional",
+        "definition": "Realistic future: if + present simple, will + infinitive ('If it fails, we will lose data')"
+      },
+      {
+        "terme": "Second conditional",
+        "definition": "Hypothetical: if + past simple, would + infinitive ('If we had more RAM, it would be faster')"
+      },
+      {
+        "terme": "Third conditional",
+        "definition": "Past regret: if + past perfect, would have + past participle ('If we had patched it...')"
+      },
+      {
+        "terme": "Passive voice",
+        "definition": "Subject + be + past participle — focuses on the action, not the actor"
+      },
+      {
+        "terme": "Present perfect passive",
+        "definition": "'The patch HAS BEEN DEPLOYED' — recent action with current relevance"
+      },
+      {
+        "terme": "Defining relative clause",
+        "definition": "No commas — essential information ('The switch that is broken is on Floor 3')"
+      },
+      {
+        "terme": "Non-defining relative clause",
+        "definition": "With commas — extra information ('The router, which was new, failed')"
+      },
+      {
+        "terme": "Reported speech",
+        "definition": "Indirect speech — tense shifts back one step ('She said the server was down')"
+      },
+      {
+        "terme": "Present perfect",
+        "definition": "Have/has + past participle — recent or relevant actions ('I have configured it')"
+      },
+      {
+        "terme": "must have",
+        "definition": "Modal of deduction — near certainty about a past event ('It must have crashed')"
+      },
+      {
+        "terme": "could have",
+        "definition": "Modal of deduction — past possibility ('It could have been prevented')"
+      }
     ],
-    "exemple_phrase": "Good morning. My name is Alex and today I am going to present our network security audit findings. I will cover three main points: first, the vulnerabilities identified; second, the risk assessment; and finally, our remediation recommendations. As you can see in this diagram, the current network has two critical exposure points. To summarise, we recommend applying the pending patches immediately and implementing network segmentation. Thank you for your attention — I would be happy to take questions.",
-    "fiche_revision": [
-      "Presentation: Introduction → Main points (3) → Conclusion → Questions",
-      "Use signposting: 'To begin with', 'Moving on to', 'Finally', 'To summarise'",
-      "STAR method for interviews: Situation → Task → Action → Result",
-      "Router: ROO-ter (US) / ROW-ter (UK) | Cache: KASH | nginx: Engine-X",
-      "SQL: SEQUEL or S-Q-L | Linux: LIN-ux | Kubernetes: koo-ber-NET-eez",
-      "'Should I have any questions' — say: 'I would be happy to answer any questions'",
-      "Interview: always quantify results ('reduced downtime by 30%', 'managed 50 users')",
-      "Preparation: practise your 2-minute 'tell me about yourself' answer until fluent"
-    ]
+    "exemple_concret": "Grammar in a real IT report: 'The server HAS BEEN restarted (present perfect passive) following the incident. If the monitoring alert HAD BEEN configured correctly, the team WOULD HAVE detected the issue earlier (third conditional). The vulnerability, WHICH WAS discovered last month (non-defining relative clause), WAS exploited (past passive) because the patch HAD NOT BEEN applied (past perfect passive). The administrator WHO manages the server (defining relative clause) said that he WAS APPLYING the fix (reported speech).'",
+    "fiche_revision": {
+      "points_cles": [
+        "0 conditional: if + present, present (facts); 1st: if + present, will (realistic future)",
+        "2nd conditional: if + past simple, would + inf (hypothetical); 3rd: if + past perfect, would have + pp (regret)",
+        "Passive: subject + be(conjugated) + past participle — used in ALL IT documentation",
+        "Present perfect (have+pp) = relevance to now; past simple = specific finished time",
+        "Defining relative clause (no commas) = essential; non-defining (commas) = extra info",
+        "Reported speech: tense shifts back — present → past, will → would, can → could",
+        "must have = certainty; could have = possibility; might have = uncertain past deduction"
+      ],
+      "formules": [
+        "Passive present: The data IS + past participle",
+        "Passive past perfect: The patch HAD BEEN + past participle",
+        "3rd conditional: If + subject + had + pp, subject + would have + pp",
+        "Reported command: [Subject] told us TO + infinitive"
+      ]
+    }
   },
   {
-    "id": "ang-07",
-    "chapitre": "Domain 7 — Learning Progression",
-    "titre": "Chapter 7 — Plan de Progression A2 vers B2",
-    "domain": "Progression",
-    "cours": "This chapter provides a structured learning roadmap for BTS SIO students to progress from A2 to B2 level in English, with a specific focus on IT and professional English.\n\n**CEFR Level Descriptors**\n\nA2 (Elementary) — Starting point:\n- Grammar: present and past simple, basic question forms\n- Vocabulary: everyday words + around 200 basic IT terms\n- Reading: can understand simple texts with familiar vocabulary\n- Writing: can write simple sentences and very short messages\n- Speaking: can use simple phrases and sentences to describe familiar topics\n- Listening: can understand short, simple messages when spoken slowly\n\nB1 (Intermediate) — 6-month target:\n- Grammar: all main tenses, passive voice, modal verbs, basic conditionals\n- Vocabulary: 800-1000 IT/professional terms\n- Reading: can read straightforward IT documents, job postings, and simple CVE advisories\n- Writing: can write clear, basic professional emails and short incident reports\n- Speaking: can present a technical topic with preparation\n- Listening: can follow a technical presentation with subtitles\n\nB2 (Upper Intermediate) — 12-month target (BTS exam level):\n- Grammar: all tenses, complex conditionals, nuanced use of modals\n- Vocabulary: 2000+ IT/professional terms, idiomatic expressions\n- Reading: can read complex IT documents (RFCs, detailed CVEs, technical whitepapers)\n- Writing: can write structured incident reports, cover letters, and technical summaries\n- Speaking: can present fluently, handle interview questions, and discuss IT topics spontaneously\n- Listening: can understand technical talks without subtitles\n\n**Recommended Learning Resources**\n\nFree resources:\n- BBC Learning English (bbclearningenglish.com): structured courses from A1 to C1, grammar explanations, vocabulary builder\n- TED Talks IT (ted.com, search 'technology'): authentic English with professional vocabulary; use subtitles and slow down to 0.75x speed initially\n- Coursera 'English for IT Professionals' (free to audit): specifically designed for IT students\n- Anki (ankiweb.net): free flashcard software; download the 'IT English' shared deck or create your own\n\nPaid/premium resources:\n- Cambridge English IELTS preparation books (useful even for BTS)\n- Grammarly (grammarly.com): writing assistant that explains grammar errors\n\n**Recommended Weekly Study Plan (5 hours/week)**\n\nMonday: 30 min vocabulary (Anki + reading one short IT article in English)\nTuesday: 20 min listening (one TED Talk or podcast episode with subtitles)\nWednesday: 30 min writing practice (write a short email or paragraph on an IT topic)\nThursday: 20 min vocabulary review + grammar exercise\nFriday: 30 min reading (one CVE advisory or job posting in English)\nWeekend: 30 min BTS practice (one mock comprehension exercise OR review corrections)\n\n**Progress Tracking**\n- Take a CEFR level test every 3 months (British Council has a free online test)\n- Do one mock BTS English subject per month\n- Weekly vocabulary test: write definitions of 10 new words from this week's reading\n- Keep a vocabulary notebook: new word → definition → example sentence from IT context",
-    "key_vocabulary": [
-      "A2: elementary level — basic sentences, simple present/past, everyday vocabulary",
-      "B1: intermediate level — all main tenses, can handle everyday professional situations",
-      "B2: upper-intermediate level — BTS SIO target — fluent in professional IT English",
-      "CEFR: Common European Framework of Reference for Languages — A1 to C2 scale",
-      "Anki: spaced repetition flashcard software — optimal for vocabulary learning",
-      "skimming: reading strategy — read quickly for main idea",
-      "scanning: reading strategy — search for specific information",
-      "TED Talk: Technology, Entertainment, Design — short professional presentations",
-      "BBC Learning English: free structured English learning resource",
-      "Coursera: online learning platform with IT English courses",
-      "spaced repetition: learning technique — review at increasing intervals to maximise retention",
-      "vocabulary notebook: personal record of new words with definitions and example sentences",
-      "mock exam: practice test using real or similar exam format",
-      "RFC: Request for Comments — official technical standards documents (in English)"
+    "id": "chap-07",
+    "chapitre": "7",
+    "titre": "BTS Oral Simulation (B2)",
+    "cours": "CHAPTER 7 — BTS ORAL SIMULATION (B2)\n\n1. FULL SCRIPT — PRESENTING AN IT INFRASTRUCTURE PROJECT (RP01)\n\nINTRODUCTION:\n'Good morning. My name is [Name], I am a second-year BTS SIO student specializing in SISR at [School Name]. Today, I am going to present my first professional situation, which took place at [Company Name], where I completed a [X]-week internship. The title of this project is: Secure Network Infrastructure Deployment.'\n\nCONTEXT:\n'The company is a [50]-employee [services sector] company located in [city]. The IT environment consists of approximately [30] workstations, [5] servers, and [10] network devices. The company's main challenge was the absence of network segmentation and the lack of a secure remote access solution for remote workers.'\n\nTECHNICAL DESCRIPTION:\n'The project involved designing and implementing a secure network infrastructure. First, I created a VLAN architecture to segment the network into three zones: the server VLAN (VLAN 10), the user VLAN (VLAN 20), and the management VLAN (VLAN 99). Second, I configured a pfSense firewall with appropriate inter-VLAN routing rules to control traffic between zones. Third, I set up an OpenVPN server to allow secure remote access for employees working from home. Finally, I documented all configurations and wrote a deployment report.'\n\nCHALLENGES:\n'The main challenge I encountered was configuring the VLAN trunk between the pfSense firewall and the Cisco switch. The 802.1Q tags were not being passed correctly. To solve this, I reviewed the switch configuration, identified a missing trunk encapsulation command, and corrected the configuration.'\n\nCONCLUSION:\n'To conclude, this project allowed me to develop practical skills in network segmentation, firewall configuration, and VPN deployment. I learned the importance of thorough documentation and of testing configurations in a lab environment before deploying to production. In the future, I would like to implement network monitoring using Zabbix or Nagios to proactively detect performance anomalies and security incidents.'\n\n2. Q&A PAIRS — LIKELY EXAMINER QUESTIONS\n\nQ: Why did you choose pfSense over a commercial firewall?\nA: 'pfSense is an open-source firewall solution based on FreeBSD that offers enterprise-level features at no licensing cost. It supports stateful packet inspection, VPN (OpenVPN and IPsec), VLAN routing, traffic shaping, and intrusion detection. It has an active community and excellent documentation. For a company with a limited IT budget, it represented the best balance of functionality and cost.'\n\nQ: What is a VLAN and why is network segmentation important?\nA: 'A VLAN, or Virtual Local Area Network, is a logical network segmentation at Layer 2 that groups devices independently of their physical location. Network segmentation is important for two main reasons: security — it prevents unauthorized lateral movement between network zones, so if a device in the user VLAN is compromised, the attacker cannot directly reach the server VLAN — and performance, because VLANs reduce broadcast domains, which decreases unnecessary network traffic.'\n\nQ: How does OpenVPN work?\nA: 'OpenVPN uses TLS encryption to create a secure tunnel between the VPN client and the server. Authentication is performed using X.509 certificates, and optionally a username and password. Once authenticated, all traffic between the client and the corporate network is encrypted using AES-256 and routed through the VPN tunnel. This protects sensitive data transmitted over untrusted public networks such as home broadband or public Wi-Fi.'\n\nQ: What would you improve if you had more time?\nA: 'I would implement a network monitoring solution using PRTG or Nagios to proactively detect performance anomalies and receive alerts in real time. I would also add multi-factor authentication for VPN access to strengthen security — currently only certificate-based authentication is used. Additionally, I would implement a syslog server to centralize log collection from all network devices for easier auditing and incident investigation.'\n\nQ: Can you explain the difference between authentication and authorization?\nA: 'Authentication is the process of verifying who you are — for example, entering your username and password. Authorization is the process of determining what you are allowed to do once you have been authenticated — for example, a standard user can read files, but only an administrator can modify system settings. In Active Directory, authentication is handled by Kerberos, and authorization is controlled through group memberships and GPOs.'\n\n3. LANGUAGE TIPS FOR THE ORAL EXAM\n\nUse technical vocabulary confidently — examiners appreciate correct use of terms like 'inter-VLAN routing', 'stateful inspection', '802.1Q trunking'. Use the passive voice for technical descriptions: 'VLANs were configured on the switch', 'Traffic is filtered by the firewall'. Use connectors to structure your answer: 'First... Second... Finally...' and 'This means that... As a result...'. If you do not understand a question, ask politely: 'Could you rephrase the question please?' / 'I am sorry, could you repeat that?'",
+    "notions_cles": [
+      {
+        "terme": "RP01 (Situation Professionnelle 1)",
+        "definition": "First professional project presented orally during the BTS SIO exam"
+      },
+      {
+        "terme": "pfSense",
+        "definition": "Open-source FreeBSD-based firewall with enterprise features (VPN, VLAN, IDS)"
+      },
+      {
+        "terme": "OpenVPN",
+        "definition": "Open-source VPN solution using TLS/AES encryption for secure remote access"
+      },
+      {
+        "terme": "VLAN segmentation",
+        "definition": "Logical division of a network into isolated zones (server/user/management VLANs)"
+      },
+      {
+        "terme": "802.1Q trunking",
+        "definition": "IEEE standard for carrying multiple VLANs over a single switch port"
+      },
+      {
+        "terme": "Inter-VLAN routing",
+        "definition": "Routing traffic between VLANs — typically done by a firewall (router-on-a-stick)"
+      },
+      {
+        "terme": "Stateful inspection",
+        "definition": "Firewall technique that tracks active connections and validates packets against their state"
+      },
+      {
+        "terme": "AES-256",
+        "definition": "Advanced Encryption Standard with 256-bit key — used in OpenVPN"
+      },
+      {
+        "terme": "Examiner question",
+        "definition": "Typical oral exam questions: explain a concept, give an example, justify a choice"
+      },
+      {
+        "terme": "Oral reformulation",
+        "definition": "'Could you rephrase the question?' — used when you do not understand"
+      },
+      {
+        "terme": "Monitoring (Zabbix/Nagios)",
+        "definition": "Tools for proactive IT infrastructure monitoring and alerting"
+      },
+      {
+        "terme": "MFA for VPN",
+        "definition": "Multi-factor authentication added to VPN — certificate + username/password + OTP"
+      }
     ],
-    "exemple_phrase": "Daily study schedule (Monday): 08:00-08:30 — Anki vocabulary review (20 cards: review + 5 new). During lunch — read one short IT news article on The Register or Ars Technica. 20:00-20:20 — watch one TED Talk (Topic: cybersecurity) at 0.75x speed with English subtitles. 20:20-20:50 — write a 100-word summary of the TED Talk in English. This routine, maintained consistently, will take you from A2 to B1 in approximately 6 months.",
-    "fiche_revision": [
-      "A2 → B1 in 6 months: all tenses + 1000 IT terms + basic professional writing",
-      "B1 → B2 in 12 months: complex documents + fluent speech + nuanced writing",
-      "Best free resources: BBC Learning English + TED Talks + Anki flashcards",
-      "Spaced repetition (Anki) is scientifically proven as most efficient vocabulary method",
-      "5 hours/week minimum: 30 min/day × 5 days + 30 min weekend practice",
-      "Read IT content IN English: The Register, Ars Technica, Krebs on Security",
-      "Test yourself monthly: mock BTS subject or Cambridge CEFR online test",
-      "Active recall beats passive reading: always test yourself, don't just re-read"
-    ]
+    "exemple_concret": "During the oral exam, when asked 'Why did you choose pfSense?', a strong answer demonstrates technical knowledge AND justification: 'pfSense is open-source, which eliminated licensing costs. It supports all required features — VLANs, OpenVPN, firewall rules. The community documentation is excellent. For a 50-person company with a small IT budget, it was the optimal solution compared to commercial alternatives like Fortinet or Palo Alto.'",
+    "fiche_revision": {
+      "points_cles": [
+        "RP01 script: Introduction → Context → Technical Description → Challenges → Conclusion",
+        "Introduction: name + BTS SIO SISR + school + project title",
+        "Technical: VLAN segmentation (10/20/99) + pfSense firewall + OpenVPN remote access",
+        "Challenge: describe problem encountered + solution applied",
+        "Conclusion: skills developed + lessons learned + future improvements",
+        "Q&A: justify technical choices (open-source, cost, features, community support)",
+        "Language: use passive voice for technical descriptions + connectors for structure"
+      ],
+      "formules": [
+        "Opening: 'Good morning. My name is... I am a BTS SIO SISR student at... Today I will present...'",
+        "Context: 'The company is a [X]-employee [sector] company. The IT environment consists of...'",
+        "Technical: 'First... Second... Third... Finally...'",
+        "Challenge: 'The main challenge was... To solve this, I...'",
+        "Conclusion: 'To conclude, this project allowed me to develop skills in... In the future, I would...'"
+      ]
+    }
   },
   {
-    "id": "ang-08",
-    "chapitre": "Domain 8 — Exam Preparation",
-    "titre": "Chapter 8 — Documents Professionnels et Annales",
-    "domain": "Exam prep",
-    "cours": "This chapter prepares you specifically for the BTS SIO English exam format, providing strategies and practice materials.\n\n**BTS SIO English Exam Format**\n\nThe BTS SIO English exam typically consists of two parts:\n\nPart 1 — Reading Comprehension (about 45 minutes):\n- An IT text in English (200-400 words), typically from a current topic\n- 4-6 comprehension questions (may be answered in French or English depending on the exam instructions)\n- Question types: factual questions, vocabulary in context, true/false with justification, summary\n\nPart 2 — Written Expression (about 30 minutes):\n- 100-150 words written in English\n- A practical writing task: professional email, short report summary, responding to a job ad\n- Assessed on: content (relevance), structure (organisation), language (grammar, vocabulary)\n\n**Common Exam Topics (last 5 years)**\n- Cloud computing (IaaS, PaaS, SaaS)\n- Cybersecurity (ransomware, phishing, GDPR)\n- Artificial Intelligence in IT (automation, machine learning)\n- DevOps (CI/CD pipelines, agile methodologies)\n- GDPR and data privacy\n- Remote working and virtualisation\n- Green IT / sustainability in computing\n\n**Strategies for Reading Comprehension**\nStep 1: Read all questions FIRST (2 minutes) — you know what to look for.\nStep 2: Skim the text (1 minute) — get the main idea, identify paragraph topics.\nStep 3: Scan for each answer using the question as your guide.\nStep 4: Write your answer — quote from the text when possible.\nStep 5: Check: have you answered exactly what was asked? Is your French/English correct?\n\n**Strategies for Written Expression**\nStep 1: Plan (2 minutes) — what 3-4 ideas will you include?\nStep 2: Write structure — opening sentence, 2-3 development sentences, closing sentence.\nStep 3: Use linking words (however, therefore, moreover, as a result).\nStep 4: Use the vocabulary and structures from your revision (passive, modals, conditionals).\nStep 5: Check (5 minutes) — grammar (tenses, agreement), spelling, word count, formality.\n\n**Sample Exam Subject: Cloud Computing**\nText: 'Cloud computing has transformed how organisations store and process data. Instead of maintaining expensive on-premises servers, companies can now rent computing resources from providers such as Amazon Web Services, Microsoft Azure, or Google Cloud. The main service models are Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS). However, migrating to the cloud raises concerns about data security and compliance, particularly with regulations such as the GDPR in Europe.'\n\nSample questions:\n1. What are the three main cloud service models mentioned in the text? (IaaS, PaaS, SaaS)\n2. According to the text, what is the main advantage of cloud computing for companies? (avoids expensive on-premises servers)\n3. What concern does the author raise about cloud migration? (data security and compliance, especially GDPR)\n\nSample written expression task: 'Write an email to your manager recommending the migration of your company's file storage to a cloud solution. Mention two advantages and one security consideration.' (100-150 words)\n\nModel answer: Subject: Recommendation — Migration to Cloud File Storage\nDear [Manager's name],\nI am writing to recommend migrating our file storage to a cloud solution such as Microsoft SharePoint or Google Workspace. Firstly, this would significantly reduce our hardware maintenance costs and free up the IT team for higher-value tasks. Furthermore, cloud storage provides automatic backups and high availability, reducing the risk of data loss.\nHowever, it is important to ensure that the chosen provider is GDPR-compliant, particularly regarding data storage location (EU servers) and access controls.\nI would be happy to prepare a more detailed proposal if you are interested.\nKind regards,\n[Your name]",
-    "key_vocabulary": [
-      "BTS SIO: Brevet de Technicien Supérieur Services Informatiques aux Organisations",
-      "reading comprehension: understanding a written text and answering questions about it",
-      "written expression: producing written text in response to a task or prompt",
-      "IaaS: Infrastructure as a Service — rent virtual servers and storage",
-      "PaaS: Platform as a Service — rent development environment/platform",
-      "SaaS: Software as a Service — use software via browser, no installation",
-      "GDPR: General Data Protection Regulation — EU data privacy law",
-      "DevOps: combining development and operations for faster software delivery",
-      "CI/CD: Continuous Integration / Continuous Deployment — automated build and deploy",
-      "on-premises: software/hardware hosted locally in the organisation's own facilities",
-      "compliance: meeting the requirements of laws, regulations, or standards",
-      "skimming: fast reading for main idea",
-      "scanning: targeted reading to find specific information",
-      "linking words: connectors that structure text (however, therefore, moreover)"
+    "id": "chap-08",
+    "chapitre": "8",
+    "titre": "BTS Exam Technique (B2)",
+    "cours": "CHAPTER 8 — BTS EXAM TECHNIQUE (B2)\n\n1. COMPTE RENDU METHODOLOGY (FULL METHOD)\n\nThe compte rendu is the core written exercise of the BTS English exam. It is written in FRENCH and must summarize an English document objectively.\n\nStep 1 — First reading (5 minutes): read the entire article for global understanding. Do not stop at unknown words. Identify: topic, type of document, overall message.\nStep 2 — Second reading (10 minutes): read again for details. Identify structure: title, author, source, date. Note the key ideas in each paragraph.\nStep 3 — Extract main ideas (5 minutes): identify 3-4 main ideas. These are the backbone of your compte rendu. NOT details (statistics, examples) — the main arguments and conclusions.\nStep 4 — Write the compte rendu in FRENCH (15-20 minutes): Paragraph 1 — Introduction: present the document. 'L'article intitulé [title], publié dans [source] en [year], traite de [topic].' 'L'auteur s'intéresse à la question de [main question].'\nParagraph 2 and 3 — Main ideas: present each main idea with connectors. 'Dans un premier temps, l'auteur explique que...' 'Ensuite, il souligne que...' / 'De plus, le texte met en évidence que...' 'En revanche, l'auteur montre que...'\nParagraph 4 — Conclusion: end the compte rendu. 'En conclusion, l'auteur estime que...' / 'L'article suggère en définitive que...'\nLength: 180-220 words exactly. Count your words.\nCRITICAL RULES: Do NOT copy sentences from the text — always reformulate in your own words. Do NOT add your personal opinion. Do NOT add information not in the text.\n\n2. NOTE DE SYNTHÈSE (MULTIPLE DOCUMENTS)\n\nA note de synthèse synthesizes information from 2-3 documents on the same theme. Key difference from compte rendu: you COMPARE and SYNTHESIZE, not just summarize. Method: identify the common theme, find convergences (points agreed), find divergences (differing views), organize by theme (not by document). Do NOT write: 'Document 1 says... Document 2 says...' — instead, group ideas thematically.\n\n3. B2 WRITTEN EXPRESSION STRUCTURE\n\nThe written expression (expression écrite) asks you to write a text of 150-200 words on a given topic. Use this structure:\nIntroduction (2-3 sentences): contextualize the topic and announce your plan. 'In today's digital world, [topic] has become increasingly important. This email/report will...' Development (2-3 paragraphs): each paragraph contains one main idea + explanation + example + link. 'First of all, [main idea]. This is because [explanation]. For example, [concrete example]. Therefore, [link to question].'\nConclusion (2-3 sentences): synthesize your argument and open to a broader perspective. 'In conclusion, [summary of position]. Looking ahead, [future perspective/recommendation].'\n\n4. USEFUL ACADEMIC PHRASES FOR B2\n\nPresenting information: 'The article highlights that...' / 'According to the author...' / 'The text suggests that...' / 'The author argues that...'\nContrasting: 'On the one hand... on the other hand...' / 'However, it should be noted that...' / 'Despite this, the author maintains that...'\nEmphasizing: 'It is worth noting that...' / 'Particularly striking is the fact that...' / 'Above all, the key point is...'\nGiving examples: 'This is illustrated by the fact that...' / 'A clear example of this is...' / 'For instance,...'\nConcluding: 'To conclude...' / 'All in all...' / 'Ultimately...' / 'In sum...'\n\n5. HANDLING UNKNOWN VOCABULARY\n\nStrategy 1 — Use context: read the full sentence and paragraph. The meaning is often implicit. Strategy 2 — Cognates: look for words resembling French (authentication, configuration, protocol). Strategy 3 — Skip and infer: skip the unknown word, read the rest, then come back and infer its role. Strategy 4 — Do not panic: in a compte rendu, you reformulate anyway — an approximate understanding is sufficient.\n\n6. TIME MANAGEMENT FOR BTS ENGLISH EXAM\n\nTotal written exam duration: 2 hours 30 minutes.\n20 minutes — Read and annotate the text (first and second reading).\n30 minutes — Write the compte rendu in French (180-220 words).\n40 minutes — Write the expression écrite in English (150-200 words).\n10 minutes — Review: check grammar, spelling, word count, coherence.\n\nTotal oral exam: 20-30 minutes (varies by academy).\n10 minutes — Preparation time (annotate document, plan oral).\n10-15 minutes — Oral presentation (compte rendu oral + project if required).\n10 minutes — Examiner questions.\n\n7. MARKING CRITERIA\n\nComprehension (does your compte rendu reflect the text accurately? — 30%): key ideas present, no misunderstandings, correct identification of main arguments.\nLanguage expression (how well do you write/speak? — 40%): grammar accuracy, vocabulary richness, sentence variety, fluency.\nStructure and coherence (is your text/speech organized? — 20%): introduction and conclusion present, logical connectors, paragraph/idea organization.\nTask completion (did you do what was asked? — 10%): correct word count, answered the specific question, correct document type.",
+    "notions_cles": [
+      {
+        "terme": "Compte rendu (écrit)",
+        "definition": "Summary in French of an English text — objective, no personal opinion, 180-220 words"
+      },
+      {
+        "terme": "Note de synthèse",
+        "definition": "Synthesis of 2-3 documents — compare and organize by theme, not by document"
+      },
+      {
+        "terme": "Expression écrite",
+        "definition": "Written production in English — introduction + development + conclusion, 150-200 words"
+      },
+      {
+        "terme": "Reformulation",
+        "definition": "Expressing the text's ideas in your own words — never copy from the text"
+      },
+      {
+        "terme": "Academic phrase",
+        "definition": "Formal expression used in written/oral: 'According to the author...' / 'It is worth noting that...'"
+      },
+      {
+        "terme": "Time management (written exam)",
+        "definition": "2h30 total: 20min read + 30min compte rendu + 40min expression + 10min review"
+      },
+      {
+        "terme": "Time management (oral exam)",
+        "definition": "10min prep + 10-15min presentation + 10min Q&A"
+      },
+      {
+        "terme": "Comprehension criterion",
+        "definition": "Marking category: are key ideas correctly identified and presented?"
+      },
+      {
+        "terme": "Expression criterion",
+        "definition": "Marking category: grammar, vocabulary, fluency, sentence variety"
+      },
+      {
+        "terme": "Skimming (reading exam)",
+        "definition": "First quick read to identify topic, type, and general message"
+      },
+      {
+        "terme": "Compte rendu intro formula",
+        "definition": "'L'article intitulé [titre], publié dans [source] en [année], traite de [sujet].'"
+      },
+      {
+        "terme": "Compte rendu rule: no opinion",
+        "definition": "Never add personal views in the compte rendu — only what the author says"
+      }
     ],
-    "exemple_phrase": "Reading comprehension answer technique — Question: 'What does the author say about GDPR?' → Locate in text → Quote or paraphrase: 'According to the text, migrating to the cloud raises concerns about compliance, particularly with the GDPR in Europe.' Written expression opening: 'I am writing to [purpose]. [Background/context]. [Main recommendation/information]. [Supporting point]. However, [consideration]. [Call to action]. Kind regards, [name].'",
-    "fiche_revision": [
-      "Exam Part 1: Reading (200-400 word IT text + 4-6 questions) — read questions FIRST",
-      "Exam Part 2: Writing (100-150 words) — plan → structure → link → review",
-      "Common topics: cloud, cybersecurity, AI, DevOps, GDPR, remote work, green IT",
-      "Quote from the text when answering comprehension questions — shows evidence",
-      "Writing checklist: correct tense, subject-verb agreement, linking words, word count",
-      "IaaS = infrastructure (VMs, storage) | PaaS = platform | SaaS = software",
-      "GDPR: data in EU, user consent required, right to erasure, fines up to 4% turnover",
-      "Always end written expression with a polite closing and your name/signature"
-    ]
+    "exemple_concret": "BTS exam simulation: given a 300-word article about Zero Trust security. Step 1 (5 min): skim — topic is a new security model. Step 2 (10 min): re-read — main ideas: (1) traditional perimeter security is obsolete, (2) Zero Trust requires continuous verification, (3) micro-segmentation limits breach impact. Step 3 (5 min): plan compte rendu structure. Step 4 (15 min): write in French — 'L'article intitulé Zero Trust: The Future of Enterprise Security, publié dans TechRepublic en 2024, traite des nouveaux modèles de sécurité informatique. Dans un premier temps, l'auteur explique que les approches traditionnelles basées sur le périmètre réseau ne sont plus suffisantes face aux cybermenaces actuelles. Ensuite, il présente le modèle Zero Trust, qui repose sur le principe de ne jamais faire confiance et de toujours vérifier l'identité des utilisateurs et des appareils. De plus, le texte met en évidence l'importance de la micro-segmentation pour limiter la propagation d'une attaque. En conclusion, l'auteur estime que les entreprises doivent adopter une approche Zero Trust pour renforcer leur sécurité dans un environnement de travail hybride.' (195 words — ✓)",
+    "fiche_revision": {
+      "points_cles": [
+        "Compte rendu: in FRENCH, 180-220 words, no personal opinion, no text copies — reformulate",
+        "Structure: intro (document presentation) → main ideas (connectors) → conclusion",
+        "Compte rendu intro: 'L'article intitulé [titre], publié dans [source] en [année], traite de [sujet].'",
+        "Time: 20min read + 30min compte rendu + 40min expression + 10min review = 2h30",
+        "Expression écrite: in ENGLISH, 150-200 words, intro + development + conclusion",
+        "Note de synthèse: organize by THEME not by document — synthesize, do not juxtapose",
+        "Marking: comprehension (30%) + expression (40%) + structure (20%) + task completion (10%)"
+      ],
+      "formules": [
+        "Compte rendu intro: 'L'article intitulé [...], publié dans [...] en [...], traite de [...].'",
+        "Main idea connector: 'Dans un premier temps... / Ensuite... / De plus... / En revanche...'",
+        "Compte rendu conclusion: 'En conclusion, l'auteur estime que...'",
+        "Expression écrite opening: 'In today's [context], [topic] has become increasingly important.'",
+        "Academic phrase: 'According to the author...' / 'It is worth noting that...' / 'This is illustrated by...'"
+      ]
+    }
   }
 ]

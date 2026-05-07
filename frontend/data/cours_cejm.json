@@ -1,102 +1,660 @@
 [
   {
-    "id": "cejm-01",
-    "chapitre": "Domaine 1 — L'entreprise et son environnement",
-    "titre": "Chapitre 1 — L'entreprise : acteur économique",
-    "domaine": "Economie",
-    "cours": "Définition de l'entreprise (organisation qui combine des facteurs de production pour créer des biens/services). Rôle économique : production, création d'emplois, valeur ajoutée (VA = production - consommations intermédiaires). Types d'entreprises selon la taille : TPE (<10 salariés, CA<2M€), PME (10-249 salariés, CA<50M€), ETI (250-4999 salariés), GE (≥5000 salariés). Secteurs d'activité : primaire (agriculture, extraction), secondaire (industrie, BTP), tertiaire (services), quaternaire (numérique, R&D). Environnement PESTEL : Politique (législation, stabilité), Économique (croissance, inflation, chômage), Social (démographie, culture), Technologique (innovation, numérique), Environnemental (écologie, normes), Légal (droit des affaires, travail).",
-    "notions_cles": ["Valeur ajoutée", "PESTEL", "TPE/PME/ETI/GE", "Secteurs d'activité", "Facteurs de production", "Consommations intermédiaires"],
-    "exemple_concret": "Le Groupe Ragni est une ETI française spécialisée dans l'éclairage public et urbain. Fondée en 1952 à Nice, elle emploie environ 400 personnes, réalise un CA de ~100M€ et exporte dans plus de 60 pays. Elle opère dans le secteur secondaire (fabrication) et tertiaire (services associés). Son analyse PESTEL révèle des opportunités (transition énergétique, LED), des menaces (concurrence asiatique) et des contraintes légales (normes européennes d'éclairage).",
-    "fiche_revision": ["L'entreprise = organisation produisant biens/services en combinant travail + capital + ressources naturelles", "VA = Chiffre d'affaires - Consommations intermédiaires", "4 tailles : TPE < PME < ETI < GE", "4 secteurs : primaire, secondaire, tertiaire, quaternaire", "PESTEL : 6 dimensions macro-environnementales", "Exemples : SNCF (tertiaire), Renault (secondaire), Leclerc (tertiaire)"]
+    "id": "chap-01",
+    "chapitre": "1",
+    "titre": "L'entreprise et son environnement",
+    "cours": "L'entreprise est une organisation économique qui combine des facteurs de production (capital, travail, matières premières) dans le but de produire des biens ou des services destinés à être vendus sur un marché. Elle agit au sein d'un environnement complexe et interagit avec de nombreux acteurs.\n\nLes parties prenantes (stakeholders) désignent l'ensemble des acteurs qui ont un intérêt direct ou indirect dans l'activité de l'entreprise. On distingue les parties prenantes internes (salariés, dirigeants, actionnaires) et les parties prenantes externes (clients, fournisseurs, collectivités locales, État, associations, syndicats, banques). La prise en compte de leurs attentes est fondamentale pour la légitimité et la pérennité de l'entreprise.\n\nLa performance de l'entreprise s'évalue selon plusieurs dimensions :\n\n1. Performance économique et financière : elle mesure la capacité de l'entreprise à dégager des profits.\n- Résultat net = Produits totaux - Charges totales\n- Taux de profitabilité = (Résultat net / Chiffre d'affaires) × 100\n- Taux de rentabilité = (Résultat net / Capitaux propres) × 100\n\n2. Performance commerciale : elle évalue la position de l'entreprise sur son marché.\n- Chiffre d'affaires (CA) = Prix unitaire × Quantités vendues\n- Part de marché = (CA entreprise / CA total du marché) × 100\n- Un gain de parts de marché indique une compétitivité accrue.\n\n3. Performance sociale : elle s'intéresse aux conditions de travail des salariés.\n- Le bilan social est un document annuel obligatoire (entreprises > 300 salariés) qui récapitule les données chiffrées des relations sociales.\n- Taux d'absentéisme = (Heures d'absence / Heures théoriques de travail) × 100\n- Parité H/F : indicateur d'égalité professionnelle entre hommes et femmes (Index Égalité Professionnelle obligatoire >50 salariés).\n\n4. Performance environnementale : elle mesure l'impact écologique de l'entreprise.\n- Empreinte carbone : quantité de gaz à effet de serre émise.\n- Certification ISO 14001 : norme internationale de management environnemental.\n- Rapport RSE (Responsabilité Sociétale des Entreprises) : document décrivant les actions menées en matière sociale et environnementale.\n\nLe Triangle de performance de Gilbert propose un modèle d'analyse tridimensionnel :\n- Pertinence : adéquation entre les objectifs fixés et les ressources mobilisées. Un objectif est pertinent si les ressources permettent de l'atteindre.\n- Efficacité : capacité à atteindre les objectifs fixés, quels que soient les moyens utilisés. On est efficace si le résultat visé est obtenu.\n- Efficience : rapport entre les résultats obtenus et les moyens (ressources) utilisés. Être efficient, c'est atteindre l'objectif en minimisant les ressources consommées.\n\nLa RSE (Responsabilité Sociétale des Entreprises) désigne l'intégration volontaire par les entreprises des préoccupations sociales et environnementales dans leurs activités commerciales. Elle repose sur trois piliers : économique (viabilité), social (équité), environnemental (durabilité). La norme ISO 26000 guide les entreprises dans leur démarche RSE. Cette approche globale vise à créer de la valeur partagée pour l'ensemble des parties prenantes.",
+    "notions_cles": [
+      {
+        "terme": "Entreprise",
+        "definition": "Organisation économique combinant facteurs de production pour produire biens/services destinés à la vente."
+      },
+      {
+        "terme": "Parties prenantes (stakeholders)",
+        "definition": "Acteurs internes et externes ayant un intérêt dans l'activité de l'entreprise (salariés, clients, fournisseurs, État…)."
+      },
+      {
+        "terme": "Résultat net",
+        "definition": "Bénéfice ou perte de l'entreprise = Produits totaux - Charges totales."
+      },
+      {
+        "terme": "Taux de profitabilité",
+        "definition": "Résultat net / CA × 100 — mesure la part du CA transformée en profit."
+      },
+      {
+        "terme": "Taux de rentabilité",
+        "definition": "Résultat net / Capitaux propres × 100 — mesure le rendement des capitaux investis."
+      },
+      {
+        "terme": "Part de marché",
+        "definition": "CA entreprise / CA total marché × 100 — mesure la position concurrentielle."
+      },
+      {
+        "terme": "Bilan social",
+        "definition": "Document annuel obligatoire récapitulant les données sociales de l'entreprise (>300 salariés)."
+      },
+      {
+        "terme": "Taux d'absentéisme",
+        "definition": "Heures d'absence / Heures théoriques × 100 — indicateur de performance sociale."
+      },
+      {
+        "terme": "Triangle de Gilbert",
+        "definition": "Modèle reliant Pertinence (objectifs/ressources), Efficacité (atteinte objectifs) et Efficience (résultats/moyens)."
+      },
+      {
+        "terme": "RSE",
+        "definition": "Responsabilité Sociétale des Entreprises : intégration volontaire des préoccupations sociales et environnementales dans la stratégie."
+      }
+    ],
+    "exemple_concret": "L'entreprise Danone affiche un taux de profitabilité de 6% (résultat net 1,8 Md€ / CA 30 Md€). Sa part de marché sur les yaourts en France est de 35%. Son bilan social révèle un taux d'absentéisme de 3,2%. Sa démarche RSE (certification ISO 14001, réduction empreinte carbone -30% en 5 ans) illustre la performance environnementale. Selon le Triangle de Gilbert : la décision d'investir dans des emballages recyclables est pertinente (ressources disponibles), efficace (objectif RSE atteint) et efficiente (coût réduit de 15%).",
+    "fiche_revision": {
+      "points_cles": [
+        "L'entreprise interagit avec ses parties prenantes internes (salariés, actionnaires) et externes (clients, fournisseurs, État).",
+        "4 dimensions de performance : économique, commerciale, sociale, environnementale.",
+        "Taux de profitabilité = Résultat net / CA × 100",
+        "Taux de rentabilité = Résultat net / Capitaux propres × 100",
+        "Part de marché = CA entreprise / CA total marché × 100",
+        "Triangle de Gilbert : Pertinence (objectifs/ressources), Efficacité (atteinte objectifs), Efficience (résultats/moyens).",
+        "RSE = piliers économique + social + environnemental (norme ISO 26000)."
+      ],
+      "formules": [
+        "Taux de profitabilité = (Résultat net / CA) × 100",
+        "Taux de rentabilité = (Résultat net / Capitaux propres) × 100",
+        "Part de marché = (CA entreprise / CA total marché) × 100",
+        "Taux d'absentéisme = (Heures d'absence / Heures théoriques) × 100"
+      ]
+    }
   },
   {
-    "id": "cejm-02",
-    "chapitre": "Domaine 1 — L'entreprise et son environnement",
-    "titre": "Chapitre 2 — Les structures juridiques",
-    "domaine": "Droit",
-    "cours": "Les formes juridiques déterminent le statut légal de l'entreprise. Entreprise individuelle (EI) : entrepreneur seul, responsabilité illimitée sur patrimoine personnel, pas de capital minimum. Sociétés de personnes — SNC (Société en Nom Collectif) : tous associés commerçants, responsabilité solidaire et indéfinie, pas de capital minimum. Sociétés de capitaux — SARL : 1 à 100 associés, capital minimum 1€, responsabilité limitée aux apports, gérant(s) personne physique. SAS (Société par Actions Simplifiée) : liberté statutaire, capital minimum 1€, responsabilité limitée, président + DG, idéale pour startups et levées de fonds. SA (Société Anonyme) : minimum 2 actionnaires (7 si cotée), capital minimum 37 000€, conseil d'administration ou directoire, cotation en bourse possible. Capital social = somme des apports des associés au moment de la création. Responsabilité limitée : associés ne risquent que leurs apports. Responsabilité illimitée : patrimoine personnel engagé.",
-    "notions_cles": ["EI", "SARL", "SAS", "SA", "SNC", "Capital social", "Responsabilité limitée", "Responsabilité illimitée", "Associé", "Actionnaire"],
-    "exemple_concret": "Pour une startup IT de 3 associés souhaitant lever des fonds : la SAS est recommandée car elle offre une grande liberté statutaire, permet facilement l'entrée d'investisseurs (business angels, VC), protège le patrimoine personnel des fondateurs (responsabilité limitée), et n'impose pas de capital minimum. La SARL conviendrait pour une activité stable sans besoin de lever des fonds externes. La SA serait envisagée pour une future introduction en bourse.",
-    "fiche_revision": ["EI : seul, responsabilité illimitée, simple à créer", "SNC : responsabilité illimitée + solidaire de tous les associés", "SARL : 1-100 associés, responsabilité limitée, capital ≥ 1€", "SAS : liberté statutaire, idéale startups, responsabilité limitée", "SA : capital ≥ 37 000€, possible cotation boursière", "Capital social ≠ capital disponible : il est inscrit au passif du bilan", "Choix forme juridique = selon : nombre d'associés, besoins financement, responsabilité souhaitée"]
+    "id": "chap-02",
+    "chapitre": "2",
+    "titre": "L'environnement économique et ses acteurs",
+    "cours": "L'environnement économique de l'entreprise est l'ensemble des forces et acteurs extérieurs qui influencent son activité. Son analyse est indispensable pour comprendre les opportunités et menaces auxquelles elle fait face.\n\nLe marché est le lieu de rencontre entre l'offre (producteurs) et la demande (consommateurs) qui détermine les prix. On distingue plusieurs structures de marché :\n- Concurrence pure et parfaite (CPP) : structure théorique reposant sur 5 conditions : atomicité (nombreux offreurs/demandeurs sans pouvoir de marché), homogénéité des produits, libre entrée et sortie du marché, transparence de l'information, mobilité des facteurs de production.\n- Monopole : un seul vendeur face à de nombreux acheteurs. Le monopoleur fixe librement son prix.\n- Duopole : deux vendeurs dominent le marché (ex : Airbus et Boeing dans l'aéronautique).\n- Oligopole : quelques grandes entreprises se partagent le marché (ex : télécommunications en France avec Orange, SFR, Bouygues, Free). Risque de comportements coopératifs (ententes).\n\nL'élasticité-prix de la demande mesure la sensibilité de la demande à une variation de prix :\n- e = Variation % de la quantité demandée / Variation % du prix\n- e < -1 : demande élastique (forte sensibilité au prix)\n- -1 < e < 0 : demande inélastique (faible sensibilité)\n- e = 0 : demande parfaitement rigide (produits de première nécessité)\n\nLa macro-économie analyse l'économie dans sa globalité :\n- PIB (Produit Intérieur Brut) = Somme des valeurs ajoutées produites sur le territoire + TVA + droits de douane. Il mesure la richesse créée.\n- Inflation : hausse générale et durable des prix mesurée par l'IPC (Indice des Prix à la Consommation). Calculé par l'INSEE.\n- Chômage : selon le BIT (Bureau International du Travail), est chômeur toute personne en âge de travailler, sans emploi, disponible et en recherche active d'emploi.\n\nL'outil PESTEL permet d'analyser l'environnement macro-économique selon 6 dimensions :\n- Politique : législation, stabilité politique, politique fiscale, réglementation sectorielle.\n- Économique : taux de croissance du PIB, taux d'intérêt, taux d'inflation, taux de chômage, pouvoir d'achat.\n- Socioculturel : démographie (vieillissement population), évolution des modes de vie, tendances de consommation, niveau d'éducation.\n- Technologique : investissements en R&D, vitesse d'innovation, brevets, numérisation.\n- Écologique : réglementation environnementale, changement climatique, normes ISO, développement durable.\n- Légal : droit du travail, droit des affaires, droit de la concurrence, protection du consommateur.\n\nLa mondialisation désigne l'intégration croissante des économies mondiales via les échanges commerciaux, les flux de capitaux et la circulation des personnes. Elle génère des opportunités (accès à de nouveaux marchés) mais aussi des menaces (concurrence accrue, délocalisation). Le protectionnisme consiste à protéger les industries nationales par des barrières douanières (droits de douane, quotas) ou non tarifaires (normes, subventions).",
+    "notions_cles": [
+      {
+        "terme": "Marché",
+        "definition": "Lieu de rencontre entre l'offre et la demande déterminant les prix d'équilibre."
+      },
+      {
+        "terme": "Concurrence pure et parfaite",
+        "definition": "Structure de marché théorique à 5 conditions : atomicité, homogénéité, libre entrée/sortie, transparence, mobilité des facteurs."
+      },
+      {
+        "terme": "Oligopole",
+        "definition": "Structure de marché avec quelques grands vendeurs dominant le secteur (ex : opérateurs télécom)."
+      },
+      {
+        "terme": "Monopole",
+        "definition": "Marché avec un seul vendeur qui fixe librement le prix (ex : SNCF sur certaines lignes)."
+      },
+      {
+        "terme": "Élasticité-prix",
+        "definition": "e = variation % demande / variation % prix — mesure la sensibilité de la demande au prix."
+      },
+      {
+        "terme": "PIB",
+        "definition": "Produit Intérieur Brut = somme des valeurs ajoutées + TVA + droits de douane. Indicateur de richesse nationale."
+      },
+      {
+        "terme": "Inflation",
+        "definition": "Hausse générale et durable des prix mesurée par l'IPC, calculée par l'INSEE."
+      },
+      {
+        "terme": "Chômage BIT",
+        "definition": "Personne sans emploi, disponible et en recherche active selon la définition du Bureau International du Travail."
+      },
+      {
+        "terme": "PESTEL",
+        "definition": "Outil d'analyse macro-environnementale : Politique, Économique, Socioculturel, Technologique, Écologique, Légal."
+      },
+      {
+        "terme": "Mondialisation",
+        "definition": "Intégration croissante des économies mondiales par les échanges commerciaux et les flux de capitaux."
+      },
+      {
+        "terme": "Protectionnisme",
+        "definition": "Politique de protection des industries nationales par des barrières douanières (droits de douane, quotas)."
+      }
+    ],
+    "exemple_concret": "Apple opère dans un oligopole (marché des smartphones dominé par Apple, Samsung, Xiaomi). Une hausse de prix de 10% sur l'iPhone entraîne une baisse de 8% des ventes (e = -0,8, demande inélastique grâce à la marque). Analyse PESTEL d'Apple : Politique (tensions USA-Chine, risque tarifaire), Économique (croissance ralentie en 2023, PIB mondial +2,9%), Technologique (investissement 30 Md$ en R&D), Légal (antitrust UE, amende 1,84 Md€ en 2024).",
+    "fiche_revision": {
+      "points_cles": [
+        "5 conditions de la CPP : atomicité, homogénéité, libre entrée/sortie, transparence, mobilité des facteurs.",
+        "Oligopole = quelques vendeurs ; Monopole = un seul vendeur ; Duopole = deux vendeurs.",
+        "Élasticité-prix e = variation % Q / variation % P",
+        "PIB = somme des valeurs ajoutées (indicateur de richesse nationale).",
+        "PESTEL : 6 dimensions de l'environnement macro (P-E-S-T-E-L).",
+        "Mondialisation : intégration économique mondiale ; Protectionnisme : barrières à l'échange.",
+        "Inflation mesurée par l'IPC (INSEE) ; Chômage défini par le BIT."
+      ],
+      "formules": [
+        "Élasticité-prix : e = (Δ%Q) / (Δ%P)",
+        "PIB = Σ Valeurs Ajoutées + TVA + Droits de douane",
+        "Part de marché = CA entreprise / CA total marché × 100"
+      ]
+    }
   },
   {
-    "id": "cejm-03",
-    "chapitre": "Domaine 1 — L'entreprise et son environnement",
-    "titre": "Chapitre 3 — Le marché et la concurrence",
-    "domaine": "Economie",
-    "cours": "Le marché est le lieu de rencontre entre l'offre et la demande qui détermine le prix d'équilibre. Loi de l'offre : plus le prix augmente, plus l'offre augmente. Loi de la demande : plus le prix augmente, moins la demande augmente. Structures de marché : Concurrence pure et parfaite (CPP) — nombreux offreurs et demandeurs, produits homogènes, information parfaite, libre entrée/sortie. Monopole : un seul offreur, prix imposé. Oligopole : peu d'offreurs, interdépendance. Duopole : deux offreurs (ex: Airbus/Boeing). Monopsone : un seul acheteur. Élasticité-prix de la demande (Ed) = (ΔQ/Q) / (ΔP/P). Si Ed < -1 : demande élastique ; si -1 < Ed < 0 : demande inélastique ; si Ed = 0 : demande parfaitement inélastique. Stratégies concurrentielles selon Porter : domination par les coûts (low-cost), différenciation (qualité/innovation), focalisation/niche. Numérique et concurrence : effets de réseau, plateformes bifaces (GAFAM), positions dominantes et abus (droit antitrust).",
-    "notions_cles": ["Offre et demande", "Prix d'équilibre", "Monopole", "Oligopole", "CPP", "Élasticité-prix", "5 forces de Porter", "Effets de réseau", "GAFAM"],
-    "exemple_concret": "Google détient ~90% du marché des moteurs de recherche (quasi-monopole). Facebook/Instagram/WhatsApp exploitent les effets de réseau : plus les utilisateurs sont nombreux, plus la plateforme est attractive. Apple pratique une stratégie de différenciation (premium, écosystème fermé). Amazon adopte la domination par les coûts grâce aux économies d'échelle. La Commission Européenne surveille ces acteurs pour abus de position dominante (amende de 4,34Md€ infligée à Google en 2018).",
-    "fiche_revision": ["Marché = rencontre offre/demande → prix d'équilibre", "CPP : atomicité, homogénéité, transparence, libre entrée", "Monopole = 1 vendeur ; Oligopole = quelques vendeurs ; Duopole = 2 vendeurs", "Élasticité Ed < 0 : demande augmente quand prix baisse", "3 stratégies Porter : coûts, différenciation, focalisation", "GAFAM : Google, Apple, Facebook, Amazon, Microsoft", "Effets de réseau = externalités positives de réseau"]
+    "id": "chap-03",
+    "chapitre": "3",
+    "titre": "La création de valeur et la performance",
+    "cours": "La performance d'une entreprise ne se réduit pas à ses résultats financiers : elle englobe la création de valeur pour l'ensemble des parties prenantes. Des outils d'analyse stratégique permettent d'identifier les sources de cette valeur.\n\nLes KPI (Key Performance Indicators) sont des indicateurs clés de performance permettant de mesurer l'atteinte des objectifs. Ils doivent être SMART : Spécifiques, Mesurables, Atteignables, Réalistes, Temporellement définis. Ex : taux de satisfaction client, délai de livraison, taux de retour produits.\n\nLe tableau de bord est un outil de pilotage regroupant les KPI essentiels pour le suivi de la performance. Il permet une vision synthétique et aide à la prise de décision. Le Balanced Scorecard (tableau de bord prospectif de Kaplan & Norton) articule 4 axes : financier, client, processus internes, apprentissage/développement.\n\nLa valeur ajoutée (VA) mesure la richesse créée par l'entreprise lors de son processus de production :\nVA = Chiffre d'affaires - Consommations intermédiaires\nLes consommations intermédiaires comprennent les matières premières, les achats de marchandises, les services externes (énergie, sous-traitance). La VA est ensuite répartie entre les différentes parties prenantes : salariés (salaires), État (impôts), actionnaires (dividendes), entreprise (autofinancement).\n\nLa chaîne de valeur de Michael Porter (1985) décompose les activités de l'entreprise en deux catégories :\n- Activités principales (créatrices de valeur directe) : logistique entrante (approvisionnements), production (transformation), logistique sortante (distribution), marketing et vente (commercialisation), services (SAV).\n- Activités de soutien (support) : infrastructure de l'entreprise (gestion, comptabilité), gestion des ressources humaines, développement technologique (R&D), achats (procurement).\nL'avantage concurrentiel naît d'une maîtrise supérieure de ces activités par rapport aux concurrents.\n\nL'analyse SWOT (Strengths, Weaknesses, Opportunities, Threats) est un outil de diagnostic stratégique :\n- Analyse interne : Forces (avantages, compétences distinctives) et Faiblesses (lacunes, points à améliorer).\n- Analyse externe : Opportunités (tendances favorables, marchés porteurs) et Menaces (concurrence, réglementation, crises).\n\nLe diagnostic stratégique combine :\n- Analyse interne : ressources (humaines, financières, technologiques), compétences clés, avantage concurrentiel (coût ou différenciation selon Porter).\n- Analyse externe : PESTEL + 5 forces de Porter (pouvoir de négociation des fournisseurs, pouvoir de négociation des clients, menace des produits substituts, menace des nouveaux entrants, intensité de la rivalité entre concurrents).\n\nLe Business Model Canvas (Osterwalder) est un outil de représentation synthétique du modèle économique en 9 blocs : segments clients, proposition de valeur, canaux de distribution, relations clients, flux de revenus, ressources clés, activités clés, partenaires clés, structure de coûts.",
+    "notions_cles": [
+      {
+        "terme": "KPI",
+        "definition": "Key Performance Indicators : indicateurs SMART mesurant l'atteinte des objectifs stratégiques et opérationnels."
+      },
+      {
+        "terme": "Tableau de bord",
+        "definition": "Outil de pilotage regroupant les KPI pour suivre la performance et aider à la prise de décision."
+      },
+      {
+        "terme": "Valeur ajoutée (VA)",
+        "definition": "VA = CA - Consommations intermédiaires. Richesse créée par l'entreprise lors de la production."
+      },
+      {
+        "terme": "Chaîne de valeur (Porter)",
+        "definition": "Décomposition des activités en activités principales (production, vente…) et de soutien (RH, R&D…) pour identifier les sources d'avantage concurrentiel."
+      },
+      {
+        "terme": "Analyse SWOT",
+        "definition": "Diagnostic stratégique : Forces/Faiblesses (internes) + Opportunités/Menaces (externes)."
+      },
+      {
+        "terme": "5 forces de Porter",
+        "definition": "Modèle analysant l'intensité concurrentielle : fournisseurs, clients, substituts, nouveaux entrants, rivalité interne."
+      },
+      {
+        "terme": "Avantage concurrentiel",
+        "definition": "Selon Porter : domination par les coûts (produire moins cher) ou différenciation (offre unique perçue comme supérieure)."
+      },
+      {
+        "terme": "Business Model Canvas",
+        "definition": "Outil de représentation du modèle économique en 9 blocs (Osterwalder) : segments, proposition de valeur, canaux, relations, revenus, ressources, activités, partenaires, coûts."
+      },
+      {
+        "terme": "Balanced Scorecard",
+        "definition": "Tableau de bord prospectif (Kaplan & Norton) articulant 4 axes : financier, client, processus internes, apprentissage."
+      },
+      {
+        "terme": "Consommations intermédiaires",
+        "definition": "Achats de biens et services consommés lors du processus de production (matières premières, énergie, sous-traitance)."
+      }
+    ],
+    "exemple_concret": "Zara (Inditex) : VA = CA 32 Md€ - Consommations intermédiaires 18 Md€ = 14 Md€. La chaîne de valeur révèle un avantage concurrentiel sur la logistique sortante (renouvellement collections toutes les 2 semaines) et la production (proximité géographique). SWOT : Forces (réactivité, marque forte), Faiblesses (dépendance logistique), Opportunités (e-commerce +20%/an), Menaces (fast-fashion critiquée, concurrence Shein).",
+    "fiche_revision": {
+      "points_cles": [
+        "VA = CA - Consommations intermédiaires (richesse créée par l'entreprise).",
+        "Chaîne de valeur Porter : activités principales (logistique, production, vente, SAV) + activités de soutien (RH, R&D, achats).",
+        "SWOT = Forces/Faiblesses (interne) + Opportunités/Menaces (externe).",
+        "5 forces de Porter : fournisseurs, clients, substituts, nouveaux entrants, rivalité.",
+        "KPI = indicateurs SMART de mesure de la performance.",
+        "Avantage concurrentiel : domination par les coûts OU différenciation.",
+        "Business Model Canvas : 9 blocs décrivant le modèle économique."
+      ],
+      "formules": [
+        "Valeur ajoutée = CA - Consommations intermédiaires",
+        "Taux de VA = (VA / CA) × 100"
+      ]
+    }
   },
   {
-    "id": "cejm-04",
-    "chapitre": "Domaine 1 — L'entreprise et son environnement",
-    "titre": "Chapitre 4 — Le financement de l'entreprise",
-    "domaine": "Economie",
-    "cours": "Les sources de financement se divisent en financement interne et externe. Financement interne (autofinancement) : capacité d'autofinancement (CAF) = bénéfice net + dotations amortissements. Financement externe par capitaux propres : apports des associés, augmentation de capital, levée de fonds (capital-risque, business angels), introduction en bourse. Financement externe par dettes : emprunt bancaire (taux fixe/variable, durée), crédit-bail (leasing — utilisation sans propriété), affacturage (cession de créances à un factor), obligations. Bilan simplifié : Actif = emplois (immobilisations + actif circulant + trésorerie) ; Passif = ressources (capitaux propres + dettes). Seuil de rentabilité (SR) = Charges fixes / Taux de marge sur coûts variables. TMCV = (CA - Charges variables) / CA. Le SR est le CA minimum pour être rentable. Marge de sécurité = CA réel - SR.",
-    "notions_cles": ["Autofinancement", "CAF", "Capital-risque", "Emprunt bancaire", "Crédit-bail", "Affacturage", "Bilan", "Seuil de rentabilité", "Marge sur coûts variables"],
-    "exemple_concret": "Une ESN (Entreprise de Services du Numérique) souhaite financer un data center à 500 000€. Options : emprunt bancaire sur 7 ans (charges prévisibles, pas de perte de capital), crédit-bail informatique (flexibilité, équipements toujours récents), levée de fonds auprès d'un VC tech (dilution du capital mais liquidités immédiates). Si les charges fixes mensuelles sont de 20 000€ et le TMCV de 40%, le SR mensuel = 20 000 / 0,40 = 50 000€ de CA minimum.",
-    "fiche_revision": ["Autofinancement = financement par ressources propres générées", "CAF = résultat net + amortissements", "Bilan : Actif (emplois) = Passif (ressources)", "SR = Charges fixes / TMCV", "TMCV = Marge sur coûts variables / CA", "Crédit-bail : utiliser sans posséder", "Affacturage : vendre ses créances clients pour obtenir de la trésorerie"]
+    "id": "chap-04",
+    "chapitre": "4",
+    "titre": "La gouvernance de l'entreprise",
+    "cours": "La gouvernance d'entreprise désigne l'ensemble des mécanismes par lesquels une entreprise est dirigée, administrée et contrôlée. Elle définit la répartition des pouvoirs, des responsabilités et des risques entre les différentes parties prenantes.\n\nLes principales formes juridiques en France :\n- EI (Entreprise Individuelle) : 1 seule personne, pas de capital minimum, responsabilité illimitée sur le patrimoine personnel, régime simplifié.\n- EURL (Entreprise Unipersonnelle à Responsabilité Limitée) : SARL à un seul associé, capital minimum 1€, responsabilité limitée aux apports.\n- SARL (Société À Responsabilité Limitée) : 2 à 100 associés, capital minimum 1€, dirigée par un gérant, responsabilité limitée aux apports. Forme la plus répandue en France.\n- SAS (Société par Actions Simplifiée) : grande liberté statutaire, capital minimum 1€, dirigée par un président, responsabilité limitée. Très utilisée par les startups.\n- SASU (SAS unipersonnelle) : SAS à un seul associé.\n- SA (Société Anonyme) : minimum 7 actionnaires, capital minimum 37 000€, gouvernance par Conseil d'Administration (CA) + Directeur Général, ou Directoire + Conseil de Surveillance. Forme obligatoire pour les entreprises cotées en bourse.\n\nDifférences SA vs SAS : La SA impose un CA d'administration obligatoire avec contrôle des actionnaires, une organisation strictement encadrée par la loi. La SAS offre une totale liberté d'organisation statutaire, sans obligation de CA d'administration.\n\nLes organigrammes représentent la structure organisationnelle :\n- Hiérarchique (ou pyramidal) : autorité du sommet vers la base, lignes de commandement claires, communication verticale.\n- Matriciel : double hiérarchie (par fonction et par projet), favorise la transversalité mais peut générer des conflits d'autorité.\n- Fonctionnel : organisation par services spécialisés (production, commercial, RH, finance).\n\nLes styles de management (Hersey & Blanchard) :\n- Directif : décisions centralisées, instructions précises, peu d'autonomie. Adapté aux débutants.\n- Persuasif (ou explicatif) : le manager explique, convainc, motive. Adapté aux employés motivés mais peu compétents.\n- Participatif (ou associatif) : décision partagée, échange d'idées, autonomie partielle. Adapté aux compétents peu motivés.\n- Délégatif : autonomie maximale, confiance totale. Adapté aux experts expérimentés et motivés.\n\nLes théories de la motivation :\n- Maslow (1943) : pyramide des 5 besoins hiérarchiques. De la base au sommet : physiologiques (manger, dormir) → sécurité (emploi, logement) → sociaux (appartenance, amour) → estime (reconnaissance, statut) → accomplissement de soi (réalisation personnelle). Un besoin doit être satisfait avant que le suivant devienne motivant.\n- Herzberg (1959) : théorie des deux facteurs. Facteurs d'hygiène (absence = insatisfaction) : salaire, conditions de travail, relations hiérarchiques. Facteurs de motivation (présence = satisfaction) : responsabilités, reconnaissance, accomplissement.\n- McGregor (1960) : Théorie X (employé paresseux, fuit les responsabilités, contrôle nécessaire) vs Théorie Y (employé motivé, créatif, autonome, cherche les responsabilités).",
+    "notions_cles": [
+      {
+        "terme": "Gouvernance d'entreprise",
+        "definition": "Ensemble des mécanismes de direction, administration et contrôle définissant la répartition des pouvoirs."
+      },
+      {
+        "terme": "SARL",
+        "definition": "Société À Responsabilité Limitée : 2-100 associés, capital min 1€, gérant, responsabilité limitée aux apports."
+      },
+      {
+        "terme": "SAS",
+        "definition": "Société par Actions Simplifiée : liberté statutaire, capital min 1€, dirigée par un président. Très prisée des startups."
+      },
+      {
+        "terme": "SA",
+        "definition": "Société Anonyme : min 7 actionnaires, capital min 37 000€, Conseil d'Administration obligatoire."
+      },
+      {
+        "terme": "Organigramme hiérarchique",
+        "definition": "Structure pyramidale avec autorité du sommet vers la base et communication verticale."
+      },
+      {
+        "terme": "Management directif",
+        "definition": "Style centralisé avec instructions précises et peu d'autonomie. Adapté aux débutants."
+      },
+      {
+        "terme": "Management participatif",
+        "definition": "Décision partagée, échange d'idées. Adapté aux employés compétents mais peu motivés."
+      },
+      {
+        "terme": "Pyramide de Maslow",
+        "definition": "5 niveaux de besoins hiérarchiques : physiologiques, sécurité, sociaux, estime, accomplissement."
+      },
+      {
+        "terme": "Théorie de Herzberg",
+        "definition": "Deux facteurs : hygiène (absence = insatisfaction) et motivation (présence = satisfaction)."
+      },
+      {
+        "terme": "Théorie X/Y de McGregor",
+        "definition": "X : employé paresseux nécessitant contrôle. Y : employé motivé, autonome et créatif."
+      }
+    ],
+    "exemple_concret": "BlaBlaCar est une SAS (liberté statutaire, président). Google France est une SARL (filiale). Chez Michelin, le style de management délégatif est appliqué aux ingénieurs R&D (Théorie Y de McGregor). Un manager d'une équipe de 5 commerciaux débutants utilisera un style directif, tandis qu'avec des experts seniors expérimentés il adoptera un style délégatif. La pyramide de Maslow explique pourquoi une augmentation de salaire (besoin de sécurité) motive moins qu'une promotion (estime de soi).",
+    "fiche_revision": {
+      "points_cles": [
+        "EI : responsabilité illimitée. SARL/SAS/SA : responsabilité limitée aux apports.",
+        "SA : min 7 actionnaires, capital 37 000€, CA obligatoire. SAS : liberté statutaire, pas de CA obligatoire.",
+        "4 styles : directif, persuasif, participatif, délégatif (contingence situationnelle).",
+        "Maslow : 5 besoins hiérarchiques (physiologique→sécurité→social→estime→accomplissement).",
+        "Herzberg : facteurs hygiène (évitent l'insatisfaction) vs facteurs motivation (créent la satisfaction).",
+        "McGregor X : contrôle nécessaire. McGregor Y : autonomie et confiance.",
+        "Organigramme matriciel : double hiérarchie (fonction + projet)."
+      ],
+      "formules": [
+        "Capital minimum SA : 37 000 €",
+        "Capital minimum SARL/SAS : 1 €",
+        "Nombre associés SARL : 2 à 100"
+      ]
+    }
   },
   {
-    "id": "cejm-05",
-    "chapitre": "Domaine 2 — Le droit du travail",
-    "titre": "Chapitre 5 — Le contrat de travail",
-    "domaine": "Droit du travail",
-    "cours": "Le contrat de travail est un accord par lequel une personne (salarié) s'engage à travailler pour une autre (employeur) moyennant rémunération, sous lien de subordination. Types de contrats : CDI (Contrat à Durée Indéterminée) — contrat normal, pas de terme fixé. CDD (Contrat à Durée Déterminée) — terme précis, motifs légaux obligatoires (remplacement, surcroît activité, saisonnier), durée max 18 mois renouvelable 1 fois. Contrat d'apprentissage : 16-29 ans, formation en alternance CFA+entreprise, rémunération % SMIC selon âge, durée 1-3 ans. Contrat de professionnalisation : 16 ans et plus, insertion professionnelle. Éléments essentiels : objet licite, cause licite, consentement libre et éclairé, capacité juridique. Clauses particulières : période d'essai (CDI : 2 mois ouvriers, 3 mois agents maîtrise, 4 mois cadres, renouvelable 1 fois), clause de non-concurrence (limitée dans le temps/espace, contrepartie financière obligatoire), clause de mobilité (zone géographique). Rupture du CDI : démission (salarié, préavis à respecter), licenciement pour motif personnel (faute simple, grave, lourde) ou économique, rupture conventionnelle (accord mutuel, indemnités). Licenciement pour faute grave : pas de préavis, pas d'indemnité de licenciement. Faute lourde : intention de nuire, pas d'indemnités compensatrices de congés payés.",
-    "notions_cles": ["CDI", "CDD", "Contrat d'apprentissage", "Période d'essai", "Clause de non-concurrence", "Démission", "Licenciement", "Rupture conventionnelle", "Lien de subordination"],
-    "exemple_concret": "Un étudiant BTS SIO en alternance signe un contrat d'apprentissage avec une ESN. Il alterne 2 semaines en entreprise / 2 semaines au CFA. Sa rémunération est de 61% du SMIC en 1ère année (environ 1000€). La période d'essai est de 45 jours. L'employeur ne peut pas lui imposer de clause de non-concurrence sans contrepartie financière. À l'issue du BTS, si embauché en CDI, une rupture conventionnelle est possible avec indemnités = 25% du salaire mensuel par année d'ancienneté.",
-    "fiche_revision": ["CDI : contrat de droit commun, pas de terme", "CDD : terme précis, motifs légaux, max 18 mois + 1 renouvellement", "Apprentissage : 16-29 ans, rémunération % SMIC", "4 conditions validité contrat : objet, cause, consentement, capacité", "Faute grave = pas de préavis ni indemnité de licenciement", "Faute lourde = intention de nuire, sanctions maximales", "Rupture conventionnelle = accord mutuel + indemnités"]
+    "id": "chap-05",
+    "chapitre": "5",
+    "titre": "Droit du travail et contrats",
+    "cours": "Le droit du travail régit les relations entre employeurs et salariés. En France, il est codifié dans le Code du Travail, complété par les conventions collectives et les accords d'entreprise.\n\nLe CDI (Contrat à Durée Indéterminée) est la forme normale et générale du contrat de travail.\n- Pas de terme défini, exécution continue.\n- Période d'essai : non obligatoire mais fréquente. Durée maximale légale : 4 mois pour les cadres (renouvelable 1 fois → 8 mois max), 2 mois pour les employés et ouvriers, 3 mois pour les agents de maîtrise et techniciens.\n- Rupture : démission (salarié), licenciement (employeur), rupture conventionnelle (accord mutuel).\n\nLe CDD (Contrat à Durée Déterminée) est une exception encadrée par la loi.\n- Motifs légaux obligatoires : remplacement d'un salarié absent, accroissement temporaire d'activité, emplois saisonniers, contrats aidés.\n- Durée maximale : 18 mois (renouvellements inclus). Renouvelable 2 fois maximum.\n- À l'issue du CDD : indemnité de fin de contrat = 10% de la rémunération brute totale (sauf exception : emploi saisonnier, refus CDI).\n- Interdit pour : remplacer un salarié gréviste, pour des travaux particulièrement dangereux (sauf dérogation).\n\nLa convention collective est un accord négocié entre syndicats d'employeurs et syndicats de salariés d'une branche professionnelle. Elle complète et améliore le Code du Travail (ne peut pas être moins favorable). Elle fixe notamment les salaires minimaux, les classifications, les conditions de travail propres au secteur.\n\nLes modes de rupture du contrat de travail :\n- Licenciement pour motif personnel : faute simple (manquement sans gravité → préavis), faute grave (manquement rendant impossible le maintien → pas de préavis ni d'indemnités de licenciement), faute lourde (intention de nuire → plus grave encore).\n- Licenciement économique : suppression de poste liée à des difficultés économiques, mutations technologiques ou réorganisation. Plan de Sauvegarde de l'Emploi (PSE) obligatoire si ≥10 licenciements dans une entreprise de ≥50 salariés.\n- Rupture conventionnelle homologuée : accord amiable entre employeur et salarié. Entretien(s) préalable(s), délai de rétractation de 15 jours, homologation par la DREETS. Droit aux allocations chômage. Indemnité spécifique ≥ indemnité légale de licenciement.\n\nLes Prud'hommes (Conseil de prud'hommes) sont la juridiction spécialisée dans les litiges individuels du travail (salaires, licenciement abusif, harcèlement). Composition paritaire : juges employeurs + juges salariés.\n\nLe temps de travail légal est de 35h/semaine. Les heures supplémentaires (au-delà de 35h) sont majorées : +25% pour les 8 premières heures, +50% au-delà. Le forfait jours est réservé aux cadres et certains non-cadres autonomes (218 jours/an max).\n\nLe télétravail est subordonné à un accord collectif ou une charte, ou à défaut un avenant au contrat de travail. L'employeur prend en charge les frais professionnels liés au télétravail.",
+    "notions_cles": [
+      {
+        "terme": "CDI",
+        "definition": "Contrat à Durée Indéterminée : contrat de droit commun, sans terme, période d'essai max 4 mois cadres/2 mois employés."
+      },
+      {
+        "terme": "CDD",
+        "definition": "Contrat à Durée Déterminée : contrat d'exception, motif légal obligatoire, durée max 18 mois, renouvelable 2 fois."
+      },
+      {
+        "terme": "Indemnité de fin de CDD",
+        "definition": "10% de la rémunération brute totale versée à l'issue d'un CDD (sauf emploi saisonnier ou refus de CDI)."
+      },
+      {
+        "terme": "Convention collective",
+        "definition": "Accord de branche négocié entre syndicats, complétant le Code du Travail en faveur des salariés."
+      },
+      {
+        "terme": "Licenciement pour faute grave",
+        "definition": "Manquement rendant impossible le maintien dans l'entreprise : pas de préavis ni d'indemnité de licenciement."
+      },
+      {
+        "terme": "Plan de Sauvegarde de l'Emploi (PSE)",
+        "definition": "Obligatoire lors d'un licenciement collectif économique ≥10 salariés dans une entreprise ≥50 salariés."
+      },
+      {
+        "terme": "Rupture conventionnelle",
+        "definition": "Rupture du CDI par accord mutuel : entretiens préalables, délai rétractation 15j, homologation DREETS, droit au chômage."
+      },
+      {
+        "terme": "Conseil de prud'hommes",
+        "definition": "Juridiction paritaire spécialisée dans les litiges individuels du droit du travail."
+      },
+      {
+        "terme": "Heures supplémentaires",
+        "definition": "Heures au-delà de 35h/semaine, majorées de 25% (8 premières) puis 50% (au-delà)."
+      },
+      {
+        "terme": "Télétravail",
+        "definition": "Forme d'organisation du travail hors locaux de l'entreprise, nécessite accord collectif, charte ou avenant au contrat."
+      }
+    ],
+    "exemple_concret": "Un salarié en CDD (remplacement congé maternité, 6 mois, salaire 2000€/mois brut) percevra à l'issue : 10% × (2000×6) = 1200€ d'indemnité de fin de contrat. Si l'employeur le licencie sans motif réel et sérieux (licenciement abusif), le salarié peut saisir les Prud'hommes. Une rupture conventionnelle d'un CDI avec 3 ans d'ancienneté (salaire 2500€) donnera droit à une indemnité ≥ 1/4 de mois de salaire par année = 625€, plus le droit au chômage.",
+    "fiche_revision": {
+      "points_cles": [
+        "CDI = contrat normal, pas de terme. CDD = exception avec motif légal obligatoire.",
+        "CDD : durée max 18 mois, renouvelable 2 fois max, indemnité fin de contrat 10%.",
+        "Période d'essai CDI : 4 mois cadres, 3 mois maîtrise, 2 mois employés/ouvriers.",
+        "Rupture conventionnelle : accord mutuel, délai rétractation 15j, homologation DREETS, droit chômage.",
+        "PSE obligatoire si ≥10 licenciements économiques dans entreprise ≥50 salariés.",
+        "Heures supplémentaires : +25% (8 premières) puis +50% (au-delà de 43h).",
+        "Convention collective : accord de branche, ne peut être moins favorable que le Code du Travail."
+      ],
+      "formules": [
+        "Indemnité fin CDD = 10% × rémunération brute totale du contrat",
+        "Indemnité légale licenciement = 1/4 mois salaire × année ancienneté (jusqu'à 10 ans)",
+        "Heures sup majorées : +25% de H36 à H43, +50% au-delà de H43"
+      ]
+    }
   },
   {
-    "id": "cejm-06",
-    "chapitre": "Domaine 2 — Le droit du travail",
-    "titre": "Chapitre 6 — Le droit du travail et la protection sociale",
-    "domaine": "Droit",
-    "cours": "Sources du droit du travail par ordre hiérarchique : Constitution → Droit européen → Loi (Code du travail) → Accords de branche → Convention collective → Accord d'entreprise → Contrat de travail → Usages. Durée légale du travail : 35h/semaine. Heures supplémentaires (au-delà de 35h) : majorations de 25% pour les 8 premières, 50% au-delà. Durée maximale : 10h/jour, 48h/semaine, 44h en moyenne sur 12 semaines. Temps partiel : durée inférieure à 35h, minimum légal 24h/semaine. Congés payés : 2,5 jours ouvrables par mois travaillé = 30 jours/an (5 semaines). RTT (Réduction du Temps de Travail) : pour accords >35h. Protection sociale (Sécurité Sociale) : financement par cotisations sociales (employeur + salarié). Branches : maladie (remboursements soins), accidents du travail, retraite (système par répartition), famille (allocations), chômage (Unédic/France Travail). Instances représentatives du personnel : CSE (Comité Social et Économique) — obligatoire ≥11 salariés, fusionne DP+CE+CHSCT depuis 2017. Discriminations interdites (art. L1132-1 CT) : 25 critères (origine, sexe, âge, handicap, religion...), sanctions pénales (3 ans prison, 45 000€ amende). Harcèlement moral : comportements répétés dégradant conditions de travail. Harcèlement sexuel : propos/comportements à connotation sexuelle.",
-    "notions_cles": ["Code du travail", "35 heures", "Heures supplémentaires", "Congés payés", "CSE", "Sécurité sociale", "Convention collective", "Discrimination", "Harcèlement"],
-    "exemple_concret": "Dans une ESN, la convention collective Syntec s'applique. Elle fixe des minimaux salariaux par coefficient, des modalités de forfait jours pour les cadres, et des dispositions spécifiques sur le télétravail. Le CSE de l'entreprise (≥11 salariés) peut être consulté sur les projets de licenciement, les modifications des conditions de travail, et les orientations stratégiques. Un salarié victime de harcèlement moral peut saisir le CSE, l'inspection du travail, ou les tribunaux (prud'hommes pour le civil, correctionnel pour le pénal).",
-    "fiche_revision": ["Hiérarchie des normes : loi > convention collective > contrat", "35h légales, heures sup majorées 25% puis 50%", "5 semaines de congés payés par an", "CSE obligatoire dès 11 salariés", "Sécurité sociale : 5 branches (maladie, AT, retraite, famille, chômage)", "25 critères de discrimination interdits", "Harcèlement moral : comportements RÉPÉTÉS (différent d'une faute isolée)"]
+    "id": "chap-06",
+    "chapitre": "6",
+    "titre": "La protection sociale et la prévoyance",
+    "cours": "La protection sociale française est l'un des systèmes les plus complets au monde. Fondé sur la solidarité nationale, il repose sur le financement par les cotisations sociales et protège les individus contre les risques sociaux.\n\nLa Sécurité Sociale a été créée par les ordonnances du 4 octobre 1945. Son financement repose sur les cotisations sociales (patronales versées par l'employeur + salariales prélevées sur le salaire brut) et la CSG/CRDS. L'URSSAF collecte ces cotisations et les redistribue.\n\nLa Sécurité Sociale est organisée en 4 branches :\n1. Maladie / Accidents du travail / Maladies professionnelles (CPAM) : remboursement soins, indemnités journalières, invalidité.\n2. Famille (CAF) : allocations familiales, aide au logement (APL), RSA.\n3. Retraite (CNAV) : pension de retraite de base.\n4. Recouvrement (URSSAF) : collecte des cotisations.\n\nLa retraite en France fonctionne sur deux niveaux :\n- Retraite de base (régime général CNAV) : calculée selon 3 critères : nombre de trimestres validés (172 pour génération 1965+), salaire de référence (25 meilleures années), taux (50% au taux plein si trimestres suffisants ou à 67 ans).\n- Retraite complémentaire (AGIRC-ARRCO fusionné en 2019) : système de points. Chaque cotisation génère des points convertis en rente lors du départ à la retraite.\n\nLa mutuelle d'entreprise est obligatoire depuis l'Accord National Interprofessionnel (ANI) du 11 janvier 2013. L'employeur doit financer au minimum 50% de la cotisation. Elle complète les remboursements de la Sécurité Sociale (ticket modérateur, dépassements d'honoraires).\n\nLa prévoyance couvre les risques lourds non couverts par la Sécurité Sociale :\n- Incapacité temporaire de travail : maintien de salaire.\n- Invalidité permanente : rente d'invalidité.\n- Décès : capital décès versé aux bénéficiaires désignés.\n\nLa formation professionnelle est un droit :\n- CPF (Compte Personnel de Formation) : crédit de 500€/an, plafonné à 5 000€ (8 000€ pour les non-qualifiés). Remplace le DIF depuis 2015. Consultable sur moncompteformation.gouv.fr.\n- CEP (Conseil en Évolution Professionnelle) : accompagnement gratuit pour construire un projet professionnel (opérateurs : Pôle Emploi, APEC, OPCO…).\n- OPCO (Opérateurs de Compétences) : organismes qui financent la formation dans les branches professionnelles.\n\nLa pénibilité au travail est prise en compte via le C2P (Compte Professionnel de Prévention), qui recense 10 facteurs de risques (bruit, travail de nuit, port de charges lourdes, postures pénibles, températures extrêmes…). Les points accumulés permettent de financer une formation, passer à temps partiel ou partir plus tôt à la retraite.",
+    "notions_cles": [
+      {
+        "terme": "Sécurité Sociale",
+        "definition": "Système de protection sociale créé en 1945, financé par cotisations, couvrant maladie, famille, retraite et accidents du travail."
+      },
+      {
+        "terme": "URSSAF",
+        "definition": "Union de Recouvrement des cotisations de Sécurité Sociale et d'Allocations Familiales : collecte les cotisations sociales."
+      },
+      {
+        "terme": "Cotisations sociales",
+        "definition": "Contributions patronales et salariales finançant la protection sociale (maladie, retraite, chômage, famille)."
+      },
+      {
+        "terme": "Retraite de base (CNAV)",
+        "definition": "Pension calculée selon 3 critères : trimestres validés, salaire de référence (25 meilleures années), taux (50% au taux plein)."
+      },
+      {
+        "terme": "AGIRC-ARRCO",
+        "definition": "Régime de retraite complémentaire des salariés du privé (fusionné en 2019), fonctionnant par points."
+      },
+      {
+        "terme": "Mutuelle d'entreprise obligatoire (ANI 2013)",
+        "definition": "Depuis janvier 2016, toutes les entreprises doivent proposer une mutuelle collective, employeur finançant ≥50%."
+      },
+      {
+        "terme": "CPF",
+        "definition": "Compte Personnel de Formation : 500€/an (max 5000€) pour financer des formations tout au long de la carrière."
+      },
+      {
+        "terme": "OPCO",
+        "definition": "Opérateurs de Compétences : financent et organisent la formation professionnelle par branche."
+      },
+      {
+        "terme": "C2P",
+        "definition": "Compte Professionnel de Prévention : points liés à 10 facteurs de pénibilité, permettant formation, temps partiel ou retraite anticipée."
+      },
+      {
+        "terme": "Prévoyance",
+        "definition": "Couverture complémentaire des risques lourds : incapacité, invalidité, décès."
+      }
+    ],
+    "exemple_concret": "Marie, cadre dans une PME depuis 15 ans, bénéficie de la mutuelle d'entreprise (employeur paie 60% de la cotisation de 80€/mois). Elle a accumulé 7 500€ sur son CPF et souhaite se former au management. En cas d'accident du travail entraînant une invalidité permanente, sa prévoyance collective lui versera une rente compensatoire. Pour sa retraite, à 62 ans avec 172 trimestres, elle touchera 50% de ses 25 meilleures années + des points AGIRC-ARRCO.",
+    "fiche_revision": {
+      "points_cles": [
+        "4 branches Sécu : maladie/AT, famille, retraite, recouvrement (URSSAF).",
+        "Retraite base CNAV : 3 critères (trimestres, salaire référence 25 meilleures années, taux 50%).",
+        "ANI 2013 : mutuelle d'entreprise obligatoire, employeur ≥ 50% de la cotisation.",
+        "CPF : 500€/an, plafonné à 5 000€ (8 000€ non-qualifiés).",
+        "C2P : 10 facteurs pénibilité → points pour formation, temps partiel ou retraite anticipée.",
+        "AGIRC-ARRCO (fusion 2019) : retraite complémentaire par points.",
+        "Prévoyance : incapacité, invalidité, décès (au-delà de la Sécurité Sociale)."
+      ],
+      "formules": [
+        "Retraite base = Salaire de référence × Taux × (Trimestres validés / Trimestres requis)",
+        "CPF : 500€/an → max 5 000€ (8 000€ pour non-qualifiés)",
+        "Mutuelle : employeur doit prendre en charge minimum 50% de la cotisation"
+      ]
+    }
   },
   {
-    "id": "cejm-07",
-    "chapitre": "Domaine 3 — Le management",
-    "titre": "Chapitre 7 — Le management et l'organisation",
-    "domaine": "Management",
-    "cours": "Le management est l'ensemble des techniques d'organisation et de gestion pour conduire une organisation vers ses objectifs. Niveaux : stratégique (DG, CA — orientations long terme), tactique (directeurs — mise en œuvre), opérationnel (managers équipes — tâches quotidiennes). Structures organisationnelles : hiérarchique (ligne directe, unité de commandement, rigide), fonctionnelle (spécialistes par fonction, double commandement possible), divisionnelle (par produit/marché/zone géographique), matricielle (double appartenance : projet + métier), en réseau (entreprise étendue, sous-traitance, partenariats). Styles de management (Hersey-Blanchard) : directif/autoritaire (fort directive, faible soutien), persuasif (fort directif + fort soutien), participatif (faible directif + fort soutien), délégatif (faible directif + faible soutien). Théories classiques : Taylor — Organisation Scientifique du Travail (OST), division du travail, standards, rendement. Fayol — 5 fonctions (POCCC : Prévoir, Organiser, Commander, Coordonner, Contrôler), 14 principes. Weber — bureaucratie rationnelle. Théories des relations humaines : Mayo (expériences Hawthorne), Maslow (pyramide des besoins : physiologiques → sécurité → appartenance → estime → accomplissement), Herzberg (bi-factorielle : facteurs d'hygiène evitent insatisfaction, facteurs de motivation créent satisfaction), McGregor (théorie X : l'homme est paresseux ; théorie Y : l'homme aime le travail). Management agile : méthodes Scrum/Kanban, sprints, daily standup, rétrospectives.",
-    "notions_cles": ["Management stratégique/tactique/opérationnel", "Structure hiérarchique/matricielle", "Hersey-Blanchard", "Taylor/OST", "Fayol/POCCC", "Maslow", "Herzberg", "Mintzberg", "Agile/Scrum"],
-    "exemple_concret": "Une ESN de 200 développeurs adopte une structure matricielle : les développeurs appartiennent à la fois à une équipe projet (chef de projet) et à une pratique technique (responsable technique Java, Python...). Les équipes projet utilisent Scrum : sprints de 2 semaines, backlog produit, daily standup. Le style de management est participatif/délégatif car les développeurs seniors sont hautement qualifiés et autonomes. La pyramide de Maslow aide à comprendre pourquoi les développeurs cherchent au-delà du salaire : évolution de carrière, reconnaissance, projets stimulants.",
-    "fiche_revision": ["3 niveaux management : stratégique (long terme) > tactique > opérationnel", "4 structures : hiérarchique, fonctionnelle, matricielle, réseau", "Hersey-Blanchard : style adapté au niveau de maturité du collaborateur", "Taylor : OST = division travail + standardisation + rendement", "Maslow : 5 besoins hiérarchisés (base vers sommet)", "Herzberg : hygiène (évite insatisfaction) différent de motivation (crée satisfaction)", "Agile : itératif, collaboratif, adaptatif — opposé au cycle en V"]
+    "id": "chap-07",
+    "chapitre": "7",
+    "titre": "L'environnement numérique et la transformation digitale",
+    "cours": "La transformation numérique (ou digitale) désigne le processus par lequel les entreprises intègrent les technologies numériques dans l'ensemble de leurs activités pour créer de la valeur, améliorer leur efficacité et proposer de nouvelles expériences client. Elle implique une transformation culturelle profonde vers une culture data-driven.\n\nL'Intelligence Artificielle (IA) révolutionne les entreprises :\n- Automatisation des tâches répétitives (RPA : Robotic Process Automation) : saisie de données, traitement de factures.\n- Chatbots et agents conversationnels : service client 24/7, réduction des coûts.\n- Analyse prédictive : anticipation des pannes (maintenance prédictive), prévision des ventes.\n- Diagnostic médical assisté : analyse d'imagerie médicale.\n- Recommandation personnalisée : Amazon, Netflix.\n\nLe Big Data désigne les jeux de données massifs caractérisés par les 4V :\n- Volume : quantités gigantesques de données (pétaoctets).\n- Vélocité : vitesse de production et de traitement des données en temps réel.\n- Variété : données structurées (bases de données), semi-structurées (XML) et non structurées (textes, images, vidéos).\n- Véracité : fiabilité et qualité des données.\nTechnologies : Hadoop (stockage distribué), Apache Spark (traitement temps réel).\n\nLe cloud computing offre des services informatiques à la demande via internet :\n- IaaS (Infrastructure as a Service) : serveurs, stockage, réseau virtualisés. Ex : AWS EC2.\n- PaaS (Platform as a Service) : environnement de développement. Ex : Heroku, Google App Engine.\n- SaaS (Software as a Service) : applications accessibles via navigateur. Ex : Microsoft 365, Salesforce.\n- Déploiements : cloud public (AWS, Azure, GCP), cloud privé (dédié à une organisation), cloud hybride.\n\nLa cybersécurité en entreprise : les cybermenaces majeures :\n- Ransomware (rançongiciel) : chiffrement des données contre rançon (ex : WannaCry 2017).\n- Phishing : hameçonnage par email frauduleux pour voler des identifiants.\n- DDoS (Distributed Denial of Service) : saturation des serveurs.\n- Attaques internes (insider threats) : malveillance ou négligence d'un employé.\n\nLe RGPD (Règlement Général sur la Protection des Données, UE 2016/679, applicable depuis mai 2018) :\n- 6 bases légales de traitement : consentement, contrat, obligation légale, intérêt vital, mission d'intérêt public, intérêt légitime.\n- Droits des individus : accès, rectification, effacement (droit à l'oubli), portabilité, opposition, limitation.\n- DPO (Délégué à la Protection des Données) : obligatoire pour certaines organisations.\n- Notification de violation de données : 72 heures maximum à la CNIL.\n- Sanctions : jusqu'à 20 M€ ou 4% du CA mondial annuel.\n\nL'économie numérique transforme les modèles économiques :\n- E-commerce B2B (entreprise→entreprise), B2C (entreprise→consommateur), C2C (entre particuliers, ex : Vinted, LeBonCoin).\n- Économie collaborative : plateformes P2P (Airbnb, BlaBlaCar, Kisskissbankbank).\n- Ubérisation : disruption des secteurs traditionnels par des plateformes numériques (Uber, Deliveroo, Alan).\n- Télétravail : avantages (flexibilité, réduction temps trajet), inconvénients (isolement, frontière vie pro/perso, risques cybersécurité).",
+    "notions_cles": [
+      {
+        "terme": "Transformation numérique",
+        "definition": "Intégration des technologies numériques dans toutes les activités de l'entreprise pour créer de la valeur et transformer la culture."
+      },
+      {
+        "terme": "Intelligence Artificielle (IA)",
+        "definition": "Technologies permettant l'automatisation (RPA), l'analyse prédictive, les chatbots et la recommandation personnalisée."
+      },
+      {
+        "terme": "Big Data (4V)",
+        "definition": "Données massives caractérisées par : Volume, Vélocité, Variété, Véracité. Traitées avec Hadoop/Spark."
+      },
+      {
+        "terme": "Cloud computing",
+        "definition": "Services informatiques à la demande : IaaS (infrastructure), PaaS (plateforme), SaaS (logiciels). Déploiements public/privé/hybride."
+      },
+      {
+        "terme": "Ransomware",
+        "definition": "Logiciel malveillant chiffrant les données d'une entreprise contre le paiement d'une rançon."
+      },
+      {
+        "terme": "RGPD",
+        "definition": "Règlement UE 2016/679 : protection des données personnelles, 6 bases légales, droits des individus, DPO, sanctions 20M€ ou 4% CA."
+      },
+      {
+        "terme": "DPO",
+        "definition": "Délégué à la Protection des Données : responsable RGPD au sein de l'organisation, obligatoire dans certains cas."
+      },
+      {
+        "terme": "Ubérisation",
+        "definition": "Disruption des secteurs traditionnels par des plateformes numériques mettant en relation directe offreurs et demandeurs."
+      },
+      {
+        "terme": "Économie collaborative",
+        "definition": "Modèle économique basé sur le partage et les échanges P2P via des plateformes numériques (Airbnb, BlaBlaCar)."
+      },
+      {
+        "terme": "Phishing",
+        "definition": "Technique de cyberattaque par email frauduleux visant à voler des identifiants ou données personnelles."
+      }
+    ],
+    "exemple_concret": "L'hôpital AP-HP a subi un ransomware en 2022 (chiffrement de 11 serveurs). Selon le RGPD, la violation devait être notifiée à la CNIL dans les 72h. L'hôpital risquait jusqu'à 4% de son budget. Amazon utilise l'IA prédictive pour recommander des produits (35% du CA). Netflix exploite le Big Data (150 M d'utilisateurs, données comportementales) pour personnaliser son catalogue. Airbnb représente l'ubérisation de l'hôtellerie (6 M de logements vs 5 M de chambres d'hôtel mondiales).",
+    "fiche_revision": {
+      "points_cles": [
+        "Big Data = 4V : Volume, Vélocité, Variété, Véracité.",
+        "Cloud : IaaS (infrastructure), PaaS (plateforme), SaaS (logiciels en ligne).",
+        "RGPD : notification violation 72h à la CNIL, amendes jusqu'à 4% CA mondial ou 20M€.",
+        "6 droits RGPD : accès, rectification, effacement, portabilité, opposition, limitation.",
+        "Cybermenaces : ransomware, phishing, DDoS, attaques internes.",
+        "Ubérisation : disruption des secteurs par plateformes P2P numériques.",
+        "Transformation numérique = transformation technologique + transformation culturelle."
+      ],
+      "formules": [
+        "Sanction RGPD max = 20 000 000 € OU 4% du CA mondial annuel (le plus élevé des deux)",
+        "Délai notification RGPD = 72 heures à la CNIL après découverte de la violation"
+      ]
+    }
   },
   {
-    "id": "cejm-08",
-    "chapitre": "Domaine 4 — Le numérique",
-    "titre": "Chapitre 8 — La transformation numérique",
-    "domaine": "Numerique",
-    "cours": "La transformation numérique est l'intégration des technologies digitales dans tous les processus de l'entreprise, changeant le modèle économique et la culture. Cloud computing : livraison de services informatiques via internet. IaaS (Infrastructure as a Service) — location de serveurs virtuels, stockage, réseau (ex: AWS EC2, Azure VMs, Google Compute Engine) ; PaaS (Platform as a Service) — environnement de développement/déploiement (ex: Heroku, AWS Elastic Beanstalk, Google App Engine) ; SaaS (Software as a Service) — applications prêtes à l'emploi (ex: Google Workspace, Salesforce, Microsoft 365). Big Data : caractérisé par les 3V — Volume (quantités massives de données), Vélocité (vitesse de génération/traitement), Variété (structurées, semi-structurées, non structurées). Outils : Hadoop, Spark, data lakes, data warehouses. Intelligence artificielle : Machine Learning (apprentissage supervisé/non supervisé), Deep Learning (réseaux de neurones profonds), LLM (Large Language Models — GPT, Claude, Llama). Cybersécurité : menaces (ransomware, phishing, DDoS, zero-day), enjeux stratégiques (continuité d'activité, réputation), référentiels (ISO 27001, NIST, ANSSI). GAFAM (Google, Apple, Facebook/Meta, Amazon, Microsoft) + BATX chinois (Baidu, Alibaba, Tencent, Xiaomi) : modèles économiques basés sur les données personnelles, publicité ciblée, effets de réseau, cloud. Impact emploi : automatisation des tâches répétitives, émergence de nouveaux métiers (Data Scientist, DevOps, RSSI, Cloud Architect).",
-    "notions_cles": ["Cloud computing", "IaaS/PaaS/SaaS", "Big Data", "3V", "Intelligence artificielle", "Machine Learning", "Cybersécurité", "GAFAM", "BATX", "Transformation digitale"],
-    "exemple_concret": "Le Groupe Ragni dans sa transformation numérique : déploie AWS (IaaS) pour héberger ses serveurs de gestion des éclairages connectés, utilise Salesforce (SaaS) pour son CRM international, développe une plateforme IoT sur Azure (PaaS) pour piloter les luminaires à distance. Les données des capteurs (Big Data) permettent une maintenance prédictive par ML. La cybersécurité est critique car une attaque sur les systèmes d'éclairage public de villes entières aurait des conséquences graves.",
-    "fiche_revision": ["IaaS = infrastructure (serveurs, réseau) vers AWS, Azure, GCP", "PaaS = plateforme dev/déploiement vers Heroku, App Engine", "SaaS = logiciel prêt à l'emploi vers Office 365, Gmail, Salesforce", "Big Data = 3V : Volume + Vélocité + Variété", "IA : ML vers Deep Learning vers LLM (évolution)", "GAFAM = modèle économique par la donnée et publicité ciblée", "Cybersécurité = enjeu stratégique n°1 pour les entreprises numériques"]
+    "id": "chap-08",
+    "chapitre": "8",
+    "titre": "La gestion de projet en entreprise",
+    "cours": "Un projet est une démarche temporaire (avec un début et une fin définis), unique (jamais identique à un autre), visant à produire un livrable défini avec des contraintes de coût, délai et qualité.\n\nLe triangle d'or (ou triangle des contraintes) met en évidence les 3 contraintes interdépendantes de tout projet :\n- Coût : budget alloué.\n- Délais : planning et échéances.\n- Qualité : niveau de performance attendu du livrable.\nToute modification d'une contrainte impacte les deux autres (ex : réduire les délais augmente les coûts ou réduit la qualité).\n\nLe cycle de vie d'un projet comprend 4 phases :\n1. Conception/Initialisation : étude de faisabilité, note de cadrage, cahier des charges (expression des besoins du commanditaire = maître d'ouvrage MOA).\n2. Planification : WBS (Work Breakdown Structure = décomposition arborescente des tâches), diagramme de Gantt (planning en barres chronologiques avec dépendances), méthode PERT (réseau de tâches avec chemin critique = suite de tâches sans marge qui détermine la durée totale du projet).\n3. Exécution/Réalisation : suivi de l'avancement (indicateurs d'avancement), gestion des risques, gestion des ressources.\n4. Clôture : bilan de projet, retour d'expérience (REX), validation des livrables, archivage.\n\nActeurs du projet :\n- Commanditaire (maître d'ouvrage, MOA) : exprime le besoin, finance, valide.\n- Chef de projet (maître d'œuvre, MOE) : pilote, coordonne, rend compte.\n- Équipe projet : réalise les tâches techniques.\n- Parties prenantes : toute personne impactée par le projet.\n\nOutils de planification :\n- Gantt : diagramme en barres sur axe chronologique, visualise durées et dépendances.\n- PERT : réseau de nœuds et flèches, calcul du chemin critique (ensemble de tâches sans marge libre, durée incompressible du projet).\n- WBS : arborescence hiérarchique décomposant le projet en tâches élémentaires.\n- Matrice d'Eisenhower : priorisation Urgent/Important.\n\nLes méthodes agiles (Manifeste Agile, 2001) reposent sur 4 valeurs :\n1. Individus et interactions > processus et outils.\n2. Logiciel fonctionnel > documentation exhaustive.\n3. Collaboration client > négociation contractuelle.\n4. Adaptation au changement > suivi d'un plan.\n\nScrum : framework agile articulé autour de sprints (itérations de 1 à 4 semaines).\n- Product Backlog : liste priorisée de toutes les fonctionnalités souhaitées.\n- Sprint Backlog : fonctionnalités sélectionnées pour le sprint en cours.\n- Daily Scrum : réunion quotidienne de 15 minutes (ce que j'ai fait, ce que je vais faire, mes obstacles).\n- Sprint Review : démonstration du travail accompli aux parties prenantes.\n- Rétrospective : amélioration continue du processus de l'équipe.\n- Vélocité = nombre de points de story (user stories) réalisés par sprint.\n- Rôles : Product Owner (PO, représente le client), Scrum Master (facilitation, levée des obstacles), Équipe de développement.\n\nKanban : méthode de flux continu visualisant le travail sur un tableau (colonnes : À faire / En cours / Terminé). Principe WIP (Work In Progress) : limiter le nombre de tâches en cours simultanément pour éviter la surcharge.\n\nMatrice RACI : outil de clarification des responsabilités.\n- R (Responsible) : réalise la tâche.\n- A (Accountable) : responsable final, rend des comptes.\n- C (Consulted) : consulté pour avis.\n- I (Informed) : informé du résultat.\n\nGestion des risques : identifier (registre des risques), évaluer (probabilité × impact = criticité), traiter (mitiger, transférer, accepter, éviter), surveiller.",
+    "notions_cles": [
+      {
+        "terme": "Projet",
+        "definition": "Démarche temporaire, unique, visant un livrable défini dans les contraintes coût-délai-qualité."
+      },
+      {
+        "terme": "Triangle d'or",
+        "definition": "Les 3 contraintes interdépendantes d'un projet : Coût, Délai, Qualité. Modifier l'une impacte les deux autres."
+      },
+      {
+        "terme": "Gantt",
+        "definition": "Diagramme en barres chronologiques représentant les tâches, leurs durées et leurs dépendances."
+      },
+      {
+        "terme": "PERT",
+        "definition": "Réseau de tâches permettant de calculer le chemin critique (durée incompressible du projet)."
+      },
+      {
+        "terme": "Chemin critique",
+        "definition": "Suite de tâches sans marge libre dont la durée totale détermine la durée minimale du projet."
+      },
+      {
+        "terme": "WBS",
+        "definition": "Work Breakdown Structure : décomposition arborescente du projet en lots de travaux et tâches élémentaires."
+      },
+      {
+        "terme": "Scrum",
+        "definition": "Framework agile avec sprints de 1-4 semaines, Product Owner, Scrum Master et équipe de développement."
+      },
+      {
+        "terme": "Kanban",
+        "definition": "Méthode de gestion en flux continu avec tableau visuel et limite WIP (Work In Progress)."
+      },
+      {
+        "terme": "Matrice RACI",
+        "definition": "Outil de clarification des rôles : Responsible (fait), Accountable (responsable), Consulted (conseille), Informed (informé)."
+      },
+      {
+        "terme": "Vélocité (Scrum)",
+        "definition": "Nombre de points de story réalisés par sprint, indicateur de capacité de l'équipe."
+      },
+      {
+        "terme": "MOA / MOE",
+        "definition": "Maître d'Ouvrage (commanditaire, exprime le besoin) / Maître d'Œuvre (chef de projet, réalise)."
+      }
+    ],
+    "exemple_concret": "Le projet de refonte du site web de Decathlon (budget 500k€, délai 8 mois, qualité : score UX >85%) illustre le triangle d'or. L'équipe utilise Scrum : sprints de 2 semaines, daily scrum à 9h, PO (directeur digital), Scrum Master. La vélocité moyenne est de 40 points/sprint. Le tableau Kanban limite le WIP à 3 tâches en cours par développeur. La matrice RACI désigne le lead developer comme Responsible de la migration base de données, et le DSI comme Accountable.",
+    "fiche_revision": {
+      "points_cles": [
+        "Triangle d'or : Coût / Délai / Qualité — contraintes interdépendantes.",
+        "4 phases du projet : Conception → Planification → Exécution → Clôture.",
+        "Gantt : barres chronologiques. PERT : réseau avec chemin critique. WBS : arborescence.",
+        "Scrum : sprint 1-4 sem, Product Backlog, Daily Scrum, Sprint Review, Rétrospective.",
+        "Manifeste Agile 2001 : 4 valeurs (individus, logiciel fonctionnel, collaboration client, adaptation).",
+        "Kanban : flux continu, WIP limité, colonnes To Do/In Progress/Done.",
+        "Matrice RACI : R=réalise, A=responsable final, C=consulté, I=informé."
+      ],
+      "formules": [
+        "Criticité risque = Probabilité × Impact",
+        "Vélocité = Σ points de story réalisés / nombre de sprints",
+        "Durée projet (PERT) = durée du chemin critique"
+      ]
+    }
   },
   {
-    "id": "cejm-09",
-    "chapitre": "Domaine 4 — Le numérique",
-    "titre": "Chapitre 9 — Le RGPD et le droit du numérique",
-    "domaine": "Droit",
-    "cours": "Le RGPD (Règlement Général sur la Protection des Données — UE 2016/679, applicable mai 2018) encadre le traitement des données personnelles. 7 principes fondamentaux : 1) Licéité, loyauté, transparence (base légale : consentement, contrat, obligation légale, intérêt légitime) ; 2) Limitation des finalités (données collectées pour finalités déterminées) ; 3) Minimisation des données (données adéquates, pertinentes, limitées) ; 4) Exactitude (données exactes, mises à jour) ; 5) Limitation de la conservation (durée limitée) ; 6) Intégrité et confidentialité (sécurité appropriée) ; 7) Responsabilité/Accountability (prouver la conformité). Droits des personnes : accès, rectification, effacement (droit à l'oubli), portabilité, opposition, limitation du traitement. Obligations entreprises : registre des traitements, DPO (Délégué à la Protection des Données — obligatoire pour autorités publiques et traitements à grande échelle), DPIA/PIA (analyse d'impact — obligatoire pour traitements à risque élevé), notification violations à la CNIL sous 72h. CNIL : autorité de contrôle française, sanctions jusqu'à 4% du CA mondial annuel ou 20M€. Droit d'auteur logiciel (L112-2 CPI) : protection automatique, durée 70 ans après mort auteur. Licences libres : GPL (copyleft fort), LGPL, MIT (très permissive), Apache 2.0 (permissive + brevet). Cybercriminalité (Code pénal) : accès frauduleux à un STAD (art. 323-1 CP, 2 ans + 60 000€), entrave (art. 323-2, 5 ans + 150 000€).",
-    "notions_cles": ["RGPD", "Données personnelles", "Consentement", "DPO", "DPIA", "CNIL", "Registre des traitements", "Droit à l'effacement", "Licences libres", "Cybercriminalité", "STAD"],
-    "exemple_concret": "Une app de révision scolaire collecte des données d'élèves mineurs (données sensibles). Obligations : base légale = consentement parental, minimisation (pas de données inutiles), DPO si >5000 personnes concernées, DPIA obligatoire (mineurs = catégorie vulnérable), registre des traitements tenu à jour. En cas de fuite de données (hack), notification CNIL sous 72h et information des utilisateurs si risque élevé. Sanction possible : jusqu'à 4% du CA mondial (ex: Amazon condamné à 746M€ en 2021 par CNIL luxembourgeoise).",
-    "fiche_revision": ["RGPD = 7 principes : licéité, finalité, minimisation, exactitude, conservation, intégrité, responsabilité", "6 droits des personnes : accès, rectification, effacement, portabilité, opposition, limitation", "Violation données → CNIL sous 72h", "DPO = obligatoire pour autorités publiques et gros traitements", "CNIL = jusqu'à 4% CA mondial ou 20M€", "Licences : MIT (permissive), GPL (copyleft), Apache (permissive + brevets)", "Art. 323-1 CP : accès frauduleux STAD = 2 ans + 60 000€"]
+    "id": "chap-09",
+    "chapitre": "9",
+    "titre": "Le management des équipes et la communication professionnelle",
+    "cours": "Le management des équipes est l'art de coordonner des individus vers un objectif commun en mobilisant leurs compétences et leur motivation. Il s'appuie sur des styles, des théories et des outils de communication.\n\nLes styles de management selon Likert (4 systèmes) :\n1. Autoritaire exploiteur : décisions imposées, communication descendante, peur comme levier.\n2. Autoritaire paternaliste : décisions du haut mais avec récompenses, relation paternaliste.\n3. Consultatif : avis des employés pris en compte, mais décisions restent à la hiérarchie.\n4. Participatif : décisions collectives, forte implication des équipes, communication bidirectionnelle.\n\nLa grille managériale de Blake & Mouton (2 axes : intérêt pour les personnes / intérêt pour la production) :\n- 1.1 Laisser-faire (low/low) : peu d'intérêt pour les personnes ET la production.\n- 1.9 Country Club (high/low) : fort intérêt pour les personnes, faible pour la production.\n- 9.1 Autorité-Obéissance (low/high) : forte production, faible attention aux personnes.\n- 5.5 Compromis (medium/medium) : équilibre partiel.\n- 9.9 Intégration (high/high) : excellence managériale, fort intérêt pour les personnes ET la production.\n\nLeadership :\n- Transactionnel : échanges basés sur récompenses/punitions, respect des règles.\n- Transformationnel : inspire, motive par une vision, crée l'adhésion.\n\nGestion des conflits (modèle Thomas-Kilmann, 2 axes : assertivité / coopération) :\n- Compétition : assertif, non coopératif (je gagne, tu perds).\n- Collaboration : assertif, coopératif (solution win-win).\n- Compromis : mi-chemin des deux.\n- Évitement : ni assertif ni coopératif (fuite).\n- Accommodation : peu assertif, très coopératif (je cède).\n\nCommunication interne (au sein de l'entreprise) :\n- Descendants : note de service, circulaire, newsletter, affichage obligatoire.\n- Ascendants : boîte à idées, enquête satisfaction, entretien annuel.\n- Transversaux : réunion d'équipe, intranet, messagerie collaborative (Teams, Slack).\n\nCommunication externe (vers l'extérieur) :\n- Publicité (media : TV, radio, affichage, digital), relations presse, réseaux sociaux, site web institutionnel, rapport annuel.\n\nLa marque employeur désigne l'image de l'entreprise en tant qu'employeur, utilisée pour attirer et retenir les talents. Elle s'appuie sur la culture d'entreprise, les avantages sociaux, le bien-être au travail. Les plateformes comme Glassdoor permettent aux salariés de noter leur employeur.\n\nLa RSE (Responsabilité Sociétale des Entreprises) selon la norme ISO 26000 s'articule autour de 7 domaines : gouvernance de l'organisation, droits de l'homme, relations et conditions de travail, environnement, loyauté des pratiques, questions relatives aux consommateurs, communautés et développement local.\n\nDiversité et inclusion :\n- Égalité professionnelle H/F : Index Égalité Professionnelle (5 indicateurs) obligatoire pour entreprises >50 salariés.\n- Handicap : OETH (Obligation d'Emploi des Travailleurs Handicapés) : 6% de l'effectif pour entreprises >20 salariés.\n- Lutte contre les discriminations (âge, origine, religion) : droit pénal + droit du travail.",
+    "notions_cles": [
+      {
+        "terme": "Grille de Blake & Mouton",
+        "definition": "Modèle managérial à 2 axes (intérêt personnes/production) définissant 5 styles dont 9.9 Intégration = excellence."
+      },
+      {
+        "terme": "Leadership transformationnel",
+        "definition": "Style de leadership inspirant qui motive par une vision et crée une adhésion collective au-delà des récompenses."
+      },
+      {
+        "terme": "Modèle Thomas-Kilmann",
+        "definition": "5 modes de gestion des conflits : compétition, collaboration, compromis, évitement, accommodation."
+      },
+      {
+        "terme": "Communication interne descendante",
+        "definition": "Information du haut vers le bas : notes de service, circulaires, affichage obligatoire."
+      },
+      {
+        "terme": "Marque employeur",
+        "definition": "Image de l'entreprise en tant qu'employeur visant à attirer et fidéliser les talents (culture, avantages, bien-être)."
+      },
+      {
+        "terme": "RSE / ISO 26000",
+        "definition": "Norme internationale guidant la RSE sur 7 domaines : gouvernance, droits humains, travail, environnement, loyauté, consommateurs, communautés."
+      },
+      {
+        "terme": "Index Égalité Professionnelle",
+        "definition": "Score sur 100 pts calculé sur 5 indicateurs H/F obligatoire pour entreprises >50 salariés."
+      },
+      {
+        "terme": "OETH",
+        "definition": "Obligation d'Emploi des Travailleurs Handicapés : 6% de l'effectif pour les entreprises de plus de 20 salariés."
+      },
+      {
+        "terme": "Likert (4 systèmes)",
+        "definition": "4 styles de management : autoritaire exploiteur, autoritaire paternaliste, consultatif, participatif."
+      },
+      {
+        "terme": "Leadership transactionnel",
+        "definition": "Management basé sur un système de récompenses et punitions pour obtenir la conformité des collaborateurs."
+      }
+    ],
+    "exemple_concret": "Chez L'Oréal (Index Égalité Professionnelle : 98/100), la marque employeur (classée #1 en France sur LinkedIn) attire 1M de candidatures/an. Le manager d'une équipe en conflit (développeur senior vs junior) utilisera la collaboration (Thomas-Kilmann) pour trouver une solution win-win. Un style 9.9 (Blake & Mouton) sera visé : fort intérêt pour les personnes (bien-être, formation) et la production (objectifs ambitieux). La communication interne passe par Teams (transversal) et les réunions hebdomadaires (descendant/ascendant).",
+    "fiche_revision": {
+      "points_cles": [
+        "Blake & Mouton : 5 styles, 9.9 Intégration = excellence managériale.",
+        "Likert : 4 systèmes (autoritaire exploiteur → participatif).",
+        "Thomas-Kilmann : 5 modes de gestion des conflits (compétition, collaboration, compromis, évitement, accommodation).",
+        "Leadership transactionnel (récompenses/sanctions) vs transformationnel (vision, inspiration).",
+        "Communication interne : descendante, ascendante, transversale.",
+        "Index Égalité Professionnelle : obligatoire >50 salariés, score /100.",
+        "RSE ISO 26000 : 7 domaines d'engagement sociétal."
+      ],
+      "formules": [
+        "OETH = 6% de l'effectif pour entreprises >20 salariés",
+        "Index Égalité Pro = score sur 100 points (5 indicateurs H/F)"
+      ]
+    }
   },
   {
-    "id": "cejm-10",
-    "chapitre": "Domaine 1 — L'entreprise et son environnement",
-    "titre": "Chapitre 10 — L'internationalisation et le commerce",
-    "domaine": "Economie",
-    "cours": "La mondialisation est l'intégration croissante des économies nationales via les échanges commerciaux et les flux de capitaux. Indicateurs : volume des échanges mondiaux (OMC), IDE (Investissements Directs à l'Étranger), taux d'ouverture = (Exports + Imports) / (2 × PIB). Balance commerciale = Exports - Imports (excédentaire si positif, déficitaire si négatif). Taux de change : cours d'une monnaie en une autre, fluctuations influencent compétitivité (euro fort → exports européens plus chers). Union Européenne : marché unique (libre circulation biens, services, capitaux, personnes), zone euro (20 pays en 2023), réglementation harmonisée, aides régionales (FEDER, FSE). Stratégies d'internationalisation : exportation directe (vente depuis pays d'origine), exportation indirecte (via agent/distributeur local), filiale à l'étranger (investissement direct, contrôle total), franchise internationale (transfert de savoir-faire), joint-venture (société commune avec partenaire local), sous-traitance internationale (délocalisation production). Avantages comparatifs (Ricardo) : chaque pays se spécialise dans ce qu'il produit relativement mieux. Organisations internationales : OMC (commerce), FMI (stabilité monétaire), Banque mondiale (développement), G20.",
-    "notions_cles": ["Mondialisation", "IDE", "Balance commerciale", "Taux de change", "Union européenne", "Exportation", "Filiale", "Joint-venture", "Franchise", "Avantages comparatifs"],
-    "exemple_concret": "Le Groupe Ragni a internationalisé ses activités dans 60+ pays. Stratégie : exportation directe pour les pays proches (Espagne, Italie), filiales dans les marchés stratégiques (Maghreb), agents distributeurs pour les marchés émergents (Afrique subsaharienne). La balance commerciale française dans l'éclairage est déficitaire (importations chinoises massives). Ragni se différencie par l'innovation (LED, IoT, gestion énergétique) plutôt que par les coûts. L'Euro fort pénalise ses exports hors zone euro mais facilite les achats de composants.",
-    "fiche_revision": ["Balance commerciale = Exports - Imports", "IDE = investissement d'une entreprise dans un pays étranger", "4 libertés UE : biens, services, capitaux, personnes", "6 modes internationalisation : export direct/indirect, filiale, franchise, JV, sous-traitance", "Avantages comparatifs Ricardo : spécialisation relative", "Taux de change : euro fort = exports plus chers mais imports moins chères", "OMC, FMI, Banque mondiale = institutions gouvernance économique mondiale"]
+    "id": "chap-10",
+    "chapitre": "10",
+    "titre": "Méthodologie CEJM - Méthode PEI et cas pratiques",
+    "cours": "La méthodologie CEJM (Culture Économique, Juridique et Managériale) est au cœur de l'épreuve du BTS SIO. Elle évalue la capacité à analyser des situations d'entreprise en mobilisant des concepts théoriques de manière structurée et argumentée.\n\nLa méthode PEI est la méthode de référence pour répondre aux questions d'analyse :\n- P — Présenter : définir précisément le concept ou la notion théorique visée. La définition doit être claire, complète et utiliser le vocabulaire technique approprié. Ne pas se contenter d'une paraphrase.\n- E — Expliquer : développer le mécanisme, le fonctionnement ou les liens logiques du concept. Répondre à la question : comment cela fonctionne-t-il ? Pourquoi ? Établir les liens de cause à effet.\n- I — Illustrer : ancrer l'explication dans le document fourni OU dans l'actualité économique. L'illustration doit être pertinente, précise et directement liée au P et au E.\n\nLes 4 compétences CEJM évaluées :\n- C1 — Analyser la situation de l'entreprise : lire et comprendre les documents (tableaux, graphiques, textes), identifier les informations clés, mobiliser les connaissances contextuelles pour replacer l'entreprise dans son environnement.\n- C2 — Dégager une problématique : identifier les enjeux centraux de la situation, formuler une question centrale pertinente qui articule les différentes dimensions du sujet (économique, juridique, managériale).\n- C3 — Mobiliser des savoirs : convoquer les concepts théoriques, les modèles (SWOT, PESTEL, Porter…), les données chiffrées, les formules de calcul pertinentes au sujet traité.\n- C4 — Construire une argumentation structurée : organiser la réponse selon un plan logique (thèse/antithèse/synthèse ou plan analytique), utiliser les connecteurs logiques (en effet, ainsi, cependant, par conséquent, en revanche), soigner la rédaction.\n\nComment répondre aux questions d'analyse de documents (méthode en 4 étapes) :\n1. Lire la consigne : identifier le type de question (définir, expliquer, calculer, justifier, comparer).\n2. Identifier la notion visée : quel concept théorique est attendu ?\n3. Lire le document : repérer les informations pertinentes (chiffres, faits, citations).\n4. Rédiger avec la méthode PEI : Présenter la notion → Expliquer le mécanisme → Illustrer avec le document.\n\nComment rédiger un diagnostic SWOT :\n- Forces : avantages internes positifs de l'entreprise (compétences, ressources, marque, technologie).\n- Faiblesses : lacunes internes à améliorer (dette, manque de compétences, dépendance fournisseur).\n- Opportunités : tendances externes favorables (croissance marché, réglementation favorable, évolution technologique).\n- Menaces : risques externes (concurrence accrue, crise économique, réglementation contraignante).\n\nComment calculer les indicateurs de performance :\n- Taux de profitabilité = (Résultat net / CA) × 100 → Ex : (300k / 5M) × 100 = 6%\n- Part de marché = (CA entreprise / CA total marché) × 100 → Ex : (2M / 20M) × 100 = 10%\n- Valeur ajoutée = CA - CI → Ex : 5M - 3M = 2M€ ; Taux de VA = (2M/5M) × 100 = 40%\n- Taux de rentabilité = (Résultat net / Capitaux propres) × 100 → Ex : (300k / 2M) × 100 = 15%\n\nPhrases types à utiliser :\n- Introduction : \"D'après le document… / La situation présentée montre que…\"\n- Développement : \"En effet, selon la théorie de… / Cette situation s'explique par… / On peut donc en déduire que…\"\n- Illustration : \"Ainsi, l'entreprise X… / Le document illustre ce phénomène en indiquant que…\"\n- Conclusion : \"En conclusion, cette analyse met en évidence… / Il apparaît donc que…\"\n\nStructure type d'une réponse réussie (3 parties) :\n1. Introduction (2-3 phrases) : contextualiser la situation, annoncer la notion et la problématique.\n2. Développement PEI (4-6 phrases) : définition + mécanisme + illustration du document.\n3. Conclusion/Bilan (1-2 phrases) : synthèse et apport pour l'entreprise.",
+    "notions_cles": [
+      {
+        "terme": "Méthode PEI",
+        "definition": "Méthode de réponse CEJM : Présenter (définition), Expliquer (mécanisme), Illustrer (exemple concret du document)."
+      },
+      {
+        "terme": "Compétence C1",
+        "definition": "Analyser la situation de l'entreprise : lire documents, identifier infos clés, mobiliser connaissances contextuelles."
+      },
+      {
+        "terme": "Compétence C2",
+        "definition": "Dégager une problématique : identifier les enjeux centraux, formuler la question centrale du sujet."
+      },
+      {
+        "terme": "Compétence C3",
+        "definition": "Mobiliser des savoirs : convoquer concepts, modèles (SWOT, PESTEL), formules, données chiffrées."
+      },
+      {
+        "terme": "Compétence C4",
+        "definition": "Construire une argumentation structurée : plan logique, connecteurs logiques, rédaction soignée."
+      },
+      {
+        "terme": "Diagnostic SWOT",
+        "definition": "Forces/Faiblesses (internes) + Opportunités/Menaces (externes) — outil de diagnostic stratégique."
+      },
+      {
+        "terme": "Indicateurs de performance",
+        "definition": "Taux de profitabilité, taux de rentabilité, part de marché, valeur ajoutée — calculés avec des formules précises."
+      },
+      {
+        "terme": "Phrases types CEJM",
+        "definition": "Formulations standardisées : 'D'après le document...', 'Cette situation s'explique par...', 'On peut donc en déduire que...'"
+      },
+      {
+        "terme": "Structure réponse CEJM",
+        "definition": "3 parties : Introduction (contextualisation) + Développement PEI + Conclusion/Bilan."
+      },
+      {
+        "terme": "Connecteurs logiques",
+        "definition": "Mots articulant l'argumentation : en effet, ainsi, cependant, par conséquent, en revanche, or, donc, néanmoins."
+      }
+    ],
+    "exemple_concret": "Question : 'Expliquez, en vous appuyant sur le document 2, comment la performance sociale de Renault est mesurée.' Réponse PEI — P : La performance sociale mesure la qualité des relations de travail et des conditions de vie des salariés (bilan social, taux d'absentéisme). E : Elle s'évalue par des indicateurs comme le taux d'absentéisme (heures d'absence / heures théoriques × 100) et l'index d'égalité H/F. I : D'après le document 2, le taux d'absentéisme de Renault est de 4,2%, supérieur à la moyenne du secteur (3,8%), ce qui révèle des axes d'amélioration sur les conditions de travail.",
+    "fiche_revision": {
+      "points_cles": [
+        "PEI = Présenter (définition précise) + Expliquer (mécanisme) + Illustrer (document ou actualité).",
+        "C1: analyser. C2: problématiser. C3: mobiliser savoirs. C4: argumenter.",
+        "SWOT : Forces/Faiblesses (interne) + Opportunités/Menaces (externe).",
+        "Taux de profitabilité = Résultat net / CA × 100.",
+        "Part de marché = CA entreprise / CA total marché × 100.",
+        "Structure réponse : Introduction + Développement PEI + Conclusion.",
+        "Phrases types : 'D'après le document...', 'Cette situation s'explique par...', 'On peut donc en déduire que...'"
+      ],
+      "formules": [
+        "Taux de profitabilité = (Résultat net / CA) × 100",
+        "Part de marché = (CA entreprise / CA total marché) × 100",
+        "Valeur ajoutée = CA - Consommations intermédiaires",
+        "Taux de rentabilité = (Résultat net / Capitaux propres) × 100",
+        "Taux d'absentéisme = (Heures absence / Heures théoriques) × 100"
+      ]
+    }
   }
 ]

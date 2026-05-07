@@ -1,102 +1,618 @@
-﻿[
+[
   {
-    "id": "e7-01",
-    "chapitre": "Domaine 1 — Systèmes Windows",
-    "titre": "Chapitre 1 — Active Directory (Windows Server 2022)",
-    "domaine": "Systèmes Windows",
-    "cours": "Architecture AD DS complète. Une forêt AD est l'unité de sécurité la plus haute — elle contient des arbres (trees) reliés par des relations d'approbation transitives. Chaque arbre est composé de domaines partageant un espace de noms DNS contigu. Un domaine est la limite administrative principale. Les Organizational Units (OU) permettent de déléguer l'administration et d'appliquer des GPO. Objets principaux : users (attributs SAMAccountName, UPN, SID), groups (security/distribution), computers, GPO. Rôles FSMO (5) : PDC Emulator (synchro heure, verrouillage comptes, compatibility NT4), RID Master (pool de RID pour création d'objets), Infrastructure Master (cohérence inter-domaines), Schema Master (unique forêt, modifications schéma), Domain Naming Master (unique forêt, ajout/suppression domaines). Réplication AD : sites connectés par site links, KCC (Knowledge Consistency Checker) génère automatiquement la topologie. Groupes : domaine local (ressources locales), global (users même domaine), universel (cross-domaine). GPO : lié à Site/Domaine/OU, filtrage sécurité, filtrage WMI, RSOP (Resultant Set of Policy), loopback processing (Replace/Merge). PowerShell AD : New-ADUser -Name jean.dupont -SamAccountName jean.dupont -UserPrincipalName jean.dupont@iris.local -Path OU=Utilisateurs,DC=iris,DC=local -AccountPassword (ConvertTo-SecureString P@ssw0rd -AsPlainText -Force) -Enabled $true ; Get-ADUser -Filter * -SearchBase OU=RH,DC=iris,DC=local -Properties * ; Add-ADGroupMember -Identity GRP_RH -Members jean.dupont ; Move-ADObject -Identity CN=jean.dupont,OU=Temp,DC=iris,DC=local -TargetPath OU=RH,DC=iris,DC=local. Jonction domaine : GUI (Propriétés système > Modifier) ou PowerShell Add-Computer -DomainName iris.local -Credential (Get-Credential) -Restart. Diagnostic : dcdiag /test:all /v, repadmin /showrepl, repadmin /replsummary, nltest /dsgetdc:iris.local.",
-    "notions_cles": ["Forêt AD", "Arbre", "Domaine", "OU (Organizational Unit)", "Rôles FSMO", "PDC Emulator", "RID Master", "Schema Master", "Domain Naming Master", "Infrastructure Master", "GPO (Group Policy Object)", "RSOP", "Sites AD", "Réplication KCC", "Groupes domaine local/global/universel", "SID", "UPN", "SAMAccountName", "dcdiag", "repadmin"],
-    "exemple_concret": "Entreprise IRIS SAS (200 salariés) : forêt iris.local avec 2 domaines (iris.local, agence.iris.local). OU structure : iris.local > Utilisateurs (RH, IT, Commercial) > Ordinateurs > Groupes > Serveurs. GPO Sécurité Postes liée à OU=Ordinateurs : désactive USB, fond d'écran corporate, politique mot de passe 12 car. FSMO roles sur DC01 (PDC, RID, Infra) et DC02 (Schema, Domain Naming). Replication entre DC01 et DC02 toutes les 15 min en intrasite.",
-    "fiche_revision": ["Forêt = limite Kerberos + schéma unique", "5 rôles FSMO : 2 par forêt (Schema, DN Master) + 3 par domaine (PDC, RID, Infra)", "GPO priority : Local < Site < Domain < OU (dernier appliqué gagne)", "Groups AGDLP : Account → Global → Domain Local → Permission", "dcdiag /test:all pour diagnostiquer la santé AD", "repadmin /replsummary pour voir l'état de réplication", "New-ADUser crée un user, -Enabled $true l'active immédiatement", "UPN format : user@domaine.local, SAMAccountName : 20 car max (NT legacy)"]
+    "id": "chap-01",
+    "chapitre": "1",
+    "titre": "Infrastructure réseau et modèle OSI",
+    "cours": "Le modèle OSI (Open Systems Interconnection) est un modèle de référence en 7 couches défini par l'ISO en 1984. Il standardise la communication entre systèmes hétérogènes en décomposant chaque fonction réseau en une couche indépendante.\n\nCouche 1 — Physique : transmission brute des bits sur le support physique. PDU = bits. Équipements : hub, répéteur, câble RJ45, fibre optique, WiFi (ondes radio). Caractéristiques électriques, mécaniques et fonctionnelles du support. Le hub est un répéteur multiport qui diffuse sur tous les ports sans discrimination.\n\nCouche 2 — Liaison de données : transfert fiable de trames entre deux nœuds directement connectés. PDU = trame (frame). Équipements : switch (commutateur), bridge. Protocoles : Ethernet 802.3, Wi-Fi 802.11, PPP. Adressage MAC (Media Access Control) : 48 bits en hexadécimal (ex: AA:BB:CC:DD:EE:FF). Le protocole ARP (Address Resolution Protocol) fait la correspondance IP → MAC. Le switch apprend les adresses MAC sur ses ports (table CAM) et transmet les trames uniquement vers le port de destination.\n\nCouche 3 — Réseau : routage des paquets de la source à la destination à travers des réseaux interconnectés. PDU = paquet. Équipements : routeur. Protocoles : IP (IPv4/IPv6), ICMP (diagnostics réseau), OSPF, RIP, BGP (routage inter-AS sur Internet). L'adressage IP est logique et hiérarchique (contrairement à l'adresse MAC qui est physique).\n\nCouche 4 — Transport : communication de bout en bout entre processus applicatifs. PDU = segment (TCP) ou datagramme (UDP). TCP (Transmission Control Protocol) : orienté connexion (handshake 3-way SYN/SYN-ACK/ACK), fiable (accusés de réception, retransmission), contrôle de flux et congestion, plus lent. UDP (User Datagram Protocol) : sans connexion, non fiable mais rapide, utilisé pour streaming, DNS, DHCP, VoIP. Notion de ports (0-65535) : ports bien connus 0-1023 (80=HTTP, 443=HTTPS, 22=SSH, 25=SMTP, 53=DNS, 67/68=DHCP).\n\nCouche 5 — Session : établissement, gestion et terminaison des sessions de communication. Protocoles : RPC (Remote Procedure Call), NetBIOS, PPTP. Synchronisation et reprise de session.\n\nCouche 6 — Présentation : traduction, encodage, compression et chiffrement des données. Formats : ASCII, UTF-8, JPEG, MPEG. Chiffrement SSL/TLS opère à cette couche (encapsulation des données applicatives). Compression HTTP/2, gzip.\n\nCouche 7 — Application : interface entre l'utilisateur et le réseau. Protocoles : HTTP/HTTPS (web), FTP (transfert fichiers), SSH (administration sécurisée), SMTP (envoi email), POP3/IMAP (réception email), DNS (résolution noms), DHCP (attribution IPs).\n\nModèle TCP/IP à 4 couches (modèle DoD) — correspondance avec OSI :\n  • Accès réseau (couches OSI 1+2) : Ethernet, Wi-Fi, ARP\n  • Internet (couche OSI 3) : IP, ICMP, OSPF, BGP\n  • Transport (couche OSI 4) : TCP, UDP\n  • Application (couches OSI 5+6+7) : HTTP, HTTPS, DNS, DHCP, SSH, FTP\n\nEncapsulation (émission) : les données applicatives sont encapsulées couche par couche. Application → Présentation/Session → Transport (ajout en-tête TCP/UDP = segment) → Réseau (ajout en-tête IP = paquet) → Liaison (ajout en-tête + trailer Ethernet = trame) → Physique (conversion en bits).\n\nDésencapsulation (réception) : processus inverse, chaque couche retire son en-tête et transmet à la couche supérieure.\n\nIncident BGP 2019 (juin) : Verizon a accepté et propagé une table de routage erronée d'un petit FAI (AS396531) qui annonçait des routes plus spécifiques pour des préfixes appartenant à Cloudflare, Amazon, Facebook et d'autres. Le trafic mondial a été redirigé vers ce petit réseau incapable d'absorber les flux, causant environ 2 heures de dégradation pour des millions d'utilisateurs. Cet incident illustre le manque de filtrage RPKI (Resource Public Key Infrastructure) chez certains opérateurs.\n\nCommandes de diagnostic réseau :\n  • ping 8.8.8.8 — Test de connectivité ICMP, affiche TTL et temps de réponse (RTT en ms)\n  • tracert 8.8.8.8 (Windows) / traceroute 8.8.8.8 (Linux) — Affiche chaque saut intermédiaire avec TTL décrémenté de 1 à chaque routeur\n  • netstat -an — Toutes les connexions actives avec adresses IP et numéros de port\n  • ipconfig /all (Windows) — Adresses IP, MAC, passerelle, DNS, état DHCP\n  • ip addr show (Linux) — Interfaces et adresses IP assignées\n  • arp -a — Table ARP locale : correspondance IP ↔ MAC des machines connues\n  • nslookup google.com — Résolution DNS d'un nom vers une adresse IP",
+    "notions_cles": [
+      {
+        "terme": "Modèle OSI",
+        "definition": "Modèle de référence ISO en 7 couches standardisant la communication réseau entre systèmes hétérogènes."
+      },
+      {
+        "terme": "PDU (Protocol Data Unit)",
+        "definition": "Unité de données propre à chaque couche OSI : bits (C1), trame (C2), paquet (C3), segment/datagramme (C4), données (C5-C7)."
+      },
+      {
+        "terme": "Adresse MAC",
+        "definition": "Identifiant physique unique de 48 bits d'une interface réseau, gravé en usine, exprimé en hexadécimal (ex: AA:BB:CC:DD:EE:FF)."
+      },
+      {
+        "terme": "ARP (Address Resolution Protocol)",
+        "definition": "Protocole couche 2/3 qui permet de résoudre une adresse IP en adresse MAC sur un réseau local."
+      },
+      {
+        "terme": "TCP vs UDP",
+        "definition": "TCP : orienté connexion, fiable, contrôle de flux (web, email). UDP : sans connexion, rapide, sans garantie (streaming, DNS, VoIP)."
+      },
+      {
+        "terme": "Encapsulation",
+        "definition": "Processus d'émission : chaque couche OSI ajoute son en-tête aux données de la couche supérieure. La désencapsulation est le processus inverse en réception."
+      },
+      {
+        "terme": "TTL (Time To Live)",
+        "definition": "Champ du paquet IP décrémenté de 1 à chaque routeur traversé. Quand TTL=0, le paquet est détruit et un message ICMP Time Exceeded est envoyé à la source."
+      },
+      {
+        "terme": "BGP (Border Gateway Protocol)",
+        "definition": "Protocole de routage inter-AS utilisé sur Internet pour échanger des tables de routage entre opérateurs (AS = Autonomous System)."
+      },
+      {
+        "terme": "Modèle TCP/IP",
+        "definition": "Modèle pratique en 4 couches (Accès réseau, Internet, Transport, Application) utilisé sur Internet, simplifié par rapport au modèle OSI théorique."
+      }
+    ],
+    "exemple_concret": "Scénario : un technicien diagnostique une panne de connectivité Internet sur un poste Windows.\n\nÉtape 1 — Test loopback : ping 127.0.0.1 → si échec, problème carte réseau locale (couche 1).\nÉtape 2 — Test passerelle : ping 192.168.1.1 → si échec, problème réseau local (couches 1-3).\nÉtape 3 — Test DNS Google : ping 8.8.8.8 → si OK mais nslookup google.com échoue, problème DNS uniquement.\nÉtape 4 — Tracert 8.8.8.8 → identifie à quel routeur (saut) la connexion échoue.\nÉtape 5 — ipconfig /all → vérifier adresse IP, masque, passerelle, serveurs DNS, bail DHCP.\nÉtape 6 — arp -a → vérifier que la passerelle a une entrée MAC (sinon problème ARP/VLAN).\n\nRésultat : si ping 8.8.8.8 OK mais ping google.com KO → modifier DNS dans ipconfig : ipconfig /flushdns puis tester nslookup google.com 8.8.8.8.",
+    "fiche_revision": {
+      "points_cles": [
+        "7 couches OSI de bas en haut : Physique, Liaison, Réseau, Transport, Session, Présentation, Application (mnémo : 'Please Do Not Throw Sausage Pizza Away')",
+        "TCP/IP 4 couches : Accès réseau (OSI 1+2) / Internet (OSI 3) / Transport (OSI 4) / Application (OSI 5-6-7)",
+        "TCP = fiable + connexion orientée (SYN/SYN-ACK/ACK) | UDP = rapide + sans connexion",
+        "Encapsulation à l'émission : données → segment → paquet → trame → bits",
+        "ARP : résout IP → MAC sur le réseau local (couche 2)",
+        "TTL décrémenté de 1 par chaque routeur (traceroute exploite ce mécanisme)",
+        "Incident BGP 2019 : absence de filtrage RPKI → propagation de routes erronées → panne mondiale 2h"
+      ],
+      "formules": [
+        "ping 8.8.8.8",
+        "tracert 8.8.8.8  (Windows) | traceroute 8.8.8.8  (Linux)",
+        "ipconfig /all  (Windows) | ip addr show  (Linux)",
+        "netstat -an",
+        "arp -a",
+        "nslookup google.com"
+      ]
+    }
   },
   {
-    "id": "e7-02",
-    "chapitre": "Domaine 1 — Systèmes Windows",
-    "titre": "Chapitre 2 — Rôles Windows Server (DNS, DHCP, NPS, PKI, DFS)",
-    "domaine": "Systèmes Windows",
-    "cours": "DNS Server : zones primaire (lecture/écriture, BIND), secondaire (lecture seule, transfert), stub (délégation partielle). Enregistrements : A (IPv4), AAAA (IPv6), PTR (résolution inverse), MX (mail, priorité), CNAME (alias), NS (name server), SOA (autorité). Délégation de zone. Conditionneurs (forwarders). DNSSEC : signature cryptographique des zones. DHCP : étendue (scope) avec plage IP, masque, exclusions, réservations (MAC vers IP fixe). Options : 003 (passerelle), 006 (DNS), 015 (nom domaine). Agent relais DHCP (RFC 3046) : forward DHCPDISCOVER entre VLANs. Failover DHCP : mode hot standby ou load balance. NPS (Network Policy Server) = serveur RADIUS Microsoft. Politiques de connexion (Connection Request Policies). Politiques réseau (Network Policies) : conditions + contraintes (authentification PEAP-MSCHAPv2). Comptabilité RADIUS : logs connexions 802.1X. PKI (Certificate Services) : CA racine (offline recommandé), CA subordonnée (online, émet les certs). Templates : WebServer, DomainController, User, Computer. Auto-enrôlement via GPO. Révocation : CRL (Certificate Revocation List) publiée HTTP/LDAP, OCSP (Online Certificate Status Protocol) temps réel. File Server : partages SMB, NTFS permissions (Full Control, Modify, Read and Execute, Read, Write) vs permissions partage (plus restrictive s'applique). DFS Namespace (DFSN) : espace de noms unifié. DFS Replication (DFSR) : réplication multi-maîtres, groupe de réplication, dossier répliqué.",
-    "notions_cles": ["Zone DNS primaire/secondaire/stub", "Enregistrements A, AAAA, PTR, MX, CNAME, SOA", "DNSSEC", "Étendue DHCP", "Options DHCP 003/006/015", "Agent relais DHCP", "DHCP Failover", "NPS/RADIUS", "802.1X", "PEAP-MSCHAPv2", "PKI", "CA racine offline", "CA subordonnée", "Templates certificats", "CRL/OCSP", "Permissions NTFS", "DFS Namespace", "DFS Replication"],
-    "exemple_concret": "Infrastructure IRIS : DC01 = DNS primaire (zone iris.local SOA), DC02 = DNS secondaire. DHCP sur DC01 : étendue 192.168.1.0/24, plage .50-.200, exclusion .1-.49 (infra), option 003=192.168.1.1, 006=192.168.1.10, 015=iris.local. Failover DHCP DC01 et DC02 en load balance 50/50. NPS sur DC01 : authentification WiFi WPA2-Enterprise 802.1X avec switch Cisco (shared secret Secret123!). PKI : RootCA (Windows Core, offline, cert 20 ans), SubCA (DC01, online, cert 5 ans), templates Utilisateur + Ordinateur avec auto-enrôlement GPO.",
-    "fiche_revision": ["Zone primaire = lecture/écriture ; secondaire = lecture seule par transfert de zone", "Options DHCP : 003=Gateway, 006=DNS, 015=Nom domaine", "Permissions effectives = NTFS ∩ Partage (la plus restrictive)", "PKI : CA racine OFFLINE impératif pour sécurité", "RADIUS écoute UDP 1812 (auth) et 1813 (accounting)", "DFSR remplace FRS depuis Windows Server 2008 R2", "Auto-enrôlement PKI : GPO Paramètres ordi > Paramètres Windows > Paramètres sécurité > PKI"]
+    "id": "chap-02",
+    "chapitre": "2",
+    "titre": "Adressage IPv4 et VLSM",
+    "cours": "L'adressage IPv4 utilise des adresses de 32 bits représentées en notation décimale pointée (4 octets). La gestion de cet espace d'adressage est fondamentale pour tout technicien réseau.\n\nClasses d'adresses IPv4 :\n  • Classe A : 0.0.0.0 – 127.255.255.255, masque par défaut /8 (255.0.0.0). Premier octet entre 1 et 126.     16 777 214 hôtes par réseau. Réservée aux très grandes organisations.\n  • Classe B : 128.0.0.0 – 191.255.255.255, masque par défaut /16 (255.255.0.0). 65 534 hôtes par réseau.\n  • Classe C : 192.0.0.0 – 223.255.255.255, masque par défaut /24 (255.255.255.0). 254 hôtes par réseau. La plus courante.\n  • Classe D : 224.0.0.0 – 239.255.255.255 — réservée au multicast (pas d'hôtes unicast).\n  • Classe E : 240.0.0.0 – 255.255.255.255 — réservée, usage expérimental.\n\nAdresses privées (RFC 1918) — non routables sur Internet :\n  • 10.0.0.0/8 (classe A) : 10.0.0.0 – 10.255.255.255, ~16,7 millions d'hôtes\n  • 172.16.0.0/12 (classe B) : 172.16.0.0 – 172.31.255.255, ~1 million d'hôtes\n  • 192.168.0.0/16 (classe C) : 192.168.0.0 – 192.168.255.255, 65 534 hôtes\n\nAdresses spéciales :\n  • 127.0.0.1 : loopback (interface virtuelle locale, test pile TCP/IP)\n  • 169.254.x.x : APIPA (Automatic Private IP Addressing) — adresse auto-configurée quand le DHCP est injoignable\n  • 255.255.255.255 : broadcast limité (tous les hôtes du réseau local)\n  • 0.0.0.0 : route par défaut (destination inconnue) ou adresse non encore assignée\n\nNotation CIDR (Classless Inter-Domain Routing) : /préfixe = nombre de bits à 1 dans le masque. Exemple : /24 = 255.255.255.0 (24 bits à 1), /26 = 255.255.255.192 (26 bits à 1).\n\nCalcul du nombre d'hôtes utilisables : 2^(32 - préfixe) - 2\n  • Soustraction de 2 : adresse réseau (tous les bits hôtes à 0) + adresse broadcast (tous les bits hôtes à 1)\n  • /24 → 2^8 - 2 = 254 hôtes | /26 → 2^6 - 2 = 62 hôtes | /28 → 2^4 - 2 = 14 hôtes\n\nVLSM (Variable Length Subnet Masking) — découpage hiérarchique d'un réseau :\nMéthode étape par étape :\n  1. Lister tous les sous-réseaux avec leur besoin en hôtes\n  2. Trier par taille DÉCROISSANTE (plus grand besoin en premier)\n  3. Pour chaque sous-réseau : trouver la plus petite puissance de 2 supérieure ou égale à (nb_hôtes + 2)\n     Puis calculer le préfixe : préfixe = 32 - log2(taille_bloc)\n  4. Attribuer les blocs CIDR séquentiellement en évitant tout chevauchement\n  5. Pour chaque sous-réseau calculer : adresse réseau, masque, broadcast, première IP utilisable (réseau+1),      dernière IP utilisable (broadcast-1), passerelle (généralement .1 ou .254)\n\nExemple VLSM complet sur 192.168.1.0/24, besoins : 60h, 30h, 14h, 6h :\n  • 60 hôtes → /26 (64 IPs, 62 utilisables) → 192.168.1.0/26, broadcast .63, passerelle .1, dernier hôte .62\n  • 30 hôtes → /27 (32 IPs, 30 utilisables) → 192.168.1.64/27, broadcast .95, passerelle .65, dernier hôte .94\n  • 14 hôtes → /28 (16 IPs, 14 utilisables) → 192.168.1.96/28, broadcast .111, passerelle .97, dernier hôte .110\n  • 6 hôtes → /29 (8 IPs, 6 utilisables) → 192.168.1.112/29, broadcast .119, passerelle .113, dernier hôte .118\n\nIPv6 — introduction :\n  • 128 bits en hexadécimal, 8 groupes de 4 chiffres hex séparés par ':' (ex: 2001:0db8:85a3:0000:0000:8a2e:0370:7334)\n  • :: remplace un ou plusieurs groupes de zéros consécutifs (une seule fois par adresse)\n  • ::1 = loopback (équivalent IPv4 127.0.0.1)\n  • fe80::/10 = adresses link-local (auto-configurées, non routables)\n  • 2001::/32 = préfixe Teredo (tunneling IPv6 dans IPv4)\n  • Pas de broadcast en IPv6 → remplacé par multicast et anycast",
+    "notions_cles": [
+      {
+        "terme": "CIDR (Classless Inter-Domain Routing)",
+        "definition": "Notation /préfixe indiquant le nombre de bits à 1 dans le masque. Remplace la notion de classes pour un adressage plus flexible."
+      },
+      {
+        "terme": "Masque de sous-réseau",
+        "definition": "Valeur 32 bits indiquant quelle partie de l'adresse IP représente le réseau (bits à 1) et quelle partie représente les hôtes (bits à 0)."
+      },
+      {
+        "terme": "VLSM (Variable Length Subnet Masking)",
+        "definition": "Technique de découpage d'un réseau en sous-réseaux de tailles différentes, optimisant l'utilisation de l'espace d'adressage."
+      },
+      {
+        "terme": "Adresses RFC 1918",
+        "definition": "Trois plages d'adresses privées non routables sur Internet : 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16."
+      },
+      {
+        "terme": "APIPA",
+        "definition": "Automatic Private IP Addressing : attribution automatique d'une adresse 169.254.x.x quand le serveur DHCP est injoignable."
+      },
+      {
+        "terme": "Broadcast",
+        "definition": "Adresse de diffusion vers tous les hôtes d'un réseau. Dernière adresse du bloc : tous les bits hôtes à 1. Ex: /24 → .255, /26 → .63."
+      },
+      {
+        "terme": "Adresse réseau",
+        "definition": "Première adresse du bloc CIDR, identifie le réseau. Tous les bits hôtes à 0. Non assignable à un hôte."
+      },
+      {
+        "terme": "IPv6",
+        "definition": "Version 6 du protocole Internet, adresses de 128 bits en hexadécimal, résout l'épuisement des adresses IPv4. Notation :: pour les zéros consécutifs."
+      }
+    ],
+    "exemple_concret": "Exercice VLSM — Entreprise avec réseau 172.16.0.0/16, besoins :\n  - Site Paris : 500 hôtes\n  - Site Lyon : 200 hôtes\n  - Lien WAN Paris-Lyon : 2 hôtes\n\nRésolution (tri décroissant : 500 → 200 → 2) :\n  • 500h → 2^9=512 IPs → /23 (510 hôtes) → 172.16.0.0/23, broadcast 172.16.1.255, passerelle 172.16.0.1\n  • 200h → 2^8=256 IPs → /24 (254 hôtes) → 172.16.2.0/24, broadcast 172.16.2.255, passerelle 172.16.2.1\n  • 2h → 2^2=4 IPs → /30 (2 hôtes) → 172.16.3.0/30, broadcast 172.16.3.3, IPs utilisables .1 et .2\n\nVérification absence chevauchement : 172.16.0.0-1.255 | 172.16.2.0-2.255 | 172.16.3.0-3.3 ✓",
+    "fiche_revision": {
+      "points_cles": [
+        "Formule hôtes utilisables : 2^(32-préfixe) - 2",
+        "Adresses privées RFC 1918 : 10/8, 172.16/12, 192.168/16 — non routables sur Internet",
+        "VLSM : toujours trier par taille DÉCROISSANTE avant de découper",
+        "Adresse réseau = première IP du bloc (bits hôtes à 0) | Broadcast = dernière IP (bits hôtes à 1)",
+        "169.254.x.x = APIPA → le DHCP ne répond pas",
+        "127.0.0.1 = loopback (test local) | 0.0.0.0 = route par défaut",
+        "IPv6 : 128 bits, :: remplace zéros consécutifs, ::1 = loopback, fe80::/10 = link-local"
+      ],
+      "formules": [
+        "Nb hôtes = 2^(32 - préfixe) - 2",
+        "/24 → 254h | /25 → 126h | /26 → 62h | /27 → 30h | /28 → 14h | /29 → 6h | /30 → 2h",
+        "Broadcast /26 : adresse_réseau + 63  (ex: .0 → broadcast .63)",
+        "Passerelle = première IP utilisable (adresse_réseau + 1)"
+      ]
+    }
   },
   {
-    "id": "e7-03",
-    "chapitre": "Domaine 2 — Systèmes Linux",
-    "titre": "Chapitre 3 — Administration Linux (Debian/Ubuntu/RHEL)",
-    "domaine": "Systèmes Linux",
-    "cours": "Gestion utilisateurs : useradd -m -s /bin/bash -G sudo jean ; usermod -aG docker jean ; passwd jean ; groupadd devops ; visudo. Droits UNIX : r=4, w=2, x=1. chmod 755, chmod 640, chmod u+x,g-w. chown jean:devops fichier. SUID (4xxx), SGID (2xxx), Sticky bit (1xxx). ACL : setfacl -m u:jean:rw fichier ; getfacl fichier. Processus : ps aux, top/htop, kill -9 PID, kill -15 PID, nice, nohup. Systemd : systemctl start/stop/restart/reload/enable/disable/status ; journalctl -u nginx -f. Réseau : ip addr show ; ip addr add ; ip route add ; nmcli ; ss -tuln. iptables : INPUT/OUTPUT/FORWARD, -P, -A, -I, -D. firewalld : firewall-cmd. ufw : ufw allow. LVM : pvcreate/vgcreate/lvcreate/mkfs/lvextend/resize2fs. SSH hardening sshd_config : Port 2222, PermitRootLogin no, PasswordAuthentication no. fail2ban : jail.local.",
-    "notions_cles": ["useradd/usermod/groupadd", "chmod octal et symbolique", "SUID/SGID/Sticky bit", "ACL setfacl/getfacl", "Systemd/systemctl", "journalctl", "iptables INPUT/OUTPUT/FORWARD", "firewalld zones", "LVM pvcreate/vgcreate/lvcreate", "SSH sshd_config hardening", "fail2ban", "ss -tuln", "nmcli", "/etc/fstab"],
-    "exemple_concret": "Serveur web Linux (Debian 12) IRIS : chmod 750 /var/www/iris, setfacl -R -m u:deployer:rwx /var/www/iris. Systemd service nginx enabled. iptables : INPUT DROP par défaut, ACCEPT 80/443/2222. LVM : vg_data avec lv_web (50G ext4) et lv_logs (20G xfs). SSH : clés RSA 4096, PermitRootLogin no, fail2ban 3 essais = ban 1h.",
-    "fiche_revision": ["chmod 777 = dangereux, préférer 750 ou 640", "usermod -aG : le -a est crucial pour ne pas perdre les groupes existants", "iptables : ordre des règles important, première règle qui match s'applique", "LVM : pv → vg → lv → mkfs → mount → fstab", "journalctl -u service -f : suivi en temps réel des logs service", "fail2ban surveille /var/log/auth.log pour SSH", "ss -tuln : t=tcp u=udp l=listen n=numeric"]
+    "id": "chap-03",
+    "chapitre": "3",
+    "titre": "Switching — VLANs et STP",
+    "cours": "Le switch (commutateur) est un équipement de couche 2 qui transmet les trames en se basant sur les adresses MAC. Contrairement au hub (qui diffuse sur tous les ports), le switch maintient une table CAM pour une transmission ciblée.\n\nTable CAM (Content Addressable Memory) :\n  • Associe adresse MAC → numéro de port → VLAN\n  • Remplissage dynamique : quand une trame arrive, le switch apprend l'adresse MAC source et son port\n  • Aging timer par défaut : 300 secondes (5 minutes) — les entrées non utilisées sont supprimées\n  • Si l'adresse MAC destination est inconnue : le switch inonde (flood) la trame sur tous les ports du VLAN\n\nDomaines de collision vs domaines de broadcast :\n  • Domaine de collision : segment réseau partagé où une collision peut se produire.     Le switch crée un domaine de collision par port (chaque port = micro-segmentation).\n  • Domaine de broadcast : ensemble des équipements recevant un broadcast.     Par défaut, tout le switch est un seul domaine de broadcast. Les VLANs segmentent les domaines de broadcast.\n\nSwitch couche 2 vs couche 3 :\n  • Couche 2 : décisions uniquement par adresses MAC, pas de routage IP\n  • Couche 3 (switch L3) : peut router entre VLANs grâce aux SVI (Switch Virtual Interface),     nécessite la commande 'ip routing'\n\nVLAN (Virtual Local Area Network) :\nUn VLAN est un réseau logique créé par configuration sur le switch. Il isole le trafic comme si les équipements étaient sur des switches physiques séparés, sans nécessiter de matériel supplémentaire.\n\nAvantages des VLANs :\n  • Sécurité : isolation du trafic entre départements (RH, Finance, IT)\n  • Performance : réduction des domaines de broadcast → moins de trafic parasite\n  • Flexibilité : regroupement logique indépendant de la localisation physique\n  • Gestion simplifiée : segmentation sans infrastructure physique distincte\n\nTypes de ports :\n  • Access port : appartient à un seul VLAN, trafic non taggé (utilisé pour les postes de travail et serveurs)\n  • Trunk port : transporte plusieurs VLANs simultanément avec le tag 802.1Q.     Le tag 802.1Q ajoute 4 octets dans la trame Ethernet : Tag Protocol ID (0x8100) + priorité CoS (3 bits) + VLAN ID (12 bits).     Le VLAN ID sur 12 bits permet 4094 VLANs distincts (1 et 4094 réservés).\n  • VLAN natif : VLAN transporté non taggé sur un trunk (VLAN 1 par défaut — recommandé de changer pour sécurité).\n\nRoutage inter-VLAN :\n  • Router-on-a-stick : un seul port trunk entre le switch et le routeur,     sous-interfaces sur le routeur (interface Fa0/0.10, encapsulation dot1Q 10, ip address ...). Économique.\n  • Switch L3 avec SVI : interface VLAN 10 sur le switch L3, plus performant (routage matériel).\n\nSTP (Spanning Tree Protocol — IEEE 802.1D) :\nSTP prévient les boucles réseau dans les topologies redondantes. Une boucle réseau sans STP provoquerait une tempête de broadcast (broadcast storm) paralysant tout le réseau en quelques secondes.\n\nProcessus STP :\n  1. Élection du Root Bridge : routeur avec le Bridge ID le plus petit.      Bridge ID = Priorité (16 bits, défaut 32768) + VLAN ID + Adresse MAC.      Si priorités égales : plus petite adresse MAC l'emporte.\n  2. Sélection des ports racines (Root Port) : un par switch non-root, chemin de moindre coût vers le Root Bridge.\n  3. Sélection des ports désignés (Designated Port) : un par segment réseau.\n  4. Blocage des ports non désignés pour casser les boucles.\n\nÉtats des ports STP : Blocking → Listening (15s) → Learning (15s) → Forwarding | Disabled\nConvergence STP 802.1D : 30 à 50 secondes (pénalisant lors d'une panne).\n\nRSTP (Rapid Spanning Tree Protocol — IEEE 802.1w) :\n  • Convergence en quelques secondes (vs 30-50s pour STP)\n  • PortFast : active Forwarding immédiatement sur les ports access (hôtes finaux) — doit être combiné avec BPDU Guard\n  • BPDU Guard : désactive le port si un BPDU STP est reçu (protège contre switch non autorisé)\n\nCommandes Cisco IOS pour VLANs et STP :\n  • vlan 10 → name SERVERS\n  • interface fastEthernet 0/1 → switchport mode access → switchport access vlan 10\n  • interface fastEthernet 0/24 → switchport mode trunk → switchport trunk native vlan 99\n  • show vlan brief (liste VLANs et ports associés)\n  • show interfaces trunk (ports trunk et VLANs autorisés)\n  • show mac address-table (table CAM)\n  • show spanning-tree (état STP, root bridge, ports bloqués)",
+    "notions_cles": [
+      {
+        "terme": "Table CAM",
+        "definition": "Content Addressable Memory : table du switch associant adresses MAC aux ports physiques. Remplie dynamiquement, aging timer 300s par défaut."
+      },
+      {
+        "terme": "VLAN (Virtual LAN)",
+        "definition": "Réseau logique virtuel configuré sur un switch. Isole le trafic broadcast et permet la segmentation sans matériel supplémentaire."
+      },
+      {
+        "terme": "Tag 802.1Q",
+        "definition": "Standard IEEE ajoutant 4 octets dans la trame Ethernet pour identifier le VLAN sur un port trunk. VLAN ID sur 12 bits = 4094 VLANs max."
+      },
+      {
+        "terme": "Access port",
+        "definition": "Port switch appartenant à un seul VLAN, trafic non taggé. Utilisé pour connecter les postes de travail et serveurs."
+      },
+      {
+        "terme": "Trunk port",
+        "definition": "Port switch transportant plusieurs VLANs avec tag 802.1Q. Utilisé entre switches, entre switch et routeur."
+      },
+      {
+        "terme": "STP (Spanning Tree Protocol)",
+        "definition": "Protocole IEEE 802.1D évitant les boucles réseau en bloquant des ports redondants. Root Bridge élu par Bridge ID le plus faible."
+      },
+      {
+        "terme": "RSTP (802.1w)",
+        "definition": "Version rapide du STP avec convergence en quelques secondes. PortFast et BPDU Guard sont des extensions importantes de RSTP."
+      },
+      {
+        "terme": "Router-on-a-stick",
+        "definition": "Architecture de routage inter-VLAN utilisant un seul port trunk vers le routeur avec des sous-interfaces (subinterfaces) configurées par VLAN."
+      },
+      {
+        "terme": "SVI (Switch Virtual Interface)",
+        "definition": "Interface virtuelle sur un switch L3 associée à un VLAN, permettant le routage inter-VLAN directement sur le switch."
+      }
+    ],
+    "exemple_concret": "Configuration VLAN PME (Cisco IOS) :\n\nSur le switch (SW1) :\n  SW1(config)# vlan 10\n  SW1(config-vlan)# name UTILISATEURS\n  SW1(config)# vlan 20\n  SW1(config-vlan)# name SERVEURS\n  SW1(config)# vlan 99\n  SW1(config-vlan)# name NATIF\n\n  SW1(config)# interface range fa0/1 - 12\n  SW1(config-if-range)# switchport mode access\n  SW1(config-if-range)# switchport access vlan 10\n\n  SW1(config)# interface fa0/24\n  SW1(config-if)# switchport mode trunk\n  SW1(config-if)# switchport trunk native vlan 99\n  SW1(config-if)# switchport trunk allowed vlan 10,20,99\n\nVérification :\n  SW1# show vlan brief\n  SW1# show interfaces trunk\n  SW1# show spanning-tree vlan 10\n\nSTP — forcer SW1 comme Root Bridge VLAN 10 :\n  SW1(config)# spanning-tree vlan 10 priority 4096",
+    "fiche_revision": {
+      "points_cles": [
+        "Table CAM : MAC → port → VLAN, aging 300s. Flood si MAC inconnue.",
+        "VLAN = domaine de broadcast isolé. Un broadcast VLAN10 ne sort pas du VLAN10.",
+        "Tag 802.1Q : 4 octets ajoutés à la trame, VLAN ID 12 bits → 4094 VLANs max.",
+        "Access port = 1 VLAN, non taggé | Trunk port = plusieurs VLANs, taggés (sauf natif)",
+        "STP élit Root Bridge = plus petit Bridge ID (priorité + VLAN + MAC)",
+        "STP 802.1D convergence 30-50s | RSTP 802.1w convergence quelques secondes",
+        "PortFast : Forwarding immédiat sur ports access | BPDU Guard : protège contre switches non autorisés"
+      ],
+      "formules": [
+        "vlan 10  →  name SERVERS",
+        "switchport mode access  →  switchport access vlan 10",
+        "switchport mode trunk  →  switchport trunk native vlan 99",
+        "spanning-tree vlan 10 priority 4096  (forcer Root Bridge)",
+        "show vlan brief | show interfaces trunk | show spanning-tree | show mac address-table"
+      ]
+    }
   },
   {
-    "id": "e7-04",
-    "chapitre": "Domaine 3 — Virtualisation",
-    "titre": "Chapitre 4 — Virtualisation (VMware, Hyper-V, Proxmox, Vagrant)",
-    "domaine": "Virtualisation",
-    "cours": "Hyperviseur Type 1 (bare-metal) : VMware ESXi, Microsoft Hyper-V, Proxmox VE (KVM+LXC, port 8006). Hyperviseur Type 2 : VirtualBox, VMware Workstation. Vagrant : outil HashiCorp. Vagrantfile : config.vm.box, config.vm.network, config.vm.provider, config.vm.provision. Commandes : vagrant up, vagrant halt, vagrant destroy -f, vagrant ssh. VMware vSphere : vCenter, vMotion (migration à chaud), HA, DRS. Hyper-V Gen 2 : UEFI, Secure Boot. Réseau virtuel : vSwitch, portgroups, VLAN. Stockage : NFS, iSCSI, FC, VMFS, vSAN.",
-    "notions_cles": ["Hyperviseur type 1 vs type 2", "VMware ESXi/vCenter", "Hyper-V génération 1/2", "Proxmox VE", "Vagrant/Vagrantfile", "vMotion", "HA (High Availability)", "DRS", "vSwitch/portgroup", "VLAN sur hyperviseur", "NFS/iSCSI/FC/VMFS/vSAN", "Live Migration", "KVM/QEMU"],
-    "exemple_concret": "Lab BTS IRIS : 3 hôtes Proxmox VE en cluster, réseau VLAN 100 (mgmt), VLAN 200 (VMs). Stockage NFS sur NAS Synology. VMs : DC01 (Windows Server 2022, 4GB/4vCPU), DC02, SRV-LINUX-01 (Debian 12). Vagrant : 3 VMs Debian (web1, web2, haproxy) provisionnées automatiquement.",
-    "fiche_revision": ["Type 1 = bare-metal (production) ; Type 2 = hosted (dev/test)", "vMotion nécessite stockage partagé et réseau dédié", "Proxmox VE : KVM pour VMs complètes, LXC pour conteneurs légers", "Vagrant box = image prépackagée ; provision = script d'init", "VMFS : filesystem propriétaire VMware pour datastores", "Snapshot différent de sauvegarde"]
+    "id": "chap-04",
+    "chapitre": "4",
+    "titre": "Routage statique et dynamique",
+    "cours": "Le routeur est un équipement de couche 3 qui relie plusieurs réseaux IP distincts. Il prend des décisions de transmission basées sur l'adresse IP de destination et décrémente le TTL à chaque saut. Si TTL atteint 0, le paquet est détruit et un message ICMP 'Time Exceeded' est envoyé à la source.\n\nTable de routage :\nChaque routeur maintient une table de routage contenant : réseau de destination | masque | métrique | interface de sortie | passerelle (next-hop). Quand un paquet arrive, le routeur cherche la route la plus spécifique (longest prefix match).\n\nTypes de routes :\n  • C (Connected) : réseaux directement connectés aux interfaces du routeur\n  • L (Local) : adresses IP propres des interfaces\n  • S (Static) : routes configurées manuellement par l'administrateur\n  • O (OSPF), R (RIP) : routes apprises par protocoles dynamiques\n  • Route par défaut (0.0.0.0/0) : Gateway of Last Resort, utilisée si aucune route spécifique ne correspond\n\nRoutage statique :\n  Commande Cisco : ip route [réseau_dest] [masque] [next_hop_ou_interface]\n  Exemple : ip route 192.168.2.0 255.255.255.0 10.0.0.2\n  Route par défaut : ip route 0.0.0.0 0.0.0.0 [passerelle_FAI]\n  Avantages : simple, déterministe, faible charge CPU. Inconvénients : pas de redondance automatique, maintenance manuelle.\n\nRIP v2 (Routing Information Protocol) :\n  • Type : protocole distance-vector (vecteur de distance)\n  • Métrique : hop count (nombre de sauts). Valeur max = 15 (16 = inaccessible/infinity)\n  • Mises à jour envoyées toutes les 30 secondes en broadcast/multicast (224.0.0.9)\n  • Convergence lente : 3 à 5 minutes en cas de panne\n  • Hold-down timer : 180 secondes (ignore annonces de route plus coûteuse pendant ce délai)\n  • Problème count-to-infinity : les boucles de routage peuvent prendre longtemps à se résoudre\n  • RIP v2 supporte CIDR et authentification MD5 (contrairement à RIP v1)\n\nOSPF (Open Shortest Path First) :\n  • Type : protocole link-state (état des liens)\n  • Algorithme : Dijkstra (SPF — Shortest Path First)\n  • Coût (métrique) = 100 Mbps / bande_passante_interface. FastEthernet (100Mbps) = coût 1. GigabitEthernet = coût 0,1 (arrondi à 1). Valeur modifiable.\n  • Chaque routeur OSPF maintient une LSDB (Link State Database) identique dans la même zone\n  • LSA (Link State Advertisement) : annonce d'état d'un lien, diffusée à tout le réseau OSPF\n  • Zones OSPF : area 0 (backbone obligatoire), autres areas connectées au backbone via ABR\n  • Élection DR/BDR sur réseau multi-accès broadcast (priorité OSPF, puis Router-ID le plus élevé)\n  • Convergence rapide, pas de limitation de diamètre (contrairement à RIP)\n\nNAT/PAT (Network Address Translation / Port Address Translation) :\n  • NAT statique : correspondance 1-pour-1 entre IP privée et IP publique\n    Commande : ip nat inside static 192.168.1.10 200.1.1.10\n  • NAT dynamique : pool d'IPs privées traduit vers pool d'IPs publiques\n  • PAT (NAT overload) : plusieurs IPs privées → 1 seule IP publique, distinction par numéros de port.     Solution standard pour l'accès Internet des PME.\n    Commande : ip nat inside source list 1 interface fa0/1 overload\n\nCommandes Cisco pour le routage :\n  • show ip route (table de routage complète)\n  • show ip ospf neighbor (voisins OSPF établis)\n  • show ip nat translations (table NAT/PAT active)\n  • router ospf 1 → network 192.168.1.0 0.0.0.255 area 0 → router-id 1.1.1.1\n  • debug ip routing (traces de routage — avec précaution en production !)",
+    "notions_cles": [
+      {
+        "terme": "Table de routage",
+        "definition": "Base de données du routeur listant les réseaux connus avec leur métrique, interface de sortie et next-hop. Décision par 'longest prefix match'."
+      },
+      {
+        "terme": "Route statique",
+        "definition": "Route configurée manuellement par l'administrateur. Simple et déterministe mais sans redondance automatique."
+      },
+      {
+        "terme": "Route par défaut",
+        "definition": "Route 0.0.0.0/0 utilisée quand aucune route spécifique ne correspond à la destination (Gateway of Last Resort)."
+      },
+      {
+        "terme": "RIP v2",
+        "definition": "Protocole distance-vector, métrique = hop count (max 15), mises à jour toutes les 30s, convergence lente. Adapté aux petits réseaux."
+      },
+      {
+        "terme": "OSPF",
+        "definition": "Protocole link-state utilisant l'algorithme Dijkstra. Coût = 100Mbps/bande passante. Zones avec area 0 obligatoire comme backbone."
+      },
+      {
+        "terme": "LSA (Link State Advertisement)",
+        "definition": "Annonce d'état de lien diffusée par chaque routeur OSPF pour construire la topologie complète du réseau (LSDB)."
+      },
+      {
+        "terme": "NAT/PAT",
+        "definition": "Traduction d'adresses réseau. NAT : IP privée ↔ IP publique. PAT (overload) : plusieurs privées → 1 publique, distinguées par ports."
+      },
+      {
+        "terme": "DR/BDR OSPF",
+        "definition": "Designated Router / Backup Designated Router : élus sur les réseaux multi-accès pour réduire le nombre d'adjacences OSPF."
+      },
+      {
+        "terme": "Longest prefix match",
+        "definition": "Règle de sélection de route : le routeur choisit toujours la route avec le préfixe le plus long (le plus spécifique) correspondant à la destination."
+      }
+    ],
+    "exemple_concret": "Configuration OSPF multi-zone (Cisco IOS) :\n\nR1(config)# router ospf 1\nR1(config-router)# router-id 1.1.1.1\nR1(config-router)# network 192.168.1.0 0.0.0.255 area 0\nR1(config-router)# network 10.0.0.0 0.0.0.3 area 0\n\nR1(config)# ip route 0.0.0.0 0.0.0.0 203.0.113.1  (route par défaut vers FAI)\n\nPAT pour accès Internet :\nR1(config)# access-list 1 permit 192.168.0.0 0.0.255.255\nR1(config)# ip nat inside source list 1 interface fa0/0 overload\nR1(config)# interface fa0/0\nR1(config-if)# ip nat outside\nR1(config)# interface fa0/1\nR1(config-if)# ip nat inside\n\nVérification :\n  R1# show ip route\n  R1# show ip ospf neighbor\n  R1# show ip nat translations",
+    "fiche_revision": {
+      "points_cles": [
+        "Métrique RIP = hop count (max 15, 16 = inaccessible). Mises à jour toutes les 30s. Convergence lente.",
+        "OSPF coût = 100Mbps / bande_passante. FastEthernet = 1. Algorithme Dijkstra. Convergence rapide.",
+        "OSPF requiert area 0 (backbone). ABR connecte les autres areas au backbone.",
+        "Longest prefix match : la route la plus spécifique (/32 > /24 > /16 > /8 > /0) est toujours préférée.",
+        "PAT (NAT overload) : plusieurs IPs privées → 1 IP publique, distinguées par numéros de port.",
+        "Route par défaut : ip route 0.0.0.0 0.0.0.0 [next-hop] — Gateway of Last Resort"
+      ],
+      "formules": [
+        "ip route 192.168.2.0 255.255.255.0 10.0.0.2  (route statique)",
+        "ip route 0.0.0.0 0.0.0.0 203.0.113.1  (route par défaut)",
+        "router ospf 1  →  network 192.168.1.0 0.0.0.255 area 0",
+        "ip nat inside source list 1 interface fa0/1 overload  (PAT)",
+        "show ip route | show ip ospf neighbor | show ip nat translations"
+      ]
+    }
   },
   {
-    "id": "e7-05",
-    "chapitre": "Domaine 3 — Services",
-    "titre": "Chapitre 5 — Conteneurisation Docker",
-    "domaine": "Services",
-    "cours": "Architecture Docker : Engine = daemon (dockerd) + CLI + API REST. Registry = dépôt d'images. Image = template read-only en couches. Conteneur = instance d'image. Dockerfile : FROM, RUN, COPY, ADD, ENV, EXPOSE, VOLUME, USER, WORKDIR, CMD, ENTRYPOINT, HEALTHCHECK. Multi-stage build. Commandes : docker run -d -p -v --network --name -e ; docker exec -it ; docker logs -f ; docker inspect ; docker stats ; docker cp. Volumes : named volume vs bind mount. Réseaux : bridge, host, none, overlay, macvlan. Docker Compose : services, ports, volumes, networks, depends_on, healthcheck, restart, environment. Sécurité : USER non-root, --read-only, --cap-drop, seccomp, trivy.",
-    "notions_cles": ["Image Docker (layers)", "Dockerfile : FROM/RUN/COPY/CMD/ENTRYPOINT", "Multi-stage build", "docker run -d -p -v --network", "Named volume vs bind mount", "Docker Compose", "Réseau bridge/host/overlay", "HEALTHCHECK", "Non-root user sécurité", "Trivy scan"],
-    "exemple_concret": "App IRIS (Docker Compose) : nginx (reverse proxy, 80/443), php-fpm, mariadb (volume nommé db_data), redis. Réseau backend + frontend. Variables via .env. Image custom : Dockerfile multi-stage Go (800MB → 15MB Alpine).",
-    "fiche_revision": ["FROM = couche de base ; chaque RUN/COPY = nouvelle couche (cache)", "CMD vs ENTRYPOINT : CMD = arguments par défaut (overridable), ENTRYPOINT = binaire fixe", "docker run -d (detach) -p host:container -v src:dst --name", "depends_on attend démarrage service, pas disponibilité applicative", "Multi-stage build : réduire taille image finale", "docker compose up -d --build pour rebuild + démarrer"]
+    "id": "chap-05",
+    "chapitre": "5",
+    "titre": "WiFi et sécurité sans fil",
+    "cours": "Le WiFi (Wireless Fidelity) est un ensemble de standards IEEE 802.11 pour les réseaux sans fil. La maîtrise de ces standards et des mécanismes de sécurité associés est essentielle pour un technicien SISR.\n\nÉvolution des normes IEEE 802.11 :\n  • 802.11b (1999) : 2.4 GHz, débit max 11 Mbps, modulation DSSS\n  • 802.11g (2003) : 2.4 GHz, débit max 54 Mbps, modulation OFDM, compatible 802.11b\n  • 802.11n / Wi-Fi 4 (2009) : 2.4 GHz et 5 GHz, débit max 600 Mbps, technologie MIMO (Multiple Input Multiple Output)\n  • 802.11ac / Wi-Fi 5 (2013) : 5 GHz uniquement, débit max 3,5 Gbps, MU-MIMO (multi-utilisateurs simultanés)\n  • 802.11ax / Wi-Fi 6 (2019) : 2.4 GHz, 5 GHz et 6 GHz, débit max 9,6 Gbps, OFDMA (meilleure gestion multi-clients), BSS Coloring, TWT\n\nFréquences et canaux :\n  • 2.4 GHz : 13 canaux (en Europe), seulement 3 canaux non-chevauchants (1, 6, 11).     Longue portée (~100m en intérieur), plus sujette aux interférences (micro-ondes, Bluetooth, voisins).\n  • 5 GHz : 23 canaux non-chevauchants. Courte portée (~30-50m), moins d'interférences, débit plus élevé.\n\nModes de fonctionnement :\n  • Infrastructure (mode BSS) : clients se connectent via un AP (Access Point). Mode standard en entreprise.\n  • Ad-hoc (IBSS) : communication directe entre clients sans AP. Peu utilisé.\n  • WDS (Wireless Distribution System) : AP reliés entre eux en sans-fil pour étendre la couverture.\n\nSSID (Service Set Identifier) : nom du réseau WiFi diffusé par l'AP. Masquer le SSID (SSID hidden) n'est PAS une mesure de sécurité efficace car il reste détectable par des outils comme Wireshark ou airodump-ng.\n\nÉvolution de la sécurité WiFi :\n\n  • WEP (Wired Equivalent Privacy, 1997) : chiffrement RC4 avec clé 64 ou 128 bits, vecteur d'initialisation (IV) de 24 bits réutilisé rapidement.     OBSOLÈTE : cassable en quelques minutes avec aircrack-ng en collectant suffisamment de paquets. Ne jamais utiliser.\n\n  • WPA (Wi-Fi Protected Access, 2003) : utilise TKIP (Temporal Key Integrity Protocol), correction partielle de WEP.     Vulnérabilités connues, remplacé par WPA2.\n\n  • WPA2-PSK / WPA2-Personal (2004) : chiffrement AES-CCMP (robuste), passphrase partagée (PSK).     Standard actuel pour les domiciles et PME. Vulnérable aux attaques par dictionnaire si PSK faible.\n\n  • WPA2-Enterprise (IEEE 802.1X) : authentification individuelle via serveur RADIUS.     Chaque utilisateur possède ses propres identifiants ou certificat. Pas de clé partagée.     Protocoles EAP : PEAP (certificate côté serveur uniquement), EAP-TLS (certificats des deux côtés — plus sécurisé).\n\n  • WPA3 (2018) : protocole SAE (Simultaneous Authentication of Equals / Dragonfly Handshake) remplace le 4-way handshake WPA2.     Protection contre les attaques brute force offline, Perfect Forward Secrecy (PFS — compromission d'une clé ne compromet pas les sessions passées),     OWE (Opportunistic Wireless Encryption) pour réseaux ouverts.\n\nRADIUS (Remote Authentication Dial-In User Service) :\n  • Protocole AAA : Authentication (qui es-tu ?), Authorization (que peux-tu faire ?), Accounting (qu'as-tu fait ?)\n  • Ports UDP 1812 (authentification) et 1813 (accounting)\n  • Le client RADIUS est l'AP ou le switch (NAS — Network Access Server)\n  • Partagé entre NAS et serveur RADIUS par un 'shared secret'\n\nConfiguration WiFi entreprise recommandée :\n  • SSID entreprise : WPA2-Enterprise + RADIUS + PEAP-MSCHAPv2 ou EAP-TLS\n  • SSID invités : VLAN dédié isolé, accès Internet uniquement, portail captif\n  • Désactiver WEP et WPA (TKIP) sur tous les APs\n  • Canaux fixes (pas d'auto-canal) pour éviter les conflits en environnement dense\n  • Puissance d'émission ajustée pour limiter la propagation à l'extérieur des locaux",
+    "notions_cles": [
+      {
+        "terme": "IEEE 802.11",
+        "definition": "Famille de standards WiFi. Wi-Fi 4 (802.11n, 600Mbps), Wi-Fi 5 (802.11ac, 3.5Gbps 5GHz), Wi-Fi 6 (802.11ax, 9.6Gbps OFDMA)."
+      },
+      {
+        "terme": "WPA2-Enterprise",
+        "definition": "Mode WiFi avec authentification 802.1X via serveur RADIUS. Chaque utilisateur a ses identifiants propres — plus sécurisé que WPA2-PSK."
+      },
+      {
+        "terme": "WPA3 / SAE",
+        "definition": "WPA3 utilise Dragonfly Handshake (SAE), offre Perfect Forward Secrecy et résiste aux attaques brute force offline."
+      },
+      {
+        "terme": "RADIUS (802.1X)",
+        "definition": "Serveur AAA (Authentication, Authorization, Accounting) pour authentification réseau centralisée. Ports UDP 1812/1813."
+      },
+      {
+        "terme": "SSID",
+        "definition": "Service Set Identifier : nom du réseau WiFi. Masquer le SSID n'est pas une mesure de sécurité efficace."
+      },
+      {
+        "terme": "WEP",
+        "definition": "Wired Equivalent Privacy : premier protocole WiFi, basé sur RC4, OBSOLÈTE. Cassable en quelques minutes avec aircrack-ng."
+      },
+      {
+        "terme": "Canaux non-chevauchants",
+        "definition": "Sur 2.4 GHz : canaux 1, 6, 11 seulement (évite les interférences). Sur 5 GHz : 23 canaux non-chevauchants disponibles."
+      },
+      {
+        "terme": "EAP-TLS / PEAP",
+        "definition": "Protocoles d'authentification extensible. EAP-TLS : certificats client + serveur (plus sécurisé). PEAP : certificat serveur seul + login/mdp."
+      }
+    ],
+    "exemple_concret": "Déploiement WiFi entreprise (100 utilisateurs) :\n\nArchitecture :\n  - Contrôleur WiFi centralisé (ou APs autonomes avec RADIUS externe)\n  - Serveur NPS/RADIUS (Windows Server) dans VLAN 20 (serveurs)\n  - SSID 'IRIS-Corp' : WPA2-Enterprise, VLAN 10, PEAP-MSCHAPv2 → AD\n  - SSID 'IRIS-Guests' : WPA2-PSK, VLAN 100, portail captif, débit limité 10Mbps\n\nParamètres NPS (Windows Server) :\n  - Client RADIUS : IP AP ou contrôleur WiFi, shared secret 'Str0ngS3cr3t!'\n  - Connection Request Policy : NAS Port Type = Wireless IEEE 802.11\n  - Network Policy : groupe AD 'GRP_WiFi', méthode auth PEAP-MSCHAPv2\n\nSur les APs :\n  - SSID IRIS-Corp → Security WPA2-Enterprise → RADIUS server 192.168.20.10:1812\n  - VLAN mapping : SSID Corp → VLAN 10, SSID Guests → VLAN 100\n  - Canaux 2.4GHz : AP1=canal 1, AP2=canal 6, AP3=canal 11 (pas de chevauchement)",
+    "fiche_revision": {
+      "points_cles": [
+        "WEP = OBSOLÈTE, cassable en minutes | WPA2-PSK = domicile/PME | WPA2-Enterprise = entreprise avec RADIUS",
+        "WPA3 = SAE/Dragonfly, Perfect Forward Secrecy, résistant brute force offline",
+        "RADIUS ports : 1812 (auth) et 1813 (accounting) — protocole UDP",
+        "2.4 GHz : 3 canaux non-chevauchants (1, 6, 11) | 5 GHz : 23 canaux non-chevauchants",
+        "Wi-Fi 6 (802.11ax) : OFDMA, BSS Coloring, TWT — optimisé pour environnements denses",
+        "Masquer le SSID n'est PAS une sécurité — détectable par airodump-ng/Wireshark",
+        "EAP-TLS (cert client+serveur) > PEAP (cert serveur seul + login/mdp) en termes de sécurité"
+      ],
+      "formules": [
+        "802.11b=11Mbps | 802.11g=54Mbps | 802.11n=600Mbps | 802.11ac=3.5Gbps | 802.11ax=9.6Gbps",
+        "RADIUS : Client (AP/NAS) → shared secret → Serveur RADIUS → AD/LDAP",
+        "Canaux 2.4GHz non-chevauchants : 1 — 6 — 11"
+      ]
+    }
   },
   {
-    "id": "e7-06",
-    "chapitre": "Domaine 4 — Réseaux",
-    "titre": "Chapitre 6 — Infrastructure réseau Cisco (IOS, VLANs, STP, ACL, OSPF)",
-    "domaine": "Réseaux",
-    "cours": "IOS essentiels : enable, conf t, end, exit, do show, copy running-config startup-config. show ip int brief, show running-config, show vlan brief, show spanning-tree, show cdp neighbors, show ip route, show ip ospf neighbor. VLANs : vlan 10, name Utilisateurs. Port access : switchport mode access, switchport access vlan 10. Port trunk : switchport trunk encapsulation dot1q, switchport mode trunk, switchport trunk allowed vlan, native vlan 99. Inter-VLAN routing (Router-on-a-stick) : interface Fa0/1.10, encapsulation dot1Q 10. L3 switch : ip routing, interface Vlan10. STP : root bridge = plus petit Bridge ID. Portfast + BPDU Guard. ACL standard (1-99) : source uniquement, près destination. ACL étendue (100-199) : src+dst+protocole+port, près source. Named ACL. NAT/PAT : ip nat inside source list overload. OSPF : router ospf 1, network area 0.",
-    "notions_cles": ["IOS enable/conf t/copy run start", "show ip int brief", "VLANs access/trunk dot1q", "Router-on-a-stick subinterfaces", "L3 switch SVI + ip routing", "STP root bridge election", "Portfast + BPDU Guard", "ACL standard (1-99) vs étendue (100-199)", "Wildcard mask", "NAT/PAT overload", "OSPF area 0"],
-    "exemple_concret": "Réseau IRIS PME : Core switch Cisco 3560 (L3), 2 access switches 2960. VLANs : 10=Users (192.168.10.0/24), 20=Servers (192.168.20.0/24), 30=DMZ (192.168.30.0/24), 99=Native. SVI sur core. ACL étendue : interdire VLAN10 vers VLAN20 port 22. OSPF area 0 entre routeurs. NAT/PAT sur routeur bord. STP : core = root bridge (priorité 4096).",
-    "fiche_revision": ["Wildcard mask = inverse du masque subnet : /24 donne 0.0.0.255", "ACL standard : source seulement, placer près de la destination", "ACL étendue : src+dst+protocole, placer près de la source", "Trunk : encapsulation dot1q AVANT switchport mode trunk", "STP priorité par défaut 32768, modifier par multiples de 4096", "OSPF network utilise wildcard mask", "ip route 0.0.0.0 0.0.0.0 = route par défaut"]
+    "id": "chap-06",
+    "chapitre": "6",
+    "titre": "Firewall et DMZ",
+    "cours": "Le firewall (pare-feu) est un dispositif de sécurité réseau filtrant le trafic entrant et sortant selon des règles définies par l'administrateur. Il constitue le premier rempart de défense d'un système d'information.\n\nTypes de firewalls :\n\n  • Firewall stateless (sans état / packet filtering) :     examine chaque paquet individuellement en fonction de l'IP source, l'IP destination, le port et le protocole.     Rapide et peu gourmand en ressources, mais aveugle au contexte des connexions TCP.     Un attaquant peut forger des paquets qui imitent du trafic légitime.\n\n  • Firewall stateful (avec état / stateful inspection) :     suit l'état des connexions TCP (SYN → SYN-ACK → ACK → ESTABLISHED → FIN).     Reconnaît automatiquement le trafic retour légitime d'une connexion initiée de l'intérieur.     Protection plus efficace contre SYN flood, TCP hijacking. Standard actuel.\n\n  • Firewall applicatif (couche 7 / proxy / WAF) :     inspecte le contenu applicatif (HTTP, SMTP, DNS), détecte les attaques applicatives (SQLi, XSS).     WAF (Web Application Firewall) protège spécifiquement les applications web.\n\nRègles de filtrage :\n  • Ordre critique : les règles sont évaluées séquentiellement, la PREMIÈRE règle qui correspond s'applique (first match wins)\n  • Règle implicite finale : DENY ALL (tout ce qui n'est pas explicitement autorisé est refusé)\n  • Éléments d'une règle : sens (entrant/sortant), IP source, IP destination, protocole (TCP/UDP/ICMP), port source, port destination, action (ALLOW/DENY/LOG)\n\nDMZ (DeMilitarized Zone) :\nLa DMZ est un sous-réseau intermédiaire entre le LAN interne et Internet, hébergeant les serveurs accessibles publiquement (serveur web, serveur mail, FTP public, DNS externe, serveur VPN).\n\nArchitecture DMZ à 3 interfaces (recommandée) :\n  • Interface WAN : connectée à Internet (IP publique)\n  • Interface DMZ : connectée aux serveurs publics (ex: 172.16.1.0/24)\n  • Interface LAN : connectée au réseau interne (ex: 192.168.1.0/24)\n\nPolitique de filtrage DMZ (principe du moindre privilège) :\n  ✓ WAN → DMZ : autorisé sur ports spécifiques (80/443 pour web, 25/465/587 pour mail)\n  ✓ LAN → DMZ : autorisé pour administration (ex: SSH depuis sous-réseau admin uniquement)\n  ✓ LAN → WAN : autorisé (filtré par proxy/IPS)\n  ✗ WAN → LAN : REFUSÉ (sauf trafic retour pour connexions initiées depuis LAN)\n  ✗ DMZ → LAN : REFUSÉ IMPÉRATIVEMENT (si serveur DMZ compromis, le LAN ne doit pas être atteignable)\n\npfSense (pare-feu open source basé FreeBSD) :\n  • Interface web d'administration (port 443 par défaut)\n  • Interfaces : WAN, LAN, DMZ avec règles par interface\n  • Port Forward : redirection de port WAN:443 → DMZ:443 (server web)\n  • Alias : groupes d'IPs ou de ports nommés pour simplifier les règles\n  • Modules : DHCP, DNS forwarder, VPN (OpenVPN/IPsec), IDS (Suricata), proxy (Squid)\n\niptables (Linux — filtrage réseau kernel) :\n  Chaînes principales :\n  • INPUT : paquets à destination du système local\n  • OUTPUT : paquets générés par le système local\n  • FORWARD : paquets traversant le système (routage)\n\n  Commandes essentielles :\n  • iptables -A INPUT -p tcp --dport 22 -j ACCEPT (autoriser SSH)\n  • iptables -A INPUT -p tcp --dport 80 -j ACCEPT (autoriser HTTP)\n  • iptables -A INPUT -j DROP (bloquer tout le reste — politique de refus par défaut)\n  • iptables -L -v -n (lister toutes les règles avec compteurs)\n  • iptables -F (vider TOUTES les règles — DANGER en production !)\n  • iptables -P INPUT DROP (politique par défaut : DROP pour INPUT)\n\nOutils complémentaires :\n  • fail2ban : analyse les logs (auth.log, apache access.log), bannit automatiquement les IPs avec trop d'échecs de connexion via iptables\n  • Snort / Suricata : IDS/IPS (Intrusion Detection/Prevention System), analysent les paquets selon des signatures d'attaques connues\n  • Honeypot : système intentionnellement vulnérable pour attirer les attaquants, analyser leurs techniques sans risque pour le SI réel",
+    "notions_cles": [
+      {
+        "terme": "Firewall stateless",
+        "definition": "Filtre les paquets individuellement par IP/port sans mémoriser l'état des connexions. Rapide mais vulnérable aux paquets forgés."
+      },
+      {
+        "terme": "Firewall stateful",
+        "definition": "Suit l'état des connexions TCP. Reconnaît automatiquement le trafic retour légitime. Standard actuel de sécurité réseau."
+      },
+      {
+        "terme": "DMZ (DeMilitarized Zone)",
+        "definition": "Sous-réseau isolé entre LAN et WAN pour les serveurs accessibles publiquement. Règle clé : DMZ → LAN doit être refusé."
+      },
+      {
+        "terme": "First match wins",
+        "definition": "Dans un firewall, les règles sont évaluées dans l'ordre. La première règle correspondant au paquet s'applique et l'évaluation s'arrête."
+      },
+      {
+        "terme": "iptables",
+        "definition": "Outil de filtrage réseau Linux basé sur Netfilter. Chaînes INPUT (entrant), OUTPUT (sortant), FORWARD (transité)."
+      },
+      {
+        "terme": "fail2ban",
+        "definition": "Outil Linux analysant les logs pour détecter les tentatives de connexion répétées et bannir automatiquement les IPs via iptables."
+      },
+      {
+        "terme": "IDS/IPS",
+        "definition": "Intrusion Detection System (passif, alerte seulement) / Intrusion Prevention System (actif, bloque). Outils : Snort, Suricata."
+      },
+      {
+        "terme": "WAF (Web Application Firewall)",
+        "definition": "Firewall applicatif spécialisé pour la protection des applications web contre les attaques SQLi, XSS, CSRF, etc."
+      },
+      {
+        "terme": "Honeypot",
+        "definition": "Système leurre intentionnellement vulnérable pour attirer et analyser les attaquants. Permet d'étudier les techniques sans mettre le SI réel en danger."
+      }
+    ],
+    "exemple_concret": "Configuration pfSense avec DMZ :\n\nInterfaces :\n  - WAN : 203.0.113.1/24 (IP publique FAI)\n  - LAN : 192.168.1.1/24 (réseau interne)\n  - DMZ : 172.16.1.1/24 (serveurs publics)\n\nRègles pfSense (onglet Firewall > Rules) :\n  1. WAN → DMZ : TCP dst 172.16.1.10 port 80,443 → ALLOW (serveur web)\n  2. WAN → DMZ : TCP dst 172.16.1.20 port 25,465 → ALLOW (serveur mail)\n  3. LAN → any : → ALLOW (trafic sortant interne)\n  4. DMZ → LAN : → BLOCK (isolation critique)\n  5. any → any : → BLOCK (deny all implicite)\n\nPort Forward (NAT) :\n  WAN:443 → 172.16.1.10:443 (HTTPS vers serveur web DMZ)\n\niptables sur serveur web DMZ (Ubuntu) :\n  iptables -P INPUT DROP\n  iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT\n  iptables -A INPUT -p tcp --dport 80 -j ACCEPT\n  iptables -A INPUT -p tcp --dport 443 -j ACCEPT\n  iptables -A INPUT -p tcp --dport 22 -s 192.168.1.0/24 -j ACCEPT  (SSH depuis LAN uniquement)",
+    "fiche_revision": {
+      "points_cles": [
+        "Stateless = paquet par paquet (sans contexte) | Stateful = suit l'état TCP (standard actuel)",
+        "DMZ : WAN→DMZ autorisé sur ports spécifiques | DMZ→LAN TOUJOURS REFUSÉ",
+        "Règles firewall : first match wins + deny all implicite en fin",
+        "fail2ban : détecte brute force dans logs → ban IP via iptables automatiquement",
+        "IDS (Snort/Suricata) = détecte et alerte | IPS = détecte et bloque",
+        "Honeypot = leurre pour analyser techniques d'attaque sans risque réel",
+        "iptables : INPUT (entrant) | OUTPUT (sortant) | FORWARD (transité)"
+      ],
+      "formules": [
+        "iptables -A INPUT -p tcp --dport 22 -j ACCEPT",
+        "iptables -A INPUT -j DROP  (règle finale : tout bloquer)",
+        "iptables -L -v -n  (lister les règles)",
+        "iptables -P INPUT DROP  (politique par défaut DROP)",
+        "iptables -F  (vider toutes règles — DANGER !)"
+      ]
+    }
   },
   {
-    "id": "e7-07",
-    "chapitre": "Domaine 5 — Supervision",
-    "titre": "Chapitre 7 — Supervision et monitoring (Prometheus, Grafana, ELK)",
-    "domaine": "Supervision",
-    "cours": "SNMP v2c (community string), SNMPv3 (authPriv : SHA + AES). MIB/OID/Trap. Syslog niveaux 0-7. Prometheus : pull (scraping), prometheus.yml, AlertManager. PromQL : up, rate(), avg(), node_cpu, node_memory, node_filesystem. Grafana : datasources, dashboards, panels, alertes. Exporters : node_exporter (9100), blackbox_exporter (9115), snmp_exporter. ELK : Elasticsearch (indexation), Logstash (ETL, grok), Kibana (viz). Filebeat collecte logs. Nagios checks actifs/passifs. Zabbix auto-découverte.",
-    "notions_cles": ["SNMP v2c vs v3 (authPriv)", "OID/MIB/Trap", "Prometheus scraping pull", "PromQL rate()/avg()/by()", "AlertManager routes/receivers", "node_exporter/blackbox_exporter", "Grafana datasources/panels", "ELK Stack", "Syslog niveaux 0-7"],
-    "exemple_concret": "Stack IRIS : Prometheus + Grafana (Docker Compose). node_exporter sur chaque Linux. blackbox_exporter HTTP 200 toutes les 30s. AlertManager : CPU > 80% pendant 5min → Slack. ELK : nginx logs via Filebeat → Logstash (grok nginx) → Elasticsearch → Kibana.",
-    "fiche_revision": ["SNMPv3 authPriv = seule version vraiment sécurisée", "Prometheus pull : il va chercher les métriques", "rate() calcule le taux de variation d'un counter", "node_exporter port 9100, blackbox_exporter port 9115", "Syslog : 0=emerg 1=alert 2=crit 3=err 4=warn 5=notice 6=info 7=debug", "ELK : Filebeat collecte, Logstash transforme, Elasticsearch indexe, Kibana affiche"]
+    "id": "chap-07",
+    "chapitre": "7",
+    "titre": "VPN et accès sécurisés",
+    "cours": "Un VPN (Virtual Private Network) crée un tunnel chiffré sur un réseau non sécurisé (Internet), permettant de communiquer comme si les équipements étaient sur le même réseau privé. Le VPN garantit confidentialité, intégrité et authentification des communications.\n\nTypes de VPN :\n  • VPN site-à-site : relie deux réseaux distants de façon permanente (ex: siège ↔ agence).     Tunnel transparent pour les utilisateurs, géré par les routeurs/firewalls aux extrémités.\n  • VPN accès distant (Remote Access VPN) : un employé se connecte au réseau entreprise depuis son domicile.     Nécessite un client VPN sur le poste utilisateur.\n  • SSL VPN (clientless) : accès via navigateur web HTTPS, sans client logiciel dédié.     Portail web donnant accès aux applications internes.\n\nIPsec (Internet Protocol Security) :\nSuite de protocoles IETF pour la sécurisation des communications IP. Standard pour VPN site-à-site.\n\n  Protocoles IPsec :\n  • AH (Authentication Header) : authentification + intégrité uniquement. PAS de chiffrement.\n  • ESP (Encapsulating Security Payload) : authentification + intégrité + CHIFFREMENT (AES). Le plus utilisé.\n\n  Modes IPsec :\n  • Mode transport : protège uniquement le payload IP. En-tête IP original conservé. Utilisé entre hôtes.\n  • Mode tunnel : tout le paquet IP original est encapsulé dans un nouveau paquet. Utilisé pour VPN site-à-site.\n\n  Négociation IKE (Internet Key Exchange) :\n  • Phase 1 (IKE SA / ISAKMP) : établissement d'un canal sécurisé pour la négociation.     Échange Diffie-Hellman, authentification mutuelle (PSK ou certificats), négociation algorithmes.\n  • Phase 2 (IPsec SA) : négociation des paramètres IPsec réels (algorithme chiffrement ESP, hash, PFS).     PFS (Perfect Forward Secrecy) : nouvelle clé DH à chaque session Phase 2.\n\nOpenVPN :\n  • Basé sur TLS/SSL, flexible, open source\n  • Port UDP 1194 par défaut (ou TCP 443 pour traverser les pare-feux restrictifs)\n  • Fichier client .ovpn contenant : adresse serveur, certificat CA, certificat client, clé privée client, paramètres\n  • Authentification possible par certificat seul, login/mdp seul, ou les deux (recommandé)\n  • Split tunneling : configurable avec push 'route'\n\nWireGuard :\n  • Protocole VPN moderne (intégré au kernel Linux depuis 5.6)\n  • Cryptographie moderne : Curve25519 (échange clés), ChaCha20 (chiffrement), Poly1305 (intégrité)\n  • Configuration minimaliste, performances supérieures à IPsec et OpenVPN\n  • Paires de clés publiques/privées (similaire à SSH)\n\nAuthentification multi-facteurs (MFA / 2FA) :\n  Facteurs d'authentification :\n  • Quelque chose que vous SAVEZ : mot de passe, PIN\n  • Quelque chose que vous AVEZ : token TOTP (Google Authenticator, Authy), SMS, carte à puce\n  • Quelque chose que vous ÊTES : biométrie (empreinte, reconnaissance faciale)\n\n  TOTP (Time-based One-Time Password — RFC 6238) :\n  • Code numérique de 6 chiffres changeant toutes les 30 secondes\n  • Calculé par HMAC-SHA1 sur la clé secrète + timestamp UNIX\n  • Nécessite synchronisation NTP (±30 secondes tolérance)\n  • Flux d'authentification VPN avec 2FA : login + mdp → OK → saisie code TOTP → vérification → accès accordé\n\nSplit tunneling :\n  • Seul le trafic à destination du réseau d'entreprise passe par le VPN\n  • Le reste (navigation web, streaming) passe directement par la connexion Internet locale\n  • Avantage : économise la bande passante du VPN | Risque : le poste expose deux réseaux simultanément\n\nLogs VPN :\n  Informations journalisées : IP source, heure de connexion, durée, utilisateur authentifié, volume de données,   adresse VPN assignée. Essentiels pour audit de sécurité et investigation forensique.",
+    "notions_cles": [
+      {
+        "terme": "VPN site-à-site",
+        "definition": "Tunnel VPN permanent reliant deux réseaux distants. Transparent pour les utilisateurs, géré par les équipements de bordure."
+      },
+      {
+        "terme": "IPsec ESP",
+        "definition": "Encapsulating Security Payload : protocole IPsec fournissant authentification, intégrité ET chiffrement (AES). Plus utilisé qu'AH."
+      },
+      {
+        "terme": "IKE Phase 1 / Phase 2",
+        "definition": "Phases de négociation IPsec. Phase 1 : canal sécurisé ISAKMP + auth. Phase 2 : paramètres IPsec SA (chiffrement, hash, PFS)."
+      },
+      {
+        "terme": "Mode tunnel vs transport",
+        "definition": "Tunnel : tout le paquet IP original encapsulé (VPN site-à-site). Transport : payload seul protégé, en-tête IP original conservé."
+      },
+      {
+        "terme": "OpenVPN",
+        "definition": "VPN open source basé TLS/SSL, port UDP 1194 (ou TCP 443), fichier .ovpn, authentification certificat + login/mdp."
+      },
+      {
+        "terme": "WireGuard",
+        "definition": "VPN moderne dans le kernel Linux (>5.6), Curve25519 + ChaCha20 + Poly1305, performances supérieures, configuration simple."
+      },
+      {
+        "terme": "TOTP (RFC 6238)",
+        "definition": "Time-based One-Time Password : code 6 chiffres changeant toutes les 30s, calculé par HMAC-SHA1. Nécessite synchronisation NTP."
+      },
+      {
+        "terme": "Split tunneling",
+        "definition": "Seul le trafic entreprise passe par le VPN. Le reste utilise la connexion Internet locale. Économise la bande passante mais expose deux réseaux."
+      },
+      {
+        "terme": "PFS (Perfect Forward Secrecy)",
+        "definition": "Nouvelle clé Diffie-Hellman à chaque session. Compromission d'une clé ne compromet pas les sessions passées ou futures."
+      }
+    ],
+    "exemple_concret": "Déploiement OpenVPN accès distant (Linux serveur + client Windows) :\n\nServeur OpenVPN (Ubuntu) :\n  apt install openvpn easy-rsa\n  ./easyrsa init-pki && ./easyrsa build-ca\n  ./easyrsa gen-req server nopass && ./easyrsa sign-req server server\n  ./easyrsa gen-req client1 && ./easyrsa sign-req client client1\n\nFichier /etc/openvpn/server.conf :\n  port 1194\n  proto udp\n  dev tun\n  ca ca.crt\n  cert server.crt\n  key server.key\n  dh dh2048.pem\n  server 10.8.0.0 255.255.255.0\n  push 'route 192.168.1.0 255.255.255.0'  (route vers réseau interne)\n  push 'dhcp-option DNS 192.168.1.10'\n\nFichier client.ovpn :\n  client\n  remote vpn.entreprise.com 1194\n  proto udp\n  <ca> ... </ca>\n  <cert> ... </cert>\n  <key> ... </key>\n\nVérification :\n  systemctl status openvpn@server\n  ip addr show tun0  (interface tunnel côté serveur)\n  cat /var/log/openvpn.log",
+    "fiche_revision": {
+      "points_cles": [
+        "IPsec AH = intégrité seulement | IPsec ESP = intégrité + CHIFFREMENT (AES) — utiliser ESP",
+        "Mode tunnel = VPN site-à-site (paquet entier encapsulé) | Mode transport = entre hôtes",
+        "IKE Phase 1 : canal sécurisé + authentification | Phase 2 : SA IPsec (chiffrement, hash)",
+        "TOTP : code 6 chiffres toutes les 30s — NTP indispensable pour synchronisation",
+        "Split tunneling : trafic entreprise via VPN, reste via Internet local (risque sécurité)",
+        "PFS : nouvelle clé DH à chaque session → compromission d'une clé n'affecte pas les autres",
+        "WireGuard : kernel Linux 5.6+, Curve25519/ChaCha20/Poly1305, plus performant qu'OpenVPN"
+      ],
+      "formules": [
+        "OpenVPN serveur : port 1194 | proto udp | dev tun | server 10.8.0.0 255.255.255.0",
+        "push 'route 192.168.1.0 255.255.255.0'  (pousser route vers client VPN)",
+        "systemctl start openvpn@server",
+        "ip addr show tun0  (interface VPN tunnel)"
+      ]
+    }
   },
   {
-    "id": "e7-08",
-    "chapitre": "Domaine 6 — Cybersécurité",
-    "titre": "Chapitre 8 — Sécurité des infrastructures (Hardening, PKI, VPN, MFA)",
-    "domaine": "Cybersécurité",
-    "cours": "Hardening : CIS Benchmarks L1/L2, moindre privilège, Lynis audit system. Windows : disable SMBv1, LLMNR/NBT-NS. PKI : CA racine offline, CA subordonnée online, CRL/OCSP. IPSec : Phase 1 (IKE ISAKMP), Phase 2 (ESP chiffre+intègre, AH intègre). Modes tunnel/transport. IKEv2 (RFC 7296). WireGuard : Curve25519/ChaCha20/Poly1305, [Interface] + [Peer]. MFA : TOTP (RFC 6238, HMAC-SHA1 + timestamp 30s), FIDO2/WebAuthn. DMZ, Zero Trust, VLAN segmentation. Windows Event IDs : 4624 (logon ok), 4625 (échec), 4648, 4776, 4771. auditd Linux. ANSSI PA-022, tiering T0/T1/T2.",
-    "notions_cles": ["CIS Benchmarks L1/L2", "Lynis audit", "PKI CA racine offline", "IPSec IKEv1/IKEv2, ESP/AH", "Modes tunnel/transport", "WireGuard Curve25519", "MFA TOTP RFC 6238", "FIDO2/WebAuthn", "DMZ/Zero Trust", "Windows Event ID 4624/4625", "auditd Linux", "ANSSI PA-022", "Tiering T0/T1/T2"],
-    "exemple_concret": "Hardening IRIS : Lynis 68→84. Désactivé SMBv1, WireGuard remplace PPTP, MFA TOTP sur admins. Tiering : T0=AD/PKI, T1=Serveurs, T2=Postes. SIEM Wazuh : 4625+4771 = brute force alert.",
-    "fiche_revision": ["ESP = chiffrement + intégrité ; AH = intégrité seulement", "WireGuard : plus simple, meilleures performances qu'IPSec", "TOTP : code change toutes les 30s, NTP indispensable", "Tiering AD : T0=AD/PKI, T1=Serveurs, T2=Postes (pas de comptes croisés)", "Event 4625 = échec logon ; beaucoup de 4625 = brute force", "lynis audit system génère rapport avec priorités CIS"]
+    "id": "chap-08",
+    "chapitre": "8",
+    "titre": "Windows Server et Active Directory",
+    "cours": "Windows Server est le système d'exploitation serveur de Microsoft. Les versions actuelles sont Windows Server 2019 et 2022. Il existe deux modes d'installation : Server Core (sans interface graphique, plus sécurisé, moins de ressources) et Desktop Experience (avec GUI, plus facile à administrer).\n\nRôles Windows Server principaux (ajoutés via Server Manager ou Install-WindowsFeature) :\n  • AD DS (Active Directory Domain Services) : annuaire LDAP pour la gestion des identités et accès\n  • DHCP : attribution dynamique d'adresses IP\n  • DNS : résolution des noms de domaine en adresses IP\n  • IIS (Internet Information Services) : serveur web Microsoft\n  • Hyper-V : hyperviseur de type 1 (virtualisation bare-metal)\n  • RDS (Remote Desktop Services) : bureau à distance multi-utilisateurs\n  • WSUS (Windows Server Update Services) : gestion centralisée des mises à jour Windows\n  • File Server avec DFS : partage de fichiers SMB et espace de noms distribué\n\nActive Directory Domain Services (AD DS) :\n\nStructure logique AD :\n  • Domaine : unité administrative de base (ex: entreprise.local). Un DC (Domain Controller) gère l'annuaire LDAP.\n  • Forêt (Forest) : ensemble de domaines partageant le même schéma AD. Frontière de sécurité ultime.\n  • Arbre (Tree) : domaines partageant un espace de noms DNS contigu (corp.com, rh.corp.com, it.corp.com).     Relations de confiance bidirectionnelles et transitives entre domaines d'un même arbre.\n  • OU (Organizational Unit) : conteneur pour les objets AD (users, computers, groups, autres OUs).     Permet la délégation d'administration et l'application ciblée des GPOs.\n\nRôles FSMO (Flexible Single Master Operations) — 5 rôles uniques :\n  Par forêt (2 rôles) : Schema Master (modifications du schéma AD), Domain Naming Master (ajout/suppression domaines)\n  Par domaine (3 rôles) : PDC Emulator (synchronisation heure, verrouillage comptes, compatibilité NT4),     RID Master (attribution de pools de RIDs pour création d'objets), Infrastructure Master (cohérence références inter-domaines)\n\nGPO (Group Policy Object) :\n  • Ensemble de paramètres de configuration appliqués à des OUs, domaines ou sites\n  • Exemples GPO sécurité : longueur min mot de passe 12 caractères, complexité obligatoire, verrouillage après 5 échecs, durée max 90 jours\n  • Exemples GPO postes : fond d'écran imposé, désactiver USB, restriction panneau de configuration, déploiement logiciels\n  • Ordre d'application (LSDOU) : Local → Site → Domain → OU parente → OU enfant. Dernière GPO appliquée gagne.\n  • gpresult /R : affiche les GPOs appliquées à l'utilisateur et l'ordinateur courants\n  • gpupdate /force : force la réapplication immédiate des GPOs\n\nGroupes AD :\n  • Locaux domaine (Domain Local) : accès aux ressources du domaine local. Peuvent contenir membres d'autres domaines.\n  • Globaux : regroupement d'utilisateurs du même domaine. Peuvent être membres de groupes locaux domaine.\n  • Universels : membres de toute la forêt. Plus flexible, répliqué dans le catalogue global. Utilisé pour forêts multi-domaines.\n  • Stratégie AGDLP : Account (user) → Global group → Domain Local group → Permission (ressource)\n\nPowerShell Active Directory (module RSAT-AD-PowerShell) :\n  • New-ADUser -Name 'Jean Dupont' -SamAccountName 'jdupont' -UserPrincipalName 'jdupont@corp.com' -AccountPassword (ConvertTo-SecureString 'P@ssw0rd' -AsPlainText -Force) -Enabled $true\n  • New-ADGroup -Name 'IT-Admins' -GroupScope Global -GroupCategory Security\n  • Get-ADUser -Filter {Department -eq 'IT'} | Select-Object Name, SamAccountName, Enabled\n  • Add-ADGroupMember -Identity 'IT-Admins' -Members 'jdupont'\n  • Move-ADObject -Identity 'CN=jdupont,OU=Users,DC=corp,DC=com' -TargetPath 'OU=IT,DC=corp,DC=com'\n  • Get-ADGroupMember -Identity 'IT-Admins' | Select-Object Name, SamAccountName\n\nOutils d'administration AD :\n  • dsa.msc : Active Directory Users and Computers\n  • gpmc.msc : Group Policy Management Console\n  • adsiedit.msc : éditeur ADSI (accès bas niveau à l'annuaire LDAP)\n  • dcdiag /test:all : diagnostic complet de la santé du DC\n  • repadmin /replsummary : état de la réplication AD",
+    "notions_cles": [
+      {
+        "terme": "Active Directory (AD DS)",
+        "definition": "Service d'annuaire LDAP de Microsoft. Gère l'authentification, les autorisations et les politiques sur un domaine Windows."
+      },
+      {
+        "terme": "Domain Controller (DC)",
+        "definition": "Serveur Windows hébergeant l'annuaire AD DS et authentifiant les utilisateurs du domaine via Kerberos ou NTLM."
+      },
+      {
+        "terme": "OU (Organizational Unit)",
+        "definition": "Conteneur AD permettant d'organiser les objets (users, computers, groups), de déléguer l'administration et d'appliquer les GPOs."
+      },
+      {
+        "terme": "GPO (Group Policy Object)",
+        "definition": "Objet de stratégie de groupe définissant des paramètres de configuration appliqués à des OUs, domaines ou sites. Ordre LSDOU."
+      },
+      {
+        "terme": "FSMO",
+        "definition": "5 rôles AD uniques : Schema Master, Domain Naming Master (par forêt) + PDC Emulator, RID Master, Infrastructure Master (par domaine)."
+      },
+      {
+        "terme": "Groupes AGDLP",
+        "definition": "Stratégie de gestion des accès AD : Account → Global group → Domain Local group → Permission."
+      },
+      {
+        "terme": "Forêt AD",
+        "definition": "Ensemble de domaines partageant le même schéma AD et des relations de confiance. Frontière de sécurité la plus haute d'AD."
+      },
+      {
+        "terme": "gpresult / gpupdate",
+        "definition": "gpresult /R : affiche les GPOs appliquées. gpupdate /force : force la réapplication immédiate des stratégies de groupe."
+      }
+    ],
+    "exemple_concret": "Déploiement AD DS pour PME (50 utilisateurs) :\n\nInstallation rôle (PowerShell) :\n  Install-WindowsFeature AD-Domain-Services -IncludeManagementTools\n  Install-ADDSForest -DomainName 'corp.entreprise.com' -SafeModeAdministratorPassword (ConvertTo-SecureString 'P@ssw0rd1' -AsPlainText -Force)\n\nStructure OU :\n  corp.entreprise.com\n  ├── OU=Utilisateurs\n  │   ├── OU=Direction\n  │   ├── OU=IT\n  │   └── OU=RH\n  ├── OU=Ordinateurs\n  └── OU=Groupes\n\nGPO 'Securite-Postes' liée à OU=Ordinateurs :\n  - Longueur min mdp : 12 car | Complexité : activée | Verrouillage : 5 échecs / 30 min\n  - Désactiver ports USB non approuvés\n  - Fond d'écran corporatif imposé\n\nCréation utilisateur IT :\n  New-ADUser -Name 'Alice Martin' -SamAccountName 'amartin' -Path 'OU=IT,OU=Utilisateurs,DC=corp,DC=entreprise,DC=com' -AccountPassword (ConvertTo-SecureString 'P@ss2024!' -AsPlainText -Force) -Enabled $true -Department 'IT'\n  Add-ADGroupMember -Identity 'IT-Admins' -Members 'amartin'",
+    "fiche_revision": {
+      "points_cles": [
+        "Structure AD : Forêt > Arbre > Domaine > OU > Objets (users, computers, groups)",
+        "5 rôles FSMO : 2 par forêt (Schema, DN Master) + 3 par domaine (PDC, RID, Infra)",
+        "GPO ordre LSDOU : Local → Site → Domain → OU (dernière appliquée gagne en cas de conflit)",
+        "AGDLP : Account → Global group → Domain Local group → Permission (sur ressource)",
+        "gpresult /R = GPOs appliquées | gpupdate /force = forcer réapplication",
+        "Groupes : locaux domaine (ressources locales) | globaux (users du domaine) | universels (toute la forêt)",
+        "dcdiag /test:all = diagnostic santé DC | repadmin /replsummary = état réplication"
+      ],
+      "formules": [
+        "Install-WindowsFeature AD-Domain-Services -IncludeManagementTools",
+        "New-ADUser -Name 'Prenom Nom' -SamAccountName 'pnom' -Enabled $true -AccountPassword (...)",
+        "New-ADGroup -Name 'Groupe' -GroupScope Global",
+        "Add-ADGroupMember -Identity 'Groupe' -Members 'user'",
+        "Get-ADUser -Filter {Department -eq 'IT'} | Select Name, SamAccountName",
+        "gpresult /R | gpupdate /force"
+      ]
+    }
   },
   {
-    "id": "e7-09",
-    "chapitre": "Domaine 7 — Continuité",
-    "titre": "Chapitre 9 — Haute disponibilité et PRA/PCA (DRBD, Keepalived, BorgBackup)",
-    "domaine": "Continuité",
-    "cours": "SPOF, redondance actif/actif vs actif/passif. MTBF, MTTR. SLA 99.9%=8h45/an, 99.99%=52min/an. RPO = perte données max. RTO = durée indispo max. HAProxy : frontend, backend, ACL, stats. Keepalived + VRRP (RFC 5798). DRBD : protocoles A (async), B (semi-sync), C (sync, RPO=0). Commandes : drbdadm up, primary --force, drbd-overview, /proc/drbd. BorgBackup : borg init --encryption=repokey, borg create ::nom /etc /var/www /home --compression lz4 --exclude-caches, borg list, borg extract. borgmatic. Stratégie 3-2-1+1 : 3 copies, 2 supports, 1 hors-site, 1 cloud immuable. Test restauration obligatoire.",
-    "notions_cles": ["SPOF", "RPO/RTO", "Actif/actif vs actif/passif", "SLA 99.9%/99.99%", "HAProxy frontend/backend", "VRRP/Keepalived", "DRBD protocoles A/B/C", "BorgBackup init/create/list/extract", "borgmatic", "Stratégie 3-2-1+1", "MTBF/MTTR"],
-    "exemple_concret": "PRA IRIS : SRV-PROD + SRV-DR, DRBD protocol C (/data 100GB), réseau dédié 172.16.0.0/30. Keepalived VIP 192.168.20.100 (PROD priority 100, DR priority 90). BorgBackup cron 3h vers NFS + S3. RTO mesuré 12 min, RPO=0.",
-    "fiche_revision": ["RPO = combien de données peut-on perdre ; RTO = combien de temps peut-on être arrêté", "DRBD C = synchrone = RPO=0 ; DRBD A = asynchrone = risque perte", "Keepalived : MASTER priority > BACKUP priority", "SLA 99.9% = 8h45 downtime/an autorisé", "3-2-1+1 : 3 copies, 2 supports, 1 hors-site, 1 immuable cloud", "Test restauration = obligatoire (sans test = PRA non validé)"]
+    "id": "chap-09",
+    "chapitre": "9",
+    "titre": "Linux et administration système",
+    "cours": "Linux est un système d'exploitation open source basé sur le noyau Linux (Linus Torvalds, 1991). Il domine les serveurs web, l'infrastructure cloud et les systèmes embarqués. La maîtrise de Linux est incontournable pour un technicien SISR.\n\nDistributions Linux serveur :\n  • Debian : stable, conservateur, packages .deb, gestionnaire apt. Référence pour la stabilité.\n  • Ubuntu Server : basé sur Debian, LTS (Long Term Support) tous les 2 ans (5 ans de support). Très répandu.\n  • CentOS / RHEL : entreprise, packages .rpm, gestionnaire yum/dnf. RHEL = payant avec support Red Hat.\n  • Alpine Linux : minimaliste, très léger, apk, idéal pour conteneurs Docker.\n\nArborescence FHS (Filesystem Hierarchy Standard) :\n  • / : racine du système de fichiers\n  • /etc : fichiers de configuration système (sshd_config, fstab, hosts, network/interfaces)\n  • /var : données variables — /var/log (journaux), /var/spool, /var/cache\n  • /home : répertoires personnels des utilisateurs (/home/alice)\n  • /usr : applications et binaires non essentiels au démarrage\n  • /bin et /sbin : binaires essentiels (ls, cp, mount, fdisk)\n  • /tmp : fichiers temporaires (nettoyé au redémarrage)\n  • /boot : noyau Linux (vmlinuz), initrd, configuration GRUB\n  • /dev : fichiers représentant les périphériques (/dev/sda, /dev/tty)\n  • /proc et /sys : pseudo-fichiers virtuels exposant l'état du kernel en temps réel\n  • /mnt et /media : points de montage temporaires et amovibles\n\nCommandes essentielles :\n\nNavigation et fichiers :\n  ls -la (liste détaillée avec fichiers cachés) | cd /chemin | pwd | tree\n  touch fichier | mkdir -p /chemin/long/inexistant | rm -rf dossier (DANGER : irréversible)\n  cp -r src/ dst/ | mv ancien_nom nouveau_nom | ln -s /cible /lien (lien symbolique)\n\nVisualisation et recherche :\n  cat fichier | less fichier (navigation) | head -n 20 fichier | tail -f /var/log/syslog (temps réel)\n  grep -r 'motif' /dossier (récursif) | grep -n 'erreur' fichier.log (avec numéros de ligne)\n  find /etc -name '*.conf' -type f | locate fichier | which commande\n\nPermissions et droits :\n  chmod 755 script.sh (rwxr-xr-x) | chmod u+x script.sh | chmod 640 config.conf (rw-r-----)\n  chown user:groupe fichier | chown -R www-data:www-data /var/www/\n  Valeurs octales : r=4, w=2, x=1. 755=rwxr-xr-x, 644=rw-r--r--, 700=rwx------\n\nGestion des utilisateurs :\n  useradd -m -s /bin/bash alice (créer avec répertoire home et shell bash)\n  passwd alice (définir/changer mot de passe)\n  usermod -aG sudo alice (ajouter au groupe sudo — le -a est CRUCIAL pour ne pas perdre les groupes existants)\n  groups alice | id alice (vérifier groupes et UID/GID)\n\nGestion des packages (Debian/Ubuntu) :\n  apt-get update (mettre à jour la liste des packages disponibles)\n  apt-get upgrade (mettre à jour les packages installés)\n  apt-get install nginx | apt-get remove nginx | dpkg -l (lister packages installés)\n\nCommandes réseau :\n  ip addr show | ip route show | ip link set eth0 up\n  ping -c 4 8.8.8.8 | traceroute google.com\n  ss -tuln (t=TCP, u=UDP, l=listening, n=numérique — ports ouverts)\n  netstat -tupln (connexions avec PID) | curl -I https://site.com | wget url\n\nSystemd et services :\n  systemctl start/stop/restart/reload/status nginx\n  systemctl enable nginx (démarrage automatique au boot)\n  journalctl -u nginx (logs du service) | journalctl -f (suivi temps réel) | journalctl --since '1 hour ago'\n\nCron (planification de tâches) :\n  crontab -e (éditer les tâches cron de l'utilisateur courant)\n  Format : minute heure jour_mois mois jour_semaine commande\n  0 3 * * * /usr/bin/rsync -az /data/ /backup/ (sauvegarde quotidienne à 3h00)\n  */5 * * * * /usr/local/bin/check_disk.sh (toutes les 5 minutes)\n  0 0 * * 1 /usr/local/bin/weekly_report.sh (tous les lundis à minuit)\n\nScripts Bash :\n  #!/bin/bash (shebang — première ligne obligatoire)\n  NOM='valeur' | echo $NOM | VAR=$(commande) (substitution de commande)\n  if [ $VAR -eq 0 ]; then echo 'zéro'; elif [ $VAR -gt 0 ]; then echo 'positif'; else echo 'négatif'; fi\n  for i in $(seq 1 10); do echo $i; done\n  while [ -f /tmp/lockfile ]; do sleep 5; done\n  $1 $2 = arguments | $# = nombre d'arguments | $? = code de retour (0=succès)",
+    "notions_cles": [
+      {
+        "terme": "FHS (Filesystem Hierarchy Standard)",
+        "definition": "Standard définissant l'arborescence Linux. /etc=config, /var=données variables, /home=users, /bin=binaires essentiels, /proc=kernel virtual."
+      },
+      {
+        "terme": "Permissions Linux (chmod)",
+        "definition": "Droits sur fichiers : r=4 (lecture), w=2 (écriture), x=1 (exécution). Triplicité user/group/other. chmod 755 = rwxr-xr-x."
+      },
+      {
+        "terme": "Systemd",
+        "definition": "Gestionnaire de services Linux moderne (PID 1). systemctl start/stop/enable/status. journalctl pour les logs."
+      },
+      {
+        "terme": "Cron",
+        "definition": "Planificateur de tâches Linux. Format : minute heure jour_mois mois jour_semaine commande. crontab -e pour éditer."
+      },
+      {
+        "terme": "apt / dpkg",
+        "definition": "Gestionnaire de packages Debian/Ubuntu. apt-get update (liste), apt-get install (installer), dpkg -l (lister installés)."
+      },
+      {
+        "terme": "ss / netstat",
+        "definition": "Outils d'inspection des connexions réseau. ss -tuln : ports TCP/UDP en écoute. netstat -tupln : connexions avec PID."
+      },
+      {
+        "terme": "tail -f",
+        "definition": "Affiche les dernières lignes d'un fichier et suit les nouvelles entrées en temps réel. Indispensable pour surveiller des logs."
+      },
+      {
+        "terme": "usermod -aG",
+        "definition": "Ajoute un utilisateur à un groupe supplémentaire. Le flag -a (append) est CRUCIAL pour ne pas écraser les groupes existants."
+      }
+    ],
+    "exemple_concret": "Script Bash de sauvegarde automatique :\n\n#!/bin/bash\n# Sauvegarde journalière vers NFS\n\nSOURCE='/var/www/html'\nDEST='/mnt/backup'\nDATE=$(date +%Y%m%d_%H%M)\nLOGFILE='/var/log/backup.log'\n\n# Vérifier que le point de montage est disponible\nif ! mountpoint -q $DEST; then\n    echo \"$DATE - ERREUR: $DEST non monté\" >> $LOGFILE\n    exit 1\nfi\n\n# Effectuer la sauvegarde\nrsync -az --delete $SOURCE/ $DEST/web_${DATE}/\nEXIT_CODE=$?\n\nif [ $EXIT_CODE -eq 0 ]; then\n    echo \"$DATE - Sauvegarde OK\" >> $LOGFILE\nelse\n    echo \"$DATE - ERREUR rsync: code $EXIT_CODE\" >> $LOGFILE\n    exit 1\nfi\n\n# Planification cron (crontab -e) :\n# 0 2 * * * /usr/local/bin/backup.sh\n\nCommandes de diagnostic système :\n  df -h (espace disque) | free -h (mémoire) | top/htop (processus) | uptime (charge CPU)\n  journalctl -u nginx --since '1 hour ago' | grep ERROR\n  ss -tuln | grep ':80 '",
+    "fiche_revision": {
+      "points_cles": [
+        "FHS : /etc=config | /var/log=journaux | /home=users | /boot=noyau | /proc=kernel virtual",
+        "chmod 755=rwxr-xr-x | 644=rw-r--r-- | 700=rwx------ | valeurs : r=4, w=2, x=1",
+        "usermod -aG : le -a est OBLIGATOIRE pour ne pas perdre les groupes existants",
+        "systemctl enable = démarrage auto au boot | journalctl -u service -f = logs temps réel",
+        "Cron format : min heure jour mois dow commande | */5 = toutes les 5 min",
+        "apt-get update (liste) → apt-get upgrade (MàJ) → apt-get install (installer)",
+        "ss -tuln : ports ouverts en écoute | tail -f /var/log/syslog : suivi logs temps réel"
+      ],
+      "formules": [
+        "useradd -m -s /bin/bash user  |  usermod -aG sudo user  |  passwd user",
+        "chmod 755 script.sh  |  chown -R www-data:www-data /var/www/",
+        "systemctl start nginx  |  systemctl enable nginx  |  journalctl -u nginx -f",
+        "apt-get update && apt-get upgrade  |  apt-get install paquet",
+        "find /etc -name '*.conf' -type f  |  grep -r 'motif' /var/log/",
+        "ss -tuln | grep LISTEN  |  tail -f /var/log/syslog"
+      ]
+    }
   },
   {
-    "id": "e7-10",
-    "chapitre": "Domaine 8 — Méthode",
-    "titre": "Chapitre 10 — Méthodologie et projets E7",
-    "domaine": "Méthode",
-    "cours": "Format E7 : épreuve écrite 4 heures. Structure : dossier technique, questions contexte, questions pratiques, évolutions. Types de questions : analyse architecture, commandes de configuration, diagnostic depuis logs, subnetting VLSM, rédaction procédure. Méthode : lire intégralement avant de commencer (15 min), identifier contraintes, ne pas inventer de données, structurer les réponses. Schéma réseau : symboles standards, adresses IP, masques, VLANs, légende, titre. VLSM : trier par taille décroissante, /26(62h), /27(30h), /28(14h), /29(6h), /30(2h).",
-    "notions_cles": ["Format épreuve 4h", "Types de questions E7", "Méthode lecture sujet", "VLSM subnetting", "Schéma réseau conventions", "Documentation technique", "Justification des choix", "Plan adressage IP"],
-    "exemple_concret": "Sujet type E7 2024 : PME DELTA (80 users, 2 sites), migration Windows Server 2022 + Hyper-V, 15 000€, SLA 99.9%. Travail : VLSM 5 VLANs, AD DS 2 DC, trunk Cisco, VPN IKEv2, PRA RTO<1h RPO<4h, supervision Zabbix.",
-    "fiche_revision": ["Lire TOUT le sujet avant de commencer : 15 min de lecture = gain de temps", "Calculer adressage VLSM avant tout", "Toujours justifier les choix techniques", "Pour les commandes : syntaxe exacte", "PRA : toujours mentionner RPO, RTO, test de restauration", "Schéma réseau : obligatoire pour questions architecture"]
+    "id": "chap-10",
+    "chapitre": "10",
+    "titre": "Cybersécurité et gestion des incidents",
+    "cours": "La cybersécurité est un domaine majeur du BTS SIO SISR. Elle couvre la protection des systèmes d'information, la gestion des risques, la réponse aux incidents et la conformité réglementaire.\n\nEBIOS RM (Expression des Besoins et Identification des Objectifs de Sécurité — Risk Manager, ANSSI) :\nMéthode française de gestion des risques cyber en 5 ateliers :\n  1. Cadrage et socle de sécurité : définir le périmètre, identifier les biens essentiels (données critiques, processus métier), biens supports (SI),      établir l'état des pratiques de sécurité actuelles.\n  2. Sources de risques : identifier les attaquants potentiels (cybercriminels, concurrents, insiders, États), leurs motivations, leurs capacités.\n  3. Scénarios stratégiques : construire des chemins d'attaque de haut niveau (comment l'attaquant peut atteindre ses objectifs).\n  4. Scénarios opérationnels : détailler les scénarios techniques (quelles vulnérabilités exploitées, quelles techniques).\n  5. Traitement des risques : définir et prioriser les mesures de sécurité, calculer le risque résiduel acceptable.\n\nRGPD (Règlement Général sur la Protection des Données — UE 2016/679, applicable mai 2018) :\n  Bases légales de traitement : consentement, exécution d'un contrat, obligation légale, intérêt légitime, sauvegarde des intérêts vitaux, mission d'intérêt public.\n\n  Droits des personnes concernées :\n  • Droit d'accès (article 15) | Droit de rectification (16) | Droit à l'effacement / 'droit à l'oubli' (17)\n  • Droit d'opposition (21) | Droit à la portabilité (20) | Droit à la limitation du traitement (18)\n\n  Obligations organisationnelles :\n  • Notification violation de données : 72 heures maximum après découverte, à la CNIL en France\n  • DPO (Délégué à la Protection des Données) obligatoire pour : autorités publiques, traitements de données sensibles à grande échelle, surveillance systématique\n  • PSSI (Politique de Sécurité des Systèmes d'Information) : document de référence définissant les règles de sécurité\n  • Amendes : jusqu'à 20 millions € ou 4% du chiffre d'affaires mondial annuel (le montant le plus élevé)\n\nGLPI (Gestionnaire Libre de Parc Informatique) — outil ITSM open source :\n  • Gestion des incidents (tickets) : catégorie, urgence (1-5), impact (1-5), priorité (matrice urgence×impact), SLA\n  • Workflow ticket : Nouveau → En cours (attribué) → En cours (planifié) → En attente → Résolu → Clos\n  • Gestion des problèmes (cause racine de plusieurs incidents récurrents)\n  • Gestion des changements (ITIL : RFC = Request For Change, CAB = Change Advisory Board, PIR = Post Implementation Review)\n  • Inventaire parc informatique : postes, serveurs, réseau, logiciels, licences (agent FusionInventory)\n\nVulnérabilités et CVE :\n  • CVE (Common Vulnerabilities and Exposures) : identifiant unique CVE-ANNÉE-NUMÉRO. Ex: CVE-2021-44228 = Log4Shell (RCE critique Apache Log4j)\n  • CVSS (Common Vulnerability Scoring System) : score de 0 à 10 évaluant la sévérité\n    - 0.0 – 3.9 : Faible | 4.0 – 6.9 : Moyen | 7.0 – 8.9 : Élevé | 9.0 – 10.0 : Critique\n    - Critères : vecteur d'accès (réseau/local), complexité, privilèges requis, interaction utilisateur, impact sur C/I/A (Confidentialité/Intégrité/Disponibilité)\n  • NVD (National Vulnerability Database) : base NIST enrichissant les CVE avec scores CVSS\n\nCycle de gestion des incidents (NIST SP 800-61) :\n  1. Préparation : plans de réponse, outils (SIEM, forensique), formation équipes, exercices\n  2. Détection & Analyse : SIEM, IDS/IPS, logs, supervision, triage (sévérité, type d'incident)\n  3. Confinement : isolation du système compromis (déconnexion réseau, snapshot VM), confinement court terme puis long terme\n  4. Éradication : suppression du malware, application correctifs, réinitialisation des mots de passe compromis\n  5. Récupération : restauration des services depuis sauvegardes saines, surveillance renforcée post-incident\n  6. Retour d'expérience (REX) : rapport d'incident, analyse cause racine, leçons apprises, amélioration des défenses\n\nAttaques courantes et contre-mesures :\n  • MAC Flooding : saturation de la table CAM du switch → switch passe en mode hub (diffuse tout) → écoute du trafic.     Contre-mesure : Port Security (max MAC par port, shutdown si dépassement).\n  • DDoS : multiplier les sources d'attaque avec des botnets pour saturer bande passante/CPU.     Contre-mesures : anti-DDoS chez le FAI/provider (Cloudflare, Akamai), rate limiting, blackholing BGP.\n  • ARP Spoofing/Poisoning : envoi de fausses réponses ARP pour associer la MAC de l'attaquant à l'IP de la passerelle → MITM.     Contre-mesures : Dynamic ARP Inspection (DAI) sur switch, IP Source Guard.\n  • VLAN Hopping : Switch spoofing (négociation DTP) ou double tagging 802.1Q.     Contre-mesures : désactiver DTP (switchport nonegotiate), VLAN natif non utilisé dédié.\n  • Phishing/Spearphishing : email frauduleux ciblé imitant une entité de confiance.     Contre-mesures : formation utilisateurs, filtrage email, SPF/DKIM/DMARC, MFA.\n\nPlan de continuité et de reprise :\n  • PCA (Plan de Continuité d'Activité) : maintien des activités critiques pendant et après un sinistre\n  • PRI (Plan de Reprise Informatique) : processus de restauration du SI après un incident majeur\n  • RTO (Recovery Time Objective) : durée maximale d'indisponibilité acceptable\n  • RPO (Recovery Point Objective) : perte de données maximale acceptable (= intervalle entre sauvegardes)\n  • Règle de sauvegarde 3-2-1 : 3 copies des données, sur 2 supports différents, dont 1 copie hors site (ou cloud)\n\nStandards IEEE de référence :\n  • 802.3 (Ethernet) | 802.11 (WiFi) | 802.1Q (VLAN trunking) | 802.1X (authentification réseau par port) | 802.1D (STP)",
+    "notions_cles": [
+      {
+        "terme": "EBIOS RM",
+        "definition": "Méthode ANSSI de gestion des risques cyber en 5 ateliers : cadrage, sources de risques, scénarios stratégiques, scénarios opérationnels, traitement des risques."
+      },
+      {
+        "terme": "RGPD",
+        "definition": "Règlement UE 2016/679 sur la protection des données personnelles. Amendes jusqu'à 20M€ ou 4% CA mondial. Notification violations sous 72h à la CNIL."
+      },
+      {
+        "terme": "CVE / CVSS",
+        "definition": "CVE = identifiant unique d'une vulnérabilité (CVE-ANNÉE-NUM). CVSS = score 0-10 de sévérité (Faible/Moyen/Élevé/Critique)."
+      },
+      {
+        "terme": "GLPI",
+        "definition": "Outil ITSM open source de gestion de parc et incidents. Workflow ticket : Nouveau → En cours → En attente → Résolu → Clos."
+      },
+      {
+        "terme": "Cycle NIST SP 800-61",
+        "definition": "Cadre de réponse aux incidents en 6 phases : Préparation → Détection → Confinement → Éradication → Récupération → REX."
+      },
+      {
+        "terme": "ARP Spoofing",
+        "definition": "Attaque MITM envoyant de fausses réponses ARP pour associer la MAC de l'attaquant à l'IP de la passerelle. Contre-mesure : Dynamic ARP Inspection."
+      },
+      {
+        "terme": "MAC Flooding",
+        "definition": "Saturation de la table CAM du switch → mode hub → écoute du trafic réseau. Contre-mesure : Port Security (switchport port-security maximum)."
+      },
+      {
+        "terme": "RPO / RTO",
+        "definition": "RPO (Recovery Point Objective) = perte de données max acceptable. RTO (Recovery Time Objective) = durée max d'indisponibilité acceptable."
+      },
+      {
+        "terme": "Règle 3-2-1",
+        "definition": "Stratégie de sauvegarde : 3 copies des données, sur 2 supports différents, dont 1 hors site ou cloud. Garantit la disponibilité en cas de sinistre."
+      },
+      {
+        "terme": "DPO (Data Protection Officer)",
+        "definition": "Délégué à la Protection des Données : obligatoire pour autorités publiques, traitements de données sensibles à grande échelle, surveillance systématique."
+      }
+    ],
+    "exemple_concret": "Scénario de gestion d'incident (ransomware détecté à 14h) :\n\nPhase 1 - Détection (14h05) :\n  SIEM alerte : chiffrement massif de fichiers sur SRV-FICHIERS.   Vérification logs Windows Event 4625 (nombreux échecs auth), 4663 (accès fichiers massifs).\n\nPhase 2 - Confinement immédiat (14h10) :\n  - Isoler SRV-FICHIERS du réseau (désactiver port switch : shutdown sur interface)\n  - Prendre snapshot VM avant toute intervention\n  - Identifier le vecteur d'entrée (logs VPN, email, RDP)\n\nPhase 3 - Éradication (14h30) :\n  - Identifier et supprimer le binaire malveillant\n  - Réinitialiser tous les comptes compromis\n  - Patcher la vulnérabilité exploitée (CVE identifié)\n\nPhase 4 - Récupération (15h00) :\n  - Restaurer depuis sauvegarde saine d'hier 03h00 (RPO = 11h de données perdues)\n  - RTO réel : 3h (objectif était 4h)\n\nPhase 5 - Notification RGPD (si données personnelles chiffrées) :\n  - Délai max 72h pour notification CNIL\n  - Documenter : nature de la violation, catégories de données, nombre de personnes concernées\n\nTicket GLPI créé : urgence=5/impact=5 → priorité=5 (critique)\nREX documenté avec cause racine, timeline, mesures correctives",
+    "fiche_revision": {
+      "points_cles": [
+        "EBIOS RM : 5 ateliers ANSSI (cadrage → sources → scénarios stratégiques → scénarios opérationnels → traitement)",
+        "RGPD : notification violation à CNIL sous 72h | amendes 20M€ ou 4% CA mondial",
+        "CVSS : 0-3.9 Faible | 4-6.9 Moyen | 7-8.9 Élevé | 9-10 Critique",
+        "Cycle incidents NIST SP 800-61 : Prépa → Détection → Confinement → Éradication → Récupération → REX",
+        "MAC Flooding → Port Security | ARP Spoofing → Dynamic ARP Inspection | VLAN Hopping → désactiver DTP",
+        "RPO = perte données max | RTO = durée indispo max | Règle 3-2-1 : 3 copies, 2 supports, 1 hors-site",
+        "GLPI workflow : Nouveau → En cours (attribué) → En attente → Résolu → Clos"
+      ],
+      "formules": [
+        "CVE-ANNÉE-NUMÉRO  (ex: CVE-2021-44228 = Log4Shell, CVSS 10.0 Critique)",
+        "switchport port-security maximum 2  (Port Security contre MAC Flooding)",
+        "Priorité GLPI = f(Urgence × Impact)  [matrice 1-5]",
+        "Règle 3-2-1 : 3 copies | 2 supports | 1 hors-site (cloud immuable recommandé)",
+        "Notification RGPD : 72h max après découverte de la violation → CNIL"
+      ]
+    }
   }
 ]

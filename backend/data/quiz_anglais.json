@@ -1,122 +1,202 @@
-﻿[
+[
   {
-    "id": "qa-01",
+    "id": "q1",
     "type": "qcm",
-    "question": "What does VPN stand for?",
-    "options": ["Virtual Private Network", "Virtual Public Network", "Verified Private Node", "Virtual Protocol Network"],
-    "reponse": "Virtual Private Network",
-    "correction_detaillee": "VPN stands for Virtual Private Network. It creates an encrypted tunnel between the user's device and a remote server, ensuring privacy and security over public networks. VPNs are widely used in corporate environments to allow remote workers to securely access internal resources.",
-    "chapitre_ref": "ang-01",
-    "difficulte": "facile"
+    "question": "What does 'DNS' stand for and what is its primary function?",
+    "options": [
+      "A. Dynamic Network Service — assigns IP addresses automatically",
+      "B. Domain Name System — translates domain names into IP addresses",
+      "C. Data Network Security — encrypts data in transit",
+      "D. Distributed Node Server — balances traffic across servers"
+    ],
+    "reponse": "B",
+    "explication": "DNS (Domain Name System) resolves human-readable domain names (e.g. www.google.com) into IP addresses that computers use to communicate. DHCP (not DNS) assigns IPs automatically."
   },
   {
-    "id": "qa-02",
+    "id": "q2",
+    "type": "qcm",
+    "question": "Choose the correct sentence using present perfect vs simple past:",
+    "options": [
+      "A. I have configured the router yesterday.",
+      "B. She has deploy the patch at 3pm.",
+      "C. We have already applied the update — the server is running normally.",
+      "D. They configured the firewall since Monday."
+    ],
+    "reponse": "C",
+    "explication": "Present perfect (have + past participle) is used for recent actions with a result relevant NOW ('already applied — server is running'). Option A is wrong: 'yesterday' requires simple past ('I configured...'). B has a conjugation error. D mixes past simple with 'since' (which requires present perfect)."
+  },
+  {
+    "id": "q3",
+    "type": "qcm",
+    "question": "Which sentence correctly uses the passive voice in an IT documentation context?",
+    "options": [
+      "A. The administrator deployed the patch last night.",
+      "B. The patch was deployed last night by the administrator.",
+      "C. The patch deployed last night.",
+      "D. The patch has deploy last night."
+    ],
+    "reponse": "B",
+    "explication": "Passive voice = subject + be (conjugated) + past participle. 'The patch WAS DEPLOYED' is correct (past passive). Option A is active voice. C lacks the auxiliary 'be'. D has an incorrect form ('has deploy' should be 'has been deployed')."
+  },
+  {
+    "id": "q4",
+    "type": "qcm",
+    "question": "What is the correct compte rendu oral structure for the BTS English exam?",
+    "options": [
+      "A. Summary → Personal opinion → Questions → Conclusion",
+      "B. Title/source → Context → Main points → Conclusion",
+      "C. Introduction → Translation → Summary → Questions",
+      "D. Author → Statistics → Examples → Personal opinion"
+    ],
+    "reponse": "B",
+    "explication": "The BTS compte rendu oral follows: (1) announce the document type, title and source; (2) explain the context (topic, who/what/where); (3) present 2-3 main points; (4) conclude with the author's message and optionally a brief personal opinion."
+  },
+  {
+    "id": "q5",
+    "type": "qcm",
+    "question": "Choose the correct connector to complete this sentence: 'The backup failed. ___, all data was lost.'",
+    "options": [
+      "A. Furthermore",
+      "B. However",
+      "C. As a result",
+      "D. In addition"
+    ],
+    "reponse": "C",
+    "explication": "'As a result' expresses a consequence or result. The backup failing CAUSED the data loss. 'Furthermore' and 'In addition' add information. 'However' introduces a contrast."
+  },
+  {
+    "id": "q6",
+    "type": "qcm",
+    "question": "What does a VPN do?",
+    "options": [
+      "A. It assigns IP addresses to devices on a network",
+      "B. It translates domain names to IP addresses",
+      "C. It creates an encrypted tunnel over a public network for secure remote access",
+      "D. It monitors network traffic and generates performance reports"
+    ],
+    "reponse": "C",
+    "explication": "A VPN (Virtual Private Network) creates an encrypted tunnel, typically using TLS/IPsec, allowing remote users to connect securely to a private network over the internet. A=DHCP, B=DNS, D=monitoring tool."
+  },
+  {
+    "id": "q7",
+    "type": "qcm",
+    "question": "Which professional email closing is most appropriate for a formal IT report sent to a client?",
+    "options": [
+      "A. See you later!",
+      "B. Cheers,",
+      "C. Yours sincerely,",
+      "D. Later,"
+    ],
+    "reponse": "C",
+    "explication": "'Yours sincerely' is the correct formal sign-off when you know the recipient's name. 'Best regards' or 'Kind regards' are also acceptable. 'Cheers', 'See you later', and 'Later' are informal and inappropriate for professional IT communication."
+  },
+  {
+    "id": "q8",
+    "type": "qcm",
+    "question": "Complete the first conditional sentence: 'If the firewall rule ___ misconfigured, the traffic ___ blocked.'",
+    "options": [
+      "A. will be / would be",
+      "B. is / will be",
+      "C. was / would be",
+      "D. had been / would have been"
+    ],
+    "reponse": "B",
+    "explication": "First conditional (realistic future): if + present simple, will + infinitive. 'If the firewall rule IS misconfigured, the traffic WILL BE blocked.' Option C is 2nd conditional. D is 3rd conditional."
+  },
+  {
+    "id": "q9",
+    "type": "qcm",
+    "question": "The French IT term 'pare-feu' translates to which English term?",
+    "options": [
+      "A. Gateway",
+      "B. Router",
+      "C. Proxy",
+      "D. Firewall"
+    ],
+    "reponse": "D",
+    "explication": "Pare-feu = Firewall (network security device filtering traffic). Gateway = passerelle. Router = routeur. Proxy = serveur mandataire."
+  },
+  {
+    "id": "q10",
+    "type": "qcm",
+    "question": "Which sentence correctly uses present perfect continuous?",
+    "options": [
+      "A. I have been monitoring the logs all morning.",
+      "B. I have monitored the logs all morning yesterday.",
+      "C. I am monitoring the logs since 8am.",
+      "D. I was monitoring the logs all morning."
+    ],
+    "reponse": "A",
+    "explication": "Present perfect continuous (have/has + been + verb-ing) describes an ongoing activity that started in the past and continues now. 'I have been monitoring the logs all morning' is correct. B incorrectly adds 'yesterday'. C uses present continuous incorrectly with 'since'. D is past continuous."
+  },
+  {
+    "id": "q11",
     "type": "vrai_faux",
-    "question": "Is this sentence written in passive voice? 'The data was stolen by hackers.'",
-    "options": ["True", "False"],
-    "reponse": "True",
-    "correction_detaillee": "True. The sentence is in passive voice. Structure: Subject (The data) + auxiliary 'was' + past participle (stolen) + optional agent (by hackers). In active voice, it would be: 'Hackers stole the data.' Passive voice is commonly used in IT reports when the focus is on the action/result rather than the doer.",
-    "chapitre_ref": "ang-03",
-    "difficulte": "facile"
+    "question": "DHCP stands for Dynamic Host Configuration Protocol and automatically assigns IP addresses to devices on a network.",
+    "reponse": true,
+    "explication": "Correct. DHCP (Dynamic Host Configuration Protocol) is a network management protocol that automatically assigns IP addresses, subnet masks, gateways, and DNS servers to devices when they connect to a network. This eliminates the need for manual IP configuration."
   },
   {
-    "id": "qa-03",
-    "type": "qcm",
-    "question": "Choose the grammatically correct sentence:",
-    "options": ["He has worked here since 5 years.", "He has worked here for 5 years.", "He is working here since 5 years.", "He worked here for 5 years ago."],
-    "reponse": "He has worked here for 5 years.",
-    "correction_detaillee": "'For' is used with a duration (for 5 years, for 3 months). 'Since' is used with a point in time (since 2020, since Monday). The present perfect (has worked) is correct because the action started in the past and continues to the present. 'He worked here for 5 years ago' is wrong because 'ago' requires past simple without 'for'.",
-    "chapitre_ref": "ang-03",
-    "difficulte": "moyen"
-  },
-  {
-    "id": "qa-04",
-    "type": "translation",
-    "question": "Translate into English: 'Le serveur a été compromis par une attaque par force brute.'",
-    "options": [],
-    "reponse": "The server was compromised by a brute-force attack.",
-    "correction_detaillee": "Key elements: 'a été compromis' = passive voice 'was compromised'. 'attaque par force brute' = brute-force attack (hyphenated as adjective). Note the passive construction: Subject + was/were + past participle + by + agent. Alternative: 'The server has been compromised by a brute-force attack' (present perfect, emphasising current impact).",
-    "chapitre_ref": "ang-02",
-    "difficulte": "moyen"
-  },
-  {
-    "id": "qa-05",
-    "type": "qcm",
-    "question": "Which word means 'faille de sécurité' in English?",
-    "options": ["vulnerability", "breach", "exploit", "All of these can mean 'faille de sécurité' depending on context"],
-    "reponse": "All of these can mean 'faille de sécurité' depending on context",
-    "correction_detaillee": "All three are related but distinct: 'vulnerability' = a weakness in a system that could be exploited. 'breach' = when the security is actually violated (the faille has been exploited). 'exploit' = code/technique that takes advantage of a vulnerability. In a BTS context, 'vulnerability' is the closest translation of 'faille de sécurité'.",
-    "chapitre_ref": "ang-02",
-    "difficulte": "moyen"
-  },
-  {
-    "id": "qa-06",
-    "type": "writing",
-    "question": "Write a professional email subject line to report a network outage affecting all users.",
-    "options": [],
-    "reponse": "[URGENT] Network Outage — All Users Affected — Immediate Action Required",
-    "correction_detaillee": "A good subject line should be: Clear and specific (identify the issue), include urgency level ([URGENT] or [CRITICAL]), mention scope (all users, production environment), and suggest action if needed. Examples of good subject lines: '[INCIDENT] Network Outage — Production — 2024-01-15 09:30 UTC', '[URGENT] Complete Network Failure — Investigation in Progress'. Avoid vague subjects like 'Problem' or 'Issue'.",
-    "chapitre_ref": "ang-05",
-    "difficulte": "moyen"
-  },
-  {
-    "id": "qa-07",
-    "type": "qcm",
-    "question": "Choose the correct modal verb: 'You ___ change your password regularly to maintain security.'",
-    "options": ["should", "would", "could have", "might have"],
-    "reponse": "should",
-    "correction_detaillee": "'Should' expresses a recommendation or best practice. It's the appropriate modal for security recommendations. 'Must' would be stronger (obligation/rule). 'Could' expresses ability or possibility. In IT security documentation, 'should' follows RFC 2119 standard meaning 'recommended but not mandatory', while 'must' means 'mandatory'.",
-    "chapitre_ref": "ang-03",
-    "difficulte": "facile"
-  },
-  {
-    "id": "qa-08",
+    "id": "q12",
     "type": "vrai_faux",
-    "question": "A 'zero-day vulnerability' is a security flaw that has been patched for exactly 0 days.",
-    "options": ["True", "False"],
-    "reponse": "False",
-    "correction_detaillee": "False. A zero-day vulnerability is a security flaw that is UNKNOWN to the software vendor or has not yet been patched. The 'zero' refers to the number of days the developer has had to fix it — meaning zero days of protection. Once a patch is released, it is no longer a zero-day. Zero-day exploits are particularly dangerous because no official fix exists yet.",
-    "chapitre_ref": "ang-02",
-    "difficulte": "moyen"
+    "question": "In English, the present perfect tense can be used with specific past time expressions such as 'yesterday' or 'at 3pm'.",
+    "reponse": false,
+    "explication": "False. The present perfect cannot be used with specific past time markers like 'yesterday', 'at 3pm', or 'last Monday'. These require the past simple. You say 'I configured it yesterday' (NOT 'I have configured it yesterday'). Present perfect is used for actions with current relevance or with time expressions like 'already', 'just', 'yet', 'ever', 'since', 'for'."
   },
   {
-    "id": "qa-09",
-    "type": "qcm",
-    "question": "What does CDN stand for?",
-    "options": ["Content Delivery Network", "Central Data Node", "Cyber Defence Network", "Cloud Distribution Node"],
-    "reponse": "Content Delivery Network",
-    "correction_detaillee": "CDN stands for Content Delivery Network. It is a geographically distributed network of servers that delivers web content (images, videos, scripts) to users from the nearest server, reducing latency. Major CDN providers include Cloudflare, Akamai, and AWS CloudFront. CDNs also provide DDoS protection and improve website availability.",
-    "chapitre_ref": "ang-01",
-    "difficulte": "facile"
+    "id": "q13",
+    "type": "vrai_faux",
+    "question": "A VLAN (Virtual Local Area Network) provides network segmentation at Layer 3 of the OSI model.",
+    "reponse": false,
+    "explication": "False. VLANs operate at Layer 2 (Data Link Layer) of the OSI model. They segment networks logically using IEEE 802.1Q tags on switch ports. Layer 3 routing (e.g., inter-VLAN routing via a firewall or router) is required to allow communication between VLANs."
   },
   {
-    "id": "qa-10",
-    "type": "translation",
-    "question": "Translate into English: 'Mettre en place une politique de sauvegarde des données.'",
-    "options": [],
-    "reponse": "Implement a data backup policy.",
-    "correction_detaillee": "'Mettre en place' = implement / set up / establish / deploy. 'politique' = policy. 'sauvegarde des données' = data backup / data backup policy. Other valid translations: 'Set up a data backup policy', 'Establish a backup policy for data', 'Deploy a data backup strategy'. In a professional IT context, 'implement' is most commonly used for policies and systems.",
-    "chapitre_ref": "ang-05",
-    "difficulte": "moyen"
+    "id": "q14",
+    "type": "vrai_faux",
+    "question": "In the BTS English written exam, the compte rendu must be written in French and should not include the student's personal opinion.",
+    "reponse": true,
+    "explication": "Correct. The compte rendu is always written in FRENCH and must objectively summarize the English document. Personal opinions are strictly prohibited — you only report what the author says. The target length is 180-220 words. Personal opinion (if requested) belongs only in the separate expression écrite task."
   },
   {
-    "id": "qa-11",
-    "type": "qcm",
-    "question": "What is the passive voice transformation of: 'The administrator reset the password'?",
-    "options": ["The password was reset by the administrator.", "The password has reset by the administrator.", "The password is resetting by the administrator.", "The password reset by the administrator."],
-    "reponse": "The password was reset by the administrator.",
-    "correction_detaillee": "Passive voice formula: Object → Subject + was/were + past participle + by + original subject. 'Reset' is irregular: reset/reset/reset (same form for all tenses). 'The administrator reset the password' (past simple active) → 'The password was reset by the administrator' (past simple passive). The agent 'by the administrator' can be omitted if not important.",
-    "chapitre_ref": "ang-03",
-    "difficulte": "moyen"
+    "id": "q15",
+    "type": "vrai_faux",
+    "question": "SSH (Secure Shell) and RDP (Remote Desktop Protocol) both provide remote access, but SSH provides a graphical interface while RDP provides command-line access.",
+    "reponse": false,
+    "explication": "False — it is the opposite. SSH provides encrypted command-line (terminal) remote access, typically to Linux/Unix systems. RDP (Remote Desktop Protocol) provides graphical desktop remote access, typically to Windows systems. Both are encrypted, but their interfaces differ."
   },
   {
-    "id": "qa-12",
+    "id": "q16",
     "type": "cas_pratique",
-    "question": "Read this CVE summary and identify: (1) vulnerability type, (2) impact, (3) affected system.\n\nCVE-2023-1234: A SQL injection vulnerability exists in ExampleApp version 2.1.3 and earlier. An unauthenticated remote attacker can exploit this vulnerability to execute arbitrary SQL commands, potentially leading to unauthorized access to the database, data exfiltration, and in some configurations, remote code execution. CVSS Score: 9.8 (Critical).",
-    "options": [],
-    "reponse": "(1) SQL injection, (2) Unauthorized database access, data theft, potential RCE — CVSS 9.8 Critical, (3) ExampleApp v2.1.3 and earlier",
-    "correction_detaillee": "(1) Vulnerability type: SQL injection — keywords: 'SQL injection vulnerability', 'execute arbitrary SQL commands'. (2) Impact: unauthorized database access + data exfiltration + potential remote code execution, rated 9.8 CRITICAL on CVSS scale (out of 10, 9.0+ = Critical). (3) Affected system: ExampleApp version 2.1.3 and all earlier versions. Reading strategy: in CVE advisories, look for the pattern 'A [type] vulnerability exists in [product] [version]. An attacker can [impact]. CVSS Score: [score]'.",
-    "chapitre_ref": "ang-04",
-    "difficulte": "difficile"
+    "question": "You are a BTS SIO SISR student presenting your IT project to the BTS examiner. The examiner asks: 'Can you explain what a VLAN is and why you chose to implement one in your project?'\n\nWrite a complete answer in English (80-100 words) that: (1) defines VLAN, (2) explains how it works, (3) justifies the choice with 2 reasons.",
+    "reponse": "A VLAN, or Virtual Local Area Network, is a logical network segmentation at Layer 2 that groups devices independently of their physical location using IEEE 802.1Q tags on switch ports. In my project, I implemented three VLANs: VLAN 10 for servers, VLAN 20 for users, and VLAN 99 for management. I chose this architecture for two main reasons: firstly, for security — VLANs isolate network zones, preventing lateral movement in case of a breach; secondly, for performance — they reduce broadcast traffic by limiting broadcast domains.",
+    "explication": "A strong answer defines the term technically, explains the implementation specifically (with VLAN IDs), and justifies the choice with concrete reasons (security + performance). Using connectors (firstly/secondly) and technical vocabulary (Layer 2, broadcast domain, lateral movement) demonstrates B2-level competence expected by BTS examiners."
+  },
+  {
+    "id": "q17",
+    "type": "cas_pratique",
+    "question": "Rewrite these 3 informal IT support sentences in formal professional English:\n1. 'Hey, the server's broken again.'\n2. 'Can you fix the wifi? It's super slow.'\n3. 'FYI the backup didn't work last night.'",
+    "reponse": "1. 'Good morning, I am writing to inform you that the primary server is currently experiencing a critical fault and is unavailable.'\n2. 'I would like to report a significant degradation in wireless network performance. Could you please investigate at your earliest convenience?'\n3. 'Please be advised that the scheduled backup task failed to complete successfully last night. I would appreciate it if this could be investigated and resolved as a priority.'",
+    "explication": "Formal register avoids contractions, slang ('super', 'FYI', 'fix'), and informal greetings. Key transformations: 'broken' → 'experiencing a critical fault'; 'slow' → 'degradation in performance'; 'didn't work' → 'failed to complete successfully'. Professional email language includes polite request forms ('Could you please...', 'I would appreciate it if...')."
+  },
+  {
+    "id": "q18",
+    "type": "cas_pratique",
+    "question": "An IT security bulletin contains the following information:\n- CVE: CVE-2024-1234\n- CVSS Score: 9.8\n- Affected software: Apache HTTP Server versions before 2.4.59\n- Description: Remote code execution vulnerability via crafted HTTP request\n- Remediation: Update to version 2.4.59\n\nWrite a 60-word internal security notice in English informing your team and recommending action.",
+    "reponse": "URGENT SECURITY NOTICE — Action Required\n\nA critical vulnerability (CVE-2024-1234, CVSS 9.8/10) has been identified in Apache HTTP Server versions prior to 2.4.59. This vulnerability allows remote code execution via a crafted HTTP request, posing a severe risk to all affected systems.\n\nAll administrators must update Apache HTTP Server to version 2.4.59 immediately. Please confirm completion by end of business today.",
+    "explication": "A security notice must include: CVE reference, CVSS score with severity label, affected versions, risk description, and a clear action with deadline. CVSS 9.8 = Critical (9.0-10.0 range). Using 'must' expresses obligation. The word 'immediately' and deadline reinforce urgency. Passive voice ('has been identified') is appropriate for formal IT notices."
+  },
+  {
+    "id": "q19",
+    "type": "cas_pratique",
+    "question": "Your IT manager asks you to write a professional email requesting a maintenance window to patch servers. Include: recipient (CEO), objective, proposed time (Saturday 23:00-01:00), systems affected (3 production web servers), expected impact (brief downtime), and a request for approval.\n\nWrite the complete email (80-100 words).",
+    "reponse": "Subject: Approval Request — Scheduled Maintenance Window\n\nDear Mr [Name],\n\nI am writing to request your approval for a scheduled maintenance window to apply critical security patches to our production infrastructure.\n\nThe proposed maintenance window is Saturday, [date], from 23:00 to 01:00. The three production web servers will be affected. During this time, users may experience a brief service interruption of approximately 15 minutes per server.\n\nAll patches have been tested in our pre-production environment. Please confirm your approval at your earliest convenience.\n\nBest regards,\n[Name], IT Department",
+    "explication": "A maintenance window request email must include: clear subject line, purpose, date/time, affected systems, expected impact, and assurance that changes have been tested. 'I am writing to request' is the standard formal opening. 'At your earliest convenience' is a formal way to request a timely response without sounding urgent."
+  },
+  {
+    "id": "q20",
+    "type": "cas_pratique",
+    "question": "Transform these 3 active sentences into passive voice (all must be grammatically correct IT documentation sentences):\n1. 'The administrator configured the firewall yesterday.'\n2. 'The monitoring system has detected an anomaly.'\n3. 'The team will deploy the update tonight.'",
+    "reponse": "1. 'The firewall was configured by the administrator yesterday.' (past passive: was + past participle)\n2. 'An anomaly has been detected by the monitoring system.' (present perfect passive: has been + past participle)\n3. 'The update will be deployed by the team tonight.' (future passive: will be + past participle)",
+    "explication": "Passive voice formula: subject + be(conjugated) + past participle. Each tense has its passive form: past simple → was/were + pp; present perfect → has/have been + pp; future → will be + pp. In IT documentation, the 'by + agent' phrase is often omitted when the actor is unimportant: 'The firewall was configured yesterday' is more common in technical writing."
   }
 ]

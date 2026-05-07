@@ -1,170 +1,203 @@
-﻿[
+[
   {
-    "id": "sm-01",
-    "titre": "Analyse d'un réseau et adressage IP",
-    "duree": "2h",
-    "niveau": "BTS SIO",
-    "description": "Ce sujet porte sur l'adressage réseau, les conversions binaire/hexadécimale et l'application de l'algèbre de Boole aux règles de sécurité réseau.",
-    "exercices": [
+    "id": "sujet-1",
+    "annee": "2024",
+    "titre": "Probabilités et cryptographie RSA",
+    "contexte": "Ce sujet porte sur deux thèmes fondamentaux de la sécurité informatique : les probabilités conditionnelles pour analyser l'efficacité des mesures de protection, et la cryptographie RSA pour sécuriser les communications. Une partie statistique complète l'analyse des données de sécurité.",
+    "parties": [
       {
-        "numero": 1,
-        "titre": "Conversions et adressage",
-        "enonce": "Répondez aux questions suivantes sur les conversions et l'adressage IP.",
-        "points": 8,
+        "titre": "Partie 1 — Probabilités conditionnelles et théorème de Bayes",
         "questions": [
           {
             "numero": "1.1",
-            "question": "Convertir l'adresse IP 192.168.10.5 en notation binaire complète (32 bits).",
-            "points": 2,
-            "correction": "192=11000000, 168=10101000, 10=00001010, 5=00000101. Adresse complète: 11000000.10101000.00001010.00000101"
+            "question": "Un administrateur système étudie l'état de 200 serveurs. Le tableau ci-dessous résume les données :\n\n              | Avec antivirus | Sans antivirus | Total\nInfecté       |      8         |      22        |  30\nSain          |     130        |      40        | 170\nTotal         |     138        |      62        | 200\n\nCalculer P(infecté), P(sans antivirus), P(infecté ∩ sans antivirus).",
+            "bareme": 3,
+            "correction": "P(infecté) = 30/200 = 0.15 soit 15%\nP(sans antivirus) = 62/200 = 0.31 soit 31%\nP(infecté ∩ sans antivirus) = 22/200 = 0.11 soit 11%"
           },
           {
             "numero": "1.2",
-            "question": "Sachant que le masque réseau est /27 (255.255.255.224), quel est le nombre maximum d'hôtes utilisables dans ce sous-réseau ?",
-            "points": 2,
-            "correction": "/27 signifie 27 bits pour le réseau, 5 bits pour les hôtes. Nombre d'hôtes = 2^5 - 2 = 32 - 2 = 30 hôtes utilisables (on soustrait l'adresse réseau et l'adresse de broadcast)."
+            "question": "En utilisant le tableau de la question 1.1, calculer :\na) P(infecté | sans antivirus) : probabilité qu'un serveur soit infecté sachant qu'il n'a pas d'antivirus.\nb) P(sans antivirus | infecté) : probabilité qu'un serveur n'ait pas d'antivirus sachant qu'il est infecté.",
+            "bareme": 4,
+            "correction": "a) P(infecté | sans antivirus) = P(infecté ∩ sans antivirus) / P(sans antivirus)\n   = (22/200) / (62/200) = 22/62 ≈ 0.355 soit 35.5%\n   Interprétation : un serveur sans antivirus a 35.5% de risque d'infection.\n\nb) P(sans antivirus | infecté) = P(infecté ∩ sans antivirus) / P(infecté)\n   = (22/200) / (30/200) = 22/30 ≈ 0.733 soit 73.3%\n   Interprétation : parmi les serveurs infectés, 73.3% n'avaient pas d'antivirus."
           },
           {
             "numero": "1.3",
-            "question": "Convertir le masque 255.255.255.224 en hexadécimal.",
-            "points": 2,
-            "correction": "255=FF, 255=FF, 255=FF, 224=E0 (128+64+32=224 en décimal = 11100000 en binaire = E0 en hexa). Masque hexa: FF.FF.FF.E0"
-          },
-          {
-            "numero": "1.4",
-            "question": "L'adresse MAC d'une carte réseau est AC:DE:48:23:45:67. Convertir le premier octet AC en décimal et en binaire.",
-            "points": 2,
-            "correction": "AC en hexa = A×16 + C = 10×16 + 12 = 160+12 = 172 en décimal. 172 en binaire: 172=128+32+8+4=10101100"
+            "question": "Vérifier le théorème de Bayes pour les événements 'infecté' (I) et 'sans antivirus' (SA) :\nP(I|SA) = P(SA|I) × P(I) / P(SA)\nCalculer chaque terme et vérifier l'égalité avec le résultat de 1.2a).",
+            "bareme": 3,
+            "correction": "P(SA|I) = P(SA ∩ I) / P(I) = (22/200) / (30/200) = 22/30 ≈ 0.7333\nP(I) = 30/200 = 0.15\nP(SA) = 62/200 = 0.31\n\nApplication de Bayes :\nP(I|SA) = P(SA|I) × P(I) / P(SA)\nP(I|SA) = (22/30) × (30/200) / (62/200)\nP(I|SA) = (22/200) / (62/200) = 22/62 ≈ 0.355 ✓\n\nOn retrouve bien le résultat de 1.2a), ce qui valide le théorème de Bayes."
           }
         ]
       },
       {
-        "numero": 2,
-        "titre": "Algèbre de Boole et pare-feu",
-        "enonce": "Application de l'algèbre de Boole aux règles de sécurité réseau.",
-        "points": 7,
+        "titre": "Partie 2 — Cryptographie RSA",
         "questions": [
           {
             "numero": "2.1",
-            "question": "Un administrateur réseau définit les règles de pare-feu suivantes : Règle A : autoriser si (port=443 ET protocole=HTTPS). Règle B : autoriser si (port=80 ET protocole=HTTP). Écrire l'expression booléenne globale 'Autoriser' en fonction des variables p443, p80, HTTP, HTTPS.",
-            "points": 2,
-            "correction": "Autoriser = (p443 ∧ HTTPS) ∨ (p80 ∧ HTTP)"
+            "question": "On choisit p = 11 et q = 13 pour générer une paire de clés RSA.\na) Calculer n = p × q.\nb) Calculer φ(n) = (p-1) × (q-1).\nc) On choisit e = 7. Vérifier que pgcd(e, φ(n)) = 1.",
+            "bareme": 3,
+            "correction": "a) n = 11 × 13 = 143\n\nb) φ(n) = (11-1) × (13-1) = 10 × 12 = 120\n\nc) pgcd(7, 120) :\n   120 = 17×7 + 1\n   7 = 7×1 + 0\n   pgcd(7, 120) = 1 ✓\n   Condition vérifiée : e=7 est bien premier avec φ(n)=120."
           },
           {
             "numero": "2.2",
-            "question": "Dresser la table de vérité complète pour l'expression : F = A ∧ (B ∨ ¬C) avec toutes les combinaisons de A, B, C.",
-            "points": 2,
-            "correction": "8 lignes (2^3=8). A=0: F=0 toujours. A=1,B=0,C=0: F=1∧(0∨1)=1. A=1,B=0,C=1: F=1∧(0∨0)=0. A=1,B=1,C=0: F=1∧(1∨1)=1. A=1,B=1,C=1: F=1∧(1∨0)=1. Donc F=1 pour (1,0,0), (1,1,0), (1,1,1) et F=0 pour tous les autres."
+            "question": "Calculer la clé privée d telle que 7×d ≡ 1 [mod 120].\nOn utilisera l'algorithme d'Euclide étendu ou la méthode par essais.\nDonner les clés publique et privée.",
+            "bareme": 4,
+            "correction": "On cherche d tel que 7d ≡ 1 [mod 120], c'est-à-dire 7d = 120k + 1 pour un entier k.\n\nPar Euclide étendu sur pgcd(7, 120) :\n120 = 17×7 + 1  →  1 = 120 - 17×7\nDonc 1 = 1×120 + (-17)×7\nCoefficient de 7 : u = -17 ≡ -17 + 120 = 103 [mod 120]\n\nVérification : 7 × 103 = 721 = 6×120 + 1 → 721 mod 120 = 1 ✓\n\nd = 103\nClé publique : (e, n) = (7, 143)\nClé privée : (d, n) = (103, 143)"
           },
           {
             "numero": "2.3",
-            "question": "Simplifier l'expression booléenne suivante en utilisant les lois de De Morgan et les propriétés de l'algèbre de Boole : F = ¬(¬A ∧ ¬B) ∨ (A ∧ B).",
-            "points": 3,
-            "correction": "F = ¬(¬A ∧ ¬B) ∨ (A ∧ B). Étape 1 — De Morgan sur ¬(¬A ∧ ¬B) = ¬(¬A) ∨ ¬(¬B) = A ∨ B. Donc F = (A ∨ B) ∨ (A ∧ B). Étape 2 — Absorption : (A ∨ B) ∨ (A ∧ B) = A ∨ B (car A∧B implique A∨B). Résultat : F = A ∨ B"
+            "question": "En utilisant la clé publique (e=7, n=143) :\na) Chiffrer le message M = 2 : calculer C = 2^7 mod 143.\nb) Chiffrer le message M = 5 : calculer C = 5^7 mod 143.",
+            "bareme": 4,
+            "correction": "a) Chiffrement de M = 2 :\nC = 2^7 mod 143 = 128 mod 143 = 128\n(128 < 143 donc C = 128)\n\nb) Chiffrement de M = 5 :\n5^1 = 5\n5^2 = 25\n5^4 = 625 mod 143 = 625 - 4×143 = 625 - 572 = 53\n5^7 = 5^4 × 5^2 × 5^1 = 53 × 25 × 5 mod 143\n53 × 25 = 1325 mod 143 = 1325 - 9×143 = 1325 - 1287 = 38\n38 × 5 = 190 mod 143 = 190 - 143 = 47\nC = 47\n\nVérification possible : 47^103 mod 143 doit redonner 5 (déchiffrement)."
           }
         ]
       },
       {
-        "numero": 3,
-        "titre": "Application réseau",
-        "enonce": "Calculs appliqués sur les réseaux IP.",
-        "points": 5,
+        "titre": "Partie 3 — Régression linéaire sur données de sécurité",
         "questions": [
           {
             "numero": "3.1",
-            "question": "Un réseau est 172.16.0.0/20. Calculer : l'adresse de broadcast, l'adresse de la première machine, l'adresse de la dernière machine.",
-            "points": 2,
-            "correction": "/20 = masque 255.255.240.0 = 11111111.11111111.11110000.00000000. Réseau: 172.16.0.0. Broadcast: 172.16.15.255 (les 12 bits hôtes à 1). Première machine: 172.16.0.1. Dernière machine: 172.16.15.254. Nombre d'hôtes: 2^12-2=4094."
+            "question": "Un RSSI enregistre le nombre de tentatives d'intrusion sur 6 mois :\nMois (x) :        1    2    3    4    5    6\nIntrusions (y) :  45   52   48   61   58   67\n\nCalculer la moyenne x̄ et la moyenne ȳ.",
+            "bareme": 2,
+            "correction": "x̄ = (1+2+3+4+5+6) / 6 = 21/6 = 3.5\n\nȳ = (45+52+48+61+58+67) / 6 = 331/6 ≈ 55.17"
           },
           {
             "numero": "3.2",
-            "question": "Vous devez créer 6 sous-réseaux à partir du réseau 192.168.1.0/24. Quel préfixe minimum faut-il utiliser ? Combien d'hôtes par sous-réseau ? Lister les 3 premiers sous-réseaux.",
-            "points": 3,
-            "correction": "Pour 6 sous-réseaux, il faut 2^n ≥ 6, donc n=3 bits supplémentaires. Nouveau préfixe: /24+3=/27. Hôtes par sous-réseau: 2^5-2=30. Sous-réseaux: 192.168.1.0/27 (hôtes .1-.30), 192.168.1.32/27 (hôtes .33-.62), 192.168.1.64/27 (hôtes .65-.94)."
+            "question": "Calculer le coefficient directeur a et l'ordonnée à l'origine b de la droite de régression y = ax + b.\nOn rappelle : a = Σ(xi-x̄)(yi-ȳ) / Σ(xi-x̄)²  et  b = ȳ - a×x̄",
+            "bareme": 5,
+            "correction": "Calcul de Σ(xi-x̄)(yi-ȳ) :\nx̄ = 3.5, ȳ ≈ 55.167\n\ni=1 : (1-3.5)(45-55.167) = (-2.5)(-10.167) = 25.417\ni=2 : (2-3.5)(52-55.167) = (-1.5)(-3.167) = 4.750\ni=3 : (3-3.5)(48-55.167) = (-0.5)(-7.167) = 3.583\ni=4 : (4-3.5)(61-55.167) = (0.5)(5.833) = 2.917\ni=5 : (5-3.5)(58-55.167) = (1.5)(2.833) = 4.250\ni=6 : (6-3.5)(67-55.167) = (2.5)(11.833) = 29.583\nΣ(xi-x̄)(yi-ȳ) = 25.417+4.750+3.583+2.917+4.250+29.583 = 70.5\n\nCalcul de Σ(xi-x̄)² :\n(-2.5)²+(-1.5)²+(-0.5)²+(0.5)²+(1.5)²+(2.5)² = 6.25+2.25+0.25+0.25+2.25+6.25 = 17.5\n\na = 70.5 / 17.5 ≈ 4.029\nb = 55.167 - 4.029×3.5 = 55.167 - 14.100 = 41.067\n\nDroite de régression : y = 4.029x + 41.067\n\nVérification : y(3.5) = 4.029×3.5 + 41.067 = 14.1 + 41.067 = 55.167 = ȳ ✓"
+          },
+          {
+            "numero": "3.3",
+            "question": "Calculer le coefficient de corrélation linéaire r et commenter la liaison.\nOn rappelle : r = cov(X,Y) / (σX × σY)\navec cov(X,Y) = Σ(xi-x̄)(yi-ȳ)/n et σX = √(Σ(xi-x̄)²/n), σY = √(Σ(yi-ȳ)²/n).",
+            "bareme": 3,
+            "correction": "cov(X,Y) = Σ(xi-x̄)(yi-ȳ) / n = 70.5 / 6 = 11.75\n\nσX = √(Σ(xi-x̄)²/n) = √(17.5/6) = √2.917 ≈ 1.708\n\nCalcul de Σ(yi-ȳ)² :\n(-10.167)²+(-3.167)²+(-7.167)²+(5.833)²+(2.833)²+(11.833)²\n= 103.37+10.03+51.37+34.02+8.03+140.02 = 346.83\nσY = √(346.83/6) = √57.805 ≈ 7.603\n\nr = 11.75 / (1.708 × 7.603) = 11.75 / 12.99 ≈ 0.905\n\nInterprétation : r ≈ 0.905 > 0.9 → très forte corrélation linéaire positive.\nLe modèle linéaire est pertinent pour décrire l'évolution des intrusions."
+          },
+          {
+            "numero": "3.4",
+            "question": "Utiliser la droite de régression pour prédire le nombre d'intrusions au mois 7. Commenter.",
+            "bareme": 2,
+            "correction": "y(7) = 4.029 × 7 + 41.067 = 28.2 + 41.067 ≈ 69.3\n\nPrévision : environ 69 tentatives d'intrusion au mois 7.\n\nCommentaire : la tendance est à la hausse (environ 4 tentatives supplémentaires par mois). Le RSSI devrait renforcer les mesures de sécurité et enquêter sur les causes de cette augmentation. Note : la prévision est fiable car r ≈ 0.905 (très forte corrélation) et on extrapole d'un seul mois."
           }
         ]
       }
-    ],
-    "bareme_total": 20
+    ]
   },
   {
-    "id": "sm-02",
-    "titre": "Sécurité et chiffrement RSA",
-    "duree": "2h",
-    "niveau": "BTS SIO",
-    "description": "Ce sujet porte sur la cryptographie mathématique (algorithme RSA) et l'application des probabilités à la sécurité informatique.",
-    "exercices": [
+    "id": "sujet-2",
+    "annee": "2024",
+    "titre": "Réseaux et graphes",
+    "contexte": "Ce sujet traite des mathématiques appliquées aux réseaux informatiques : le découpage d'adresses IP avec la méthode VLSM, l'optimisation du routage avec l'algorithme de Dijkstra, et la modélisation de l'amortissement des équipements réseau par les suites numériques.",
+    "parties": [
       {
-        "numero": 1,
-        "titre": "Chiffrement RSA",
-        "enonce": "Application de l'algorithme RSA pour la cryptographie asymétrique.",
-        "points": 10,
+        "titre": "Partie 1 — Adressage VLSM",
         "questions": [
           {
             "numero": "1.1",
-            "question": "Vérifier que p=7 et q=13 sont premiers. Calculer n=p×q.",
-            "points": 1,
-            "correction": "7 est premier (diviseurs: 1 et 7 uniquement). 13 est premier (diviseurs: 1 et 13 uniquement). n = 7 × 13 = 91."
+            "question": "Une entreprise dispose du réseau 172.16.0.0/16. Elle souhaite créer 5 sous-réseaux :\n- SR1 : 200 hôtes\n- SR2 : 100 hôtes\n- SR3 : 50 hôtes\n- SR4 : 25 hôtes\n- SR5 : 5 hôtes\n\nPour chaque sous-réseau, déterminer le préfixe (longueur du masque) et le nombre d'hôtes utilisables. Montrer le calcul.",
+            "bareme": 5,
+            "correction": "Formule : préfixe = 32 - ⌈log₂(nb_hôtes + 2)⌉\nHôtes utilisables = 2^(32-préfixe) - 2\n\nSR1 — 200 hôtes :\n200+2=202 → 2^7=128<202, 2^8=256≥202 → préfixe = 32-8 = /24\nHôtes : 256-2 = 254 ✓\n\nSR2 — 100 hôtes :\n100+2=102 → 2^7=128≥102 → préfixe = 32-7 = /25\nHôtes : 128-2 = 126 ✓\n\nSR3 — 50 hôtes :\n50+2=52 → 2^6=64≥52 → préfixe = 32-6 = /26\nHôtes : 64-2 = 62 ✓\n\nSR4 — 25 hôtes :\n25+2=27 → 2^5=32≥27 → préfixe = 32-5 = /27\nHôtes : 32-2 = 30 ✓\n\nSR5 — 5 hôtes :\n5+2=7 → 2^3=8≥7 → préfixe = 32-3 = /29\nHôtes : 8-2 = 6 ✓"
           },
           {
             "numero": "1.2",
-            "question": "Calculer φ(n) = (p-1)(q-1). Expliquer la signification de φ(n).",
-            "points": 2,
-            "correction": "φ(91) = (7-1)(13-1) = 6 × 12 = 72. φ(n) est l'indicatrice d'Euler: le nombre d'entiers entre 1 et n qui sont premiers avec n (pgcd=1)."
-          },
-          {
-            "numero": "1.3",
-            "question": "Choisir e=5. Vérifier que pgcd(5, 72)=1 en utilisant l'algorithme d'Euclide.",
-            "points": 2,
-            "correction": "pgcd(72,5): 72=5×14+2, pgcd(5,2): 5=2×2+1, pgcd(2,1)=1. Donc pgcd(5,72)=1 ✓. e=5 est valide car premier avec φ(n)=72."
-          },
-          {
-            "numero": "1.4",
-            "question": "Calculer d = e^(-1) mod φ(n) = 5^(-1) mod 72. Utiliser l'algorithme d'Euclide étendu ou une méthode par essai.",
-            "points": 3,
-            "correction": "On cherche d tel que 5d ≡ 1 [72]. Par essai: 5×1=5, 5×2=10, 5×13=65, 5×14=70, 5×15=75=72+3, 5×29=145=2×72+1 ✓. Donc d=29. Vérification: 5×29=145=2×72+1≡1[72] ✓"
-          },
-          {
-            "numero": "1.5",
-            "question": "Chiffrer le message m=3 avec la clé publique (91, 5). Déchiffrer ensuite c avec la clé privée (91, 29) pour vérifier.",
-            "points": 2,
-            "correction": "Chiffrement: c = m^e mod n = 3^5 mod 91 = 243 mod 91. 243 = 2×91 + 61. Donc c = 61. Déchiffrement: m = c^d mod n = 61^29 mod 91. Calcul par exponentiations successives: 61²=3721≡3721-40×91=3721-3640=81[91], 61⁴≡81²=6561≡6561-72×91=6561-6552=9[91], 61⁸≡81[91], 61^16≡81²≡9[91], 61^29=61^16×61^8×61^4×61^1≡9×81×9×61=9×81×549≡9×81×(549-6×91)≡9×81×3=9×243=9×(243-2×91)=9×61=549≡549-6×91=549-546=3[91] ✓. m=3 retrouvé ✓"
+            "question": "En partant de l'adresse 172.16.0.0 et en attribuant les sous-réseaux dans l'ordre décroissant (SR1 d'abord), compléter le tableau suivant pour chaque sous-réseau :\nAdresse réseau | Masque | Broadcast | 1ère IP | Dernière IP",
+            "bareme": 5,
+            "correction": "SR1 (/24, 256 adresses) :\nAdresse réseau : 172.16.0.0\nMasque : 255.255.255.0\nBroadcast : 172.16.0.255\n1ère IP : 172.16.0.1  ;  Dernière IP : 172.16.0.254\n\nSR2 (/25, 128 adresses) — démarre à 172.16.1.0 :\nAdresse réseau : 172.16.1.0\nMasque : 255.255.255.128\nBroadcast : 172.16.1.127\n1ère IP : 172.16.1.1  ;  Dernière IP : 172.16.1.126\n\nSR3 (/26, 64 adresses) — démarre à 172.16.1.128 :\nAdresse réseau : 172.16.1.128\nMasque : 255.255.255.192\nBroadcast : 172.16.1.191\n1ère IP : 172.16.1.129  ;  Dernière IP : 172.16.1.190\n\nSR4 (/27, 32 adresses) — démarre à 172.16.1.192 :\nAdresse réseau : 172.16.1.192\nMasque : 255.255.255.224\nBroadcast : 172.16.1.223\n1ère IP : 172.16.1.193  ;  Dernière IP : 172.16.1.222\n\nSR5 (/29, 8 adresses) — démarre à 172.16.1.224 :\nAdresse réseau : 172.16.1.224\nMasque : 255.255.255.248\nBroadcast : 172.16.1.231\n1ère IP : 172.16.1.225  ;  Dernière IP : 172.16.1.230"
           }
         ]
       },
       {
-        "numero": 2,
-        "titre": "Probabilités et sécurité",
-        "enonce": "Application des probabilités à des scénarios de sécurité informatique.",
-        "points": 10,
+        "titre": "Partie 2 — Algorithme de Dijkstra",
         "questions": [
           {
             "numero": "2.1",
-            "question": "Un attaquant essaie de deviner un mot de passe de 8 caractères composé uniquement de lettres minuscules (26 lettres). Combien de mots de passe possibles existe-t-il ?",
-            "points": 2,
-            "correction": "26^8 = 208 827 064 576 ≈ 2.09 × 10^11 combinaisons possibles."
+            "question": "Un réseau d'entreprise comporte 6 routeurs A, B, C, D, E, F. Les coûts OSPF des liaisons sont :\nA-B:10, A-C:3, B-D:4, B-E:8, C-B:2, C-D:6, D-F:5, E-F:7\n\nAppliquer l'algorithme de Dijkstra depuis A pour calculer les distances minimales vers tous les routeurs. Dresser le tableau de l'algorithme étape par étape.",
+            "bareme": 8,
+            "correction": "Initialisation : dist = {A:0, B:∞, C:∞, D:∞, E:∞, F:∞}\n\nÉtape 1 — Sélection A (dist=0) :\n  Voisins : B: min(∞, 0+10)=10, C: min(∞, 0+3)=3\n  dist = {A:0, B:10, C:3, D:∞, E:∞, F:∞}\n\nÉtape 2 — Sélection C (dist=3) :\n  Voisins : B: min(10, 3+2)=5, D: min(∞, 3+6)=9\n  dist = {A:0, B:5, C:3, D:9, E:∞, F:∞}\n\nÉtape 3 — Sélection B (dist=5) :\n  Voisins : D: min(9, 5+4)=9, E: min(∞, 5+8)=13\n  dist = {A:0, B:5, C:3, D:9, E:13, F:∞}\n\nÉtape 4 — Sélection D (dist=9) :\n  Voisins : F: min(∞, 9+5)=14\n  dist = {A:0, B:5, C:3, D:9, E:13, F:14}\n\nÉtape 5 — Sélection E (dist=13) :\n  Voisins : F: min(14, 13+7)=14 (pas d'amélioration)\n  dist = {A:0, B:5, C:3, D:9, E:13, F:14}\n\nÉtape 6 — Sélection F (dist=14) → Fin.\n\nDistances finales depuis A :\n  A:0, B:5, C:3, D:9, E:13, F:14"
           },
           {
             "numero": "2.2",
-            "question": "L'attaquant peut tester 1 000 mots de passe par seconde. Quelle est la probabilité de trouver le mot de passe en moins d'une heure ? (en supposant une recherche exhaustive aléatoire sans répétition)",
-            "points": 2,
-            "correction": "En 1 heure = 3600 secondes → 3 600 000 essais. P = 3 600 000 / 208 827 064 576 ≈ 0.0000172 ≈ 0.00172%. La probabilité est très faible. Si on ajoute chiffres+majuscules (62 caractères): 62^8 ≈ 2.18×10^14, encore plus difficile."
+            "question": "Donner le plus court chemin de A vers F et son coût total. Reconstruire le chemin en utilisant les prédécesseurs.",
+            "bareme": 3,
+            "correction": "Reconstruction des prédécesseurs depuis la table Dijkstra :\nF ← D (dist[F]=14 = dist[D]+5 = 9+5)\nD ← C (dist[D]=9 = dist[C]+6 = 3+6)  [ou B : dist[B]+4=5+4=9, les deux conviennent]\nC ← A (dist[C]=3 = dist[A]+3 = 0+3)\n\nChemin optimal : A → C → D → F\nCoût total : 3 + 6 + 5 = 14\n\nVérification des autres chemins vers F :\nA→B→D→F = 10+4+5 = 19\nA→C→B→D→F = 3+2+4+5 = 14 (même coût, route alternative)\nA→B→E→F = 10+8+7 = 25\nLe chemin A→C→D→F (ou A→C→B→D→F) est bien optimal avec un coût de 14."
+          }
+        ]
+      },
+      {
+        "titre": "Partie 3 — Amortissement d'un switch par suite arithmétique",
+        "questions": [
+          {
+            "numero": "3.1",
+            "question": "Un switch réseau est acheté 8 000 € et est amorti de façon linéaire (constante) sur 4 ans. La valeur nette comptable (VNC) en début d'année n est notée u_n (n=0,1,2,3,4).\na) Quelle est la dotation annuelle aux amortissements ?\nb) Donner la suite (u_n) sous forme de terme général.\nc) Vérifier que u_4 = 0.",
+            "bareme": 3,
+            "correction": "a) Dotation annuelle = Valeur initiale / Durée = 8000 / 4 = 2000 € par an\n\nb) La suite est arithmétique de raison r = -2000 et de premier terme u_0 = 8000.\n   Terme général : u_n = 8000 + n×(-2000) = 8000 - 2000n\n\nc) u_4 = 8000 - 2000×4 = 8000 - 8000 = 0 €\n   À la fin de la 4ème année, le switch est entièrement amorti (VNC = 0). ✓"
           },
           {
-            "numero": "2.3",
-            "question": "Un système de détection d'intrusion (IDS) a les propriétés suivantes: P(alerte | intrusion) = 0.95 (taux de détection), P(alerte | pas d'intrusion) = 0.02 (faux positifs). On sait que P(intrusion) = 0.01. Calculer P(intrusion | alerte) avec le théorème de Bayes.",
-            "points": 3,
-            "correction": "Théorème de Bayes: P(I|A) = P(A|I)×P(I) / P(A). P(A) = P(A|I)×P(I) + P(A|¬I)×P(¬I) = 0.95×0.01 + 0.02×0.99 = 0.0095 + 0.0198 = 0.0293. P(I|A) = 0.95×0.01 / 0.0293 = 0.0095/0.0293 ≈ 0.324 ≈ 32.4%. Malgré un bon taux de détection, seulement 32.4% des alertes correspondent à une vraie intrusion, à cause du faible taux d'intrusion réel."
-          },
-          {
-            "numero": "2.4",
-            "question": "Sur 30 jours, un serveur web subit en moyenne 2 attaques DDoS par mois. En modélisant par une loi de Poisson de paramètre λ=2, calculer la probabilité de : (a) exactement 0 attaque, (b) au moins 1 attaque, (c) plus de 3 attaques.",
-            "points": 3,
-            "correction": "Loi de Poisson P(X=k) = λ^k × e^(-λ) / k! avec λ=2, e^(-2)≈0.1353. (a) P(X=0)=e^(-2)≈0.1353 soit 13.5%. (b) P(X≥1)=1-P(X=0)=1-0.1353=0.8647 soit 86.5%. (c) P(X>3)=1-P(X≤3)=1-[P(0)+P(1)+P(2)+P(3)]. P(1)=2e^(-2)≈0.2707, P(2)=2e^(-2)≈0.2707, P(3)=(8/6)e^(-2)≈0.1804. P(X≤3)=0.1353+0.2707+0.2707+0.1804=0.8571. P(X>3)=1-0.8571=0.1429 soit 14.3%."
+            "numero": "3.2",
+            "question": "a) Quelle est la VNC du switch après 2 ans ?\nb) À partir de quelle année la VNC est-elle inférieure à 1 000 € ?\nc) Calculer la somme totale des amortissements sur 4 ans en utilisant la formule de la somme d'une suite arithmétique.",
+            "bareme": 4,
+            "correction": "a) u_2 = 8000 - 2000×2 = 8000 - 4000 = 4 000 €\n\nb) On résout u_n < 1000 :\n   8000 - 2000n < 1000\n   -2000n < -7000\n   n > 3.5\n   Donc à partir de n = 4, la VNC est inférieure à 1000€.\n   Vérification : u_4 = 0 < 1000 ✓ ; u_3 = 8000-6000 = 2000 ≥ 1000 ✓\n\nc) Les amortissements annuels sont constants = 2000 € chaque année.\n   Somme = 2000+2000+2000+2000 = 4×2000 = 8000 €\n   On retrouve bien la valeur initiale du switch : tout est amorti. ✓\n   Note : avec la formule S = n×(u1+un)/2 = 4×(2000+2000)/2 = 4×2000 = 8000 €"
           }
         ]
       }
-    ],
-    "bareme_total": 20
+    ]
+  },
+  {
+    "id": "sujet-3",
+    "annee": "2024",
+    "titre": "Statistiques et disponibilité des systèmes",
+    "contexte": "Ce sujet applique les statistiques et le calcul des probabilités à la gestion de la disponibilité d'un data center. Il couvre la loi binomiale pour modéliser les pannes, les statistiques descriptives sur des logs de performance, et les intervalles de confiance pour évaluer le respect d'un SLA.",
+    "parties": [
+      {
+        "titre": "Partie 1 — Loi binomiale et disponibilité",
+        "questions": [
+          {
+            "numero": "1.1",
+            "question": "Un data center comprend 20 serveurs identiques et indépendants. La probabilité qu'un serveur tombe en panne sur un mois donné est p = 0.05.\nOn note X le nombre de serveurs en panne sur ce mois.\na) Quelle loi de probabilité suit X ? Préciser ses paramètres.\nb) Calculer P(X=0) et P(X=1). Arrondir à 4 décimales.",
+            "bareme": 4,
+            "correction": "a) Les 20 serveurs sont indépendants, chacun avec probabilité de panne p=0.05.\n   X suit la loi binomiale B(n=20, p=0.05).\n\nb) P(X=k) = C(20,k) × (0.05)^k × (0.95)^(20-k)\n\nP(X=0) = C(20,0) × (0.05)^0 × (0.95)^20\n       = 1 × 1 × (0.95)^20\n       = (0.95)^20 ≈ 0.3585\n\nP(X=1) = C(20,1) × (0.05)^1 × (0.95)^19\n       = 20 × 0.05 × (0.95)^19\n       = 1 × 0.3774 ≈ 0.3774\n\nRappel : (0.95)^19 = (0.95)^20 / 0.95 ≈ 0.3585/0.95 ≈ 0.3774"
+          },
+          {
+            "numero": "1.2",
+            "question": "a) Calculer P(X ≥ 2), probabilité qu'au moins 2 serveurs tombent en panne.\nb) Calculer l'espérance E(X) et la variance V(X) de X.\nc) Interpréter l'espérance dans le contexte du data center.",
+            "bareme": 4,
+            "correction": "a) P(X ≥ 2) = 1 - P(X=0) - P(X=1)\n   P(X ≥ 2) = 1 - 0.3585 - 0.3774 = 0.2641 ≈ 26.4%\n\nb) E(X) = n×p = 20 × 0.05 = 1 serveur en panne en moyenne\n   V(X) = n×p×(1-p) = 20 × 0.05 × 0.95 = 0.95\n   σ(X) = √0.95 ≈ 0.975\n\nc) En moyenne, on s'attend à 1 serveur en panne par mois dans ce data center.    Avec 26.4% de probabilité d'avoir au moins 2 pannes simultanées,    il est important de prévoir de la redondance et un plan de maintenance préventive."
+          }
+        ]
+      },
+      {
+        "titre": "Partie 2 — Statistiques descriptives sur logs",
+        "questions": [
+          {
+            "numero": "2.1",
+            "question": "L'équipe réseau mesure le temps de réponse (en ms) sur 10 requêtes successives :\n45, 52, 38, 61, 49, 55, 42, 58, 47, 53\n\na) Calculer la moyenne x̄.\nb) Calculer la variance V et l'écart-type σ.",
+            "bareme": 4,
+            "correction": "a) Moyenne :\nx̄ = (45+52+38+61+49+55+42+58+47+53) / 10\nx̄ = 500 / 10 = 50 ms\n\nb) Variance :\nCalcul de Σ(xi-x̄)² avec x̄=50 :\n(45-50)²=25  (52-50)²=4  (38-50)²=144  (61-50)²=121  (49-50)²=1\n(55-50)²=25  (42-50)²=64  (58-50)²=64  (47-50)²=9  (53-50)²=9\nΣ(xi-50)² = 25+4+144+121+1+25+64+64+9+9 = 466\n\nV = Σ(xi-x̄)² / n = 466/10 = 46.6 ms²\n\nσ = √46.6 ≈ 6.83 ms"
+          },
+          {
+            "numero": "2.2",
+            "question": "a) Déterminer la médiane de la série [45, 52, 38, 61, 49, 55, 42, 58, 47, 53].\nb) Calculer le premier quartile Q1 et le troisième quartile Q3.",
+            "bareme": 3,
+            "correction": "a) Tri croissant de la série :\n38, 42, 45, 47, 49, 52, 53, 55, 58, 61\n\nn=10 (pair) → médiane = moyenne des valeurs de rang 5 et 6\nMédiane = (49 + 52) / 2 = 50.5 ms\n\nb) Q1 : médiane de la moitié inférieure {38, 42, 45, 47, 49}\n   Q1 = valeur de rang 3 = 45 ms\n\nQ3 : médiane de la moitié supérieure {52, 53, 55, 58, 61}\n   Q3 = valeur de rang 3 = 55 ms\n\nÉcart interquartile : Q3-Q1 = 55-45 = 10 ms"
+          }
+        ]
+      },
+      {
+        "titre": "Partie 3 — Intervalle de confiance et SLA",
+        "questions": [
+          {
+            "numero": "3.1",
+            "question": "Suite à une campagne de mesure sur n=100 requêtes, on obtient :\nTemps de réponse moyen : x̄ = 48 ms\nÉcart-type : σ = 8 ms\n\nConstruire l'intervalle de confiance à 95% pour le temps de réponse moyen μ.\nOn rappelle : IC95% = [x̄ - 1.96×σ/√n  ;  x̄ + 1.96×σ/√n]",
+            "bareme": 3,
+            "correction": "Application directe de la formule :\n√n = √100 = 10\nσ/√n = 8/10 = 0.8\n1.96 × 0.8 = 1.568 ≈ 1.57\n\nIC95% = [48 - 1.57  ;  48 + 1.57]\nIC95% = [46.43 ms  ;  49.57 ms]\n\nInterprétation : on est sûr à 95% que le vrai temps de réponse moyen μ se trouve entre 46.43 ms et 49.57 ms."
+          },
+          {
+            "numero": "3.2",
+            "question": "Le SLA (Service Level Agreement) de l'entreprise impose un temps de réponse moyen inférieur à 50 ms.\na) L'intervalle de confiance calculé en 3.1 permet-il de conclure que le SLA est respecté ? Justifier.\nb) Quelle taille d'échantillon n serait nécessaire pour obtenir un IC95% de demi-largeur ≤ 1 ms ?",
+            "bareme": 4,
+            "correction": "a) L'IC95% est [46.43 ; 49.57]. La borne supérieure 49.57 ms < 50 ms.\n   Avec un niveau de confiance de 95%, l'ensemble de l'intervalle est inférieur à 50 ms.\n   Conclusion : on peut affirmer avec 95% de confiance que μ < 50 ms.\n   Le SLA est respecté au niveau de confiance 95%.\n\nb) On veut : 1.96 × σ/√n ≤ 1\n   1.96 × 8/√n ≤ 1\n   √n ≥ 1.96 × 8 = 15.68\n   n ≥ 15.68² = 245.86\n   Il faut n ≥ 246 mesures pour avoir un IC95% de demi-largeur ≤ 1 ms.\n\nInterprétation : plus l'échantillon est grand, plus l'estimation est précise. Passer de 100 à 246 mesures divise par environ 1.57 la demi-largeur de l'IC."
+          }
+        ]
+      }
+    ]
   }
 ]
