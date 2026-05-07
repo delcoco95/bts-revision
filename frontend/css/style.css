@@ -486,6 +486,50 @@ hr { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
   .reader-content { padding: 16px 16px 40px; }
 }
 
+/* ============================================================ GLOSSAIRE — New Design ===== */
+.glossaire-search {
+  width:100%; padding:12px 16px; border:2px solid var(--border2); border-radius:var(--r-sm);
+  font-size:1rem; margin-bottom:24px; background:var(--bg2); color:var(--text);
+  outline:none; transition:border-color .2s;
+}
+.glossaire-search:focus { border-color:var(--white); }
+.glossaire-alphabet { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:32px; }
+.glossaire-alpha-btn {
+  width:36px; height:36px; border:2px solid var(--border2); background:var(--bg2);
+  color:var(--text-2); cursor:pointer; font-weight:700; font-size:.82rem;
+  border-radius:4px; transition:all .15s; display:flex; align-items:center; justify-content:center;
+}
+.glossaire-alpha-btn:hover { background:var(--white); color:var(--black); border-color:var(--white); }
+.glossaire-alpha-disabled { opacity:.3; cursor:default; pointer-events:none; }
+.glossaire-section { margin-bottom:40px; }
+.glossaire-section-letter {
+  font-size:2rem; font-weight:900; border-bottom:3px solid var(--white);
+  padding-bottom:8px; margin-bottom:16px; color:var(--white);
+}
+.glossaire-card {
+  border-left:4px solid var(--white); padding:16px 20px; margin-bottom:12px;
+  background:var(--bg2); border-top:1px solid var(--border); border-right:1px solid var(--border);
+  border-bottom:1px solid var(--border); border-radius:0 var(--r-sm) var(--r-sm) 0;
+  transition:background .15s;
+}
+.glossaire-card:hover { background:var(--bg3); }
+.glossaire-term { font-size:1.05rem; font-weight:700; color:var(--white); letter-spacing:.02em; }
+.glossaire-acronym { font-size:.82rem; color:var(--text-3); margin-left:8px; }
+.glossaire-def { margin-top:8px; line-height:1.7; color:var(--text-2); font-size:.88rem; }
+.glossaire-hidden { display:none !important; }
+
+/* ============================================================ GENERAL SPACING IMPROVEMENTS ===== */
+.q-card { margin-bottom:24px; padding:24px; background:var(--bg2); border:1px solid var(--border); border-radius:var(--r); }
+.q-card-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; font-size:.8rem; color:var(--text-3); font-weight:600; text-transform:uppercase; letter-spacing:.05em; }
+.q-text { font-size:.92rem; line-height:1.75; color:var(--text); margin-bottom:14px; }
+.q-choices { display:flex; flex-direction:column; gap:8px; }
+.q-choice { padding:10px 16px; border:1px solid var(--border2); border-radius:var(--r-sm); cursor:pointer; font-size:.88rem; transition:all .15s; }
+.q-choice:hover { border-color:var(--text-3); background:var(--bg3); }
+.q-choice.correct { border-color:#6ee7b7; color:#6ee7b7; background:rgba(110,231,183,.06); }
+.q-choice.wrong   { border-color:#f87171; color:#f87171; background:rgba(248,113,113,.06); }
+.q-expl { display:none; margin-top:12px; padding:12px 14px; background:var(--bg3); border-radius:var(--r-sm); border-left:3px solid var(--border2); }
+.q-expl.show { display:block; }
+
 /* ===== QUIZ — OPEN ANSWER & VF BUTTONS ===== */
 .q-type-badge { font-size:.65rem; background:var(--bg4); border:1px solid var(--border2); padding:2px 8px; border-radius:20px; color:var(--text-2); text-transform:uppercase; letter-spacing:.05em; }
 

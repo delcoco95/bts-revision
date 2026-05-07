@@ -9,8 +9,8 @@ const SUBJECTS = [
   { id:'maths',   label:'Mathématiques',    desc:'Numération, Boole, stats, RSA, cryptographie',icon:'∑', chapters:8  },
   { id:'anglais', label:'Anglais',          desc:'IT English, progression A2 → B2',            icon:'◈', chapters:8  },
   { id:'culture', label:'Culture Générale', desc:'Synthèse, dissertation, expression',         icon:'◐', chapters:6  },
-  { id:'e5',      label:'Épreuve E5',       desc:'Oral portfolio BTS SIO SISR',                icon:'▷', chapters:4  },
-  { id:'e6',      label:'Épreuve E6',       desc:'Parcours de professionnalisation',           icon:'▷', chapters:3  },
+  { id:'e5',      label:'Épreuve E5',       desc:'Oral portfolio BTS SIO SISR',                icon:'▷', chapters:6  },
+  { id:'e6',      label:'Épreuve E6',       desc:'Parcours de professionnalisation',           icon:'▷', chapters:8  },
   { id:'e7',      label:'Épreuve E7',       desc:'Admin systèmes et réseaux (SISR)',           icon:'▷', chapters:10 },
 ];
 const SUBJECT_IDS = new Set(SUBJECTS.map(s => s.id));
@@ -717,38 +717,66 @@ async function renderGlossairePage(c) {
     try { const gd = await dataFetch('glossaire', null); if(gd) state.glossaireData = gd; } catch(e) {}
   }
   const data = state.glossaireData || [];
-  c.innerHTML = `
-    <div class="page-title">Glossaire IT</div>
-    <div class="page-sub">${data.length} définitions</div>
-    <div class="dict-controls">
-      <input class="dict-search" placeholder="Rechercher un terme..." oninput="filterGloss(this.value)">
-      <div class="az-btns">
-        <button class="az-btn on" onclick="filterGlossL('ALL',this)">Tout</button>
-        ${[...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'].map(l=>`<button class="az-btn" onclick="filterGlossL('${l}',this)">${l}</button>`).join('')}
-      </div>
-    </div>
-    <div id="glossGrid" class="glossary-grid">${glossCards(data)}</div>`;
+
+  // Group terms by first letter
+  const grouped = {};
+  data.forEach(function(g) {
+    const letter = (g.terme || '?')[0].toUpperCase();
+    if (!grouped[letter]) grouped[letter] = [];
+    grouped[letter].push(g);
+  });
+  const letters = Object.keys(grouped).sort();
+  const availLetters = new Set(letters);
+
+  const ALPHA = ['A','B','C','D','E','F','G','H','I','J','K','L','M',
+                 'N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+
+  const alphaHtml = ALPHA.map(function(l) {
+    const disabled = availLetters.has(l) ? '' : ' glossaire-alpha-disabled';
+    return '<button class="glossaire-alpha-btn' + disabled + '" onclick="glossScrollTo(\'' + l + '\')">' + l + '</button>';
+  }).join('');
+
+  const sectionsHtml = letters.map(function(letter) {
+    const cards = grouped[letter].map(function(g) {
+      const acronym = g.acronyme ? '<span class="glossaire-acronym">(' + g.acronyme + ')</span>' : '';
+      const domain  = g.domaine  ? '<span class="glossaire-acronym"> [' + g.domaine + ']</span>'  : '';
+      const exemple = g.exemple  ? '<div class="glossaire-acronym" style="margin-top:6px;font-style:italic">Ex : ' + g.exemple + '</div>' : '';
+      const searchData = ((g.terme || '') + ' ' + (g.definition || '')).toLowerCase();
+      return '<div class="glossaire-card" data-search="' + searchData.replace(/"/g, '&quot;') + '">'
+           + '<div><span class="glossaire-term">' + (g.terme || '') + '</span>' + acronym + domain + '</div>'
+           + '<div class="glossaire-def">' + (g.definition || '') + '</div>'
+           + exemple
+           + '</div>';
+    }).join('');
+    return '<div class="glossaire-section" id="gloss-' + letter + '">'
+         + '<div class="glossaire-section-letter">' + letter + '</div>'
+         + cards
+         + '</div>';
+  }).join('');
+
+  c.innerHTML = '<div class="page-title">Glossaire IT</div>'
+    + '<div class="page-sub">' + data.length + ' définitions</div>'
+    + '<input class="glossaire-search" type="text" placeholder="Rechercher un terme ou une définition..." '
+    + 'id="glossSearch" oninput="filterGlossNew(this.value)">'
+    + '<div class="glossaire-alphabet">' + alphaHtml + '</div>'
+    + '<div id="glossSections">' + sectionsHtml + '</div>';
 }
-function glossCards(data) {
-  if (!data.length) return '<div class="empty">Aucun résultat</div>';
-  return data.map(g => `<div class="g-card">
-    <div class="g-term">${g.terme}</div>
-    <div class="g-domain">${g.domaine||''}</div>
-    <div class="g-def">${g.definition}</div>
-    ${g.exemple?`<div class="g-example">Ex : ${g.exemple}</div>`:''}
-  </div>`).join('');
-}
-window.filterGloss = function(q) {
-  const d = (state.glossaireData||[]).filter(g => !q || g.terme.toLowerCase().includes(q.toLowerCase()) || g.definition.toLowerCase().includes(q.toLowerCase()));
-  const grid = document.getElementById('glossGrid');
-  if (grid) grid.innerHTML = glossCards(d);
+
+window.filterGlossNew = function(q) {
+  const ql = q.toLowerCase().trim();
+  document.querySelectorAll('.glossaire-card').forEach(function(card) {
+    const text = card.getAttribute('data-search') || '';
+    card.classList.toggle('glossaire-hidden', ql.length > 0 && !text.includes(ql));
+  });
+  document.querySelectorAll('.glossaire-section').forEach(function(sec) {
+    const visible = sec.querySelectorAll('.glossaire-card:not(.glossaire-hidden)').length;
+    sec.classList.toggle('glossaire-hidden', visible === 0);
+  });
 };
-window.filterGlossL = function(l,btn) {
-  document.querySelectorAll('.az-btn').forEach(b=>b.classList.remove('on'));
-  btn.classList.add('on');
-  const d = l==='ALL' ? (state.glossaireData||[]) : (state.glossaireData||[]).filter(g=>g.terme.toUpperCase().startsWith(l));
-  const grid = document.getElementById('glossGrid');
-  if (grid) grid.innerHTML = glossCards(d);
+
+window.glossScrollTo = function(letter) {
+  const el = document.getElementById('gloss-' + letter);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
 
 /* ─────────────────────── ACRONYMES ─────────────────────── */

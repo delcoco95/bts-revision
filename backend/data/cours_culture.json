@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "id": "culture-01",
     "chapitre": "culture-01",
@@ -26,8 +26,14 @@
       }
     ],
     "liens": [
-      {"texte": "CNIL — RGPD expliqué", "url": "https://www.cnil.fr/fr/rgpd-de-quoi-parle-t-on"},
-      {"texte": "Méthode synthèse — Eduscol", "url": "https://eduscol.education.fr/"}
+      {
+        "texte": "CNIL — RGPD expliqué",
+        "url": "https://www.cnil.fr/fr/rgpd-de-quoi-parle-t-on"
+      },
+      {
+        "texte": "Méthode synthèse — Eduscol",
+        "url": "https://eduscol.education.fr/"
+      }
     ]
   },
   {
@@ -53,7 +59,12 @@
       {
         "type": "qcm",
         "question": "En quelle année ChatGPT a-t-il été lancé publiquement ?",
-        "choix": ["2020", "2021", "2022", "2023"],
+        "choix": [
+          "2020",
+          "2021",
+          "2022",
+          "2023"
+        ],
         "reponse": "2022"
       },
       {
@@ -63,8 +74,14 @@
       }
     ],
     "liens": [
-      {"texte": "AI Act — Parlement européen", "url": "https://www.europarl.europa.eu/topics/fr/article/20230601STO93804/loi-sur-l-ia-premiere-reglementation-europeenne-sur-l-intelligence-artificielle"},
-      {"texte": "CNIL — Cambridge Analytica", "url": "https://www.cnil.fr/fr/cambridge-analytica-ce-quil-sest-passe"}
+      {
+        "texte": "AI Act — Parlement européen",
+        "url": "https://www.europarl.europa.eu/topics/fr/article/20230601STO93804/loi-sur-l-ia-premiere-reglementation-europeenne-sur-l-intelligence-artificielle"
+      },
+      {
+        "texte": "CNIL — Cambridge Analytica",
+        "url": "https://www.cnil.fr/fr/cambridge-analytica-ce-quil-sest-passe"
+      }
     ]
   },
   {
@@ -95,13 +112,24 @@
       {
         "type": "qcm",
         "question": "Quel arrêt de la Cour de Cassation (2018) a ouvert la voie à la requalification des livreurs de plateformes en salariés en France ?",
-        "choix": ["Arrêt Uber (2020)", "Arrêt Take Eat Easy (2018)", "Arrêt Deliveroo (2019)", "Arrêt Amazon (2021)"],
+        "choix": [
+          "Arrêt Uber (2020)",
+          "Arrêt Take Eat Easy (2018)",
+          "Arrêt Deliveroo (2019)",
+          "Arrêt Amazon (2021)"
+        ],
         "reponse": "Arrêt Take Eat Easy (2018)"
       }
     ],
     "liens": [
-      {"texte": "Forum Économique Mondial — Future of Jobs 2023", "url": "https://www.weforum.org/reports/the-future-of-jobs-report-2023/"},
-      {"texte": "Code du travail — Télétravail", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035646288"}
+      {
+        "texte": "Forum Économique Mondial — Future of Jobs 2023",
+        "url": "https://www.weforum.org/reports/the-future-of-jobs-report-2023/"
+      },
+      {
+        "texte": "Code du travail — Télétravail",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035646288"
+      }
     ]
   },
   {
@@ -127,7 +155,12 @@
       {
         "type": "qcm",
         "question": "Selon The Shift Project (2019), quel pourcentage des émissions mondiales de GES représente le numérique ?",
-        "choix": ["1%", "2%", "4%", "10%"],
+        "choix": [
+          "1%",
+          "2%",
+          "4%",
+          "10%"
+        ],
         "reponse": "4%"
       },
       {
@@ -137,8 +170,14 @@
       }
     ],
     "liens": [
-      {"texte": "The Shift Project — Lean ICT", "url": "https://theshiftproject.org/article/lean-ict-our-new-report/"},
-      {"texte": "Accord de Paris — Nations Unies", "url": "https://unfccc.int/fr/a-propos-des-ndcs/l-accord-de-paris"}
+      {
+        "texte": "The Shift Project — Lean ICT",
+        "url": "https://theshiftproject.org/article/lean-ict-our-new-report/"
+      },
+      {
+        "texte": "Accord de Paris — Nations Unies",
+        "url": "https://unfccc.int/fr/a-propos-des-ndcs/l-accord-de-paris"
+      }
     ]
   },
   {
@@ -168,8 +207,14 @@
       }
     ],
     "liens": [
-      {"texte": "Méthodologie de la dissertation — Caféanlais", "url": "https://www.cafe-anlais.fr/"},
-      {"texte": "Forum économique mondial — Future of Jobs", "url": "https://www.weforum.org/reports/the-future-of-jobs-report-2023/"}
+      {
+        "texte": "Méthodologie de la dissertation — Caféanlais",
+        "url": "https://www.cafe-anlais.fr/"
+      },
+      {
+        "texte": "Forum économique mondial — Future of Jobs",
+        "url": "https://www.weforum.org/reports/the-future-of-jobs-report-2023/"
+      }
     ]
   },
   {
@@ -199,8 +244,14 @@
       }
     ],
     "liens": [
-      {"texte": "Mon espace santé", "url": "https://www.monespacesante.fr/"},
-      {"texte": "ANSSI — Secteur santé", "url": "https://www.ssi.gouv.fr/entreprise/secteurs-critiques/sante/"}
+      {
+        "texte": "Mon espace santé",
+        "url": "https://www.monespacesante.fr/"
+      },
+      {
+        "texte": "ANSSI — Secteur santé",
+        "url": "https://www.ssi.gouv.fr/entreprise/secteurs-critiques/sante/"
+      }
     ]
   },
   {
@@ -226,8 +277,14 @@
       }
     ],
     "liens": [
-      {"texte": "Référentiel BTS SIO — Eduscol", "url": "https://eduscol.education.fr/sti/si-ens-sio"},
-      {"texte": "ANSSI — Cybersécurité", "url": "https://www.ssi.gouv.fr"}
+      {
+        "texte": "Référentiel BTS SIO — Eduscol",
+        "url": "https://eduscol.education.fr/sti/si-ens-sio"
+      },
+      {
+        "texte": "ANSSI — Cybersécurité",
+        "url": "https://www.ssi.gouv.fr"
+      }
     ]
   },
   {
@@ -253,48 +310,35 @@
       }
     ],
     "liens": [
-      {"texte": "CNIL — Fiches pratiques", "url": "https://www.cnil.fr/fr/textes-officiels-europeens-protection-donnees"},
-      {"texte": "Annales BTS Culture générale — APMEP", "url": "https://www.apmep.fr/Annales-BTS"}
+      {
+        "texte": "CNIL — Fiches pratiques",
+        "url": "https://www.cnil.fr/fr/textes-officiels-europeens-protection-donnees"
+      },
+      {
+        "texte": "Annales BTS Culture générale — APMEP",
+        "url": "https://www.apmep.fr/Annales-BTS"
+      }
     ]
   },
   {
     "id": "culture-09",
-    "titre": "Theme CGE 2026 — Les animaux et nous : imaginer, connaitre, comprendre l'animal",
-    "contenu": [
-      {
-        "sous_titre": "Presentation du theme officiel 2026",
-        "texte": "Le theme officiel de l'epreuve de Culture Generale et Expression (CGE) pour le BTS session 2026 est : 'Les animaux et nous : imaginer, connaitre, comprendre l'animal'.\n\nCe theme invite a interroger les multiples relations que l'etre humain entretient avec les animaux : relation affective (animaux de compagnie), relation scientifique (etude du comportement animal, cognition), relation ethique (bien-etre animal, droits des animaux), relation economique (elevage, experimentation), relation culturelle et imaginaire (mythes, litterature, symboles).\n\nL'epreuve CGE comporte deux parties :\n1. Synthese de documents : plusieurs textes / images / documents sur le theme, rediger une synthese objective de 200 mots environ.\n2. Ecriture personnelle : repondre a une question en exprimant son point de vue argumente.\n\nDuree : 3h — Coefficient : 3"
-      },
-      {
-        "sous_titre": "Reperes historiques et juridiques",
-        "texte": "Dates et lois cles :\n\n- 1850 : Loi Grammont (France) — premiere loi francaise contre la cruaute envers les animaux domestiques. Premier texte legislatif de protection animale en Europe.\n- 1963 : Convention europeenne pour la protection des animaux dans les elevages.\n- 1976 : Loi Bardot (France) — renforce la protection contre la maltraitance animale.\n- 1987 : Convention europeenne pour la protection des animaux de compagnie.\n- 1997 : Traite d'Amsterdam — reconnaissance de la sensibilite animale au sein de l'Union europeenne.\n- 2015 : Reforme du Code civil francais — l'article 515-14 reconnait les animaux comme 'etres vivants doues de sensibilite' (sortie du statut de bien meuble).\n- 2021 : Loi contre la maltraitance animale (France) — interdiction des delphinariums, spectacles avec animaux sauvages dans les cirques itinerants (delai de 7 ans), renforcement des peines.\n\nPersonnalites cles :\n- Peter Singer (ne 1946) : philosophe australien, auteur de 'La Liberation animale' (1975) — fondateur du mouvement antispéciste, concept de 'specisme' (discrimination fondee sur l'appartenance a une espece).\n- Tom Regan (1938-2017) : philosophe americain, theorie des 'droits des animaux' — les animaux ont des droits inherents.\n- Jane Goodall (nee 1934) : primatologue britannique, etude des chimpanzes en milieu naturel (Tanzania, 1960) — demontre que les chimpanzes fabriquent et utilisent des outils.\n- Konrad Lorenz (1903-1989) : ethologue autrichien, prix Nobel de medecine 1973, fondateur de l'ethologie moderne, concept d'empreinte (imprinting).\n- Boris Cyrulnik (ne 1937) : neuropsychiatre francais, travaux sur l'attachement homme-animal et la resilience."
-      },
-      {
-        "sous_titre": "Cognition et intelligence animale",
-        "texte": "Principales decouvertes scientifiques :\n\n1. Chimpanzes (Jane Goodall, 1960s) : utilisation d'outils (brindilles pour extraire des termites), comportements sociaux complexes, transmission culturelle.\n\n2. Alex le perroquet (Irene Pepperberg, 1977-2007) : perroquet gris d'Afrique capable d'identifier des couleurs, des formes, de compter jusqu'a 6, de formuler des demandes. Mort en 2007 en disant 'You be good. I love you'.\n\n3. Dauphin : reconnaissance de soi dans un miroir (test du miroir, Gordon Gallup Jr., 1970) — indicateur de conscience de soi. Demontre aussi chez les grands singes, elephants, pies.\n\n4. Elephants : memoire a long terme, empathie (comportement de deuil), utilisation d'outils, reconnaissance de soi.\n\n5. Poulpe/Pieuvre : systeme nerveux distribue (2/3 des neurones dans les tentacules), apprentissage par observation, camouflage contextuel adaptatif.\n\n6. Abeilles : danse des abeilles (Karl von Frisch, Nobel 1973) — communication de la direction et de la distance d'une source de nourriture par une danse ritualisee ('danse en frétillement').\n\nConceptes scientifiques a maitriser :\n- Ethologie : science du comportement animal en milieu naturel.\n- Cognition animale : capacites mentales (memoire, resolution de problemes, communication).\n- Theorie de l'esprit (Theory of Mind) : capacite a attribuer des etats mentaux a autrui — observee partiellement chez les grands singes.\n- Sentience : capacite a eprouver des sensations subjectives (plaisir, douleur, emotions)."
-      },
-      {
-        "sous_titre": "Ethique animale et specisme",
-        "texte": "Concepts philosophiques fondamentaux :\n\n1. Specisme (Peter Singer) : discrimination morale fondee sur l'appartenance a une espece, analogue au racisme ou au sexisme. Singer argumente que la capacite a souffrir est le critere moral pertinent, pas l'appartenance a l'espece Homo sapiens.\n\n2. Bien-etre animal (animal welfare) : approche pragmatique (≠ droits des animaux) qui accepte l'utilisation des animaux mais exige des conditions minimales. Les 5 libertes (Brambell, 1965) : absence de faim/soif, absence de souffrance physique, absence de douleur/maladie, expression du comportement naturel, absence de peur/detresse.\n\n3. Antispécisme : mouvement qui refuse toute hierarchie morale entre especes. Prone l'abolition de l'exploitation animale (elevage, experimentation, spectacles).\n\n4. Veganism vs vegetarisme : veganism = refus de tout produit d'origine animale (alimentaire, vestimentaire) ; vegetarisme = refus de chair animale.\n\n5. Experimentation animale : debat entre necessite scientifique et medicale vs souffrance infligee. Directive europeenne 2010/63/UE encadre l'experimentation : principe des 3R (Remplacer, Reduire, Raffiner).\n\nChiffres cles :\n- France 2022 : 1,88 million d'animaux utilises pour la recherche scientifique (source : Comite National de Reflexion Ethique sur l'Experimentation Animale — CNREEA).\n- 70% des medicaments mis sur le marche ont ete testes sur des animaux.\n- 65 milliards d'animaux terrestres abattus par an dans le monde pour l'alimentation (FAO)."
-      },
-      {
-        "sous_titre": "L'animal dans l'imaginaire culturel et litteraire",
-        "texte": "L'animal occupe une place centrale dans les representations humaines depuis la prehistoire.\n\nRepresentations historiques :\n- Grottes de Lascaux (17 000 ans av. J.-C.) : peintures rupestres representant des bovins, cerfs, chevaux — premiers temoignages de la fascination humaine pour l'animal.\n- Egypte antique : animaux sacres (Anubis/chacal, Bastet/chat, Horus/faucon) — l'animal comme intermediaire entre monde humain et divin.\n- Fables : Esope (VIe siecle av. J.-C.), La Fontaine (XVIIe siecle) — utilisation des animaux comme allegories de defauts et qualites humaines.\n\nLitterature et cinema :\n- 'La Ferme des animaux' (George Orwell, 1945) : allegorie politique — les animaux symbolisent les classes sociales et le totalitarisme stalinien.\n- 'Moby Dick' (Herman Melville, 1851) : la baleine comme symbole de l'inconnu, de la nature indomptable.\n- 'L'Etranger' (Albert Camus, 1942) : le chien du vieux Salamano — symbolise la solitude et l'incomprehension.\n- Cinema : 'Au hasard Balthazar' (Robert Bresson, 1966), 'La Planete des singes' (1968), 'Bambi' (Disney, 1942).\n\nBiomimetisme (lien avec SISR/Numerique) :\n- Definition : s'inspirer des solutions biologiques des animaux pour resoudre des problemes techniques.\n- Exemples : Velcro (inspire des crampons de la bardane), combinaison de natation (peau de requin), sonar des sous-marins (echolocation des chauves-souris), algorithmes de colonies de fourmis (optimisation de routes reseau), reseaux de neurones artificiels (inspire du cerveau humain).\n- IA et neurosciences computationnelles : DeepMind AlphaFold (prediction de la structure des proteines, 2020) inspire des mecanismes biologiques."
-      },
-      {
-        "sous_titre": "Methodologie : la synthese de documents sur ce theme",
-        "texte": "Exemple de plan pour une synthese sur 'La place de l'animal dans la societe contemporaine' :\n\nDocuments types susceptibles d'etre proposes :\n- Texte journalistique (ex : article du Monde sur la loi 2021)\n- Texte philosophique (extrait de Singer ou Cyrulnik)\n- Infographie (statistiques elevage, experimentation)\n- Photo ou dessin (representation symbolique)\n\nEtapes de la synthese :\n1. Lecture et annotation de chaque document (15 min)\n2. Tableau comparatif des idees par document (10 min)\n3. Identification de l'idee directrice commune\n4. Plan en 2 ou 3 parties (equilibrees)\n5. Redaction : introduction (presentation documents + problematique + annonce plan), developpement, conclusion (bilan objectif)\n\nConseils methodologiques :\n- Ne JAMAIS donner son avis dans la synthese (contrairement a l'ecriture personnelle)\n- Reformuler, ne pas copier-coller\n- Articuler les idees entre les documents (confrontation, convergence, complementarite)\n- Respecter la proportion : 200 mots minimum\n\nExemple de phrase d'introduction :\n'Les quatre documents proposes abordent, sous des angles complementaires, la question de la place des animaux dans la societe humaine. La these commune qui se degage est celle d'une relation en mutation, tiraillee entre exploitation traditionnelle et prise de conscience ethique croissante.'\n\nAxes de problematique frequents :\n- L'animal sujet de droit vs l'animal ressource economique\n- Intelligence animale : quelles consequences ethiques ?\n- La protection animale : evolution des mentalites ou contrainte legislative ?"
-      },
-      {
-        "sous_titre": "Ecriture personnelle — exemples de sujets et de reponses",
-        "texte": "Sujet type 1 :\n'Pensez-vous que la reconnaissance de la sensibilite animale doit conduire a accorder des droits aux animaux ? Vous repondrez en vous appuyant sur les documents et vos connaissances personnelles.'\n\nPlan suggere :\nI. La science confirme la sensibilite et l'intelligence des animaux → base pour une evolution juridique\nII. La protection animale progresse mais reste limitee (bien-etre vs droits)\nIII. Les enjeux economiques et culturels freinent une revolution juridique complete\nConclusion : une evolution graduelle est preferable a une rupture radicale.\n\n---\n\nSujet type 2 :\n'L'etre humain peut-il se passer des animaux ?'\n\nPlan :\nI. Des relations ancestrales et multifonctionnelles (alimentation, travail, compagnie, recherche)\nII. Des alternatives emergent mais restent partielles (proteine vegetale, IA, organoide)\nIII. La question n'est pas tant 'peut-il' mais 'doit-il' → glissement ethique\n\n---\n\nSujet type 3 (en lien avec le numerique / BTS SIO) :\n'En quoi le vivant inspire-t-il l'innovation technologique ?'\n\nPlan :\nI. Le biomimetisme : l'animal comme modele d'efficacite (velcro, sonar, algorithmes de fourmis)\nII. Les neurosciences computationnelles : le cerveau animal comme inspiration pour l'IA\nIII. Les limites ethiques du biomimetisme et de l'experimentation animale au service de la technologie\n\nCette question est particulierement pertinente pour les candidats BTS SIO car elle etablit un pont direct entre la culture generale et le domaine professionnel (reseaux, IA, cybersecurite)."
-      }
+    "titre": "CGE 2026 — Les animaux et nous : imaginer, connaître, comprendre",
+    "points_cles": [
+      "Thème officiel BTS 2026 : Les animaux et nous",
+      "4 axes : imaginaire / connaissance / compréhension / relation Homme-Animal",
+      "Méthode synthèse : 3 parties, connecteurs, objectif",
+      "Méthode écriture personnelle : prise de position, arguments, exemples"
     ],
     "liens": [
-      {"label": "Loi contre maltraitance animale 2021 — Legifrance", "url": "https://www.legifrance.gouv.fr/"},
-      {"label": "CNREEA — Experimentation animale", "url": "https://agriculture.gouv.fr/"},
-      {"label": "Peter Singer — Animal Liberation Project", "url": "https://www.utilitarian.net/singer/"},
-      {"label": "Jane Goodall Institute", "url": "https://janegoodall.org/"}
-    ]
+      {
+        "label": "Fables de La Fontaine — texte intégral",
+        "url": "https://www.lafontaine.net/"
+      },
+      {
+        "label": "ENISA — Rapport sur la biodiversité numérique",
+        "url": "https://www.enisa.europa.eu/"
+      }
+    ],
+    "contenu": "<h3>Thème officiel BTS Culture Générale et Expression 2026</h3>\n<p><strong>Intitulé officiel :</strong> \"Les animaux et nous : imaginer, connaître, comprendre l'animal\"</p>\n<p>Ce thème explore les multiples façons dont les êtres humains se représentent, étudient et appréhendent le monde animal. Il invite à une réflexion sur notre rapport à l'animal — à la fois miroir de l'humanité et être vivant à part entière.</p>\n\n<h3>Axes de réflexion</h3>\n\n<h4>Axe 1 — L'animal imaginaire et symbolique</h4>\n<ul>\n<li><strong>Mythologie et littérature :</strong> depuis l'Antiquité, les animaux peuplent l'imaginaire humain. Les fables de <strong>La Fontaine</strong> (XVIIe siècle) utilisent l'animal comme miroir de la société humaine : le lion symbolise le pouvoir, le renard la ruse, l'agneau l'innocence.</li>\n<li><strong>Littérature moderne :</strong> <em>La Ferme des animaux</em> de <strong>George Orwell</strong> (1945) est une allégorie politique où les animaux représentent les classes sociales et les idéologies politiques. <em>L'Appel de la forêt</em> de <strong>Jack London</strong> (1903) explore l'instinct et le retour à l'état sauvage.</li>\n<li><strong>Cinéma :</strong> <em>L'Ours</em> (Jean-Jacques Annaud, 1988), <em>Le Peuple migrateur</em> (Jacques Perrin, 2001), <em>Microcosmos</em> (Nuridsany et Pérennou, 1996). Le dessin animé comme vecteur symbolique : <em>Bambi</em> (Disney, 1942), <em>Le Roi Lion</em> (1994).</li>\n<li><strong>Bestiairen médiévaux :</strong> au Moyen Âge, les bestiaires attribuaient des vertus morales aux animaux (le pélican = sacrifice, le lion = Christ ressuscité).</li>\n</ul>\n\n<h4>Axe 2 — Connaître l'animal (sciences)</h4>\n<ul>\n<li><strong>Éthologie :</strong> science du comportement animal. <strong>Konrad Lorenz</strong> (Prix Nobel 1973) découvrit l'empreinte — le caneton suit le premier être vu après l'éclosion. <strong>Karl von Frisch</strong> (Prix Nobel 1973) décrypte la danse des abeilles. <strong>Frans de Waal</strong> montre l'empathie et les comportements moraux chez les primates (<em>De la réconciliation chez les primates</em>, 1989).</li>\n<li><strong>Jane Goodall :</strong> étude des chimpanzés sauvages en Tanzanie depuis 1960. Elle révèle que les chimpanzés fabriquent et utilisent des outils, redéfinissant la frontière entre Homme et animal.</li>\n<li><strong>Cognition animale :</strong> intelligence des corbeaux (résolution de problèmes complexes), mémoire des éléphants, communication des dauphins, conscience chez les grands singes.</li>\n<li><strong>Biodiversité et extinction :</strong> rapport IPBES 2019 — un million d'espèces menacées d'extinction. Convention sur la biodiversité (Rio, 1992). Sixième extinction de masse en cours.</li>\n</ul>\n\n<h4>Axe 3 — Comprendre l'animal (éthique et philosophie)</h4>\n<ul>\n<li><strong>Descartes</strong> (<em>Discours de la méthode</em>, 1637) : les animaux sont des \"animaux-machines\", automates sans âme ni pensée. Vision mécaniste qui a longtemps justifié l'exploitation animale.</li>\n<li><strong>Montaigne</strong> (<em>Essais</em>, Livre II, chapitre 12) : défend la continuité entre Homme et animal. \"Il y a plus de différence de tel homme à tel homme qu'entre tel homme et telle bête.\"</li>\n<li><strong>Jeremy Bentham</strong> (philosophe utilitariste, XVIIIe siècle) : \"La question n'est pas : peuvent-ils raisonner ? Ni : peuvent-ils parler ? Mais : peuvent-ils souffrir ?\" — fondement philosophique du bien-être animal.</li>\n<li><strong>Peter Singer</strong> (<em>La Libération animale</em>, 1975) : fondateur de l'antispécisme. L'espèce ne peut justifier une différence de traitement si les êtres souffrent également. Le spécisme est une discrimination injustifiée.</li>\n<li><strong>Florence Burgat :</strong> philosophe française contemporaine, spécialiste de l'éthique animale. Plaide pour une reconnaissance de la subjectivité animale.</li>\n<li><strong>Reconnaissance légale :</strong> en France, le Code civil reconnaît les animaux comme \"êtres vivants doués de sensibilité\" depuis 2015. Loi sur le bien-être animal renforcée en 2021.</li>\n</ul>\n\n<h4>Axe 4 — L'animal et l'Homme (relations pratiques)</h4>\n<ul>\n<li><strong>Domestication :</strong> il y a 15 000 ans, le chien est le premier animal domestiqué. La domestication transforme à la fois l'animal et l'Homme.</li>\n<li><strong>Élevage industriel :</strong> 70 milliards d'animaux terrestres élevés chaque année. Débat sur les conditions d'élevage, le bien-être animal, l'impact environnemental.</li>\n<li><strong>Expérimentation animale :</strong> environ 12 millions d'animaux utilisés en Europe par an (Directive 2010/63/UE). Règle des 3R : Replace, Reduce, Refine.</li>\n<li><strong>Zoothérapie :</strong> utilisation thérapeutique des animaux pour les personnes âgées, autistes, en souffrance psychologique.</li>\n<li><strong>Animaux sauvages et conservation :</strong> zoos et parcs naturels — rôle de conservation ou instrumentalisation ?</li>\n</ul>\n\n<h3>Dates et événements clés à mémoriser</h3>\n<table style=\"width:100%;border-collapse:collapse;margin:16px 0;\">\n<tr style=\"background:#000;color:#fff;\"><th style=\"padding:8px;\">Date</th><th style=\"padding:8px;\">Événement</th></tr>\n<tr style=\"border-bottom:1px solid #ddd;\"><td style=\"padding:8px;\">1637</td><td style=\"padding:8px;\">Descartes — <em>Discours de la méthode</em> — animaux-machines</td></tr>\n<tr style=\"border-bottom:1px solid #ddd;\"><td style=\"padding:8px;\">1668</td><td style=\"padding:8px;\">La Fontaine — Fables (Livres I-VI)</td></tr>\n<tr style=\"border-bottom:1px solid #ddd;\"><td style=\"padding:8px;\">1945</td><td style=\"padding:8px;\">George Orwell — <em>La Ferme des animaux</em></td></tr>\n<tr style=\"border-bottom:1px solid #ddd;\"><td style=\"padding:8px;\">1975</td><td style=\"padding:8px;\">Peter Singer — <em>La Libération animale</em></td></tr>\n<tr style=\"border-bottom:1px solid #ddd;\"><td style=\"padding:8px;\">1973</td><td style=\"padding:8px;\">Prix Nobel Médecine : Lorenz, von Frisch, Tinbergen (éthologie)</td></tr>\n<tr style=\"border-bottom:1px solid #ddd;\"><td style=\"padding:8px;\">1992</td><td style=\"padding:8px;\">Convention sur la Diversité Biologique — Sommet de Rio</td></tr>\n<tr style=\"border-bottom:1px solid #ddd;\"><td style=\"padding:8px;\">2015</td><td style=\"padding:8px;\">France — Code civil reconnaît les animaux comme \"êtres sensibles\"</td></tr>\n<tr style=\"border-bottom:1px solid #ddd;\"><td style=\"padding:8px;\">2019</td><td style=\"padding:8px;\">Rapport IPBES — 1 million d'espèces menacées d'extinction</td></tr>\n<tr><td style=\"padding:8px;\">2021</td><td style=\"padding:8px;\">France — Loi renforcée sur le bien-être animal</td></tr>\n</table>\n\n<h3>Citations mémorables</h3>\n<ul>\n<li><strong>Bentham :</strong> \"La question n'est pas : peuvent-ils raisonner ? Mais : peuvent-ils souffrir ?\"</li>\n<li><strong>Montaigne :</strong> \"Il y a plus de différence de tel homme à tel homme qu'entre tel homme et telle bête.\"</li>\n<li><strong>Victor Hugo :</strong> \"La grandeur d'une nation et son progrès moral peuvent être jugés par la façon dont elle traite ses animaux.\"</li>\n<li><strong>Jane Goodall :</strong> \"La différence entre les humains et les animaux est de degré, non de nature.\"</li>\n<li><strong>La Fontaine :</strong> \"Tout flatteur vit aux dépens de celui qui l'écoute.\" (Le Corbeau et le Renard)</li>\n</ul>\n\n<h3>Problématiques types pour l'épreuve BTS</h3>\n<ul>\n<li>\"Dans quelle mesure notre rapport aux animaux révèle-t-il nos valeurs morales et culturelles ?\"</li>\n<li>\"L'animal est-il notre semblable ou notre miroir ?\"</li>\n<li>\"Les représentations de l'animal nous disent-elles plus sur l'Homme que sur l'animal lui-même ?\"</li>\n<li>\"La connaissance scientifique de l'animal transforme-t-elle notre relation à lui ?\"</li>\n<li>\"Peut-on reconnaître des droits aux animaux sans remettre en cause la civilisation humaine ?\"</li>\n</ul>\n\n<h3>Plans types à maîtriser</h3>\n\n<h4>Plan dialectique (thèse / antithèse / synthèse)</h4>\n<ul>\n<li><strong>I.</strong> L'animal est un objet au service de l'Homme (exploitation, domestication, expérimentation)</li>\n<li><strong>II.</strong> L'animal est un sujet méritant protection et droits (sensibilité, cognition, éthique)</li>\n<li><strong>III.</strong> Une relation à repenser : coexistence, responsabilité, interdépendance</li>\n</ul>\n\n<h4>Plan thématique (axes du thème)</h4>\n<ul>\n<li><strong>I.</strong> Imaginer l'animal : représentations symboliques, littéraires, artistiques</li>\n<li><strong>II.</strong> Connaître l'animal : sciences, éthologie, biodiversité</li>\n<li><strong>III.</strong> Comprendre l'animal : éthique, droits, relation Homme-Animal</li>\n</ul>\n\n<h3>Méthode CGE — Synthèse de documents</h3>\n<p><strong>Objectif de la synthèse :</strong> dégager les idées essentielles d'un corpus de documents hétérogènes (texte, image, graphique, tableau) et les organiser en un texte cohérent et personnel.</p>\n<ol>\n<li><strong>Lecture du corpus :</strong> lire chaque document en notant les idées principales et leur source</li>\n<li><strong>Identification des convergences et divergences</strong> entre les documents</li>\n<li><strong>Construction du plan :</strong> 2 ou 3 parties thématiques (pas une synthèse document par document)</li>\n<li><strong>Rédaction :</strong> introduction (présentation du corpus + problématique + annonce du plan), développement, conclusion</li>\n<li><strong>Référencer les documents :</strong> \"(doc. 1)\", \"(doc. 2)\" à chaque utilisation</li>\n</ol>\n\n<h3>Méthode CGE — Écriture personnelle</h3>\n<p><strong>Structure recommandée :</strong> prise de position clairement affirmée, arguments développés avec des exemples précis et variés, nuances et concessions.</p>\n<ul>\n<li>Ouvrir sur une anecdote, un fait, une citation</li>\n<li>Annoncer votre thèse dès le premier paragraphe</li>\n<li>Développer 3 arguments avec exemples concrets (littéraire, scientifique, actualité)</li>\n<li>Intégrer une concession (\"Certes..., mais...\")</li>\n<li>Conclure en répondant à la problématique et en ouvrant sur une perspective</li>\n</ul>\n\n<h3>Connecteurs logiques indispensables</h3>\n<table style=\"width:100%;border-collapse:collapse;margin:16px 0;\">\n<tr style=\"background:#000;color:#fff;\"><th style=\"padding:8px;\">Fonction</th><th style=\"padding:8px;\">Connecteurs</th></tr>\n<tr style=\"border-bottom:1px solid #ddd;\"><td style=\"padding:8px;\">Addition</td><td style=\"padding:8px;\">De plus, par ailleurs, en outre, également, qui plus est</td></tr>\n<tr style=\"border-bottom:1px solid #ddd;\"><td style=\"padding:8px;\">Opposition</td><td style=\"padding:8px;\">Cependant, néanmoins, en revanche, toutefois, or</td></tr>\n<tr style=\"border-bottom:1px solid #ddd;\"><td style=\"padding:8px;\">Cause</td><td style=\"padding:8px;\">Car, en effet, parce que, puisque, vu que</td></tr>\n<tr style=\"border-bottom:1px solid #ddd;\"><td style=\"padding:8px;\">Conséquence</td><td style=\"padding:8px;\">Ainsi, donc, c'est pourquoi, dès lors, il s'ensuit que</td></tr>\n<tr style=\"border-bottom:1px solid #ddd;\"><td style=\"padding:8px;\">Illustration</td><td style=\"padding:8px;\">Ainsi, par exemple, c'est le cas de, notamment, tel que</td></tr>\n<tr><td style=\"padding:8px;\">Conclusion</td><td style=\"padding:8px;\">En définitive, en somme, finalement, pour conclure, au terme de</td></tr>\n</table>"
   }
 ]
